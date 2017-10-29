@@ -7,10 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  childHogeValue: String = "initial value";
+  childHogeValue: String = 'initial value';
 
-  constructor(){
-
-  }
+  constructor() {}
 
 }

@@ -7,25 +7,36 @@ import { Component, OnInit, Input, OnChanges, DoCheck, SimpleChanges } from '@an
 })
 export class HogeHogeComponent implements OnInit, OnChanges, DoCheck {
 
+  /**
+   * ngOnChanges の確認のためのパラメータ
+   *
+   * @type {String}
+   * @memberof HogeHogeComponent
+   */
   @Input()
-  hogeInputValue: String;
-  
-  hogeInputValue2: String = "Initial Value";
+  ngOnChangesValue: String;
+
+  /**
+   * ngDoCheck の確認のためのパラメータ
+   *
+   * @type {String}
+   * @memberof HogeHogeComponent
+   */
+  ngDoCheckValue: String = 'Initial Value';
 
   constructor() {
-    console.log("[constructor] fired");
+    console.log('[constructor] fired');
   }
 
   ngOnInit(): void {
-    console.log("[ngOnInit] fired");
+    console.log('[ngOnInit] fired');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("[ngOnChanges] fired. hogeInputValue={" + this.hogeInputValue + "}" );
+    console.log('[ngOnChanges] fired. ngOnChangesValue={' + this.ngOnChangesValue + '}' );
   }
 
   ngDoCheck(): void {
-    console.log("[ngDoCheck] fired. hogeInputValue={" + this.hogeInputValue + "}" );
-    console.log("[ngDoCheck] fired. hogeInputValue2={" + this.hogeInputValue2 + "}" );
+    console.log('[ngDoCheck] fired. ngDoCheckValue={' + this.ngDoCheckValue + '}' );
   }
 }
