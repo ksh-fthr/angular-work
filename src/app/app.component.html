@@ -1,0 +1,4 @@
+<label for="inputText">入力項目(親から子に渡る):</label>
+<input id="inputText" name="inputText" type="text" [(ngModel)]="childHogeValue" />
+
+<app-hoge-hoge [hogeInputValue]="childHogeValue"></app-hoge-hoge>
