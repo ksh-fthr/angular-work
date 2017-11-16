@@ -8,5 +8,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 現在は次のブランチがあります。
 
 * feat_life_cycle_docheck
-  * Angular コンポーネントのライフサイクルの ngDoCheck について確認するためのブランチ
+  * Angular コンポーネントのライフサイクルの ngDoCheck について確認するためのブランチ
 
