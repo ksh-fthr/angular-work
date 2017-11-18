@@ -9,4 +9,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 
 * feat_life_cycle_docheck
   * Angular コンポーネントのライフサイクルの ngDoCheck について確認するためのブランチ
-
+* feat_life_cycle_aftercontent
+  * Angular コンポーネントのライフサイクルの ngAfterContentInit と ngAfterContentChecked について確認するためのブランチ
