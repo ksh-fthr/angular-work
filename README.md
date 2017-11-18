@@ -7,6 +7,6 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 基本的にそのとき確認した内容ごとにブランチを切ります。
 現在は次のブランチがあります。
 
-* feat_life_cycle
-  * Angular コンポーネントのライフサイクルについて確認するためのブランチ
+* feat_life_cycle_docheck
+  * Angular コンポーネントのライフサイクルの ngDoCheck について確認するためのブランチ
 
