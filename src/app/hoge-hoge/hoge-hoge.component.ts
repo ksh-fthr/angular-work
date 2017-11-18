@@ -25,18 +25,18 @@ export class HogeHogeComponent implements OnInit, OnChanges, DoCheck {
   ngDoCheckValue: String = 'Initial Value';
 
   constructor() {
-    console.log('[constructor] fired');
+    console.log('[HogeHogeComponent][constructor] fired');
   }
 
   ngOnInit(): void {
-    console.log('[ngOnInit] fired');
+    console.log('[HogeHogeComponent][ngOnInit] fired');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('[ngOnChanges] fired. ngOnChangesValue={' + this.ngOnChangesValue + '}' );
+    console.log('[HogeHogeComponent][ngOnChanges] fired. ngOnChangesValue={' + this.ngOnChangesValue + '}' );
   }
 
   ngDoCheck(): void {
-    console.log('[ngDoCheck] fired. ngDoCheckValue={' + this.ngDoCheckValue + '}' );
+    console.log('[HogeHogeComponent][ngDoCheck] fired. ngDoCheckValue={' + this.ngDoCheckValue + '}' );
   }
 }

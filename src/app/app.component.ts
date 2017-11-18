@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterContentInit, AfterContentChecked, ContentChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +10,4 @@ export class AppComponent {
   childHogeValue: String = 'initial value';
 
   constructor() {}
-
 }
