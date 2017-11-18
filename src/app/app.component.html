@@ -1,4 +1,42 @@
-<label for="inputText">入力項目(親から子に渡る):</label>
-<input id="inputText" name="inputText" type="text" [(ngModel)]="childHogeValue" />
+<div>
+  <div class="block-header">
+    <p>ngDoCheck の動きを理解するためのブロック</p>
+  </div>
 
-<app-hoge-hoge [ngOnChangesValue]="childHogeValue"></app-hoge-hoge>
+  <div class="block-body">
+    <label for="inputText">入力項目(親から子に渡る):</label>
+    <input id="inputText" name="inputText" type="text" [(ngModel)]="childHogeValue" />
+
+    <app-hoge-hoge [ngOnChangesValue]="childHogeValue">
+    </app-hoge-hoge>
+  </div>
+</div>
+
+<div>
+  <div class="block-header">
+    <p>ng-content の動きを理解するためのブロック</p>
+  </div>
+
+  <div class="block-body">
+    <app-content-parent>
+    </app-content-parent>
+  </div>
+</div>
+
+<div>
+  <div class="block-header">
+    <p>AfterContent の動きを理解するためのブロック</p>
+  </div>
+
+  <div class="block-body">
+    <app-piyo-parent>
+      <!-- 対応する select 属性が付与されたタグに埋め込まれる -->
+      <!-- # class 属性を削除するとコンテンツが表示されなくなるので試してみてください -->
+      <app-piyo-child class="external-contents-component">
+      </app-piyo-child>
+      <p class="external-contents-sentence">
+        外部コンテンツとして文を埋め込む
+      </p>
+    </app-piyo-parent>
+  </div>
+</div>
