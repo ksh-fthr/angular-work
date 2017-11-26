@@ -10,6 +10,8 @@ import { ContentParentComponent } from './content-parent/content-parent.componen
 import { ContentChildComponent } from './content-child/content-child.component';
 import { PiyoChildComponent } from './piyo-child/piyo-child.component';
 import { PiyoParentComponent } from './piyo-parent/piyo-parent.component';
+import { ViewParentComponent } from './view-parent/view-parent.component';
+import { ViewChildComponent } from './view-child/view-child.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PiyoParentComponent } from './piyo-parent/piyo-parent.component';
     ContentParentComponent,
     ContentChildComponent,
     PiyoChildComponent,
-    PiyoParentComponent
+    PiyoParentComponent,
+    ViewParentComponent,
+    ViewChildComponent
   ],
   imports: [
     BrowserModule,
