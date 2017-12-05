@@ -1,10 +1,14 @@
-<p>
-  親コンポーネントの入力フォームからビューの変更を確認する
-</p>
-
-<label for="inputText">入力項目(親):</label>
-<input id="inputText" name="inputText" type="text" [(ngModel)]="ngAfterViewCheckValue" />
-
-<!-- 子コンポーネントを登録 -->
-<app-view-child>
-</app-view-child>
+<div>
+  <app-view-child></app-view-child>
+</div>
+<div>
+  <app-view-child></app-view-child>
+</div>
+<div>
+  <app-view-child></app-view-child>
+</div>
+<hr />
+<div>
+  <p>子コンポーネントで入力された値が次の行に表示される</p>
+  <p>{{valueBox[0]}} {{valueBox[1]}} {{valueBox[2]}}</p>
+</div>

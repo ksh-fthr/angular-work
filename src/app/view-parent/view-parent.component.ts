@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-// ngAferViewInit と ngAfterViewChecked を利用するための import
-import { AfterViewInit, AfterViewChecked } from '@angular/core';
+// ngAfterViewChecked を利用するための import
+import { AfterViewChecked } from '@angular/core';
 
-// 子コンポーネントで定義されたパラメータを取得するための import
-import { ViewChild } from '@angular/core';
+// 子コンポーネントの参照をリストで取得するための import
+import { ViewChildren, QueryList } from '@angular/core';
 
 // 子コンポーネントを import
 import { ViewChildComponent} from '../view-child/view-child.component';
@@ -14,43 +14,26 @@ import { ViewChildComponent} from '../view-child/view-child.component';
   templateUrl: './view-parent.component.html',
   styleUrls: ['./view-parent.component.css']
 })
-export class ViewParentComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class ViewParentComponent implements AfterViewChecked {
 
   /**
-   * ngAfterViewInit と ngAfterViewChecked の確認のためのパラメータ
+   * 子コンポーネントの参照から値をセットするためのパラメータ
    *
    * @type {String}
    * @memberof ViewChildComponent
    */
-  public ngAfterViewCheckValue: String;
+  public valueBox: String[] = ['', '', ''];
 
   /**
-   * 子コンポーネントを参照
+   * 子コンポーネントの参照
+   * テンプレートで指定した子コンポーネントをリストで取得できる
    *
    * @type {ViewChildComponent}
    * @memberof ViewParentComponent
    */
-  @ViewChild(ViewChildComponent) viewChild: ViewChildComponent;
+  @ViewChildren(ViewChildComponent) viewChildren: QueryList<ViewChildComponent>;
 
   constructor() { }
-
-  /**
-   * コンポーネントの初期化処理
-   *
-   * @memberof ViewParentComponent
-   */
-  ngOnInit() {
-    this.ngAfterViewCheckValue = 'ngOnInitで初期化した';
-  }
-
-  /**
-   * ビューの初期化をフックする
-   *
-   * @memberof ViewParentComponent
-   */
-  ngAfterViewInit() {
-    console.log('[ViewParentComponent][ngAfterViewInit] fired');
-  }
 
   /**
    * ビューの変更をフックする
@@ -58,6 +41,16 @@ export class ViewParentComponent implements OnInit, AfterViewInit, AfterViewChec
    * @memberof ViewParentComponent
    */
   ngAfterViewChecked() {
-    console.log('[ViewParentComponent][ngAfterViewChecked] fired. ngAfterViewCheckValue={' + this.ngAfterViewCheckValue + '}');
+
+    this.viewChildren.forEach((item, index) => {
+      if (this.valueBox[index] !== item.inputValue) {
+
+        // ERROR Error: ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked
+        // の回避のために遅延評価を行う
+        setTimeout(() => {
+          this.valueBox[index] = item.inputValue;
+        }, 0);
+      }
+    });
   }
 }
