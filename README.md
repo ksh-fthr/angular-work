@@ -15,3 +15,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * Angular コンポーネントのライフサイクルの ngAfterViewInit と ngAfterViewChecked について確認するためのブランチ
 * feat_reference_component
   * Angular コンポーネントで子コンポーネントや外部コンテンツの参照を取得する動きを確認するためのブランチ
+* feat_parent_child
+  * Angular コンポーネントで親子関係にあるコンポーネント間でのデータ受け渡しの動きを確認するためのブランチ
