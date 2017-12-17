@@ -1,22 +1,10 @@
 <div>
   <div class="block-header">
-    <p>子コンポーネントの取り込みを確認するためのブロック</p>
+    <p>子コンポーネントとのデータの受け渡し/受け取りを確認するためのブロック</p>
   </div>
 
   <div class="block-body">
-    <app-view-parent>
-    </app-view-parent>
-</div>
-
-<div>
-  <div class="block-header">
-    <p>外部コンテンツの取り込みを確認するためのブロック</p>
-  </div>
-
-  <div class="block-body">
-    <app-content-parent>
-      <app-content-child class="external-contents-component">
-      </app-content-child>
-    </app-content-parent>
-  </div>
+    <!-- ルートコンポーネントでは親コンポーネントのタグをセット -->
+    <app-comp-parent>
+    </app-comp-parent>
 </div>

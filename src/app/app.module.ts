@@ -12,6 +12,8 @@ import { PiyoChildComponent } from './piyo-child/piyo-child.component';
 import { PiyoParentComponent } from './piyo-parent/piyo-parent.component';
 import { ViewParentComponent } from './view-parent/view-parent.component';
 import { ViewChildComponent } from './view-child/view-child.component';
+import { CompParentComponent } from './comp-parent/comp-parent.component';
+import { CompChildComponent } from './comp-child/comp-child.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ViewChildComponent } from './view-child/view-child.component';
     PiyoChildComponent,
     PiyoParentComponent,
     ViewParentComponent,
-    ViewChildComponent
+    ViewChildComponent,
+    CompParentComponent,
+    CompChildComponent
   ],
   imports: [
     BrowserModule,
