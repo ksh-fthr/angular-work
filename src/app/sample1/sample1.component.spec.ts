@@ -1,25 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewChildComponent } from './view-child.component';
+import { Sample1Component } from './sample1.component';
 
-describe('ViewChildComponent', () => {
-  let component: ViewChildComponent;
-  let fixture: ComponentFixture<ViewChildComponent>;
+describe('ServiceSample1Component', () => {
+  let component: Sample1Component;
+  let fixture: ComponentFixture<Sample1Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewChildComponent ]
+      declarations: [ Sample1Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewChildComponent);
+    fixture = TestBed.createComponent(Sample1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
