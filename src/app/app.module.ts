@@ -5,34 +5,25 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HogeHogeComponent } from './hoge-hoge/hoge-hoge.component';
-import { ContentParentComponent } from './content-parent/content-parent.component';
-import { ContentChildComponent } from './content-child/content-child.component';
-import { PiyoChildComponent } from './piyo-child/piyo-child.component';
-import { PiyoParentComponent } from './piyo-parent/piyo-parent.component';
-import { ViewParentComponent } from './view-parent/view-parent.component';
-import { ViewChildComponent } from './view-child/view-child.component';
-import { CompParentComponent } from './comp-parent/comp-parent.component';
-import { CompChildComponent } from './comp-child/comp-child.component';
+import { Sample1Component } from './sample1/sample1.component';
+
+// サービスを登録するための import
+// コンポーネントで DI する場合はこの import は不要
+import { CommonService } from './service/common.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HogeHogeComponent,
-    ContentParentComponent,
-    ContentChildComponent,
-    PiyoChildComponent,
-    PiyoParentComponent,
-    ViewParentComponent,
-    ViewChildComponent,
-    CompParentComponent,
-    CompChildComponent
+    Sample1Component
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
+  // サービスを登録する
   providers: [
+    // コンポーネントで DI する場合はここでの登録は不要
+    CommonService
   ],
   bootstrap: [AppComponent]
 })
