@@ -19,3 +19,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * Angular コンポーネントで親子関係にあるコンポーネント間でのデータ受け渡しの動きを確認するためのブランチ
 * feat_create_service
   * Angular サービスの生成と利用についての動きを確認するためのブランチ
+* feat_share_service
+  * Angular サービスによるコンポーネント間のデータ共有を確認するためのブランチ
