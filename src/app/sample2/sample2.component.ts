@@ -4,50 +4,44 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 // サービスを登録するための import
-// アプリ全体でのサービスの共有､コンポーネント単位でのサービスの共有に関わらず､ここの import は必要
 import { CommonService } from '../service/common.service';
 
 @Component({
-  selector: 'app-sample1',
-  templateUrl: './sample1.component.html',
-  styleUrls: ['./sample1.component.css'],
-  // サービスを登録する
-  // コンポーネントで DI する場合はこのコメントアウトを外す
-  // providers: [
-    // CommonService
-  // ]
+  selector: 'app-sample2',
+  templateUrl: './sample2.component.html',
+  styleUrls: ['./sample2.component.css']
 })
-export class Sample1Component implements OnInit, OnDestroy {
+export class Sample2Component implements OnInit, OnDestroy {
 
   /**
    * CommonService の変数の参照を取得する変数
    *
    * @type {String}
-   * @memberof Sample1Component
+   * @memberof Sample2Component
    */
-  public serviceProp: String = 'Initialized by Sample1Component';
+  public serviceProp: String = 'Initialized by Sample2Component';
 
   /**
    * データ共有のための Subscription
    *
    * @private
    * @type {Subscription}
-   * @memberof Sample1Component
+   * @memberof Sample2Component
    */
   private subscription: Subscription;
 
   /**
-   * コンストラクタ. ServiceSample1Component のインスタンスを生成する
+   * コンストラクタ. ServiceSample2Component のインスタンスを生成する
    *
    * @param {CommonService} commonService 共通サービス
-   * @memberof Sample1Component
+   * @memberof Sample2Component
    */
   constructor(private commonService: CommonService) { }
 
   /**
    * ライフサイクルメソッド｡コンポーネントの初期化で使用する
    *
-   * @memberof Sample1Component
+   * @memberof Sample2Component
    */
   ngOnInit() {
 
@@ -55,7 +49,7 @@ export class Sample1Component implements OnInit, OnDestroy {
     // サービスで共有しているデータが更新されたら発火されるイベントをキャッチする
     this.subscription = this.commonService.sharedDataSource$.subscribe(
       msg => {
-        console.log('[Sample1Component] shared data updated.');
+        console.log('[Sample2Component] shared data updated.');
         this.serviceProp = msg;
       }
     );
@@ -64,7 +58,7 @@ export class Sample1Component implements OnInit, OnDestroy {
   /**
    * コンポーネント終了時の処理
    *
-   * @memberof Sample1Component
+   * @memberof Sample2Component
    */
   ngOnDestroy() {
     //  リソースリーク防止のため CommonService から subcribe したオブジェクトを破棄する
@@ -74,11 +68,11 @@ export class Sample1Component implements OnInit, OnDestroy {
   /**
    * ボタンクリック時のイベントハンドラ
    *
-   * @memberof Sample1Component
+   * @memberof Sample2Component
    */
   onClicSendMessage() {
     // CommonService のデータ更新を行う
-    console.log('[Sample1Component] onClicSendMessage fired.');
-    this.commonService.onNotifySharedDataChanged('Updated by Sample1Component.');
+    console.log('[Sample2Component] onClicSendMessage fired.');
+    this.commonService.onNotifySharedDataChanged('Updated by Sample2Component.');
   }
 }

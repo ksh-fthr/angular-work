@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { Sample1Component } from './sample1/sample1.component';
+import { Sample2Component } from './sample2/sample2.component';
 
 // サービスを登録するための import
 // コンポーネントで DI する場合はこの import は不要
@@ -14,7 +15,8 @@ import { CommonService } from './service/common.service';
 @NgModule({
   declarations: [
     AppComponent,
-    Sample1Component
+    Sample1Component,
+    Sample2Component,
   ],
   imports: [
     BrowserModule,
