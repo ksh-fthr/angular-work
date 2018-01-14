@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-// データ共有のための Subscription を import
+// subscribe を保持するための Subscription を import
 import { Subscription } from 'rxjs/Subscription';
 
 // サービスを登録するための import
@@ -14,7 +14,7 @@ import { CommonService } from '../service/common.service';
 export class Sample2Component implements OnInit, OnDestroy {
 
   /**
-   * CommonService の変数の参照を取得する変数
+   * CommonService の変数の参照を取得するプロパティ
    *
    * @type {String}
    * @memberof Sample2Component
@@ -22,7 +22,7 @@ export class Sample2Component implements OnInit, OnDestroy {
   public serviceProp: String = 'Initialized by Sample2Component';
 
   /**
-   * データ共有のための Subscription
+   * subscribe を保持するための Subscription
    *
    * @private
    * @type {Subscription}

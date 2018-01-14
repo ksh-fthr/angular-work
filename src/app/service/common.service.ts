@@ -7,7 +7,7 @@ import { Subject } from 'rxjs/Subject';
 export class CommonService {
 
   /**
-   * 共有データの変更を通知するためのオブジェクト
+   * データの変更を通知するためのオブジェクト
    *
    * @private
    * @memberof CommonService
@@ -15,7 +15,8 @@ export class CommonService {
   private sharedDataSource = new Subject<string>();
 
   /**
-   * コンポーネント間で共有するためのデータ
+   * Subscribe するためのプロパティ
+   * `- コンポーネント間で共有するためのプロパティ
    *
    * @memberof CommonService
    */
@@ -29,7 +30,7 @@ export class CommonService {
   constructor() {}
 
   /**
-   * 共有データの更新イベント
+   * データの更新イベント
    *
    * @param {string} updateed 更新データ
    * @memberof CommonService
