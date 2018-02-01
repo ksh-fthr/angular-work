@@ -7,7 +7,6 @@ import { Component, AfterContentInit, AfterContentChecked, ContentChild } from '
 })
 export class AppComponent {
   title = 'app';
-  childHogeValue: String = 'initial value';
 
   constructor() {}
 }
