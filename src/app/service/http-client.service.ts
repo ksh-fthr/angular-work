@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
 @Injectable()
-export class HttpServiceService {
+export class HttpClientService {
 
   /**
    * Request Header
    *
    * @private
-   * @memberof HttpServiceService
+   * @memberof HttpClientService
    */
   private headers: any = new Headers({'Content-Type': 'application/json'});
 
@@ -16,14 +16,14 @@ export class HttpServiceService {
    * バックエンドのアドレス
    *
    * @private
-   * @memberof HttpServiceService
+   * @memberof HttpClientService
    */
   private host: string = 'http://localhost:4200/app';
 
   /**
-   * コンストラクタ. HttpServiceService のインスタンスを生成する
+   * コンストラクタ. HttpClientService のインスタンスを生成する
    * @param {Http} http HTTP
-   * @memberof HttpServiceService
+   * @memberof HttpClientService
    */
   constructor(private http: Http) { }
 
@@ -31,7 +31,7 @@ export class HttpServiceService {
    * HTTP GET メソッドを実行する.
    *
    * @returns {Promise<any[]>}
-   * @memberof HttpServiceService
+   * @memberof HttpClientService
    */
   public get(): Promise<any[]> {
     return this.http.get(this.host + '/get', this.headers)
@@ -48,7 +48,7 @@ export class HttpServiceService {
    *
    * @private
    * @param {any} err エラー情報
-   * @memberof HttpServiceService
+   * @memberof HttpClientService
    */
   private errorHandler(err) {
     console.log('Error occured.', err);

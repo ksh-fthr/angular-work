@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HttpClientComponent } from './http-client/http-client.component';
 
-import { HttpServiceService } from './service/http-service.service';
+import { HttpClientService } from './service/http-client.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { HttpServiceService } from './service/http-service.service';
     HttpModule
   ],
   providers: [
-    HttpServiceService
+    HttpClientService
   ],
   bootstrap: [AppComponent]
 })

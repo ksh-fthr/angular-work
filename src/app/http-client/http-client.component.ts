@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HttpServiceService } from '../service/http-service.service';
+import { HttpClientService } from '../service/http-client.service';
 
 @Component({
   selector: 'app-http-client',
@@ -21,10 +21,10 @@ export class HttpClientComponent implements OnInit {
   /**
    * コンストラクタ. HttpClientComponent のインスタンスを生成する
    *
-   * @param {HttpServiceService} httpServiceService HTTP通信を担当するサービス
+   * @param {HttpClientService} httpClientService HTTP通信を担当するサービス
    * @memberof HttpClientComponent
    */
-  constructor(private httpServiceService: HttpServiceService) { }
+  constructor(private httpClientService: HttpClientService) { }
 
   /**
    * ライフサイクルメソッド｡コンポーネントの初期化で使用する
@@ -32,7 +32,7 @@ export class HttpClientComponent implements OnInit {
    * @memberof HttpClientComponent
    */
   ngOnInit() {
-    this.httpServiceService.get()
+    this.httpClientService.get()
     .then(
       (response) => this.param = response
     )
