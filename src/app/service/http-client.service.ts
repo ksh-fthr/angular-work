@@ -13,7 +13,12 @@ export class HttpClientService {
   private headers: any = new Headers({'Content-Type': 'application/json'});
 
   /**
-   * バックエンドのアドレス
+   * RST-API 実行時に指定する URL
+   *
+   * バックエンドは Express で実装し、ポート番号「3000」で待ち受けているため、
+   * そのまま指定すると CORS でエラーになる
+   * それを回避するため、ここではフロントエンドのポート番号「4200」を指定し、
+   * angular/cli のリバースプロキシを利用してバックエンドとの通信を実現する
    *
    * @private
    * @memberof HttpClientService
@@ -37,6 +42,8 @@ export class HttpClientService {
     return this.http.get(this.host + '/get', this.headers)
     .toPromise()
     .then((res) => {
+      // response の型は any ではなく class で型を定義した方が良いが
+      // ここでは簡便さから any としておく
       const response: any = res.json();
       return response;
     })

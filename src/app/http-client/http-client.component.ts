@@ -12,6 +12,9 @@ export class HttpClientComponent implements OnInit {
   /**
    * バックエンドから取得した文字列
    *
+   * 型は any ではなく class で型を定義した方が良いが
+   * ここでは簡便さから any としておく
+   *
    * @private
    * @type {string}
    * @memberof HttpClientComponent
@@ -20,6 +23,7 @@ export class HttpClientComponent implements OnInit {
 
   /**
    * コンストラクタ. HttpClientComponent のインスタンスを生成する
+   * 自作した HttpClientService を DI する
    *
    * @param {HttpClientService} httpClientService HTTP通信を担当するサービス
    * @memberof HttpClientComponent
@@ -28,6 +32,7 @@ export class HttpClientComponent implements OnInit {
 
   /**
    * ライフサイクルメソッド｡コンポーネントの初期化で使用する
+   * 今回はコンポーネントの初期化時にバックエンドから情報を取得してビューに表示する
    *
    * @memberof HttpClientComponent
    */
