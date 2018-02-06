@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+
+// REST クライアント実装ののためのサービスを import
 import { Http } from '@angular/http';
 
 @Injectable()
 export class HttpClientService {
 
   /**
-   * Request Header
+   * リクエストヘッダを定義
    *
    * @private
    * @memberof HttpClientService
@@ -18,7 +20,7 @@ export class HttpClientService {
    * バックエンドは Express で実装し、ポート番号「3000」で待ち受けているため、
    * そのまま指定すると CORS でエラーになる
    * それを回避するため、ここではフロントエンドのポート番号「4200」を指定し、
-   * angular/cli のリバースプロキシを利用してバックエンドとの通信を実現する
+   * Angular CLI のリバースプロキシを利用してバックエンドとの通信を実現する
    *
    * @private
    * @memberof HttpClientService
@@ -27,13 +29,14 @@ export class HttpClientService {
 
   /**
    * コンストラクタ. HttpClientService のインスタンスを生成する
-   * @param {Http} http HTTP
+   *
+   * @param {Http} http Httpサービスを DI する
    * @memberof HttpClientService
    */
   constructor(private http: Http) { }
 
   /**
-   * HTTP GET メソッドを実行する.
+   * HTTP GET メソッドを実行する
    *
    * @returns {Promise<any[]>}
    * @memberof HttpClientService
@@ -51,7 +54,7 @@ export class HttpClientService {
   }
 
   /**
-   * エラーハンドラ
+   * REST-API 実行時のエラーハンドラ
    *
    * @private
    * @param {any} err エラー情報

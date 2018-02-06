@@ -1,11 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+// HTTP クライアントのための import
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+
+// HTTP クライアントとしてのコンポーネント
 import { HttpClientComponent } from './http-client/http-client.component';
 
+// バックエンドとの通信を実際に担当するサービス
 import { HttpClientService } from './service/http-client.service';
 
 @NgModule({
@@ -16,9 +21,11 @@ import { HttpClientService } from './service/http-client.service';
   imports: [
     BrowserModule,
     FormsModule,
+    // モジュールを利用を宣言する
     HttpModule
   ],
   providers: [
+    // 自作サービスをアプリ全体で DI するために登録する
     HttpClientService
   ],
   bootstrap: [AppComponent]
