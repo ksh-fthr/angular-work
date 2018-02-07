@@ -37,6 +37,7 @@ export class HttpClientService {
 
   /**
    * HTTP GET メソッドを実行する
+   * (toPromise.then((res) =>{}) を利用する場合のコード)
    *
    * @returns {Promise<any[]>}
    * @memberof HttpClientService
@@ -52,6 +53,26 @@ export class HttpClientService {
     })
     .catch(this.errorHandler);
   }
+
+  /**
+   * HTTP GET メソッドを実行する
+   * (subscribe((res) =>{}) を利用する場合のコード)
+   *
+   * @param {*} callback HTTP GET の実行結果を受け取って処理するためのコールバック処理
+   * @memberof HttpClientService
+   */
+  // public get(callback: any) {
+  //   this.http.get(this.host + '/get', this.headers)
+  //   .subscribe(
+  //     (res) => {
+  //       const response: any = res.json();
+  //       callback(response);
+  //     },
+  //     (error) => {
+  //       this.errorHandler(error);
+  //     }
+  //   );
+  // }
 
   /**
    * REST-API 実行時のエラーハンドラ
