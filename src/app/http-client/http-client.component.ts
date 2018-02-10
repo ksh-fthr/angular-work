@@ -9,7 +9,7 @@ import { HttpClientService } from '../service/http-client.service';
 export class HttpClientComponent implements OnInit {
 
   /**
-   * バックエンドから取得した文字列
+   * バックエンドから返却されたレスポンスをセットするプロパティ
    *
    * 型は any ではなく class で型を定義した方が良いが
    * ここでは簡便さから any としておく
@@ -18,7 +18,15 @@ export class HttpClientComponent implements OnInit {
    * @type {string}
    * @memberof HttpClientComponent
    */
-  public param: any = '';
+  public param: any = {};
+
+  /**
+   * バックエンドから返却されたたメッセージをセットするプロパティ
+   *
+   * @type {*}
+   * @memberof HttpClientComponent
+   */
+  public messageInfo: any = {};
 
   /**
    * コンストラクタ. HttpClientComponent のインスタンスを生成する
@@ -41,7 +49,10 @@ export class HttpClientComponent implements OnInit {
     // ------
     this.httpClientService.get()
     .then(
-      (response) => this.param = response
+      (response) => {
+        this.param = response;
+        this.messageInfo = this.param.messages[0];
+      }
     )
     .catch(
       (error) => console.log(error)
