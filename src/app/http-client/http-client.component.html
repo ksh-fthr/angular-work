@@ -1,3 +1,7 @@
 <p>
-  バックエンドから取得した文字列は 「 {{param.response}} 」 です。
+  バックエンドから取得したメッセージは 「 {{param.messages[0].message}} 」 です。
 </p>
+
+<input type="button" id="register" value="登録" (click)="onClickRegister($event)">
+<input type="button" id="update" value="更新" (click)="onClickUpdate($event)">
+<input type="button" id="delete" value="削除" (click)="onClickDelete($event)">

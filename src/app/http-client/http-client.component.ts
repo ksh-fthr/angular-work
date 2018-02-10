@@ -56,4 +56,74 @@ export class HttpClientComponent implements OnInit {
     // });
   }
 
+  /**
+   * 登録ボタンクリック時のイベントハンドラ
+   *
+   * @param {*} event イベント情報
+   * @memberof HttpClientComponent
+   */
+  public onClickRegister(event: any) {
+    this.doRegister();
+  }
+
+  /**
+   * 更新ボタンクリック時のイベントハンドラ
+   *
+   * @param {*} event イベント情報
+   * @memberof HttpClientComponent
+   */
+  public onClickUpdate(event: any) {
+    this.doUpdate();
+  }
+
+  /**
+   * 削除ボタンクリック時のイベントハンドラ
+   *
+   * @param {*} event イベント情報
+   * @memberof HttpClientComponent
+   */
+  public onClickDelete(event: any) {
+    this.doDelete();
+  }
+
+  /**
+   * メッセージ登録
+   *
+   * @private
+   * @memberof HttpClientComponent
+   */
+  private doRegister() {
+    const body: any = {
+      id: 1,
+      message: 'メッセージ登録' + 1
+    };
+    this.httpClientService.register(body);
+  }
+
+  /**
+   * メッセージ更新
+   *
+   * @private
+   * @memberof HttpClientComponent
+   */
+  private doUpdate() {
+    const body: any = {
+      id: 1,
+      message: 'メッセージ更新' + 1
+    };
+    this.httpClientService.update(body);
+  }
+
+  /**
+   * メッセージ削除
+   *
+   * @private
+   * @memberof HttpClientComponent
+   */
+  private doDelete() {
+    const body: any = {
+      id: 1
+    };
+    this.httpClientService.delete(body);
+  }
 }

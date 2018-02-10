@@ -75,6 +75,58 @@ export class HttpClientService {
   // }
 
   /**
+   * メッセージ登録
+   *
+   * @param {*} body リクエストボディ
+   * @returns {Promise<any[]>} バックエンドからのレスポンス
+   * @memberof HttpClientService
+   */
+  public register(body: any): Promise<any[]> {
+    return this.http.post(this.host + '/post', body, this.headers)
+    .toPromise()
+    .then((res) => {
+      const response: any = res.json();
+      return response;
+    })
+    .catch(this.errorHandler);
+  }
+
+  /**
+   * メッセージ更新
+   *
+   * @param {*} body リクエストボディ
+   * @returns {Promise<any[]>} バックエンドからのレスポンス
+   * @memberof HttpClientService
+   */
+  public update(body: any): Promise<any[]> {
+    return this.http.put(this.host + '/put', body, this.headers)
+    .toPromise()
+    .then((res) => {
+      const response: any = res.json();
+      return response;
+    })
+    .catch(this.errorHandler);
+  }
+
+  /**
+   * メッセージ削除
+   *
+   * @param {*} body リクエストボディ
+   * @returns {Promise<any[]>} バックエンドからのレスポンス
+   * @memberof HttpClientService
+   */
+  public delete(body: any): Promise<any[]> {
+    this.headers.body = body;
+    return this.http.delete(this.host + '/delete', this.headers)
+    .toPromise()
+    .then((res) => {
+      const response: any = res.json();
+      return response;
+    })
+    .catch(this.errorHandler);
+  }
+
+  /**
    * REST-API 実行時のエラーハンドラ
    *
    * @private
