@@ -1,0 +1,31 @@
+<form #formCheck="ngForm" class="formCheck">
+  <div class="input_ip_address">
+    <label>IPアドレス:</label>
+    <input
+      type="text"
+      class="input_text"
+      name="input_ip_address"
+      [(ngModel)]="inputIP"
+      #inputIPinfo="ngModel"
+      required
+      minlength="{{networkAddressPattern}}"
+      maxlength="{{maxNetworkAddressLength}}"
+      pattern="{{networkAddressPattern}}"
+    >
+    <div class="caution" *ngIf="inputIPinfo.errors && (inputIPinfo.dirty || inputIPinfo.touched)">
+      <div [hidden]="!inputIPinfo.errors.required">
+        ※ 項目が未入力です
+      </div>
+      <div [hidden]="!inputIPinfo.errors.minlength">
+        ※ 入力した内容が短すぎます
+      </div>
+      <div [hidden]="!inputIPinfo.errors.maxlength">
+        ※ 入力した内容が長すぎます
+      </div>
+      <div [hidden]="!inputIPinfo.errors.pattern">
+        ※ 入力した内容に誤りがあります
+      </div>
+    </div>
+  </div>
+  <input type="button" class="button_ok" name="button_ok" value="OK" (click)="onClickOK($event)" [disabled]="formCheck.invalid">
+</form>

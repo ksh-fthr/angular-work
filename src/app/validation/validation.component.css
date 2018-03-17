@@ -1,0 +1,8 @@
+.input_ip_address {
+  width: inherit;
+  height: 50px;
+}
+.caution {
+  color: rgba(255, 0, 0, 1);
+  width: 100%;
+}
