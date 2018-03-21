@@ -1,5 +1,9 @@
 import { Component, AfterContentInit, AfterContentChecked, ContentChild } from '@angular/core';
 
+import { HogeService } from './service/hoge.service';
+import { Bar1Service } from './service/bar1.service';
+import { Bar2Service } from './service/bar2.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +11,13 @@ import { Component, AfterContentInit, AfterContentChecked, ContentChild } from '
 })
 export class AppComponent {
   title = 'app';
-  childHogeValue: String = 'initial value';
 
-  constructor() {}
+  constructor(
+    private hogeService: HogeService,
+    private bar1Service: Bar1Service,
+    private bar2Service: Bar2Service
+  ) {
+    hogeService.exec(bar1Service);
+    hogeService.exec(bar2Service);
+  }
 }
