@@ -23,3 +23,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * Angular サービスによるコンポーネント間のデータ共有を確認するためのブランチ
 * feat_http_client
   * Http モジュールを利用した Http クライアントの実装を確認するためのブランチ
+* feat_generics
+  * TypeScript のジェネリックで、引数で渡されたインスタンスのメソッドを使うための実装を確認するためのブランチ
