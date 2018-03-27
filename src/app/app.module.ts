@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ValidationComponent } from './validation/validation.component';
+import { UseDirectiveComponent } from './component/use-directive/use-directive.component';
+import { TemplateDirective } from './directive/template.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ValidationComponent,
+    UseDirectiveComponent,
+    TemplateDirective,
   ],
   imports: [
     BrowserModule,

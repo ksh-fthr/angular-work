@@ -25,3 +25,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * Http モジュールを利用した Http クライアントの実装を確認するためのブランチ
 * feat_validation
   * Angular による validation 機能を確認するためのブランチ
+* feat_validation
+  * ディレクティブの自作について確認するためのブランチ
