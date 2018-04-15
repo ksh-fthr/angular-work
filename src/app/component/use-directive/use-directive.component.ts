@@ -8,11 +8,39 @@ import { TemplateDirective } from '../../directive/template.directive';
 })
 export class UseDirectiveComponent implements OnInit {
 
-  public inputData: string;
+  /**
+   * 本コンポーネントの html テンプレートでセットしているディレクティブに渡すデータ-1
+   *
+   * @type {string}
+   * @memberof UseDirectiveComponent
+   */
+  public greet: string;
+
+  /**
+   * 本コンポーネントの html テンプレートでセットしているディレクティブに渡すデータ-2
+   *
+   * @type {string}
+   * @memberof UseDirectiveComponent
+   */
+  public name: string;
+
+  /**
+   * コンストラクタ ( 本コンポーネントではなにもしない )
+   *
+   * @memberof UseDirectiveComponent
+   */
   constructor() { }
 
+  /**
+   * 初期処理
+   * プロパティ: inputData に文字列をセット
+   * ここでセットされた文字列がディレクティブに渡り､ブラウザ上に表示される
+   *
+   * @memberof UseDirectiveComponent
+   */
   ngOnInit() {
-    this.inputData = 'Hello, Angular.';
+    this.greet = 'Hello';
+    this.name = 'Angular';
   }
 
 }
