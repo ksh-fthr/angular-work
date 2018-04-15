@@ -3,23 +3,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-
-import { HogeService } from './service/hoge.service';
-import { Bar1Service } from './service/bar1.service';
-import { Bar2Service } from './service/bar2.service';
+import { UseDirectiveComponent } from './component/use-directive/use-directive.component';
+import { TemplateDirective } from './directive/template.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
+    UseDirectiveComponent,
+    TemplateDirective,
   ],
   imports: [
     BrowserModule,
     FormsModule,
   ],
   providers: [
-    HogeService,
-    Bar1Service,
-    Bar2Service
   ],
   bootstrap: [AppComponent]
 })
