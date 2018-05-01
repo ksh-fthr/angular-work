@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Host } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appEvent]'
@@ -23,7 +23,7 @@ export class EventDirective {
    * @param {*} target このディレクティブが適用されているhtml要素
    * @memberof EventDirective
    */
-  @HostListener('mouseenter', ['$event.target']) onmouseenter(target: any) {
+  @HostListener('mouseenter', ['$event.target']) changeBackgroundColor(target: any) {
     console.log(target);
     this.elementRef.nativeElement.style.backgroundColor = 'rgb(255, 0, 0)';
   }
@@ -35,7 +35,7 @@ export class EventDirective {
    * @param {*} target このディレクティブが適用されているhtml要素
    * @memberof EventDirective
    */
-  @HostListener('mouseleave', ['$event.target']) onmouseleave(target: any) {
+  @HostListener('mouseleave', ['$event.target']) restoreBackgroundColor(target: any) {
     console.log(target);
     this.elementRef.nativeElement.style.backgroundColor = 'rgb(219, 210, 224)';
   }
