@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UseDirectiveComponent } from './component/use-directive/use-directive.component';
-import { TemplateDirective } from './directive/template.directive';
+import { EventDirective } from './directive/event.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     UseDirectiveComponent,
-    TemplateDirective,
+    EventDirective,
   ],
   imports: [
     BrowserModule,

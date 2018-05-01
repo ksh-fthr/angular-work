@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TemplateDirective } from '../../directive/template.directive';
+import { EventDirective } from '../../directive/event.directive';
 
 @Component({
   selector: 'app-use-directive',
