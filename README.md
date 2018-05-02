@@ -31,3 +31,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * ディレクティブの自作について確認するためのブランチ
 * feat_directive_event
   * イベント処理を伴うディレクティブについて確認するためのブランチ
+* feat_directive_validation
+  * ディレクティブに検証機能( validation )を設ける方法について確認するためのブランチ

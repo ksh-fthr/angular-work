@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventDirective } from '../../directive/event.directive';
+// import { NetworkAddressValidatorDirective } from '../../directive/network-address-validator.directive';
 
 @Component({
   selector: 'app-use-directive',
@@ -7,6 +7,15 @@ import { EventDirective } from '../../directive/event.directive';
   styleUrls: ['./use-directive.component.css']
 })
 export class UseDirectiveComponent implements OnInit {
+
+  /**
+   * 入力されたアドレス
+   *
+   * @type {string}
+   * @memberof UseDirectiveComponent
+   */
+  public inputAddress: string;
+
   /**
    * コンストラクタ ( 本コンポーネントではなにもしない )
    *
@@ -20,4 +29,15 @@ export class UseDirectiveComponent implements OnInit {
    * @memberof UseDirectiveComponent
    */
   ngOnInit() { }
+
+  /**
+   * OKボタンがクリックされた時のイベントハンドラ
+   * ここでは単純にアラートを出すだけ
+   *
+   * @param {any} $event イベント情報
+   * @memberof UseDirectiveComponent
+   */
+  public onClickOK($event) {
+    alert('OK button had clicked.');
+  }
 }

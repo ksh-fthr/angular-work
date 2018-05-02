@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UseDirectiveComponent } from './component/use-directive/use-directive.component';
-import { EventDirective } from './directive/event.directive';
+import { NetworkAddressValidatorDirective } from './directive/network-address-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     UseDirectiveComponent,
-    EventDirective,
+    NetworkAddressValidatorDirective,
   ],
   imports: [
     BrowserModule,
