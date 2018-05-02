@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { NetworkAddressValidatorDirective } from '../../directive/network-address-validator.directive';
 
 @Component({
   selector: 'app-use-directive',
