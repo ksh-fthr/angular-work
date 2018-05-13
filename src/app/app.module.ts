@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 // HTTP クライアントのための import
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
@@ -22,7 +22,7 @@ import { HttpClientService } from './service/http-client.service';
     BrowserModule,
     FormsModule,
     // モジュールを利用を宣言する
-    HttpModule
+    HttpClientModule
   ],
   providers: [
     // 自作サービスをアプリ全体で DI するために登録する

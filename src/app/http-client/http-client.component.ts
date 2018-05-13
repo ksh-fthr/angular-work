@@ -26,7 +26,35 @@ export class HttpClientComponent implements OnInit {
    * @type {*}
    * @memberof HttpClientComponent
    */
-  public messageInfo: any = {};
+  public messageInfo: any = {
+    id: null,
+    message: null
+  };
+
+  /**
+   * バックエンドから返却されたたメッセージを保持するリストプロパティ
+   *
+   * @type {*}
+   * @memberof HttpClientComponent
+   */
+  public messageInfoList: any = [this.messageInfo];
+
+  /**
+   * メッセージ登録回数
+   *
+   * @private
+   * @type {number}
+   * @memberof HttpClientComponent
+   */
+  public messageId: number = 1;
+
+  /**
+   * 入力メッセージ
+   *
+   * @type {string}
+   * @memberof HttpClientComponent
+   */
+  public message: string = '';
 
   /**
    * コンストラクタ. HttpClientComponent のインスタンスを生成する
@@ -51,7 +79,7 @@ export class HttpClientComponent implements OnInit {
     .then(
       (response) => {
         this.param = response;
-        this.messageInfo = this.param.messages[0];
+        this.messageInfoList = this.param.messages;
       }
     )
     .catch(
@@ -64,6 +92,7 @@ export class HttpClientComponent implements OnInit {
     // HTTP GET の実行結果を受け取るためのコールバックを引数に､ get() を呼び出す
     // this.httpClientService.get((response) => {
     //   this.param = response;
+    //   this.messageInfoList = this.param.messages;
     // });
   }
 
@@ -105,10 +134,19 @@ export class HttpClientComponent implements OnInit {
    */
   private doRegister() {
     const body: any = {
-      id: 1,
-      message: 'メッセージ登録' + 1
+      id: this.messageId,
+      message: this.message
     };
-    this.httpClientService.register(body);
+    this.httpClientService.register(body)
+    .then(
+      (response) => {
+        this.param = response;
+        this.messageInfoList = this.param.messages;
+      }
+    )
+    .catch(
+      (error) => console.log(error)
+    );
   }
 
   /**
@@ -119,10 +157,19 @@ export class HttpClientComponent implements OnInit {
    */
   private doUpdate() {
     const body: any = {
-      id: 1,
-      message: 'メッセージ更新' + 1
+      id: this.messageId,
+      message: this.message
     };
-    this.httpClientService.update(body);
+    this.httpClientService.update(body)
+    .then(
+      (response) => {
+        this.param = response;
+        this.messageInfoList = this.param.messages;
+      }
+    )
+    .catch(
+      (error) => console.log(error)
+    );
   }
 
   /**
@@ -133,8 +180,17 @@ export class HttpClientComponent implements OnInit {
    */
   private doDelete() {
     const body: any = {
-      id: 1
+      id: this.messageId
     };
-    this.httpClientService.delete(body);
+    this.httpClientService.delete(body)
+    .then(
+      (response) => {
+        this.param = response;
+        this.messageInfoList = this.param.messages;
+      }
+    )
+    .catch(
+      (error) => console.log(error)
+    );
   }
 }

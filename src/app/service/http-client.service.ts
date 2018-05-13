@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 // REST クライアント実装ののためのサービスを import
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class HttpClientService {
@@ -33,7 +33,7 @@ export class HttpClientService {
    * @param {Http} http Httpサービスを DI する
    * @memberof HttpClientService
    */
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   /**
    * HTTP GET メソッドを実行する
@@ -48,7 +48,7 @@ export class HttpClientService {
     .then((res) => {
       // response の型は any ではなく class で型を定義した方が良いが
       // ここでは簡便さから any としておく
-      const response: any = res.json();
+      const response: any = res;
       return response;
     })
     .catch(this.errorHandler);
@@ -65,7 +65,7 @@ export class HttpClientService {
   //   this.http.get(this.host + '/get', this.headers)
   //   .subscribe(
   //     (res) => {
-  //       const response: any = res.json();
+  //       const response: any = res;
   //       callback(response);
   //     },
   //     (error) => {
@@ -85,7 +85,7 @@ export class HttpClientService {
     return this.http.post(this.host + '/post', body, this.headers)
     .toPromise()
     .then((res) => {
-      const response: any = res.json();
+      const response: any = res;
       return response;
     })
     .catch(this.errorHandler);
@@ -102,7 +102,7 @@ export class HttpClientService {
     return this.http.put(this.host + '/put', body, this.headers)
     .toPromise()
     .then((res) => {
-      const response: any = res.json();
+      const response: any = res;
       return response;
     })
     .catch(this.errorHandler);
@@ -120,7 +120,7 @@ export class HttpClientService {
     return this.http.delete(this.host + '/delete', this.headers)
     .toPromise()
     .then((res) => {
-      const response: any = res.json();
+      const response: any = res;
       return response;
     })
     .catch(this.errorHandler);
