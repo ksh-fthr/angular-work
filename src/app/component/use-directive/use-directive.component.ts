@@ -90,29 +90,16 @@ export class UseDirectiveComponent implements OnInit {
    * @memberof ValidationComponent
    */
   private manageValidationError(validationKey, errorInformation) {
-    if (errorInformation) {
-      let isExist: boolean = false;
-      for (const target in this.validationErrorList) {
-        if (this.validationErrorList.hasOwnProperty(target) &&
-            this.validationErrorList[target].key === validationKey) {
-          isExist = true;
-          this.validationErrorList.splice(target, 1);
-          this.validationErrorList.push({ key: validationKey, error: errorInformation });
-          break;
-        }
+    for (const target in this.validationErrorList) {
+      if (this.validationErrorList.hasOwnProperty(target) &&
+          this.validationErrorList[target].key === validationKey) {
+        this.validationErrorList.splice(target, 1);
+        break;
       }
+    }
 
-      if (!isExist) {
-        this.validationErrorList.push({ key: validationKey, error: errorInformation });
-      }
-    } else {
-      for (const target in this.validationErrorList) {
-        if (this.validationErrorList.hasOwnProperty(target) &&
-            this.validationErrorList[target].key === validationKey) {
-          this.validationErrorList.splice(target, 1);
-          break;
-        }
-      }
+    if (errorInformation) {
+      this.validationErrorList.push({ key: validationKey, error: errorInformation });
     }
 
     const errorData: any = this.validationErrorList[this.validationErrorList.length - 1];
