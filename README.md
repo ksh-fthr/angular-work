@@ -33,3 +33,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * イベント処理を伴うディレクティブについて確認するためのブランチ
 * [feat_directive_validation](https://github.com/ksh-fthr/angular-work/tree/feat_directive_validation)
   * ディレクティブに検証機能( validation )を設ける方法について確認するためのブランチ
+* [feat_reactive_form](https://github.com/ksh-fthr/angular-work/tree/feat_reactive_form)
+  * ReactiveFormsModule を使って statusChanges で validation の状態遷移を検知する方法について確認するためのブランチ
