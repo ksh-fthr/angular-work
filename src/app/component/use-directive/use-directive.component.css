@@ -1,3 +1,29 @@
-.caution {
+.form-area {
+  height: 100px;
+}
+
+.input-network-address {
+  width: inherit;
   height: 30px;
+}
+
+.validation-error-information {
+  height: 50px;
+  width: 100%;
+}
+.caution {
+  color: rgba(255, 0, 0, 1);
+}
+
+.label-common {
+  width: 140px;
+  display: inline-block;
+}
+
+.button-area {
+  height: 50px;
+}
+
+.button-area .button-ok {
+  margin: 15px auto;
 }
