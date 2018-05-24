@@ -4,11 +4,11 @@ import { Subscription } from 'rxjs';
 import { stringify } from 'querystring';
 
 @Component({
-  selector: 'app-use-directive',
-  templateUrl: './use-directive.component.html',
-  styleUrls: ['./use-directive.component.css']
+  selector: 'app-reactive-form',
+  templateUrl: './reactive-form.component.html',
+  styleUrls: ['./reactive-form.component.css']
 })
-export class UseDirectiveComponent implements OnInit, OnDestroy {
+export class ReactiveFormComponent implements OnInit, OnDestroy {
 
   /**
    * ビューで定義するする Form の本体
@@ -163,18 +163,6 @@ export class UseDirectiveComponent implements OnInit, OnDestroy {
       subnetmask: this.networkForm.controls['subnetmaskControl'].value,
     };
     alert('input value: ' + JSON.stringify(inputValue));
-  }
-
-  /**
-   * keyup イベントのイベントハンドラ
-   * このイベントをトリガーに入力エラー情報を管理する
-   *
-   * @param {any} validationKey
-   * @param {any} errorInformation
-   * @memberof ValidationComponent
-   */
-  public onKeyUp(validationKey, errorInformation) {
-    this.manageValidationError(validationKey, errorInformation)
   }
 
   /**
