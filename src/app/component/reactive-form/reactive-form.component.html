@@ -7,7 +7,6 @@
         class="input-text"
         name="input-ip-address"
         [formControl]="networkForm.controls['ipControl']"
-        appNetworkAddressValidator
       >
     </div>
     <div class="input-network-address">
@@ -17,11 +16,10 @@
         class="input-text"
         name="input-subnet-mask"
         [formControl]="networkForm.controls['subnetmaskControl']"
-        appNetworkAddressValidator
       >
     </div>
     <div class="validation-error-information">
-      <div class="caution" *ngIf="validationError">
+      <div class="caution" *ngIf="validationError && (networkForm.dirty || networkForm.touched)">
         <div [hidden]="!validationError?.required">※ 項目が未入力です</div>
         <div [hidden]="!validationError?.minlength">※ 入力した内容が短すぎます</div>
         <div [hidden]="!validationError?.maxlength">※ 入力した内容が長すぎます</div>
