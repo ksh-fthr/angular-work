@@ -11,7 +11,7 @@ import { stringify } from 'querystring';
 export class ReactiveFormComponent implements OnInit, OnDestroy {
 
   /**
-   * ビューで定義するする Form の本体
+   * ビューで定義する Form の本体
    *
    * @type {FormGroup}
    * @memberof ValidationComponent
@@ -93,27 +93,33 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    * @memberof ValidationComponent
    */
   public ngOnInit() {
+
+    // 複数の入力項目を設置するフォームを生成する
     this.networkForm = new FormGroup({
+      // IPアドレスの入力項目
       ipControl: new FormControl(
         '',
         [
-          Validators.required,
-          Validators.minLength(this.minNetworkAddressLength),
-          Validators.maxLength(this.maxNetworkAddressLength),
-          Validators.pattern(this.networkAddressPattern)
+          Validators.required,                                 // 必須入力をチェック
+          Validators.minLength(this.minNetworkAddressLength),  // 最少入力桁数をチェック
+          Validators.maxLength(this.maxNetworkAddressLength),  // 最大入力桁数をチェック
+          Validators.pattern(this.networkAddressPattern)       // 入力パターンをチェック
         ]
       ),
+      // サブネットマスクの入力項目
       subnetmaskControl: new FormControl(
         '',
         [
-          Validators.required,
-          Validators.minLength(this.minNetworkAddressLength),
-          Validators.maxLength(this.maxNetworkAddressLength),
-          Validators.pattern(this.networkAddressPattern)
+          Validators.required,                                 // 必須入力をチェック
+          Validators.minLength(this.minNetworkAddressLength),  // 最少入力桁数をチェック
+          Validators.maxLength(this.maxNetworkAddressLength),  // 最大入力桁数をチェック
+          Validators.pattern(this.networkAddressPattern)       // 入力パターンをチェック
         ]
       ),
     });
 
+    // フォーム生成時に指定した入力項目( FormControl ) 分、validation の状態を監視する
+    // 状態が変化したらイベントをキャッチするので、それをトリガーにエラー情報の管理を行う
     this.ipControlSubscription = this.networkForm.controls['ipControl'].statusChanges.subscribe((data) => {
       this.manageValidationError('ipControl', this.networkForm.controls['ipControl'].errors);
     });
@@ -131,6 +137,7 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    * @memberof ValidationComponent
    */
   public ngOnDestroy() {
+    // イベント情報が残り続けるのを防ぐためにコンポーネントの終了処理で破棄する
     this.ipControlSubscription.unsubscribe();
     this.subnetmaskSubscription.unsubscribe();
   }
@@ -142,10 +149,12 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    * @memberof ValidationComponent
    */
   private changeFormEnabledDisabled() {
-    // if hope to enable form control
+    // この例では常に「有効」となる
+
+    // 有効にしたい場合
     this.networkForm.controls['ipControl'].enable();
     this.networkForm.controls['subnetmaskSubscription'].enable();
-    // if hope to disable form control
+    // 無効にしたい場合
     // this.networkForm.controls['ipControl'].disable();
     // this.networkForm.controls['subnetmaskControl'].disable();
   }
@@ -177,6 +186,11 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    * @memberof ValidationComponent
    */
   private manageValidationError(validationKey, errorInformation) {
+
+    // validation のエラー情報を管理する
+    // 常に最後に発生したエラー情報をビューに表示するため、リストから最後の要素を取得して
+    // テンプレートから参照されるプロパティにセットしている
+
     for (const target in this.validationErrorList) {
       if (this.validationErrorList.hasOwnProperty(target) &&
           this.validationErrorList[target].key === validationKey) {
