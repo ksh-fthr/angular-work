@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 // subscribe を保持するための Subscription を import
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 // サービスを登録するための import
 // アプリ全体でのサービスの共有､コンポーネント単位でのサービスの共有に関わらず､ここの import は必要

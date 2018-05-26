@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 // イベント発火のための Subject を import
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class CommonService {

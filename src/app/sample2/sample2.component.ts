@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 // subscribe を保持するための Subscription を import
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 // サービスを登録するための import
 import { CommonService } from '../service/common.service';
