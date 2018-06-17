@@ -1,6 +1,12 @@
 <div class="tab-area-base">
   <ul class="tab-menu-base">
-    <li class="current">HOME</li>
-    <li>OTHER</li>
+    <li [class.current]="tabTable['Tab-A']" (click)="onClick($event)">Tab-A</li>
+    <li [class.current]="tabTable['Tab-B']" (click)="onClick($event)">Tab-B</li>
   </ul>
+  <div *ngIf="tabTable['Tab-A']">
+    <app-tab-a></app-tab-a>
+  </div>
+  <div *ngIf="tabTable['Tab-B']">
+    <app-tab-b></app-tab-b>
+  </div>
 </div>

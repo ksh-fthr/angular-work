@@ -7,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UseDirectiveComponent implements OnInit {
 
-  /**
-   * 入力されたアドレス
-   *
-   * @type {string}
-   * @memberof UseDirectiveComponent
-   */
-  public inputAddress: string;
+  public tabTable: any = {
+    'Tab-A': true,
+    'Tab-B': false
+  };
 
   /**
    * コンストラクタ ( 本コンポーネントではなにもしない )
@@ -31,12 +28,20 @@ export class UseDirectiveComponent implements OnInit {
 
   /**
    * OKボタンがクリックされた時のイベントハンドラ
-   * ここでは単純にアラートを出すだけ
    *
    * @param {any} $event イベント情報
    * @memberof UseDirectiveComponent
    */
-  public onClickOK($event) {
-    alert('OK button had clicked.');
+  public onClick($event) {
+    this.setCurrentTab($event.target.innerHTML);
+  }
+
+  private setCurrentTab(key: string) {
+    for (const target in this.tabTable) {
+      if (this.tabTable.hasOwnProperty(target)) {
+        this.tabTable[target] = false;
+      }
+    }
+    this.tabTable[key] = true;
   }
 }
