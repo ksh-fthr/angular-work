@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UseDirectiveComponent } from './use-directive.component';
+import { SwitchTabComponent } from './switch-tab.component';
 
-describe('UseDirectiveComponent', () => {
-  let component: UseDirectiveComponent;
-  let fixture: ComponentFixture<UseDirectiveComponent>;
+describe('SwitchTabComponent', () => {
+  let component: SwitchTabComponent;
+  let fixture: ComponentFixture<SwitchTabComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UseDirectiveComponent ]
+      declarations: [ SwitchTabComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UseDirectiveComponent);
+    fixture = TestBed.createComponent(SwitchTabComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

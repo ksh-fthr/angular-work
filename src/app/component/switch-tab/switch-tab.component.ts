@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-use-directive',
-  templateUrl: './use-directive.component.html',
-  styleUrls: ['./use-directive.component.css']
+  selector: 'app-switch-tab',
+  templateUrl: './switch-tab.component.html',
+  styleUrls: ['./switch-tab.component.css']
 })
-export class UseDirectiveComponent implements OnInit {
+export class SwitchTabComponent implements OnInit {
 
   public tabTable: any = {
     'Tab-A': true,
@@ -15,14 +15,14 @@ export class UseDirectiveComponent implements OnInit {
   /**
    * コンストラクタ ( 本コンポーネントではなにもしない )
    *
-   * @memberof UseDirectiveComponent
+   * @memberof SwitchTabComponent
    */
   constructor() { }
 
   /**
    * 初期処理 ( 本コンポーネントではなにもしない )
    *
-   * @memberof UseDirectiveComponent
+   * @memberof SwitchTabComponent
    */
   ngOnInit() { }
 
@@ -30,7 +30,7 @@ export class UseDirectiveComponent implements OnInit {
    * OKボタンがクリックされた時のイベントハンドラ
    *
    * @param {any} $event イベント情報
-   * @memberof UseDirectiveComponent
+   * @memberof SwitchTabComponent
    */
   public onClick($event) {
     this.setCurrentTab($event.target.innerHTML);
