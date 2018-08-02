@@ -33,3 +33,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * イベント処理を伴うディレクティブについて確認するためのブランチ
 * [feat_directive_validation](https://github.com/ksh-fthr/angular-work/tree/feat_directive_validation)
   * ディレクティブに検証機能( validation )を設ける方法について確認するためのブランチ
+* [feat_switch_tab](https://github.com/ksh-fthr/angular-work/tree/feat_switch_tab)
+  * ngComponentOutlet を使ったタブの実装を通じてコンポーネントの動的切り替えを確認するためのブランチ

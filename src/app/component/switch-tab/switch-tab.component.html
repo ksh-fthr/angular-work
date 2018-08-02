@@ -1,12 +1,10 @@
 <div class="tab-area-base">
   <ul class="tab-menu-base">
-    <li [class.current]="tabTable['Tab-A']" (click)="onClick($event)">Tab-A</li>
-    <li [class.current]="tabTable['Tab-B']" (click)="onClick($event)">Tab-B</li>
+    <ng-container *ngFor="let tab of tabs">
+        <li [class.current]="tab.current" (click)="onClick($event)">{{tab.name}}</li>
+    </ng-container>
   </ul>
-  <div *ngIf="tabTable['Tab-A']">
-    <app-tab-a></app-tab-a>
-  </div>
-  <div *ngIf="tabTable['Tab-B']">
-    <app-tab-b></app-tab-b>
-  </div>
+
+  <!-- ngComponentOutlet で動的にコンポーネントを表示する -->
+  <ng-container *ngComponentOutlet="currentTab"></ng-container>
 </div>

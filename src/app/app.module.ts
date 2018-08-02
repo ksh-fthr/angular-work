@@ -7,6 +7,8 @@ import { SwitchTabComponent } from './component/switch-tab/switch-tab.component'
 import { TabAComponent } from './component/tab-a/tab-a.component';
 import { TabBComponent } from './component/tab-b/tab-b.component';
 
+import { SwitchTabService } from './service/switch-tab.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,11 +16,17 @@ import { TabBComponent } from './component/tab-b/tab-b.component';
     TabAComponent,
     TabBComponent,
   ],
+  // ngComponentOutlet で動的にコンポーネントを表示するにはこの宣言が必要
+  entryComponents: [
+    TabAComponent,
+    TabBComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
   ],
   providers: [
+    SwitchTabService
   ],
   bootstrap: [AppComponent]
 })

@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabBComponent implements OnInit {
 
+  /**
+   * コンストラクタ( 本コンポーネントではなにもしない )
+   *
+   * @memberof TabBComponent
+   */
   constructor() { }
 
-  ngOnInit() {
-  }
+  /**
+   * 初期処理( 本コンポーネントではなにもしない )
+   *
+   * @memberof TabBComponent
+   */
+  ngOnInit() { }
 
 }

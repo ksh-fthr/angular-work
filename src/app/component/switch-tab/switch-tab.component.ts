@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SwitchTabService } from '../../service/switch-tab.service';
+
+import { TabModel } from '../../model/tab-model';
+
 @Component({
   selector: 'app-switch-tab',
   templateUrl: './switch-tab.component.html',
@@ -7,41 +11,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SwitchTabComponent implements OnInit {
 
-  public tabTable: any = {
-    'Tab-A': true,
-    'Tab-B': false
-  };
+  private _currentTab: any;
+  private _tabs: Array<TabModel>;
+
+  // 次のブロックは setter/getter
+  // 今回の実装では単純にプロパティにセット/プロパティをゲットするだけの単純なもの
+
+  public get currentTab(): any {
+    return this._currentTab;
+  }
+
+  public get tabs(): Array<TabModel> {
+    return this._tabs;
+  }
 
   /**
    * コンストラクタ ( 本コンポーネントではなにもしない )
    *
    * @memberof SwitchTabComponent
    */
-  constructor() { }
+  constructor(
+    private switchTabService: SwitchTabService
+  ) {}
 
   /**
-   * 初期処理 ( 本コンポーネントではなにもしない )
+   * 初期処理
    *
    * @memberof SwitchTabComponent
    */
-  ngOnInit() { }
+  ngOnInit() {
+    // view に表示するための情報をここでセットする
+    this._tabs = this.switchTabService.tabs;
+    this._currentTab = this.switchTabService.getCurrentContents();
+  }
 
   /**
-   * OKボタンがクリックされた時のイベントハンドラ
+   * ボタンがクリックされた時のイベントハンドラ
    *
    * @param {any} $event イベント情報
    * @memberof SwitchTabComponent
    */
   public onClick($event) {
-    this.setCurrentTab($event.target.innerHTML);
-  }
-
-  private setCurrentTab(key: string) {
-    for (const target in this.tabTable) {
-      if (this.tabTable.hasOwnProperty(target)) {
-        this.tabTable[target] = false;
-      }
-    }
-    this.tabTable[key] = true;
+    // クリックされたタブに応じて表示するコンテンツ( component ) を切り替える
+    this._currentTab = this.switchTabService.changeCurrentContents($event.target.innerHTML);
   }
 }
