@@ -35,3 +35,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * ディレクティブに検証機能( validation )を設ける方法について確認するためのブランチ
 * [feat_reactive_form](https://github.com/ksh-fthr/angular-work/tree/feat_reactive_form)
   * ReactiveFormsModule を使って statusChanges で validation の状態遷移を検知する方法について確認するためのブランチ
+* [feat_switch_tab](https://github.com/ksh-fthr/angular-work/tree/feat_switch_tab)
+  * ngComponentOutlet を使ったタブの実装を通じてコンポーネントの動的切り替えを確認するためのブランチ

@@ -4,12 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ReactiveFormComponent } from './component/reactive-form/reactive-form.component';
+import { SwitchTabComponent } from './component/switch-tab/switch-tab.component';
+import { TabAComponent } from './component/tab-a/tab-a.component';
+import { TabBComponent } from './component/tab-b/tab-b.component';
+
+import { SwitchTabService } from './service/switch-tab.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReactiveFormComponent
+    SwitchTabComponent,
+    TabAComponent,
+    TabBComponent,
+  ],
+  // ngComponentOutlet で動的にコンポーネントを表示するにはこの宣言が必要
+  entryComponents: [
+    TabAComponent,
+    TabBComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +28,7 @@ import { ReactiveFormComponent } from './component/reactive-form/reactive-form.c
     ReactiveFormsModule
   ],
   providers: [
+    SwitchTabService
   ],
   bootstrap: [AppComponent]
 })
