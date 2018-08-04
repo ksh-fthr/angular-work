@@ -15,7 +15,7 @@ export class SwitchTabComponent implements OnInit {
   private _tabs: Array<TabModel>;
 
   // 次のブロックは setter/getter
-  // 今回の実装では単純にプロパティにセット/プロパティをゲットするだけの単純なもの
+  // 今回の実装ではプロパティに対してセット/ゲットするだけの単純なもの
 
   public get currentTab(): any {
     return this._currentTab;

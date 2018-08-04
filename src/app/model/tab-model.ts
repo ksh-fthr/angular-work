@@ -18,7 +18,7 @@ export class TabModel {
   }
 
   // 以降のブロックは setter/getter
-  // 今回の実装では単純にプロパティにセット/プロパティをゲットするだけの単純なもの
+  // 今回の実装ではプロパティに対してセット/ゲットするだけの単純なもの
 
   public set name(_name: string) {
     this._name = _name;
