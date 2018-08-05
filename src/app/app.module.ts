@@ -15,7 +15,7 @@ import { SwitchTabService } from './service/switch-tab.service';
     TabAComponent,
     TabBComponent,
   ],
-  // ngComponentOutlet で動的にコンポーネントを表示するにはこの宣言が必要
+  // ngComponentOutlet で動的にコンポーネントを読み込むにはこの宣言が必要
   entryComponents: [
     TabAComponent,
     TabBComponent

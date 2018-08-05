@@ -22,7 +22,7 @@ export class SwitchTabService {
 
   /**
    * コンストラクタ
-   * .
+   *
    * @memberof SwitchTabService
    */
   constructor() { }
