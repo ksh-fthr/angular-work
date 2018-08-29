@@ -1,9 +1,17 @@
 <div>
   <div class="block-header">
-    <p>ngComponentOutlet を使ったタブの動的切り替えの動作確認を行うブロック</p>
+    <p>Routing によるページ切り替えの動作確認を行う</p>
   </div>
 
   <div class="block-body">
-    <app-switch-tab></app-switch-tab>
+    <ul>
+      <!-- routing のためのリンク. routerLink に app.module.ts で定義したテーブル: ROUTE_TABLE に登録した path をセットする -->
+      <li><a routerLink="/page-a">Page-Aに遷移</a></li>
+      <li><a routerLink="/page-b">Page-Bに遷移</a></li>
+      <li><a routerLink="/page-c">Page-Cに遷移</a></li>
+    </ul>
   </div>
 </div>
+
+<!-- routing で呼び出されたページは router-outlet で確保された領域に反映される -->
+<router-outlet></router-outlet>

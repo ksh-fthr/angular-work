@@ -37,3 +37,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * ReactiveFormsModule を使って statusChanges で validation の状態遷移を検知する方法について確認するためのブランチ
 * [feat_switch_tab](https://github.com/ksh-fthr/angular-work/tree/feat_switch_tab)
   * ngComponentOutlet を使ったタブの実装を通じてコンポーネントの動的切り替えを確認するためのブランチ
+* [feat_routing](https://github.com/ksh-fthr/angular-work/tree/feat_routing)
+  * Routing による画面繊維の確認するためのブランチ

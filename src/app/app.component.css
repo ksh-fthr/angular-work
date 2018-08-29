@@ -20,8 +20,18 @@ p {
 
 .block-body {
   margin: 0;
-  padding: 5px 10px;
+  padding: 0 10px;
   background: rgb(219, 210, 224);
   width: 100%;
-  height: 100px;
+  height: 30px;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+.block-body ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0 15px;
 }

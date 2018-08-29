@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SwitchTabComponent } from './switch-tab.component';
+import { PageAComponent } from './page-a.component';
 
-describe('SwitchTabComponent', () => {
-  let component: SwitchTabComponent;
-  let fixture: ComponentFixture<SwitchTabComponent>;
+describe('PageAComponent', () => {
+  let component: PageAComponent;
+  let fixture: ComponentFixture<PageAComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SwitchTabComponent ]
+      declarations: [ PageAComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SwitchTabComponent);
+    fixture = TestBed.createComponent(PageAComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
