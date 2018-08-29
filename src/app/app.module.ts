@@ -13,6 +13,8 @@ import { PageCComponent } from './component/page-c/page-c.component';
 //    '' で [/] のルートパスを指定できる
 //    '*＊' でワイルドカードを指定できる
 const ROUTE_TABLE: Routes = [
+  // [/] パス指定時は page-a を表示する
+  { path: '', component: PageAComponent },
   { path: 'page-a', component: PageAComponent },
   { path: 'page-b', component: PageBComponent },
   { path: 'page-c', component: PageCComponent }
