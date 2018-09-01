@@ -69,7 +69,10 @@ export class HttpClientService {
   //       callback(response);
   //     },
   //     (error) => {
-  //       this.errorHandler(error);
+  //       // subscribe の実装のときに this.errorHandler でエラー処理を
+  //       // 行うと Uncaught (in promise) が発生するので、
+  //       // ここではコンソールにログを出すだけにする
+  //       console.log(error);
   //     }
   //   );
   // }
@@ -128,6 +131,7 @@ export class HttpClientService {
 
   /**
    * REST-API 実行時のエラーハンドラ
+   * (toPromise.then((res) =>{}) を利用する場合のコード)
    *
    * @private
    * @param {any} err エラー情報
