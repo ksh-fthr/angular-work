@@ -39,3 +39,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * ngComponentOutlet を使ったタブの実装を通じてコンポーネントの動的切り替えを確認するためのブランチ
 * [feat_routing](https://github.com/ksh-fthr/angular-work/tree/feat_routing)
   * Routing による画面繊維の確認するためのブランチ
+* [feat_routing_another](https://github.com/ksh-fthr/angular-work/tree/feat_routing_another)
+  * Routing による画面繊維の確認するためのブランチ(画面そのものの切り替えを試す)
