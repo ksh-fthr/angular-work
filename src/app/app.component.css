@@ -1,0 +1,18 @@
+.footer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+
+  /* 子要素 ( 子はblock要素 ) を上下中央揃え ( 天地左右の中央に配置 ) する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer_button {
+  display: block;
+  width: 100px;
+  height: 100%;
+}

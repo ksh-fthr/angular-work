@@ -1,0 +1,68 @@
+.overlay {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+
+  /* 子要素 ( 子はblock要素 ) を上下中央揃え ( 天地左右の中央に配置 ) する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.float_window {
+  overflow: hidden;
+  height: 200px;
+  width: 400px;
+  background-color: rgb(229, 241, 247);
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+  border: solid 1px rgb(0, 0, 0);
+  cursor: move;
+  z-index: 1001;
+}
+
+.header {
+  height: 20%;
+  width: 100%;
+  cursor: move;
+  border-bottom: solid 1px rgb(0, 0, 0);
+
+  /* 子要素 ( 子はblock要素 ) を上下中央揃え ( 天地左右の中央に配置 ) する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header > #header_label {
+  display: block;
+}
+
+.contents {
+  height: 60%;
+  width: 100%;
+  cursor: move;
+  text-align: center;
+}
+
+.footer {
+  height: 20%;
+  width: 100%;
+  cursor: move;
+  border-top: solid 1px rgb(0, 0, 0);
+
+  /* 子要素 ( 子はblock要素 ) を上下中央揃え ( 天地左右の中央に配置 ) する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer > #close_button {
+  display: block;
+  width: 30%;
+  height: 70%;
+}
