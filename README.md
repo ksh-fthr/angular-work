@@ -41,3 +41,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * Routing による画面繊維の確認するためのブランチ
 * [feat_routing_another](https://github.com/ksh-fthr/angular-work/tree/feat_routing_another)
   * Routing による画面繊維の確認するためのブランチ(画面そのものの切り替えを試す)
+* [feat_modal](https://github.com/ksh-fthr/angular-work/tree/feat_modal)
+  * ngComponentOutlet を使って modal の実装を試すブランチ
