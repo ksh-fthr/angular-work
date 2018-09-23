@@ -6,12 +6,25 @@ import { Subject } from 'rxjs';
 })
 export class ModalService {
 
+  // データの変更を通知するためのオブジェクト
   private closeEventSubject = new Subject<string>();
+
+  // Subscribe するためのプロパティ( これでイベント通知をキャッチする )
   public closeEventObservable$ = this.closeEventSubject.asObservable();
 
+  /**
+   * コンストラクタ
+   *
+   * @memberof ModalService
+   */
   constructor() { }
 
-  public onCloseModal() {
+  /**
+   * イベント通知のリクエストを処理する( モーダルダイアログを閉じる )
+   *
+   * @memberof ModalService
+   */
+  public requestCloseModal() {
     this.closeEventSubject.next();
   }
 }
