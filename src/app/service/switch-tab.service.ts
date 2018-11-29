@@ -34,11 +34,12 @@ export class SwitchTabService {
    * @memberof SwitchTabService
    */
   public getCurrentContents(): any {
-    for (const target in this._tabs) {
-      if (this._tabs.hasOwnProperty(target)) {
-        if (this._tabs[target].current) {
-          return this._tabs[target].contents;
-        }
+    // this._tabs は Array 型なので「for-in」は使わないで無難に「for文」で回す
+    // 「for-of」でも良いけれど、それだとデバッグ時に「this」やら「_tabs」が何故か「undefined」になって気持ち悪い...
+    for (let index = 0; index < this._tabs.length; index++) {
+      const target = this._tabs[index];
+      if (target.current) {
+        return target.contents;
       }
     }
   }
@@ -52,14 +53,16 @@ export class SwitchTabService {
    */
   public changeCurrentContents(name: string): any {
     let contents: any;
-    for (const target in this._tabs) {
-      if (this._tabs.hasOwnProperty(target)) {
-        this._tabs[target].current = false;
 
-        if (this._tabs[target].name === name) {
-          this._tabs[target].current = true;
-          contents = this._tabs[target].contents;
-        }
+    // this._tabs は Array 型なので「for-in」は使わないで無難に「for文」で回す
+    // 「for-of」でも良いけれど、それだとデバッグ時に「this」やら「_tabs」が何故か「undefined」になって気持ち悪い...
+    for (let index = 0; index < this._tabs.length; index++) {
+      const target = this._tabs[index];
+      target.current = false;
+
+      if (target.name === name) {
+        target.current = true;
+        contents = target.contents;
       }
     }
     return contents;
