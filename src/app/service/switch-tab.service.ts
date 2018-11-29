@@ -30,7 +30,7 @@ export class SwitchTabService {
   /**
    * 現在表示中のコンテンツを取得する
    *
-   * @returns {*}
+   * @returns {any} 表示中のコンテンツ( 実態はコンポーネント... これも抽象クラス作ってやると型指定できるけど今回はそこまでしない )
    * @memberof SwitchTabService
    */
   public getCurrentContents(): any {
@@ -48,7 +48,7 @@ export class SwitchTabService {
    * 表示するコンテンツを切り替える
    *
    * @param {string} name クリックされたタブのタブ名
-   * @returns {any} 切り替え先のコンテンツ
+   * @returns {any} 切り替え先のコンテンツ( 実態はコンポーネント... これも抽象クラス作ってやると型指定できるけど今回はそこまでしない )
    * @memberof SwitchTabService
    */
   public changeCurrentContents(name: string): any {
