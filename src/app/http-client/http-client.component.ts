@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { HttpClientService } from '../service/http-client.service';
 
 @Component({
@@ -8,185 +8,59 @@ import { HttpClientService } from '../service/http-client.service';
 })
 export class HttpClientComponent implements OnInit {
 
-  /**
-   * バックエンドから返却されたレスポンスをセットするプロパティ
-   *
-   * 型は any ではなく class で型を定義した方が良いが
-   * ここでは簡便さから any としておく
-   *
-   * @private
-   * @type {string}
-   * @memberof HttpClientComponent
-   */
-  public param: any = {};
-
-  /**
-   * バックエンドから返却されたたメッセージをセットするプロパティ
-   *
-   * @type {*}
-   * @memberof HttpClientComponent
-   */
-  public messageInfo: any = {
-    id: null,
-    message: null
-  };
-
-  /**
-   * バックエンドから返却されたたメッセージを保持するリストプロパティ
-   *
-   * @type {*}
-   * @memberof HttpClientComponent
-   */
-  public messageInfoList: any = [this.messageInfo];
-
-  /**
-   * メッセージ登録回数
-   *
-   * @private
-   * @type {number}
-   * @memberof HttpClientComponent
-   */
-  public messageId: number = 1;
-
-  /**
-   * 入力メッセージ
-   *
-   * @type {string}
-   * @memberof HttpClientComponent
-   */
-  public message: string = '';
+  private element: HTMLElement;
 
   /**
    * コンストラクタ. HttpClientComponent のインスタンスを生成する
    * 自作した HttpClientService を DI する
    *
    * @param {HttpClientService} httpClientService HTTP通信を担当するサービス
+   * @param {ElementRef} elementRef DOM参照のためのモジュール
    * @memberof HttpClientComponent
    */
-  constructor(private httpClientService: HttpClientService) { }
+  constructor(
+    private httpClientService: HttpClientService,
+    private elementRef: ElementRef
+  ) {
+    this.element = this.elementRef.nativeElement;
+  }
 
   /**
    * ライフサイクルメソッド｡コンポーネントの初期化で使用する
-   * 今回はコンポーネントの初期化時にバックエンドから情報を取得してビューに表示する
+   * 今回はなにもしない
    *
    * @memberof HttpClientComponent
    */
-  ngOnInit() {
-    // ------
-    // toPromise.then((res) =>{}) を利用する場合のコード
-    // ------
-    this.httpClientService.get()
+  ngOnInit() {}
+
+  public async outputCsv(event: any): Promise<any> {
+    //-------------------------------------------
+    // 1. REST-API を実行して CSV データを取得する
+    //-------------------------------------------
+    this.httpClientService.getCsv()
     .then(
-      (response) => {
-        this.param = response;
-        this.messageInfoList = this.param.messages;
-      }
-    )
-    .catch(
-      (error) => console.log(error)
-    );
+      (response: any) => {
+        const csv = response.csv;
+        const filename = response.fileName;
 
-    // ------
-    // subscribe((res) =>{}) を利用する場合のコード
-    // ------
-    // HTTP GET の実行結果を受け取るためのコールバックを引数に､ get() を呼び出す
-    // this.httpClientService.get((response) => {
-    //   this.param = response;
-    //   this.messageInfoList = this.param.messages;
-    // });
-  }
+        //-------------------------------------------
+        // 2. レスポンスを加工してCSVファイルとURLを作る
+        //-------------------------------------------
+        // CSV ファイルは `UTF-8 BOM有り` で出力する
+        // そうすることで Excel で開いたときに文字化けせずに表示できる
+        const bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
+        // CSVファイルを出力するために Blob 型のインスタンスを作る
+        const blob = new Blob([bom, csv], { type: 'text/csv' });
+        const url = window.URL.createObjectURL(blob);
 
-  /**
-   * 登録ボタンクリック時のイベントハンドラ
-   *
-   * @param {*} event イベント情報
-   * @memberof HttpClientComponent
-   */
-  public onClickRegister(event: any) {
-    this.doRegister();
-  }
-
-  /**
-   * 更新ボタンクリック時のイベントハンドラ
-   *
-   * @param {*} event イベント情報
-   * @memberof HttpClientComponent
-   */
-  public onClickUpdate(event: any) {
-    this.doUpdate();
-  }
-
-  /**
-   * 削除ボタンクリック時のイベントハンドラ
-   *
-   * @param {*} event イベント情報
-   * @memberof HttpClientComponent
-   */
-  public onClickDelete(event: any) {
-    this.doDelete();
-  }
-
-  /**
-   * メッセージ登録
-   *
-   * @private
-   * @memberof HttpClientComponent
-   */
-  private doRegister() {
-    const body: any = {
-      id: this.messageId,
-      message: this.message
-    };
-    this.httpClientService.register(body)
-    .then(
-      (response) => {
-        this.param = response;
-        this.messageInfoList = this.param.messages;
-      }
-    )
-    .catch(
-      (error) => console.log(error)
-    );
-  }
-
-  /**
-   * メッセージ更新
-   *
-   * @private
-   * @memberof HttpClientComponent
-   */
-  private doUpdate() {
-    const body: any = {
-      id: this.messageId,
-      message: this.message
-    };
-    this.httpClientService.update(body)
-    .then(
-      (response) => {
-        this.param = response;
-        this.messageInfoList = this.param.messages;
-      }
-    )
-    .catch(
-      (error) => console.log(error)
-    );
-  }
-
-  /**
-   * メッセージ削除
-   *
-   * @private
-   * @memberof HttpClientComponent
-   */
-  private doDelete() {
-    const body: any = {
-      id: this.messageId
-    };
-    this.httpClientService.delete(body)
-    .then(
-      (response) => {
-        this.param = response;
-        this.messageInfoList = this.param.messages;
+        //-------------------------------------------
+        // 3. 出力はリンクタグのDOMを取得してそこから行う
+        //-------------------------------------------
+        // this.element は `ElementRef.nativeElement` から取得した `HTMLElement`
+        const link: HTMLAnchorElement = this.element.querySelector('#csv-donwload') as HTMLAnchorElement;
+        link.href = url;
+        link.download = filename;
+        link.click();
       }
     )
     .catch(

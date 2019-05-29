@@ -55,87 +55,12 @@ export class HttpClientService {
    * @returns {Promise<any[]>}
    * @memberof HttpClientService
    */
-  public get(): Promise<any[]> {
-    return this.http.get(this.host + '/get', this.httpOptions)
+  public getCsv(): Promise<any[]> {
+    return this.http.get(this.host + '/csv', this.httpOptions)
     .toPromise()
     .then((res) => {
       // response の型は any ではなく class で型を定義した方が良いが
       // ここでは簡便さから any としておく
-      const response: any = res;
-      return response;
-    })
-    .catch(this.errorHandler);
-  }
-
-  /**
-   * HTTP GET メソッドを実行する
-   * (subscribe((res) =>{}) を利用する場合のコード)
-   *
-   * @param {*} callback HTTP GET の実行結果を受け取って処理するためのコールバック処理
-   * @memberof HttpClientService
-   */
-  // public get(callback: any) {
-  //   this.http.get(this.host + '/get', this.httpOptions)
-  //   .subscribe(
-  //     (res) => {
-  //       const response: any = res;
-  //       callback(response);
-  //     },
-  //     (error) => {
-  //       // subscribe の実装のときに this.errorHandler でエラー処理を
-  //       // 行うと Uncaught (in promise) が発生するので、
-  //       // ここではコンソールにログを出すだけにする
-  //       console.log(error);
-  //     }
-  //   );
-  // }
-
-  /**
-   * メッセージ登録
-   *
-   * @param {*} body リクエストボディ
-   * @returns {Promise<any[]>} バックエンドからのレスポンス
-   * @memberof HttpClientService
-   */
-  public register(body: any): Promise<any[]> {
-    return this.http.post(this.host + '/post', body, this.httpOptions)
-    .toPromise()
-    .then((res) => {
-      const response: any = res;
-      return response;
-    })
-    .catch(this.errorHandler);
-  }
-
-  /**
-   * メッセージ更新
-   *
-   * @param {*} body リクエストボディ
-   * @returns {Promise<any[]>} バックエンドからのレスポンス
-   * @memberof HttpClientService
-   */
-  public update(body: any): Promise<any[]> {
-    return this.http.put(this.host + '/put', body, this.httpOptions)
-    .toPromise()
-    .then((res) => {
-      const response: any = res;
-      return response;
-    })
-    .catch(this.errorHandler);
-  }
-
-  /**
-   * メッセージ削除
-   *
-   * @param {*} body リクエストボディ
-   * @returns {Promise<any[]>} バックエンドからのレスポンス
-   * @memberof HttpClientService
-   */
-  public delete(body: any): Promise<any[]> {
-    this.httpOptions.body = body;
-    return this.http.delete(this.host + '/delete', this.httpOptions)
-    .toPromise()
-    .then((res) => {
       const response: any = res;
       return response;
     })
