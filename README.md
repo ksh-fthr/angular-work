@@ -43,3 +43,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * Routing による画面繊維の確認するためのブランチ(画面そのものの切り替えを試す)
 * [feat_modal](https://github.com/ksh-fthr/angular-work/tree/feat_modal)
   * ngComponentOutlet を使って modal の実装を試すブランチ
+* [feat_csv](https://github.com/ksh-fthr/angular-work/tree/feat_csv)
+  * CSVデータをバックエンドから取得してファイル出力する実装を試すブランチ
