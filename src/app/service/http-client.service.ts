@@ -55,7 +55,7 @@ export class HttpClientService {
    * @returns {Promise<any[]>}
    * @memberof HttpClientService
    */
-  public getCsv(): Promise<any[]> {
+  public getCsv(): Promise<any> {
     return this.http.get(this.host + '/csv', this.httpOptions)
     .toPromise()
     .then((res) => {
