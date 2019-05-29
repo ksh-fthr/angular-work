@@ -52,7 +52,7 @@ export class HttpClientService {
    * HTTP GET メソッドを実行する
    * (toPromise.then((res) =>{}) を利用する場合のコード)
    *
-   * @returns {Promise<any[]>}
+   * @returns {Promise<any>}
    * @memberof HttpClientService
    */
   public getCsv(): Promise<any> {
