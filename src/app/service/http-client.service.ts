@@ -68,6 +68,25 @@ export class HttpClientService {
   }
 
   /**
+   * HTTP GET メソッドを実行する
+   * (toPromise.then((res) =>{}) を利用する場合のコード)
+   *
+   * @returns {Promise<any>}
+   * @memberof HttpClientService
+   */
+  public getZip(): Promise<any> {
+    return this.http.get(this.host + '/zip', this.httpOptions)
+    .toPromise()
+    .then((res) => {
+      // response の型は any ではなく class で型を定義した方が良いが
+      // ここでは簡便さから any としておく
+      const response: any = res;
+      return response;
+    })
+    .catch(this.errorHandler);
+  }
+
+  /**
    * REST-API 実行時のエラーハンドラ
    * (toPromise.then((res) =>{}) を利用する場合のコード)
    *

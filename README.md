@@ -45,3 +45,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * ngComponentOutlet を使って modal の実装を試すブランチ
 * [feat_csv](https://github.com/ksh-fthr/angular-work/tree/feat_csv)
   * CSVデータをバックエンドから取得してファイル出力する実装を試すブランチ
+* [feat_csv](https://github.com/ksh-fthr/angular-work/tree/feat_zip)
+  * base64 文字列化したZIPファイルをバックエンドから取得してファイル出力する実装を試すブランチ

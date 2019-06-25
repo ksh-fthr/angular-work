@@ -1,4 +1,10 @@
-<div>
-  <button type="button" class="btn btn1" (click)="outputCsv($event)">CSV出力</button>
-  <a id="csv-donwload"></a>
+<div class="button-block">
+  <div class="buttons">
+    <button type="button" class="btn btn1" (click)="outputCsv($event)">CSVファイル出力</button>
+    <a id="csv-donwload"></a>
+  </div>
+  <div class="buttons">
+    <button type="button" class="btn btn1" (click)="outputZip($event)">ZIPファイル出力</button>
+    <a id="zip-donwload"></a>
+  </div>
 </div>
