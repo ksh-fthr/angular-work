@@ -1,7 +1,9 @@
 # このアプリについて
-
 Angular CLI で作成したプロジェクトを使用して、Angular の理解を深めるためにアレコレすることを目的としたものです。
 したがって、完全に個人での利用を目的としたものであり、更新のたびに以前の機能が無くなることがあります。
+
+上記より master ブランチは意味のある役割を持っていません。
+もし学習の内容が気になる場合は各ブランチをご参照ください。
 
 # ブランチについて
 基本的にそのとき確認した内容ごとにブランチを切ります。
@@ -45,5 +47,5 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * ngComponentOutlet を使って modal の実装を試すブランチ
 * [feat_csv](https://github.com/ksh-fthr/angular-work/tree/feat_csv)
   * CSVデータをバックエンドから取得してファイル出力する実装を試すブランチ
-* [feat_csv](https://github.com/ksh-fthr/angular-work/tree/feat_zip)
+* [feat_zip](https://github.com/ksh-fthr/angular-work/tree/feat_zip)
   * base64 文字列化したZIPファイルをバックエンドから取得してファイル出力する実装を試すブランチ
