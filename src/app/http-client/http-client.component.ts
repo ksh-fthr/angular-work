@@ -84,7 +84,7 @@ export class HttpClientComponent implements OnInit {
    */
   public async outputZip(event: any): Promise<any> {
     //-------------------------------------------
-    // 1. REST-API を実行して CSV データを取得する
+    // 1. REST-API を実行して ZIP データを取得する
     //-------------------------------------------
     this.httpClientService.getZip()
     .then(
@@ -93,15 +93,16 @@ export class HttpClientComponent implements OnInit {
         const filename = response.fileName;
 
         // -------------------------------------------
-        // 2. レスポンスを加工してzipファイルとURLを作る
+        // 2. レスポンスを加工して ZIP ファイルと URL を作る
         // -------------------------------------------
-        // data はバイナリを文字列化したもの( zip を base64エンコード + utf-8 でデコードして文字列化している )なので、
-        // これをバイナリに戻してやる必要がある
+        // data はバイナリを文字列化したものなので、これをバイナリに戻してやる必要がある
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // └─> ZIP を base64エンコード + utf-8 でデコードして文字列化している
         const blob = this.toBlobZip(zip);
         const url = window.URL.createObjectURL(blob);
 
         //-------------------------------------------
-        // 3. 出力はリンクタグのDOMを取得してそこから行う
+        // 3. 出力はリンクタグの DOM を取得してそこから行う
         //-------------------------------------------
         // this.element は `ElementRef.nativeElement` から取得した `HTMLElement`
         const link: HTMLAnchorElement = this.element.querySelector('#zip-donwload') as HTMLAnchorElement;
@@ -116,10 +117,10 @@ export class HttpClientComponent implements OnInit {
   }
 
   /**
-   * bas64 文字列になっている zip ファイル(バイナリデータ) をバイナリデータに変換する
+   * bas64 文字列になっている ZIP ファイル(バイナリデータ) をバイナリデータに変換する
    *
    * @private
-   * @param {string} base64 バイナリデータを base64エンコードして更に文字列化した文字列
+   * @param {string} base64 バイナリデータを base64 エンコードして更に文字列化した文字列
    * @returns {Blob} 引数の文字列をバイナリに戻したバイナリデータ
    * @memberof AggregateMonthlyComponent
    * @description
