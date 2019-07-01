@@ -33,6 +33,13 @@ export class HttpClientComponent implements OnInit {
    */
   ngOnInit() {}
 
+  /**
+   * CSV ファイル出力を行う
+   *
+   * @param event イベント情報
+   * @description
+   *  REST-API を実行して取得した CSV データを元に CSV ファイル出力を行う
+   */
   public async outputCsv(event: any): Promise<any> {
     //-------------------------------------------
     // 1. REST-API を実行して CSV データを取得する
@@ -68,6 +75,13 @@ export class HttpClientComponent implements OnInit {
     );
   }
 
+  /**
+   * ZIP ファイル出力を行う
+   *
+   * @param event イベント情報
+   * @description
+   *  REST-API を実行して取得した ZIP データを元に ZIP ファイル出力を行う
+   */
   public async outputZip(event: any): Promise<any> {
     //-------------------------------------------
     // 1. REST-API を実行して CSV データを取得する
