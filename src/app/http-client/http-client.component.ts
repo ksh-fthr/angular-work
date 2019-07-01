@@ -122,7 +122,7 @@ export class HttpClientComponent implements OnInit {
    * @param {string} base64 バイナリデータを base64エンコードして更に文字列化した文字列
    * @returns {Blob} 引数の文字列をバイナリに戻したバイナリデータ
    * @memberof AggregateMonthlyComponent
-   * @desc
+   * @description
    *  ZIP ファイルへの変換のみ対応している
    * @see
    *  https://developer.mozilla.org/ja/docs/Web/API/WindowBase64/atob
