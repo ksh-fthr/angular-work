@@ -14,7 +14,7 @@ export class HogeHogeComponent implements OnInit, OnChanges, DoCheck {
    * @memberof HogeHogeComponent
    */
   @Input()
-  ngOnChangesValue: String;
+  ngOnChangesValue: String = '';
 
   /**
    * ngDoCheck の確認のためのパラメータ
