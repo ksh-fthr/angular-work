@@ -13,7 +13,7 @@ export class ViewChildComponent {
    * @type {String}
    * @memberof ViewChildComponent
    */
-  public inputValue: String;
+  public inputValue: String = '';
 
   constructor() { }
 }
