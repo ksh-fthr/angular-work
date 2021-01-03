@@ -16,7 +16,7 @@ export class ViewChildComponent implements OnInit, AfterViewInit, AfterViewCheck
    * @type {String}
    * @memberof ViewChildComponent
    */
-  public ngAfterViewCheckValue: String;
+  public ngAfterViewCheckValue: String = '';
 
   constructor() { }
 

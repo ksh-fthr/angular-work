@@ -22,7 +22,7 @@ export class ViewParentComponent implements OnInit, AfterViewInit, AfterViewChec
    * @type {String}
    * @memberof ViewChildComponent
    */
-  public ngAfterViewCheckValue: String;
+  public ngAfterViewCheckValue: String = '';
 
   /**
    * 子コンポーネントを参照
@@ -30,7 +30,7 @@ export class ViewParentComponent implements OnInit, AfterViewInit, AfterViewChec
    * @type {ViewChildComponent}
    * @memberof ViewParentComponent
    */
-  @ViewChild(ViewChildComponent) viewChild: ViewChildComponent;
+  @ViewChild(ViewChildComponent) viewChild!: ViewChildComponent;
 
   constructor() { }
 
