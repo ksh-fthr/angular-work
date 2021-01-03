@@ -17,7 +17,7 @@ import { PiyoChildComponent } from '../piyo-child/piyo-child.component';
 export class PiyoParentComponent implements OnInit, AfterContentInit, AfterContentChecked {
 
   // 外部コンテンツである子コンポーネントを参照
-  @ContentChild(PiyoChildComponent) child: PiyoChildComponent;
+  @ContentChild(PiyoChildComponent) child!: PiyoChildComponent;
 
   // 子コンポーネントのパラメータの値をセットする変数
   private contents: String = '';

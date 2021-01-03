@@ -31,7 +31,7 @@ export class ViewParentComponent implements AfterViewChecked {
    * @type {ViewChildComponent}
    * @memberof ViewParentComponent
    */
-  @ViewChildren(ViewChildComponent) viewChildren: QueryList<ViewChildComponent>;
+  @ViewChildren(ViewChildComponent) viewChildren!: QueryList<ViewChildComponent>;
 
   constructor() { }
 

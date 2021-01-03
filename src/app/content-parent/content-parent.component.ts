@@ -22,7 +22,7 @@ export class ContentParentComponent implements AfterContentChecked {
    * @type {String}
    * @memberof ContentParentComponent
    */
-  public contentValue: String;
+  public contentValue: String = '';
 
   /**
    * 外部コンテンツの参照
@@ -31,7 +31,7 @@ export class ContentParentComponent implements AfterContentChecked {
    * @type {ContentChildComponent}
    * @memberof ContentParentComponent
    */
-  @ContentChild(ContentChildComponent) contentChild: ContentChildComponent;
+  @ContentChild(ContentChildComponent) contentChild!: ContentChildComponent;
 
   constructor() { }
 

@@ -19,7 +19,7 @@ export class CompChildComponent implements OnInit {
    * @type {String}
    * @memberof CompParentComponent
    */
-  @Input() dataFromParent: String;
+  @Input() dataFromParent: String = '';
 
   /**
    * 親コンポーネントに対してイベントを発火するためのパラメータ

@@ -10,20 +10,20 @@ export class CompParentComponent implements OnInit {
   /**
    * 子コンポーネントに渡すための文字列をセットするパラメータ
    *
-   * @private
+   * @public
    * @type {String}
    * @memberof CompParentComponent
    */
-  private parentData: String;
+  public parentData: String = '';
 
   /**
    * 子コンポーネントからイベント発火で渡された文字列をセットするパラメータ
    *
-   * @private
+   * @public
    * @type {String}
    * @memberof CompParentComponent
    */
-  private eventData: String;
+  public eventData: String = '';
 
   constructor() { }
 
