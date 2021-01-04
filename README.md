@@ -23,9 +23,9 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 * feat_create_service
   * Angular サービスの生成と利用についての動きを確認するためのブランチ
   * Qiita の [[Angular] Angular CLI によるサービスの生成](https://qiita.com/ksh-fthr/items/900baee52b80e6ed1b66) で扱った
-feat_share_service
+* feat_share_service
   * Angular サービスによるコンポーネント間のデータ共有を確認するためのブランチ
   * Qiita の [[Angular] サービスを使用してデータをコンポーネント間で共有する](https://qiita.com/ksh-fthr/items/e43dd37bff2e51e95a59) で扱った
-feat_http_client
+* feat_http_client
   * Http モジュールを利用した Http クライアントの実装を確認するためのブランチ
   * Qiita の [[Angular] HTTPクライアント(RESTクライアント)を実装する](https://qiita.com/ksh-fthr/items/840ae54472892a87f48d) で扱った
