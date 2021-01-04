@@ -34,7 +34,7 @@ export class Sample1Component implements OnInit, OnDestroy {
    * @type {Subscription}
    * @memberof Sample1Component
    */
-  private subscription: Subscription;
+  private subscription!: Subscription;
 
   /**
    * コンストラクタ. ServiceSample1Component のインスタンスを生成する
