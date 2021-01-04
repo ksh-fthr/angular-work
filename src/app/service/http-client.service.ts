@@ -165,7 +165,7 @@ export class HttpClientService {
    * トークンを動的に設定できるようメソッド化している
    * Bearer トークンをヘッダに設定したい場合はこのメソッドを利用する
    */
-  public setAuthorization(token: string = null): void {
+  public setAuthorization(token: string = ''): void {
     if (!token) {
       return;
     }
