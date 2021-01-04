@@ -9,7 +9,7 @@ export class CommonService {
    * @type {String}
    * @memberof CommonService
    */
-  public commonProp: String;
+  public commonProp: String = '';
 
   /**
    * コンストラクタ. CommonService のインスタンスを生成する

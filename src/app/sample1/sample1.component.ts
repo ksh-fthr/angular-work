@@ -22,7 +22,7 @@ export class Sample1Component implements OnInit {
    * @type {String}
    * @memberof Sample1Component
    */
-  public serviceProp: String;
+  public serviceProp: String = '';
 
   /**
    * コンストラクタ. ServiceSample1Component のインスタンスを生成する
