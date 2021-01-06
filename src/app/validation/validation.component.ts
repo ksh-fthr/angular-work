@@ -13,7 +13,7 @@ export class ValidationComponent implements OnInit {
    * @type {string}
    * @memberof ValidationComponent
    */
-  public inputIP: string = null;
+  public inputIP: string = '';
 
   /**
    * validaion のための双方向データバインドを行うプロパティ
@@ -21,7 +21,7 @@ export class ValidationComponent implements OnInit {
    * @type {string}
    * @memberof ValidationComponent
    */
-  public inputSubnetMask: string = null;
+  public inputSubnetMask: string = '';
 
   /**
    * 入力された内容の最小文字数チェック
@@ -79,7 +79,7 @@ export class ValidationComponent implements OnInit {
    * @param {any} $event イベント情報
    * @memberof ValidationComponent
    */
-  public onClickOK($event) {
+  public onClickOK($event: any) {
     alert('OK button had clicked.');
   }
 
@@ -91,7 +91,7 @@ export class ValidationComponent implements OnInit {
    * @param {any} errorInformation
    * @memberof ValidationComponent
    */
-  public onKeyUp(validationKey, errorInformation) {
+  public onKeyUp(validationKey: any, errorInformation: any) {
     this.manageValidationError(validationKey, errorInformation)
   }
 
@@ -106,7 +106,7 @@ export class ValidationComponent implements OnInit {
    * @param {any} errorInformation バリデーションエラー情報
    * @memberof ValidationComponent
    */
-  private manageValidationError(validationKey, errorInformation) {
+  private manageValidationError(validationKey: any, errorInformation: any) {
     for (const target in this.validationErrorList) {
       if (this.validationErrorList.hasOwnProperty(target) &&
           this.validationErrorList[target].key === validationKey) {
