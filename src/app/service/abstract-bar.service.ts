@@ -1,3 +1,3 @@
 export abstract class AbstractBarService {
-  public abstract exec();
+  public abstract exec(): any;
 }
