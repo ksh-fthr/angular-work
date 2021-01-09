@@ -37,7 +37,7 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
   * Qiita の [[TypeScript] ジェネリックで引数で渡されたインスタンスのメソッドを使いたい](https://qiita.com/ksh-fthr/items/c0696167a72f9e37986c) で扱った
 * feat_directive
   * ディレクティブの自作について確認するためのブランチ
-  * [Qiita の [Angular] 属性ディレクティブを自作する で扱った](https://qiita.com/ksh-fthr/items/b8e3577f47483f5685e2)
+  * Qiita の [[Angular] 属性ディレクティブを自作する](https://qiita.com/ksh-fthr/items/b8e3577f47483f5685e2) で扱った
 * feat_directive_event
   * イベント処理を伴うディレクティブについて確認するためのブランチ
   * Qiita の [[Angular] 属性ディレクティブにイベント処理を登録する](https://qiita.com/ksh-fthr/items/43cf954515a5f6ace515) で扱った
