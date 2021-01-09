@@ -11,7 +11,7 @@ export class TemplateDirective implements OnInit {
    * @type {string}
    * @memberof TemplateDirective
    */
-  @Input() public greet: string;
+  @Input() public greet: string = '';
 
   /**
    * 親コンポーネントから受け取るデータ-2
@@ -19,7 +19,7 @@ export class TemplateDirective implements OnInit {
    * @type {string}
    * @memberof TemplateDirective
    */
-  @Input() public name: string;
+  @Input() public name: string = '';
 
   /**
    * コンストラクタ
