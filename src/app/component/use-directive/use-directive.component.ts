@@ -13,7 +13,7 @@ export class UseDirectiveComponent implements OnInit {
    * @type {string}
    * @memberof UseDirectiveComponent
    */
-  public inputAddress: string;
+  public inputAddress: string = '';
 
   /**
    * 入力されたアドレス
@@ -21,7 +21,7 @@ export class UseDirectiveComponent implements OnInit {
    * @type {string}
    * @memberof UseDirectiveComponent
    */
-  public inputSubnetMask: string;
+  public inputSubnetMask: string = '';
 
   /**
    * 入力エラー情報を画面に表示するためのプロパティ
@@ -61,7 +61,7 @@ export class UseDirectiveComponent implements OnInit {
    * @param {any} $event イベント情報
    * @memberof UseDirectiveComponent
    */
-  public onClickOK($event) {
+  public onClickOK($event: any) {
     alert('OK button had clicked.');
   }
 
@@ -74,7 +74,7 @@ export class UseDirectiveComponent implements OnInit {
    * @param {any} errorInformation
    * @memberof ValidationComponent
    */
-  public onKeyUp(validationKey, errorInformation) {
+  public onKeyUp(validationKey: any, errorInformation: any) {
     this.manageValidationError(validationKey, errorInformation)
   }
 
@@ -89,7 +89,7 @@ export class UseDirectiveComponent implements OnInit {
    * @param {any} errorInformation バリデーションエラー情報
    * @memberof ValidationComponent
    */
-  private manageValidationError(validationKey, errorInformation) {
+  private manageValidationError(validationKey: any, errorInformation: any) {
     for (const target in this.validationErrorList) {
       if (this.validationErrorList.hasOwnProperty(target) &&
           this.validationErrorList[target].key === validationKey) {

@@ -63,6 +63,6 @@ export class NetworkAddressValidatorDirective implements Validator {
       return { pattern: true };
     }
 
-    return null;
+    return {};
   }
 }
