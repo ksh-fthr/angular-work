@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-reactive-form',
@@ -14,16 +13,16 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    * ビューで定義する Form の本体
    *
    * @type {FormGroup}
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
-  public networkForm: FormGroup;
+  public networkForm!: FormGroup;
 
   /**
    * 入力された内容の最小文字数チェック
    * IPアドレスの最小文字数である x.x.x.x の ７ を定義
    *
    * @type {number}
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
   public readonly minNetworkAddressLength: number = 7;
 
@@ -32,7 +31,7 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    * IPアドレスの最大文字数である xxx.xxx.xxx.xxx の 15 を定義
    *
    * @type {number}
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
   public readonly maxNetworkAddressLength: number = 15;
 
@@ -41,7 +40,7 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    * 正規表現で x.x.x.x ~ xxx.xxx.xxx.xxx のパターンマッチングを実現させる
    *
    * @type {string}
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
   public readonly networkAddressPattern: string = '^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])[¥.]){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$';
 
@@ -49,7 +48,7 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    * 入力エラー情報を画面に表示するためのプロパティ
    *
    * @type {*}
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
   public validationError: any;
 
@@ -58,7 +57,7 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    *
    * @private
    * @type {*}
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
   private validationErrorList: any = [];
 
@@ -67,32 +66,32 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    *
    * @private
    * @type {Subscription}
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
-  private ipControlSubscription: Subscription;
+  private ipControlSubscription!: Subscription;
 
   /**
    * SubnetMask の入力フォームで発生した statusChanges イベントを保持する subscription
    *
    * @private
    * @type {Subscription}
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
-  private subnetmaskSubscription: Subscription;
+  private subnetmaskSubscription!: Subscription;
 
   /**
    * コンストラクタ
    *
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
   constructor() { }
 
   /**
    * コンポーネントの初期化処理
    *
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
-  public ngOnInit() {
+  public ngOnInit(): void {
 
     // 複数の入力項目を設置するフォームを生成する
     this.networkForm = new FormGroup({
@@ -134,9 +133,9 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
   /**
    * コンポーネントの終了処理
    *
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
-  public ngOnDestroy() {
+  public ngOnDestroy(): void {
     // イベント情報が残り続けるのを防ぐためにコンポーネントの終了処理で破棄する
     this.ipControlSubscription.unsubscribe();
     this.subnetmaskSubscription.unsubscribe();
@@ -146,14 +145,14 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    * 入力フォームの有効/無効を制御する
    *
    * @private
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
   private changeFormEnabledDisabled() {
     // この例では常に「有効」となる
 
     // 有効にしたい場合
     this.networkForm.controls['ipControl'].enable();
-    this.networkForm.controls['subnetmaskSubscription'].enable();
+    this.networkForm.controls['subnetmaskControl'].enable();
     // 無効にしたい場合
     // this.networkForm.controls['ipControl'].disable();
     // this.networkForm.controls['subnetmaskControl'].disable();
@@ -164,9 +163,9 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    * ここでは単純にアラートを出すだけ
    *
    * @param {any} $event イベント情報
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
-  public onClickOK($event) {
+  public onClickOK($event: any) {
     const inputValue: any = {
       ipAddress: this.networkForm.controls['ipControl'].value,
       subnetmask: this.networkForm.controls['subnetmaskControl'].value,
@@ -183,9 +182,9 @@ export class ReactiveFormComponent implements OnInit, OnDestroy {
    * @private
    * @param {any} validationKey エラーが発生した入力フォーム
    * @param {any} errorInformation バリデーションエラー情報
-   * @memberof ValidationComponent
+   * @memberof ReactiveFormComponent
    */
-  private manageValidationError(validationKey, errorInformation) {
+  private manageValidationError(validationKey: any, errorInformation: any) {
 
     // validation のエラー情報を管理する
     // 常に最後に発生したエラー情報をビューに表示するため、リストから最後の要素を取得して

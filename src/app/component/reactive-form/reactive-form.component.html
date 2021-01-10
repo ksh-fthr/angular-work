@@ -12,7 +12,7 @@
         type="text"
         class="input-text"
         name="input-ip-address"
-        [formControl]="networkForm.controls['ipControl']"
+        formControlName="ipControl"
       >
     </div>
     <div class="input-network-address">
@@ -24,7 +24,7 @@
         type="text"
         class="input-text"
         name="input-subnet-mask"
-        [formControl]="networkForm.controls['subnetmaskControl']"
+        formControlName="subnetmaskControl"
       >
     </div>
     <div class="validation-error-information">
