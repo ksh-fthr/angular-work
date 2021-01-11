@@ -7,7 +7,7 @@ import { TabModel } from '../model/tab-model';
 })
 export class SwitchTabService {
 
-  private _tabs: Array<TabModel>;
+  private _tabs!: Array<TabModel>;
 
   // 次のブロックは setter/getter
   // 今回の実装ではプロパティに対してセット/ゲットするだけの単純なもの

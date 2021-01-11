@@ -12,7 +12,7 @@ import { TabModel } from '../../model/tab-model';
 export class SwitchTabComponent implements OnInit {
 
   private _currentTab: any;
-  private _tabs: Array<TabModel>;
+  private _tabs!: Array<TabModel>;
 
   // 次のブロックは setter/getter
   // 今回の実装ではプロパティに対してセット/ゲットするだけの単純なもの
@@ -51,7 +51,7 @@ export class SwitchTabComponent implements OnInit {
    * @param {any} $event イベント情報
    * @memberof SwitchTabComponent
    */
-  public onClick($event) {
+  public onClick($event: any) {
     // クリックされたタブに応じて表示するコンテンツ( component ) を切り替える
     this._currentTab = this.switchTabService.changeCurrentContents($event.target.innerHTML);
   }
