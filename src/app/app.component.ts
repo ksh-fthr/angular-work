@@ -15,7 +15,7 @@ import { ModalService } from './service/modal.service';
 export class AppComponent implements OnInit, OnDestroy  {
 
   // モーダルダイアログが閉じた際のイベントをキャッチするための subscription
-  private subscription: Subscription;
+  private subscription!: Subscription;
 
   // ngComponentOutlet にセットするためのプロパティ
   public modal: any = null;
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit, OnDestroy  {
    * @param {*} $event イベント情報
    * @memberof AppComponent
    */
-  public onClick($event) {
+  public onClick($event: any) {
     this.setModal();
   }
 
