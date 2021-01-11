@@ -43,7 +43,7 @@ export class ModalComponent implements OnInit, OnDestroy {
    * @param {*} $event イベント情報
    * @memberof ModalComponent
    */
-  public onClick($event) {
+  public onClick($event: any) {
     this.notifyCloseModal();
   }
 
