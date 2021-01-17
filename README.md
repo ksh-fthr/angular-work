@@ -5,6 +5,17 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 上記より master ブランチは意味のある役割を持っていません。
 もし学習の内容が気になる場合は各ブランチをご参照ください。
 
+# 環境について
+以下の環境で実行・確認しています。
+
+| 環境                                          | バージョン | 備考               |
+| --------------------------------------------- | ---------- | ------------------ |
+| [Angular CLI](https://cli.angular.io/)        | v11.0.5    | `$ ng --version`   |
+| [Angular](https://angular.io/)                | v11.0.5    | 同上               |
+| [TypeScript](https://www.typescriptlang.org/) | v4.0.2     | 同上               |
+| [Node.js](https://nodejs.org/ja/)             | v12.18.3   | `$ node --version` |
+| [npm](https://www.npmjs.com/)                 | v6.14.6    | `$ npm --version`  |
+
 # ブランチについて
 基本的にそのとき確認した内容ごとにブランチを切ります。
 現在は次のブランチがあります。
