@@ -5,7 +5,7 @@
 
   <div class="block-body">
     <label for="inputText">入力項目(親から子に渡る):</label>
-    <input id="inputText" name="inputText" type="text" [(ngModel)]="childHogeValue" />
+    <input class="inputText" name="inputText" type="text" [(ngModel)]="childHogeValue" />
 
     <app-hoge-hoge [ngOnChangesValue]="childHogeValue">
     </app-hoge-hoge>

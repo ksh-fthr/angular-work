@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PiyoChildComponent implements OnInit {
 
-  public contents: String = '';
+  public contents = '';
 
   constructor() {
     console.log('[PiyoChildComponent][constructor] fired');
@@ -16,7 +16,7 @@ export class PiyoChildComponent implements OnInit {
   /**
    * コンポーネントの初期化
    */
-  ngOnInit() {
+  ngOnInit(): void {
     this.contents = '子コンポーネント で初期化しました。';
     console.log('[PiyoChildComponent][ngOnInit] fired. contents={' + this.contents + '}');
   }

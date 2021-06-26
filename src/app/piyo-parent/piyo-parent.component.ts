@@ -20,7 +20,7 @@ export class PiyoParentComponent implements OnInit, AfterContentInit, AfterConte
   @ContentChild(PiyoChildComponent) child!: PiyoChildComponent;
 
   // 子コンポーネントのパラメータの値をセットする変数
-  private contents: String = '';
+  private contents = '';
 
   constructor() {
     console.log('[PiyoParentComponent][constructor] fired');
@@ -29,14 +29,14 @@ export class PiyoParentComponent implements OnInit, AfterContentInit, AfterConte
   /**
    * コンポーネントの初期化
    */
-  ngOnInit() {
+  ngOnInit(): void {
     console.log('[PiyoParentComponent][ngOnInit] fired');
   }
 
   /**
    * 外部コンテンツが初期化された後に処理
    */
-  ngAfterContentInit() {
+  ngAfterContentInit(): void {
     this.contents = this.child.contents;
     console.log('[PiyoParentComponent][ngAfterContentInit] fired. conents={' + this.contents + '}');
   }
@@ -44,7 +44,7 @@ export class PiyoParentComponent implements OnInit, AfterContentInit, AfterConte
   /**
    * 外部コンテンツの確認後に処理
    */
-  ngAfterContentChecked() {
+  ngAfterContentChecked(): void {
     this.contents = this.child.contents;
     console.log('[PiyoParentComponent][ngAfterContentChecked] fired. contents={' + this.contents + '}');
   }

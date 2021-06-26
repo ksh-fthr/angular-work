@@ -18,17 +18,11 @@ export class ViewParentComponent implements OnInit, AfterViewInit, AfterViewChec
 
   /**
    * ngAfterViewInit と ngAfterViewChecked の確認のためのパラメータ
-   *
-   * @type {String}
-   * @memberof ViewChildComponent
    */
-  public ngAfterViewCheckValue: String = '';
+  public ngAfterViewCheckValue = '';
 
   /**
    * 子コンポーネントを参照
-   *
-   * @type {ViewChildComponent}
-   * @memberof ViewParentComponent
    */
   @ViewChild(ViewChildComponent) viewChild!: ViewChildComponent;
 
@@ -36,28 +30,22 @@ export class ViewParentComponent implements OnInit, AfterViewInit, AfterViewChec
 
   /**
    * コンポーネントの初期化処理
-   *
-   * @memberof ViewParentComponent
    */
-  ngOnInit() {
+  ngOnInit(): void {
     this.ngAfterViewCheckValue = 'ngOnInitで初期化した';
   }
 
   /**
    * ビューの初期化をフックする
-   *
-   * @memberof ViewParentComponent
    */
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     console.log('[ViewParentComponent][ngAfterViewInit] fired');
   }
 
   /**
    * ビューの変更をフックする
-   *
-   * @memberof ViewParentComponent
    */
-  ngAfterViewChecked() {
+  ngAfterViewChecked(): void {
     console.log('[ViewParentComponent][ngAfterViewChecked] fired. ngAfterViewCheckValue={' + this.ngAfterViewCheckValue + '}');
   }
 }

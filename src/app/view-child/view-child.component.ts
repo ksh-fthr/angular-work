@@ -12,38 +12,29 @@ export class ViewChildComponent implements OnInit, AfterViewInit, AfterViewCheck
 
   /**
    * ngAfterViewInit と ngAfterViewChecked の確認のためのパラメータ
-   *
-   * @type {String}
-   * @memberof ViewChildComponent
    */
-  public ngAfterViewCheckValue: String = '';
+  public ngAfterViewCheckValue = '';
 
   constructor() { }
 
   /**
    * コンポーネントの初期化処理
-   *
-   * @memberof ViewChildComponent
    */
-  ngOnInit() {
+  ngOnInit(): void {
     this.ngAfterViewCheckValue = 'ngOnInitで初期化した';
   }
 
   /**
    * ビューの初期化をフックする
-   *
-   * @memberof ViewChildComponent
    */
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     console.log('[ViewChildComponent][ngAfterViewInit] fired.');
   }
 
   /**
    * ビューの変更をフックする
-   *
-   * @memberof ViewChildComponent
    */
-  ngAfterViewChecked() {
+  ngAfterViewChecked(): void {
     console.log('[ViewChildComponent][ngAfterViewChecked] fired. ngAfterViewCheckValue={' + this.ngAfterViewCheckValue + '}');
   }
 }
