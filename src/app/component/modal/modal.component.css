@@ -1,0 +1,61 @@
+.overlay {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  overflow: hidden;
+  height: 200px;
+  width: 400px;
+  background-color: rgb(229, 241, 247);
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+  border: solid 1px rgb(0, 0, 0);
+  z-index: 1001;
+}
+
+.header {
+  height: 20%;
+  width: 100%;
+  font-size: 1.2em;
+  border-bottom: solid 1px rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header > #header_label {
+  display: block;
+}
+
+.contents {
+  height: 60%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.footer {
+  height: 20%;
+  width: 100%;
+  border-top: solid 1px rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer > #close_button {
+  display: block;
+  width: 30%;
+  height: 70%;
+  font-size: 1.2em;
+}
