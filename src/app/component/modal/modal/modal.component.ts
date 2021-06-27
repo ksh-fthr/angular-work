@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 // モーダルダイアログを閉じるためのイベントを管理するサービス
-import { ModalService } from '../../service/modal.service';
+import { ModalService } from '../../../service/modal.service';
 
 @Component({
   selector: 'app-modal',

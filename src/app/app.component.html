@@ -1,4 +1,16 @@
-<div class="footer">
-  <input id="footer_button" type="button" value="open modal" (click)="onClick($event);">
+<div>
+  <div class="block-header">
+    <p>サイトナビゲーション</p>
+  </div>
+
+  <div class="block-body">
+    <ul>
+      <!-- routing のためのリンク. routerLink に app.module.ts で定義したテーブル: ROUTE_TABLE に登録した path をセットする -->
+      <li><a routerLink="/routing">ルーティングの確認ページ</a></li>
+      <li><a routerLink="/modal">モーダルの確認ページ</a></li>
+    </ul>
+  </div>
 </div>
-<ng-container *ngComponentOutlet="modal"></ng-container>
+
+<!-- routing で呼び出されたページは router-outlet で確保された領域に反映される -->
+<router-outlet></router-outlet>
