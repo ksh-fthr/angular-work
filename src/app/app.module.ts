@@ -19,11 +19,20 @@ import { ModalService } from './service/modal.service';
 //    '' で [/] のルートパスを指定できる
 //    '*＊' でワイルドカードを指定できる
 const ROUTE_TABLE: Routes = [
-  { path: 'modal', component: ModalComponent },
-  { path: 'routing', component: RoutingComponent },
-  { path: 'routing/page-a', component: PageAComponent },
-  { path: 'routing/page-b', component: PageBComponent },
-  { path: 'routing/page-c', component: PageCComponent }
+  {
+    path: 'modal',
+    component: ModalBaseComponent
+  },
+  {
+    path: 'routing',
+    component: RoutingComponent,
+    // children 要素によって `<router-outlet></router-outlet>` の入れ子が実現できる
+    children: [
+      { path: 'page-a', component: PageAComponent },
+      { path: 'page-b', component: PageBComponent },
+      { path: 'page-c', component: PageCComponent }
+    ]
+  },
 ];
 
 @NgModule({
