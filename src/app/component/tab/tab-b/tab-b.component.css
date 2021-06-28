@@ -1,0 +1,18 @@
+.parent {
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+
+  /* 子要素を中央に配置する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  font-size: xx-large;
+
+  /* 子要素を中央に配置する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

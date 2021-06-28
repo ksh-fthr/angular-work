@@ -1,0 +1,29 @@
+div.tab-area-base {
+  width: 90%;
+  margin: auto;
+  height: calc(100% - 80px)
+}
+
+ul.tab-menu-base {
+  overflow: hidden;
+  list-style: none;
+  margin: 0px auto;
+  padding: 0;
+  border-bottom: 5px solid rgb(180, 180, 180);
+}
+
+ul.tab-menu-base li {
+  float: left;
+  margin: 20px 8px 0 0 ;
+  padding: 0;
+  background: rgb(240, 240, 240);
+  border-radius: 10px 10px 0 0;
+  height: 100%;
+  width: 200px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+ul.tab-menu-base li.current {
+  background: rgb(180, 180, 180);
+}
