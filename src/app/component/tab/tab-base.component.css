@@ -1,0 +1,27 @@
+div {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: calc(100% - 65px);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.block-header {
+  margin: 0;
+  padding: 10px 10px;
+  background: rgb(182, 109, 228);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  height: 25px;
+}
+
+.block-body {
+  margin: 0;
+  padding: 5px 10px;
+  background: rgb(220, 200, 224);
+  width: 100%;
+}

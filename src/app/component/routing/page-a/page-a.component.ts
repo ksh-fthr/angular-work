@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageAComponent implements OnInit {
 
-  constructor() { }
+  /**
+   * コンストラクタ( 本コンポーネントではなにもしない )
+   */
+   constructor() { }
 
-  ngOnInit(): void {
+  /**
+   * 初期処理
+   */
+   ngOnInit(): void {
   }
 }

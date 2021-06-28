@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 import { ModalComponent } from './modal/modal.component';
 
 // モーダルダイアログを閉じるためのイベントを管理するサービス
-import { ModalService } from '../../service/modal.service';
+import { ModalService } from '../../service/modal/modal.service';
 
 @Component({
   selector: 'app-modal-base',
