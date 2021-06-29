@@ -1,6 +1,6 @@
 .parent {
   height: 100%;
-  background-color: rgb(255, 255, 255);
+  background: rgb(230, 230, 230);
 
   /* 子要素を中央に配置する */
   display: flex;
