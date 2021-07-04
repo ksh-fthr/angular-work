@@ -8,7 +8,7 @@ import { SwitchTabService } from '../../service/switch-tab/switch-tab.service';
 import { TabModel } from '../../model/tab-model';
 
 @Component({
-  selector: 'app-tab-baase',
+  selector: 'app-tab-base',
   templateUrl: './tab-base.component.html',
   styleUrls: ['./tab-base.component.css']
 })

@@ -1,4 +1,13 @@
-<div class="footer">
-  <input id="footer_button" type="button" value="open modal" (click)="onClick($event);">
+<div id="modal-base-area">
+  <div class="block-header">
+    <p>ngComponentOutlet を使ったモーダルの動作確認を行う</p>
+  </div>
+
+  <div class="block-body">
+    <ng-container *ngComponentOutlet="modal"></ng-container>
+  </div>
+
+  <div class="block-footer">
+    <input id="footer_button" type="button" value="open modal" (click)="onClick($event);">
+  </div>
 </div>
-<ng-container *ngComponentOutlet="modal"></ng-container>
