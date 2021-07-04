@@ -13,10 +13,10 @@ import { PageCComponent } from './component/routing/page-c/page-c.component';
 // モーダル実装検証用コンポーネント/サービス
 import { ModalBaseComponent } from './component/modal/modal-base.component';
 import { ModalComponent } from './component/modal/modal/modal.component';
-import { SwitchTabComponent } from './component/tab/switch-tab/switch-tab.component';
 import { ModalService } from './service/modal/modal.service';
 
 // タブ実装検証用コンポーネント/サービス
+import { SwitchTabComponent } from './component/tab/switch-tab/switch-tab.component';
 import { TabBaseComponent } from './component/tab/tab-base.component';
 import { TabAComponent } from './component/tab/tab-a/tab-a.component';
 import { TabBComponent } from './component/tab/tab-b/tab-b.component';

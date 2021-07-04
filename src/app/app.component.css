@@ -1,39 +1,67 @@
-div {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-}
-
-.block-header {
-  text-align: center;
-  margin: 0 0 0 0;
-  padding: 10px 10px;
-  background: rgb(82, 109, 228);
-  color: rgb(255, 255, 255);
+#header-area, #header-contents {
   width: 100%;
-  height: 25px;
-}
-
-.block-body {
+  height: 10%;
   margin: 0;
-  padding: 0 10px;
-  background: rgb(219, 210, 224);
-  width: 100%;
-  height: 30px;
+
+  /* 子要素を中央に配置する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-ul, li {
-  margin: 0;
-  padding: 0;
+#header-contents p {
+  font-size: 1.5em;
 }
 
-.block-body ul li {
+#header-contents img {
+  float: left;
+}
+
+#main-area {
+  height: calc(100% - 120px);
+}
+
+#menu-contents {
+  float: left;
+  width: 15%;
+  height: 100%;
+}
+
+.item_box {
+  margin: 0 5px;
+  padding: 10px;
+  width: 90%;
+  height: calc(100% - 20px);
+  border-radius: 20px;
+  border: 1px solid #b7a007;
+}
+
+.items {
   display: inline-block;
-  margin: 0;
-  padding: 0 15px;
+  margin: 0; /* この指定で各項目にある `･` を消す */
+}
+
+.item_buttons {
+  text-decoration: none;
+  display: inline-block;
+  background: #e2cda7;
+  background: linear-gradient(#ffffff, #e2cda7);
+  color: #b7a007;
+  padding: 10px;
+  border: 1px solid #b7a007;
+  border-radius: 5px;
+  margin: 5px 0 !important;
+  width: 180px;
+}
+
+.item_buttons:hover {
+  background: #b7a077;
+  background: linear-gradient(#b7a007, #e2cda7);
+  color: #ffffff;
+}
+
+#main-contents {
+  float: right;
+  width: 85%;
+  height: 100%;
 }

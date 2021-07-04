@@ -1,17 +1,22 @@
-<div>
-  <div class="block-header">
-    <p>サイトメニュー</p>
+<header id="header-area">
+  <div id="header-contents">
+    <img src="../assets/angular.svg" widht="64" height="64" />
+    <p>Angular-Work</p>
   </div>
+</header>
 
-  <div class="block-body">
-    <ul>
+<main id="main-area">
+  <div id="menu-contents">
+    <ul class="item_box">
       <!-- routing のためのリンク. routerLink に app.module.ts で定義したテーブル: ROUTE_TABLE に登録した path をセットする -->
-      <li><a routerLink="/routing">ルーティング実装の確認ページ</a></li>
-      <li><a routerLink="/modal">モーダル実装の確認ページ</a></li>
-      <li><a routerLink="/tab">タブ実装の確認ページ</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/routing">ルーティング実装の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/modal">モーダル実装の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/tab">タブ実装の確認</a></li>
     </ul>
   </div>
-</div>
 
-<!-- routing で呼び出されたページは router-outlet で確保された領域に反映される -->
-<router-outlet></router-outlet>
+  <div id="main-contents">
+    <!-- routing で呼び出されたページは router-outlet で確保された領域に反映される -->
+    <router-outlet></router-outlet>
+  </div>
+</main>

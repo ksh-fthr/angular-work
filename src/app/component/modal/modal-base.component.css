@@ -1,15 +1,40 @@
-.footer {
-  position: fixed;
-  background: rgba(0, 0, 0, 1.0);
+#modal-base-area {
+  margin: 0 0 0 15px;
+  padding: 0;
+  width: calc(100% - 20px);
+  height: calc(100% - 100px);
+}
+
+.block-header {
+  margin: 0;
+  padding: 10px 10px;
+  background: rgb(182, 109, 240);
+  color: rgb(255, 255, 255);
+  height: 25px;
+  width: inherit;
+}
+
+.block-header > p {
   margin: 0;
   padding: 0;
-  width: 100%;
+}
+
+.block-body {
+  margin: 0;
+  padding: 0;
+  height: calc(100% - 25px);
+}
+
+.block-footer {
+  background: rgba(0, 0, 0, 1.0);
+  padding: 0;
   height: 80px;
   bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 #footer_button {
   display: block;
   font-size: 1.5em;
