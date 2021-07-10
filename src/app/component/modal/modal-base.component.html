@@ -1,13 +1,15 @@
 <div id="modal-base-area">
-  <div class="block-header">
-    <p>ngComponentOutlet を使ったモーダルの動作確認を行う</p>
-  </div>
+  <div id="modal-wrap">
+    <div id="modal-header">
+      <p>ngComponentOutlet を使ったモーダルの動作確認を行う</p>
+    </div>
 
-  <div class="block-body">
-    <ng-container *ngComponentOutlet="modal"></ng-container>
-  </div>
+    <div id="modal-body">
+      <ng-container *ngComponentOutlet="modal"></ng-container>
+    </div>
 
-  <div class="block-footer">
-    <input id="footer_button" type="button" value="open modal" (click)="onClick($event);">
+    <div id="modal-footer">
+      <input id="footer_button" type="button" value="open modal" (click)="onClick($event);">
+    </div>
   </div>
 </div>
