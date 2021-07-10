@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+// form を作成するために必要
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -21,6 +23,13 @@ import { TabBaseComponent } from './component/tab/tab-base.component';
 import { TabAComponent } from './component/tab/tab-a/tab-a.component';
 import { TabBComponent } from './component/tab/tab-b/tab-b.component';
 import { SwitchTabService } from './service/switch-tab/switch-tab.service';
+
+// 子コンポーネントや外部コンテンツの参照を取得する検証コンポーネント/サービス
+import { ReferenceBaseComponent } from './component/reference/reference-base.component';
+import { ContentChildComponent } from './component/reference/content-child/content-child.component';
+import { ContentParentComponent } from './component/reference/content-parent/content-parent.component';
+import { ViewChildComponent } from './component/reference/view-child/view-child.component';
+import { ViewParentComponent } from './component/reference/view-parent/view-parent.component';
 
 
 // Routing を行う対象のコンポーネントを管理する
@@ -47,6 +56,10 @@ const ROUTE_TABLE: Routes = [
     path: 'tab',
     component: TabBaseComponent
   },
+  {
+    path: 'reference',
+    component: ReferenceBaseComponent
+  },
 ];
 
 @NgModule({
@@ -65,6 +78,12 @@ const ROUTE_TABLE: Routes = [
     SwitchTabComponent,
     TabAComponent,
     TabBComponent,
+    // 子コンポーネントや外部コンテンツの参照を取得する検証コンポーネント/サービス
+    ReferenceBaseComponent,
+    ContentChildComponent,
+    ContentParentComponent,
+    ViewChildComponent,
+    ViewParentComponent,
   ],
   entryComponents: [
     ModalComponent,
@@ -72,6 +91,7 @@ const ROUTE_TABLE: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTE_TABLE), // 追加. routing の情報を登録する
+    FormsModule,
   ],
   providers: [
     ModalService,
