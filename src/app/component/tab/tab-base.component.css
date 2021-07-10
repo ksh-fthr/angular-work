@@ -2,25 +2,34 @@
   margin: 0 0 0 15px;
   padding: 0;
   width: calc(100% - 20px);
-  height: calc(100% - 10px);
+  /* height: calc(100% - 10px); */
+  height: 100%;
 }
 
-.block-header {
+#tab-wrap {
+  height: inherit;
+  border: 1px solid #b7a007;
+  border-radius: 20px;
+}
+
+#tab-header {
   margin: 0;
   padding: 10px 10px;
-  background: rgb(182, 109, 240);
-  color: rgb(255, 255, 255);
+  color: #b7a007;
+  background: linear-gradient(#ffffff, #e2cda7);
   height: 25px;
   width: inherit;
+  border-radius: 20px 20px 0 0;
 }
 
-.block-header > p {
+#tab-header > p {
   margin: 0;
   padding: 0;
 }
 
-.block-body {
+#tab-body {
   margin: 0;
   padding: 0;
-  height: inherit;
+  height: 90%;
+  border-radius: 0 0 20px 20px;
 }

@@ -44,7 +44,6 @@
 .item_buttons {
   text-decoration: none;
   display: inline-block;
-  background: #e2cda7;
   background: linear-gradient(#ffffff, #e2cda7);
   color: #b7a007;
   padding: 10px;
@@ -55,7 +54,6 @@
 }
 
 .item_buttons:hover {
-  background: #b7a077;
   background: linear-gradient(#b7a007, #e2cda7);
   color: #ffffff;
 }

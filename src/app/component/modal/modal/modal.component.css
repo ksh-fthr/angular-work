@@ -14,10 +14,10 @@
   overflow: hidden;
   height: 200px;
   width: 400px;
-  background-color: rgb(229, 241, 247);
+  background: #f0e6bc;
   border-radius: 15px;
   box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
-  border: solid 1px rgb(0, 0, 0);
+  border: solid 1px #000;
   z-index: 1001;
 }
 
@@ -25,7 +25,7 @@
   height: 20%;
   width: 100%;
   font-size: 1.2em;
-  border-bottom: solid 1px rgb(0, 0, 0);
+  border-bottom: solid 1px #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@
 .modal-footer {
   height: 20%;
   width: 100%;
-  border-top: solid 1px rgb(0, 0, 0);
+  border-top: solid 1px #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,4 +56,8 @@
   width: 30%;
   height: 70%;
   font-size: 1.2em;
+  color: #fff;
+  background: linear-gradient(#ffffff, #b7a007);
+  border: 1px solid #b7a007;
+  border-radius: 20px;
 }
