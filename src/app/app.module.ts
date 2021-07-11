@@ -24,12 +24,17 @@ import { TabAComponent } from './component/tab/tab-a/tab-a.component';
 import { TabBComponent } from './component/tab/tab-b/tab-b.component';
 import { SwitchTabService } from './service/switch-tab/switch-tab.service';
 
-// 子コンポーネントや外部コンテンツの参照を取得する検証コンポーネント/サービス
+// 子コンポーネントや外部コンテンツの参照を取得する検証用コンポーネント/サービス
 import { ReferenceBaseComponent } from './component/reference/reference-base.component';
 import { ContentChildComponent } from './component/reference/content-child/content-child.component';
 import { ContentParentComponent } from './component/reference/content-parent/content-parent.component';
 import { ViewChildComponent } from './component/reference/view-child/view-child.component';
 import { ViewParentComponent } from './component/reference/view-parent/view-parent.component';
+
+// 親子関係にあるコンポーネント間でのデータ受け渡しの検証用コンポーネント/サービス
+import { ParentChildBaseComponent } from './component/parent-child/parent-child-base.component';
+import { ParentComponent } from './component/parent-child/parent/parent.component';
+import { ChildComponent } from './component/parent-child/child/child.component';
 
 
 // Routing を行う対象のコンポーネントを管理する
@@ -60,6 +65,10 @@ const ROUTE_TABLE: Routes = [
     path: 'reference',
     component: ReferenceBaseComponent
   },
+  {
+    path: 'parent-child',
+    component: ParentChildBaseComponent
+  }
 ];
 
 @NgModule({
@@ -78,12 +87,16 @@ const ROUTE_TABLE: Routes = [
     SwitchTabComponent,
     TabAComponent,
     TabBComponent,
-    // 子コンポーネントや外部コンテンツの参照を取得する検証コンポーネント/サービス
+    // 子コンポーネントや外部コンテンツの参照を取得する検証用コンポーネント
     ReferenceBaseComponent,
     ContentChildComponent,
     ContentParentComponent,
     ViewChildComponent,
     ViewParentComponent,
+    // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用コンポーネント
+    ParentChildBaseComponent,
+    ParentComponent,
+    ChildComponent,
   ],
   entryComponents: [
     ModalComponent,
