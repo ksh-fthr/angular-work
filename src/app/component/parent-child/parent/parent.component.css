@@ -1,0 +1,23 @@
+#parent-wrap {
+  height: 100%;
+}
+
+#parent-to-child {
+  height: 50%;
+}
+
+#parent-to-child #header-parent-to-child {
+  font-size: 1.2em;
+}
+
+#child-to-parent {
+  height: 50%
+}
+
+#child-to-parent #header-child-to-parent {
+  font-size: 1.2em;
+}
+
+#event-data {
+  color: crimson;
+}

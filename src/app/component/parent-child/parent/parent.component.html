@@ -1,15 +1,31 @@
-<div>
-  <!--
-    * 親コンポーネントで子コンポーネントのタグをセット
-    * さらにその属性として「子コンポーネント側で@Inputデコレータを付与されたパラメータ」を指定する
-      * こうすることで子コンポーネントにデータを渡すことができる
-    * また「子コンポーネント側で@Outputデコレータで修飾されたパラメータ」に「親コンポーネントで用意したイベントハンドラ」を代入する
-      * これにより子コンポーネントのイベントをキャッチすることができる
-   -->
-  <app-child [dataFromParent]="parentData" (event)="onReceiveEventFromChild($event)"></app-child>
-</div>
-<hr />
-<div>
-  <!-- 子コンポーネントからイベント経由で渡されたデータを表示する -->
-  <p>{{eventData}}</p>
+<div id="parent-wrap">
+  <div id="parent-to-child">
+    <div id="header-parent-to-child">
+      <p>親コンポーネントから子コンポーネントへのデータ授受を確認</p>
+    </div>
+    <div id="body-parent-to-child">
+      <!--
+        * 親コンポーネントで子コンポーネントのタグをセット
+        * さらにその属性として「子コンポーネント側で@Inputデコレータを付与されたパラメータ」を指定する
+          * こうすることで子コンポーネントにデータを渡すことができる
+        * また「子コンポーネント側で@Outputデコレータで修飾されたパラメータ」に「親コンポーネントで用意したイベントハンドラ」を代入する
+          * これにより子コンポーネントのイベントをキャッチすることができる
+      -->
+      <p>次の行に表示しているデータは､親コンポーネントから子コンポーネントに送られたデータです｡</p>
+      <app-child [dataFromParent]="parentData" (event)="onReceiveEventFromChild($event)"></app-child>
+    </div>
+  </div>
+  <hr />
+  <div id="child-to-parent">
+    <div id="header-child-to-parent">
+      <p>子コンポーネントから親コンポーネントへのデータ授受を確認</p>
+    </div>
+    <div id="body-child-to-parent">
+      <!-- 子コンポーネントからイベント経由で渡されたデータを表示する -->
+      <p>次の行には子コンポーネントから発火されたイベント経由で渡されたデータが表示されます｡</p>
+      <p id="event-data">
+        >> {{eventData}}
+      </p>
+    </div>
+  </div>
 </div>
