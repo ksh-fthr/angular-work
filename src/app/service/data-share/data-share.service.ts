@@ -13,26 +13,23 @@ export class DataShareService {
    *
    * @private
    */
-   private sharedDataSource = new Subject<string>();
-
-   /**
-    * Subscribe するためのプロパティ
-    * `- コンポーネント間で共有するためのプロパティ
-    */
-   public sharedDataSource$ = this.sharedDataSource.asObservable();
-
-   /**
-    * コンストラクタ. CommonService のインスタンスを生成する
-    */
-   constructor() {}
-
-   /**
-    * データの更新イベント
-    *
-    * @param {string} updateed 更新データ
-    */
-   public onNotifySharedDataChanged(updateed: string) {
-     console.log('[CommonService] onNotifySharedDataChanged fired.');
-     this.sharedDataSource.next(updateed);
-   }
- }
+  private sharedDataSource = new Subject<string>();
+  /**
+   * Subscribe するためのプロパティ
+   * `- コンポーネント間で共有するためのプロパティ
+   */
+  public sharedDataSource$ = this.sharedDataSource.asObservable();
+  /**
+   * コンストラクタ. DataShareService のインスタンスを生成する
+   */
+  constructor() {}
+  /**
+   * データの更新イベント
+   *
+   * @param {string} updated 更新データ
+   */
+  public onNotifySharedDataChanged(updated: string) {
+    console.log('[DataShareService] onNotifySharedDataChanged fired.');
+    this.sharedDataSource.next(updated);
+  }
+}

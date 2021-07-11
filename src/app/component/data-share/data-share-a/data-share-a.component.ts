@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 
 // subscribe を保持するための Subscription を import
 import { Subscription } from 'rxjs';
@@ -17,59 +17,77 @@ import { DataShareService } from '../../../service/data-share/data-share.service
   //   DataShareService
   // ]
 })
-export class DataShareAComponent implements OnInit {
+export class DataShareAComponent implements OnInit, OnDestroy {
+ /**
+  * DataShareService の変数の参照を取得するプロパティ
+  *
+  * @type {String}
+  */
+  public serviceProp: String = 'Initialized by Component-A';
 
   /**
-   * CommonService の変数の参照を取得するプロパティ
+   * subscribe を保持するための Subscription
    *
-   * @type {String}
+   * @private
+   * @type {Subscription}
    */
-   public serviceProp: String = 'Initialized by Sample1Component';
+  private subscription!: Subscription;
 
-   /**
-    * subscribe を保持するための Subscription
-    *
-    * @private
-    * @type {Subscription}
-    */
-   private subscription!: Subscription;
+  /**
+   * サービスで共有するデータが更新されたかをチェックするためのデータ
+   * @type {string}
+   */
+   private preData: string = this.serviceProp;
 
-   /**
-    * コンストラクタ. ServiceSample1Component のインスタンスを生成する
-    *
-    * @param {CommonService} commonService 共通サービス
-    */
-   constructor(private dataShareService: DataShareService) { }
+  /**
+   * コンストラクタ. ServiceSample1Component のインスタンスを生成する
+   *
+   * @param {DataShareService} dataShareService 共通サービス
+   */
+  constructor(
+    private dataShareService: DataShareService,
+    private el: ElementRef,
+  ) { }
 
-   /**
-    * ライフサイクルメソッド｡コンポーネントの初期化で使用する
-    */
-   ngOnInit(): void {
+  /**
+   * ライフサイクルメソッド｡コンポーネントの初期化で使用する
+   */
+  ngOnInit(): void {
+    // イベント登録
+    // サービスで共有しているデータが更新されたら発火されるイベントをキャッチする
+    this.subscription = this.dataShareService.sharedDataSource$.subscribe(
+      (msg: any) => {
+        console.log('[Component-A] shared data updated.');
+        this.serviceProp = msg;
+      }
+    );
+  }
 
-     // イベント登録
-     // サービスで共有しているデータが更新されたら発火されるイベントをキャッチする
-     this.subscription = this.dataShareService.sharedDataSource$.subscribe(
-       (msg: any) => {
-         console.log('[Sample1Component] shared data updated.');
-         this.serviceProp = msg;
-       }
-     );
-   }
+  /**
+   * コンポーネント終了時の処理
+   */
+  ngOnDestroy(): void {
+    //  リソースリーク防止のため DataShareService から subcribe したオブジェクトを破棄する
+    this.subscription.unsubscribe();
+  }
 
-   /**
-    * コンポーネント終了時の処理
-    */
-   ngOnDestroy(): void {
-     //  リソースリーク防止のため CommonService から subcribe したオブジェクトを破棄する
-     this.subscription.unsubscribe();
-   }
+  /**
+   * View の変更検知処理
+   */
+   ngAfterViewChecked(): void {
+    // 泥臭いがデータ変更が検知されたら描画する
+    // TODO: もっとスマートなやり方があるはず...
+    if (this.preData !== this.serviceProp) {
+      this.el.nativeElement.querySelector('.updated-data-area').style.visibility = 'visible';
+    }
+  }
 
-   /**
-    * ボタンクリック時のイベントハンドラ
-    */
-   onClicSendMessage() {
-     // CommonService のデータ更新を行う
-     console.log('[Sample1Component] onClicSendMessage fired.');
-     this.dataShareService.onNotifySharedDataChanged('Updated by Sample1Component.');
-   }
+  /**
+   * ボタンクリック時のイベントハンドラ
+   */
+  onClicSendMessage() {
+    // DataShareService のデータ更新を行う
+    console.log('[Component-A] onClicSendMessage fired.');
+    this.dataShareService.onNotifySharedDataChanged('Updated by Component-A.');
+  }
 }

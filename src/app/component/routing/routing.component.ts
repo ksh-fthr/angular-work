@@ -10,12 +10,12 @@ export class RoutingComponent implements OnInit {
   /**
    * コンストラクタ( 本コンポーネントではなにもしない )
    */
-   constructor() { }
+  constructor() { }
 
   /**
    * 初期処理
    */
-   ngOnInit(): void {
+  ngOnInit(): void {
   }
 
 }

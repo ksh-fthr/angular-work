@@ -1,0 +1,22 @@
+.event-button {
+  height: 40px;
+  font-size: 1.0em;
+  border-radius: 15px;
+  border: solid 0.5px #b7a007;
+  color: #ffffff;
+  background: linear-gradient(#ffffff, #b7a007);
+}
+
+.initial-data {
+  font-size: 1.1em;
+  color: #b7a007;
+}
+
+.updated-data-area {
+  visibility: hidden;
+}
+
+.updated-data {
+  font-size: 1.1em;
+  color: #b7a007;
+}
