@@ -22,6 +22,7 @@ p {
   color: #b7a007;
   background: linear-gradient(#ffffff, #e2cda7);
   border-radius: 20px 20px 0 0;
+  height: 25px;
 }
 
 #parent-child-body {

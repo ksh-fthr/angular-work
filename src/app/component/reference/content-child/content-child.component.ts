@@ -11,7 +11,6 @@ export class ContentChildComponent {
    * テキストボックスの入力値
    *
    * @type {string}
-   * @memberof ContentChildComponent
    */
   public inputValue: string = '';
 

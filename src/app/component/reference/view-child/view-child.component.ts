@@ -11,7 +11,6 @@ export class ViewChildComponent {
    * テキストボックスの入力値
    *
    * @type {string}
-   * @memberof ViewChildComponent
    */
   public inputValue: string = '';
 

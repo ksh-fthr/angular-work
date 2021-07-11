@@ -23,8 +23,6 @@ export class ModalBaseComponent implements OnInit, OnDestroy  {
 
   /**
    * コンストラクタ
-   *
-   * @memberof AppComponent
    */
   constructor(
     private modalService: ModalService
@@ -32,10 +30,8 @@ export class ModalBaseComponent implements OnInit, OnDestroy  {
 
   /**
    * 初期処理
-   *
-   * @memberof AppComponent
    */
-  ngOnInit() {
+  ngOnInit(): void {
     // モーダルダイアログを閉じた際のイベントを処理する
     this.subscription = this.modalService.closeEventObservable$.subscribe(
       () => {
@@ -48,10 +44,8 @@ export class ModalBaseComponent implements OnInit, OnDestroy  {
 
   /**
    * 終了処理
-   *
-   * @memberof AppComponent
    */
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
@@ -59,7 +53,6 @@ export class ModalBaseComponent implements OnInit, OnDestroy  {
    * クリックイベント
    *
    * @param {*} $event イベント情報
-   * @memberof AppComponent
    */
   public onClick($event: any) {
     this.setModal();
@@ -69,7 +62,6 @@ export class ModalBaseComponent implements OnInit, OnDestroy  {
    * モーダルダイアログを表示する
    *
    * @private
-   * @memberof AppComponent
    */
   private setModal() {
     this.modal = ModalComponent;

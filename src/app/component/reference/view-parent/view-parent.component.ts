@@ -20,7 +20,6 @@ export class ViewParentComponent implements AfterViewChecked {
    * 子コンポーネントの参照から値をセットするためのパラメータ
    *
    * @type {String}
-   * @memberof ViewChildComponent
    */
   public valueBox: String[] = ['', '', ''];
 
@@ -29,7 +28,6 @@ export class ViewParentComponent implements AfterViewChecked {
    * テンプレートで指定した子コンポーネントをリストで取得できる
    *
    * @type {ViewChildComponent}
-   * @memberof ViewParentComponent
    */
   @ViewChildren(ViewChildComponent) viewChildren!: QueryList<ViewChildComponent>;
 
@@ -37,10 +35,8 @@ export class ViewParentComponent implements AfterViewChecked {
 
   /**
    * ビューの変更をフックする
-   *
-   * @memberof ViewParentComponent
    */
-  ngAfterViewChecked() {
+  ngAfterViewChecked(): void {
 
     this.viewChildren.forEach((item, index) => {
       if (this.valueBox[index] !== item.inputValue) {

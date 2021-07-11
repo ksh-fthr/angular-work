@@ -20,7 +20,6 @@ export class ContentParentComponent implements AfterContentChecked {
    * 外部コンテンツの参照から値をセットするためのパラメータ
    *
    * @type {String}
-   * @memberof ContentParentComponent
    */
   public contentValue: String = '';
 
@@ -29,7 +28,6 @@ export class ContentParentComponent implements AfterContentChecked {
    * テンプレートで指定した外部コンテンツを取得できる
    *
    * @type {ContentChildComponent}
-   * @memberof ContentParentComponent
    */
   @ContentChild(ContentChildComponent) contentChild!: ContentChildComponent;
 
@@ -37,10 +35,8 @@ export class ContentParentComponent implements AfterContentChecked {
 
   /**
    * 外部コンテンツの変更をフックする
-   *
-   * @memberof ContentParentComponent
    */
-  ngAfterContentChecked() {
+  ngAfterContentChecked(): void {
 
     if (this.contentValue !== this.contentChild.inputValue) {
       this.contentValue = this.contentChild.inputValue;

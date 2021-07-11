@@ -3,37 +3,38 @@ p {
   padding: 0;
 }
 
-#reference-base-area {
+#data-share-base-area {
   margin: 0 0 0 15px;
   padding: 0;
   width: calc(100% - 20px);
   height: 100%;
 }
 
-#child-component {
-  height: 50%;
-  border: 1px solid #b7a007;
-  border-radius: 20px;
-}
-
-#foregin-contents {
-  height: 50%;
-  border: 1px solid #b7a007;
-  border-radius: 20px;
-}
-
-.reference-header {
+.data-share-header {
   margin: 0;
   padding: 10px 10px;
   color: #b7a007;
   background: linear-gradient(#ffffff, #e2cda7);
   border-radius: 20px 20px 0 0;
+  width: inherit;
   height: 25px;
 }
 
-.reference-body {
+.data-share-body {
   margin: 0;
-  padding: 5px 10px;
+  padding: 0 10px;
+  width: inherit;
   height: 100%;
+}
+
+#data-share-a {
+  border: 1px solid #b7a007;
   border-radius: 20px;
+  height: 50%;
+}
+
+#data-share-b {
+  border: 1px solid #b7a007;
+  border-radius: 20px;
+  height: 50%;
 }
