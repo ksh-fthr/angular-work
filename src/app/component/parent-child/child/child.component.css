@@ -1,3 +1,18 @@
-#sent-data {
-  color: crimson;
+#parent-to-child {
+  padding: 0 20px;
+  color: #b7a007;
+  border: dashed 0.5px;
+  height: 100px;
+  width:90%;
+  display: flex;
+  align-items: center;
+}
+
+#event-button {
+  height: 40px;
+  font-size: 1.0em;
+  border-radius: 15px;
+  border: solid 0.5px #b7a007;
+  color: #ffffff;
+  background: linear-gradient(#ffffff, #b7a007);
 }

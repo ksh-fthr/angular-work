@@ -6,7 +6,7 @@
   height: 50%;
 }
 
-#parent-to-child #header-parent-to-child {
+#header-parent-to-child {
   font-size: 1.2em;
 }
 
@@ -14,10 +14,16 @@
   height: 50%
 }
 
-#child-to-parent #header-child-to-parent {
+#header-child-to-parent {
   font-size: 1.2em;
 }
 
 #event-data {
-  color: crimson;
+  padding: 0 20px;
+  color: #b7a007;
+  border: dashed 0.5px;
+  height: 100px;
+  width: 90%;
+  display: flex;
+  align-items: center;
 }
