@@ -28,8 +28,6 @@ export class SwitchTabComponent implements OnInit {
 
   /**
    * コンストラクタ ( 本コンポーネントではなにもしない )
-   *
-   * @memberof SwitchTabComponent
    */
   constructor(
     private switchTabService: SwitchTabService
@@ -37,10 +35,8 @@ export class SwitchTabComponent implements OnInit {
 
   /**
    * 初期処理
-   *
-   * @memberof SwitchTabComponent
    */
-  ngOnInit() {
+  ngOnInit(): void {
     // view に表示するための情報をここでセットする
     this._tabs = this.switchTabService.tabs;
     this._currentTab = this.switchTabService.getCurrentContents();
@@ -50,7 +46,6 @@ export class SwitchTabComponent implements OnInit {
    * ボタンがクリックされた時のイベントハンドラ
    *
    * @param {any} $event イベント情報
-   * @memberof SwitchTabComponent
    */
   public onClick($event: any) {
     // クリックされたタブに応じて表示するコンテンツ( component ) を切り替える

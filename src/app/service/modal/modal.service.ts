@@ -14,15 +14,11 @@ export class ModalService {
 
   /**
    * コンストラクタ
-   *
-   * @memberof ModalService
    */
   constructor() { }
 
   /**
    * イベント通知のリクエストを処理する( モーダルダイアログを閉じる )
-   *
-   * @memberof ModalService
    */
   public requestCloseModal() {
     this.closeEventSubject.next();

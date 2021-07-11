@@ -12,14 +12,11 @@ export class AppComponent implements OnInit {
    * コンストラクタ ( 本コンポーネントではなにもしない )
    *
    * @param {SwitchTabService} switchTabService
-   * @memberof AppComponent
    */
   constructor() {}
 
   /**
    * 初期処理
-   *
-   * @memberof AppComponent
    */
   ngOnInit(): void { }
 }

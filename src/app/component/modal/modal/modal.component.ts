@@ -14,7 +14,6 @@ export class ModalComponent implements OnInit, OnDestroy {
    * コンストラクタ
    *
    * @param {ModalService} modalService
-   * @memberof ModalComponent
    */
   constructor(
     private modalService: ModalService
@@ -22,17 +21,13 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   /**
    * 初期処理
-   *
-   * @memberof ModalComponent
    */
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   /**
    * 終了処理
-   *
-   * @memberof ModalComponent
    */
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     // モーダルダイアログが閉じたタイミングで出力される
     console.log('destroyed');
   }
@@ -41,7 +36,6 @@ export class ModalComponent implements OnInit, OnDestroy {
    * クリックイベント
    *
    * @param {*} $event イベント情報
-   * @memberof ModalComponent
    */
   public onClick($event: any) {
     this.notifyCloseModal();
@@ -51,7 +45,6 @@ export class ModalComponent implements OnInit, OnDestroy {
    * モーダルダイアログを閉じる
    *
    * @private
-   * @memberof ModalComponent
    */
   private notifyCloseModal() {
     this.modalService.requestCloseModal();

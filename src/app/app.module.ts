@@ -35,6 +35,12 @@ import { ViewParentComponent } from './component/reference/view-parent/view-pare
 import { ParentChildBaseComponent } from './component/parent-child/parent-child-base.component';
 import { ParentComponent } from './component/parent-child/parent/parent.component';
 import { ChildComponent } from './component/parent-child/child/child.component';
+import { DataShareService } from './service/data-share/data-share.service';
+
+// コンポーネント間のデータ共有の検証用コンポーネント/サービス
+import { DataShareBaseComponent } from './component/data-share/data-share-base.component';
+import { DataShareAComponent } from './component/data-share/data-share-a/data-share-a.component';
+import { DataShareBComponent } from './component/data-share/data-share-b/data-share-b.component';
 
 
 // Routing を行う対象のコンポーネントを管理する
@@ -68,6 +74,10 @@ const ROUTE_TABLE: Routes = [
   {
     path: 'parent-child',
     component: ParentChildBaseComponent
+  },
+  {
+    path: 'data-share',
+    component: DataShareBaseComponent
   }
 ];
 
@@ -97,6 +107,9 @@ const ROUTE_TABLE: Routes = [
     ParentChildBaseComponent,
     ParentComponent,
     ChildComponent,
+    DataShareAComponent,
+    DataShareBComponent,
+    DataShareBaseComponent,
   ],
   entryComponents: [
     ModalComponent,
@@ -108,7 +121,8 @@ const ROUTE_TABLE: Routes = [
   ],
   providers: [
     ModalService,
-    SwitchTabService
+    SwitchTabService,
+    DataShareService,
   ],
   bootstrap: [AppComponent]
 })
