@@ -5,6 +5,7 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1000;
+  /* 子要素を中央に配置する */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +27,7 @@
   width: 100%;
   font-size: 1.2em;
   border-bottom: solid 1px #000;
+  /* 子要素を中央に配置する */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,6 +48,7 @@
   height: 20%;
   width: 100%;
   border-top: solid 1px #000;
+  /* 子要素を中央に配置する */
   display: flex;
   justify-content: center;
   align-items: center;

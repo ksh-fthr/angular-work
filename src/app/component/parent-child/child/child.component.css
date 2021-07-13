@@ -3,9 +3,13 @@
   color: #b7a007;
   border: dashed 0.5px;
   height: 100px;
-  width:90%;
+  /* 子要素を中央に配置する */
   display: flex;
   align-items: center;
+}
+
+#sent-data {
+  font-size: 1.1em;
 }
 
 .event-button {

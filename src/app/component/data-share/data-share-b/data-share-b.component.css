@@ -12,11 +12,17 @@
   color: #b7a007;
 }
 
-.updated-data-area {
-  visibility: hidden;
+.updated-data-block {
+  padding: 0 20px;
+  font-size: 1.1em;
+  color: #b7a007;
+  border: dashed 0.5px;
+  height: 50px;
+  /* 子要素を上下中央に配置する */
+  display: flex;
+  align-items: center;
 }
 
 .updated-data {
-  font-size: 1.1em;
-  color: #b7a007;
+  visibility: hidden;
 }
