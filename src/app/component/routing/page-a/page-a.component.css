@@ -1,5 +1,5 @@
 .parent {
-  height: calc(100% - 150px);
+  height: 100%;
 
   /* 子要素を中央に配置する */
   display: flex;

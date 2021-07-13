@@ -37,10 +37,11 @@
   padding: 0;
   height: 80px;
   bottom: 0;
+  border-radius: 0 0 20px 20px;
+  /* 子要素を中央に配置する */
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0 0 20px 20px;
 }
 
 #footer_button {

@@ -1,26 +1,20 @@
 <div class="initial-data-area">
   <p>
-    DataShareService で共有されているデータの初期値は
-  </p>
-  <p class="initial-data">
-    {{this.serviceProp}}
-  </p>
-  <p>
-    です｡<br />
+    DataShareService で共有されているデータの初期値は <font class="initial-data">{{this.serviceProp}}</font> です｡<br />
     下のボタンをクリックすると､各コンポーネントの値を更新します｡
-    ( ↑の初期値の値も一緒に更新されてしまいます )
+    ( ↑の初期値の値も一緒に更新されます )
   </p>
   <input class="event-button" type="button" value="サービス経由でデータを共有していることを確認する" (click)="onClicSendMessage()" />
 </div>
-
+<hr />
 <div class="updated-data-area">
   <p>
     DataShareService で共有されているデータは
   </p>
-  <p class="updated-data">
-    {{this.serviceProp}}
+  <p class="updated-data-block">
+    <font class="updated-data"> {{this.serviceProp}}</font>
   </p>
   <p>
-    に更新されました｡<br />
+  に更新されました｡
   </p>
 </div>

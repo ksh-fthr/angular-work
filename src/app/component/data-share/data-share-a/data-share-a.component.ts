@@ -23,7 +23,7 @@ export class DataShareAComponent implements OnInit, OnDestroy {
   *
   * @type {String}
   */
-  public serviceProp: String = 'Initialized by Component-A';
+  public serviceProp: string = 'Initialized by Component-A';
 
   /**
    * subscribe を保持するための Subscription
@@ -78,7 +78,7 @@ export class DataShareAComponent implements OnInit, OnDestroy {
     // 泥臭いがデータ変更が検知されたら描画する
     // TODO: もっとスマートなやり方があるはず...
     if (this.preData !== this.serviceProp) {
-      this.el.nativeElement.querySelector('.updated-data-area').style.visibility = 'visible';
+      this.el.nativeElement.querySelector('.updated-data').style.visibility = 'visible';
     }
   }
 
