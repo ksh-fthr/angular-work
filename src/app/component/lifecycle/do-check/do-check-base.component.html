@@ -1,4 +1,17 @@
-<label for="inputText">入力項目(親から子に渡る):</label>
-<input class="inputText" name="inputText" type="text" [(ngModel)]="childComponentParameter" />
+<div id="do-check-base-area">
+  <div id="do-check-wrap">
+    <div id="do-check-header">
+      <p>ライフサイクル- ngDoCheck の動きを確認する</p>
+    </div>
 
-<app-do-check-verification [ngOnChangesValue]="childComponentParameter"></app-do-check-verification>
+    <div id="do-check-body">
+      <p>
+        <label for="inputText">入力項目(親から子に渡る): </label>
+        <input class="inputText" name="inputText" type="text" [(ngModel)]="childComponentParameter" />
+        <br />
+        <small class="note">( ngOnChanges を走らせたときの動作を確認する )</small>
+      </p>
+      <app-do-check-verification [ngOnChangesValue]="childComponentParameter"></app-do-check-verification>
+    </div>
+  </div>
+</div>

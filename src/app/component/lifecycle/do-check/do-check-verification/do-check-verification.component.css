@@ -1,0 +1,35 @@
+#do-check-verification-area {
+  height: calc(100% - 50px);
+}
+
+#lifecycle-verification-block {
+  height: 25%;
+}
+
+#log-block {
+  height: 75%;
+}
+
+.input-data {
+  font-size: 1.2em;
+  color: #b7a007;
+}
+
+#log-label {
+  display: block;
+}
+
+#log-text-area {
+  padding: 0 20px;
+  font-size: 1.1em;
+  color: #b7a007;
+  border: dashed 0.5px;
+  height: 85%;
+  width: 90%;
+  resize: none;
+}
+
+.note {
+  color: #f33e33;
+}
+

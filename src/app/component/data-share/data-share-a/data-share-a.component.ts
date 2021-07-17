@@ -46,7 +46,7 @@ export class DataShareAComponent implements OnInit, OnDestroy {
    */
   constructor(
     private dataShareService: DataShareService,
-    private el: ElementRef,
+    private element: ElementRef,
   ) { }
 
   /**
@@ -78,7 +78,7 @@ export class DataShareAComponent implements OnInit, OnDestroy {
     // 泥臭いがデータ変更が検知されたら描画する
     // TODO: もっとスマートなやり方があるはず...
     if (this.preData !== this.serviceProp) {
-      this.el.nativeElement.querySelector('.updated-data').style.visibility = 'visible';
+      this.element.nativeElement.querySelector('.updated-data').style.visibility = 'visible';
     }
   }
 
