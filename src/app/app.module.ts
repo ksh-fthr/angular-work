@@ -42,6 +42,11 @@ import { DataShareBaseComponent } from './component/data-share/data-share-base.c
 import { DataShareAComponent } from './component/data-share/data-share-a/data-share-a.component';
 import { DataShareBComponent } from './component/data-share/data-share-b/data-share-b.component';
 
+// コンポーネントのライフサイクル検証用コンポーネント
+// doCheck の検証
+import { DoCheckBaseComponent } from './component/lifecycle/do-check/do-check-base.component';
+import { DoCheckVerificationComponent } from './component/lifecycle/do-check/do-check-verification/do-check-verification.component';
+
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -49,6 +54,22 @@ import { DataShareBComponent } from './component/data-share/data-share-b/data-sh
 //    '' で [/] のルートパスを指定できる
 //    '*＊' でワイルドカードを指定できる
 const ROUTE_TABLE: Routes = [
+  {
+    path: 'life-cycle-do-check',
+    component: DoCheckBaseComponent
+  },
+  {
+    path: 'parent-child',
+    component: ParentChildBaseComponent
+  },
+  {
+    path: 'reference',
+    component: ReferenceBaseComponent
+  },
+  {
+    path: 'data-share',
+    component: DataShareBaseComponent
+  },
   {
     path: 'routing',
     component: RoutingComponent,
@@ -67,18 +88,6 @@ const ROUTE_TABLE: Routes = [
     path: 'tab',
     component: TabBaseComponent
   },
-  {
-    path: 'reference',
-    component: ReferenceBaseComponent
-  },
-  {
-    path: 'parent-child',
-    component: ParentChildBaseComponent
-  },
-  {
-    path: 'data-share',
-    component: DataShareBaseComponent
-  }
 ];
 
 @NgModule({
@@ -110,6 +119,8 @@ const ROUTE_TABLE: Routes = [
     DataShareAComponent,
     DataShareBComponent,
     DataShareBaseComponent,
+    DoCheckBaseComponent,
+    DoCheckVerificationComponent,
   ],
   entryComponents: [
     ModalComponent,

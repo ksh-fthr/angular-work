@@ -6,9 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-share-base.component.css']
 })
 export class DataShareBaseComponent implements OnInit {
-  title = 'app';
-  childHogeValue: String = 'initial value';
-
   constructor() { }
 
   ngOnInit(): void {
