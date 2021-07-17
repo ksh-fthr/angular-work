@@ -6,8 +6,5 @@ import { Component, AfterContentInit, AfterContentChecked, ContentChild } from '
   styleUrls: ['./reference-base.component.css']
 })
 export class ReferenceBaseComponent {
-  title = 'app';
-  childHogeValue: String = 'initial value';
-
   constructor() {}
 }

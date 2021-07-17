@@ -6,9 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent-child-base.component.css']
 })
 export class ParentChildBaseComponent implements OnInit {
-  title = 'app';
-  childHogeValue: String = 'initial value';
-
   constructor() { }
 
   ngOnInit(): void {
