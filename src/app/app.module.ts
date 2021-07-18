@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
+import { Logging } from './utils/logging';
+
 // ルーティング実装検証用コンポーネント/サービス
 import { RoutingComponent } from './component/routing/routing.component';
 import { PageAComponent } from './component/routing/page-a/page-a.component';
@@ -46,6 +48,9 @@ import { DataShareBComponent } from './component/data-share/data-share-b/data-sh
 // doCheck の検証
 import { DoCheckBaseComponent } from './component/lifecycle/do-check/do-check-base.component';
 import { DoCheckVerificationComponent } from './component/lifecycle/do-check/do-check-verification/do-check-verification.component';
+// onChange の検証
+import { OnChangeBaseComponent } from './component/lifecycle/on-change/on-change-base.component';
+import { OnChangeVerificationComponent } from './component/lifecycle/on-change/on-change-verification/on-change-verification.component';
 
 
 // Routing を行う対象のコンポーネントを管理する
@@ -54,6 +59,10 @@ import { DoCheckVerificationComponent } from './component/lifecycle/do-check/do-
 //    '' で [/] のルートパスを指定できる
 //    '*＊' でワイルドカードを指定できる
 const ROUTE_TABLE: Routes = [
+  {
+    path: 'life-cycle-on-change',
+    component: OnChangeBaseComponent
+  },
   {
     path: 'life-cycle-do-check',
     component: DoCheckBaseComponent
@@ -119,8 +128,13 @@ const ROUTE_TABLE: Routes = [
     DataShareAComponent,
     DataShareBComponent,
     DataShareBaseComponent,
+    // コンポーネントのライフサイクル検証用コンポーネント
+    // doCheck の検証
     DoCheckBaseComponent,
     DoCheckVerificationComponent,
+    // onChange の検証
+    OnChangeBaseComponent,
+    OnChangeVerificationComponent,
   ],
   entryComponents: [
     ModalComponent,
@@ -134,6 +148,7 @@ const ROUTE_TABLE: Routes = [
     ModalService,
     SwitchTabService,
     DataShareService,
+    Logging,
   ],
   bootstrap: [AppComponent]
 })

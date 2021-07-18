@@ -1,13 +1,13 @@
-#do-check-verification-area {
+#on-change-verification-area {
   height: calc(100% - 50px);
 }
 
 #lifecycle-verification-block {
-  height: 25%;
+  height: 10%;
 }
 
 #log-block {
-  height: 75%;
+  height: 90%;
 }
 
 .input-data {
@@ -24,7 +24,7 @@
   font-size: 1.1em;
   color: #b7a007;
   border: dashed 0.5px;
-  height: 85%;
+  height: 90%;
   width: 90%;
   resize: none;
 }

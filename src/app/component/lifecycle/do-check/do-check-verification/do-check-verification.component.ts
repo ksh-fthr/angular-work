@@ -1,5 +1,5 @@
 import { Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-
+import { Logging } from '../../../../utils/logging';
 @Component({
   selector: 'app-do-check-verification',
   templateUrl: './do-check-verification.component.html',
@@ -10,15 +10,15 @@ export class DoCheckVerificationComponent implements OnInit, OnChanges, DoCheck 
   /**
    * ngOnChanges の確認のためのパラメータ
    *
-   * @type {String}
+   * @type {string}
    */
   @Input()
-  ngOnChangesValue: String = '';
+  ngOnChangesValue: string = '';
 
   /**
    * ngDoCheck の確認のためのパラメータ
    */
-  ngDoCheckValue: String = 'Initial Value';
+  ngDoCheckValue: string = 'Initial Value';
 
   /**
    * ログ出力を行うテキストエリアの HTML エレメント
@@ -40,33 +40,30 @@ export class DoCheckVerificationComponent implements OnInit, OnChanges, DoCheck 
 
   ngOnInit(): void {
     // こちらはコンソールログと画面上の両方に出力する
-    console.log('[ngOnInit] fired');
-    this.consoleLog('[ngOnInit] fired');
+    const message: string = '[ngOnInit] fired';
+    console.log(message);
+    Logging.info(this.textAreaElement, message);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // ngOnchanges はライフサイクルの順序上､ ngOninit の先に実行される( @Input で修飾されたデータが存在する場合 )
+    // ngOnchanges はライフサイクルの順序上､ ( @Input で修飾されたデータが存在する場合は )ngOninit の先に実行される.
     // なので､ちょっと気持ち悪いがここで
+    //
     // - 画面上のログ出力先となる HTML 要素の取得
-    // - 画面上にログを出力する処理の定義と変数へのセット
     // を行う
-    // ( ngOninit で行うと this.consoleLog の定義前に実行されるので例外が発生する
+    // ( ngOninit で行うと HTML 要素が取得される前にログ出力を行おうとするので例外が発生する
     this.textAreaElement = this.element.nativeElement.querySelector('#log-text-area');
-    this.consoleLog = ((logTextAreaArgument: HTMLTextAreaElement) => {
-      let logTextArea = logTextAreaArgument;
-      return (text: string) => {
-        logTextArea.value+=text+'\n';
-      }
-    })(this.textAreaElement);
 
     // こちらもコンソールログと画面上の両方に出力する
-    console.log(`[ngOnChanges] fired. ngOnChangesValue={ ${this.ngOnChangesValue} }`);
-    this.consoleLog(`[ngOnChanges] fired. ngOnChangesValue={ ${this.ngOnChangesValue} }`);
+    const message: string = `[ngOnChanges] fired. ngOnChangesValue={ ${this.ngOnChangesValue} }`;
+    console.log(message);
+    Logging.info(this.textAreaElement, message);
   }
 
   ngDoCheck(): void {
     // こちらもコンソールログと画面上の両方に出力する
-    console.log(`[ngDoCheck] fired. ngDoCheckValue={ ${this.ngDoCheckValue} }` );
-    this.consoleLog(`[ngDoCheck] fired. ngDoCheckValue={ ${this.ngDoCheckValue} }` );
+    const message: string = `[ngDoCheck] fired. ngDoCheckValue={ ${this.ngDoCheckValue} }`;
+    console.log(message);
+    Logging.info(this.textAreaElement, message);
   }
 }

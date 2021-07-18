@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoCheckBaseComponent implements OnInit {
   title = 'app';
-  childComponentParameter: String = 'initial value';
+  childComponentParameter: string = 'initial value';
 
   constructor() { }
 

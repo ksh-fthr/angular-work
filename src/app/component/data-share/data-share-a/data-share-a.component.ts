@@ -21,7 +21,7 @@ export class DataShareAComponent implements OnInit, OnDestroy {
  /**
   * DataShareService の変数の参照を取得するプロパティ
   *
-  * @type {String}
+  * @type {string}
   */
   public serviceProp: string = 'Initialized by Component-A';
 
