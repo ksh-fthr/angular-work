@@ -50,8 +50,9 @@ export class DoCheckVerificationComponent implements OnInit, OnChanges, DoCheck 
     // なので､ちょっと気持ち悪いがここで
     //
     // - 画面上のログ出力先となる HTML 要素の取得
+    //
     // を行う
-    // ( ngOninit で行うと HTML 要素が取得される前にログ出力を行おうとするので例外が発生する
+    // ( ngOninit で行うと HTML 要素が取得される前にログ出力を行おうとするので例外が発生する )
     this.textAreaElement = this.element.nativeElement.querySelector('#log-text-area');
 
     // こちらもコンソールログと画面上の両方に出力する
