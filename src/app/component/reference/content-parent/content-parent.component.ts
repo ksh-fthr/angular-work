@@ -19,9 +19,9 @@ export class ContentParentComponent implements AfterContentChecked {
   /**
    * 外部コンテンツの参照から値をセットするためのパラメータ
    *
-   * @type {String}
+   * @type {string}
    */
-  public contentValue: String = '';
+  public contentValue: string = '';
 
   /**
    * 外部コンテンツの参照

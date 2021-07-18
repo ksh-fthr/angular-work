@@ -16,14 +16,14 @@ export class ChildComponent implements OnInit {
   /**
    * 親コンポーネントから受け取るデータ(文字列)をセットするパラメータ
    *
-   * @type {String}
+   * @type {string}
    */
-  @Input() dataFromParent: String = '';
+  @Input() dataFromParent: string = '';
 
   /**
    * 親コンポーネントに対してイベントを発火するためのパラメータ
    */
-  @Output() event = new EventEmitter<String>();
+  @Output() event = new EventEmitter<string>();
 
   constructor() { }
 

@@ -19,9 +19,9 @@ export class ViewParentComponent implements AfterViewChecked {
   /**
    * 子コンポーネントの参照から値をセットするためのパラメータ
    *
-   * @type {String}
+   * @type {string}
    */
-  public valueBox: String[] = ['', '', ''];
+  public valueBox: string[] = ['', '', ''];
 
   /**
    * 子コンポーネントの参照

@@ -39,6 +39,7 @@
 .items {
   display: inline-block;
   margin: 0; /* この指定で各項目にある `･` を消す */
+  width: 97%;
 }
 
 .item_buttons {
@@ -46,11 +47,11 @@
   display: inline-block;
   background: linear-gradient(#ffffff, #e2cda7);
   color: #b7a007;
-  padding: 10px;
+  padding: 10px 5px 10px 5px;
   border: 1px solid #b7a007;
   border-radius: 5px;
   margin: 5px 0 !important;
-  width: 180px;
+  width: inherit;
 }
 
 .item_buttons:hover {

@@ -1,0 +1,17 @@
+<div id="on-change-base-area">
+  <div id="on-change-wrap">
+    <div id="on-change-header">
+      <p>ライフサイクル- ngOnChange の動きを確認する</p>
+    </div>
+
+    <div id="on-change-body">
+      <p>
+        <label for="inputText">入力項目: </label>
+        <input id="inputText" name="inputText" type="text" [(ngModel)]="childComponentParameter" />
+        <br />
+        <small class="note">( ngOnChanges を走らせたときの動作を確認する )</small>
+      </p>
+      <app-on-change-verification [ngOnChangesValue]="childComponentParameter"></app-on-change-verification>
+    </div>
+  </div>
+</div>
