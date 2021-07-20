@@ -1,0 +1,28 @@
+<div>
+  <div class="block-header">
+    <p>ng-content の動きを理解するためのブロック</p>
+  </div>
+
+  <div class="block-body">
+    <app-ng-content-parent>
+    </app-ng-content-parent>
+  </div>
+</div>
+
+<div>
+  <div class="block-header">
+    <p>AfterContent の動きを理解するためのブロック</p>
+  </div>
+
+  <div class="block-body">
+    <app-after-content-parent>
+      <!-- 対応する select 属性が付与されたタグに埋め込まれる -->
+      <!-- # class 属性を削除するとコンテンツが表示されなくなるので試してみてください -->
+      <app-after-content-child class="external-contents-component">
+      </app-after-content-child>
+      <p class="external-contents-sentence">
+        外部コンテンツとして文を埋め込む
+      </p>
+    </app-after-content-parent>
+  </div>
+</div>
