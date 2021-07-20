@@ -1,22 +1,43 @@
-div {
-  margin: 0;
-  padding: 0;
-}
-
 p {
   margin: 0;
   padding: 0;
 }
 
-.block-header {
-  margin: 15px 0 0 0;
-  padding: 10px 10px;
-  background: rgb(82, 109, 228);
-  color: rgb(255, 255, 255);
+#after-content-base-area {
+  margin: 0 0 0 15px;
+  padding: 0;
+  width: calc(100% - 20px);
+  height: 100%;
 }
 
-.block-body {
+#ng-content-verification-block, #after-content-verification-block {
+  border: 1px solid #b7a007;
+  border-radius: 20px;
+}
+
+#ng-content-verification-block {
+  height: 30%;
+}
+
+#after-content-verification-block {
+  height: 70%;
+}
+
+.after-content-block-header {
+  margin: 0;
+  padding: 10px 10px;
+  color: #b7a007;
+  background: linear-gradient(#ffffff, #e2cda7);
+  border-radius: 20px 20px 0 0;
+  height: 25px;
+}
+
+.after-content-block-body {
   margin: 0;
   padding: 5px 10px;
-  background: rgb(219, 210, 224);
+  height: calc(100% - 50px);
+}
+
+.note {
+  color: #f33e33;
 }

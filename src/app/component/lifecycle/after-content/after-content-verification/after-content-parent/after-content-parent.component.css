@@ -1,17 +1,26 @@
-#log-block-parent {
-  height: 90%;
+#after-content-parent-area {
+  height: 95%;
 }
 
-#log-label-parent {
-  display: block;
+#external-content-verification-1 {
+  height:55%;
 }
 
-#log-text-area-parent {
+#external-content-verification-2 {
+  height:40%;
+}
+
+#set-contents-by-class-and-select-block {
   padding: 0 20px;
   font-size: 1.1em;
   color: #b7a007;
   border: dashed 0.5px;
-  height: 90%;
-  width: 90%;
-  resize: none;
+  height: 70px;
+  /* 子要素を上下中央に配置する */
+  display: flex;
+  align-items: center;
+}
+
+.note {
+  color: #f33e33;
 }
