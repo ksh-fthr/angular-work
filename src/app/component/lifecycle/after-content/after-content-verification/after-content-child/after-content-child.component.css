@@ -1,0 +1,17 @@
+#log-block-child {
+  height: 90%;
+}
+
+#log-label-child {
+  display: block;
+}
+
+#log-text-area-child {
+  padding: 0 20px;
+  font-size: 1.1em;
+  color: #b7a007;
+  border: dashed 0.5px;
+  height: 90%;
+  width: 90%;
+  resize: none;
+}
