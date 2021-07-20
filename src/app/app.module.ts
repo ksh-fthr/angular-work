@@ -51,6 +51,12 @@ import { DoCheckVerificationComponent } from './component/lifecycle/do-check/do-
 // onChange の検証
 import { OnChangeBaseComponent } from './component/lifecycle/on-change/on-change-base.component';
 import { OnChangeVerificationComponent } from './component/lifecycle/on-change/on-change-verification/on-change-verification.component';
+// AfterContentInit と AfterContentChecked の検証
+import { AfterContentBaseComponent } from './component/lifecycle/after-content/after-content-base.component';
+import { AfterContentParentComponent } from './component/lifecycle/after-content/after-content-verification/after-content-parent/after-content-parent.component';
+import { AfterContentChildComponent } from './component/lifecycle/after-content/after-content-verification/after-content-child/after-content-child.component';
+import { NgContentParentComponent } from './component/lifecycle/after-content/ng-content-verification/ng-content-parent/ng-content-parent.component';
+import { NgContentChildComponent } from './component/lifecycle/after-content/ng-content-verification/ng-content-child/ng-content-child.component';
 
 
 // Routing を行う対象のコンポーネントを管理する
@@ -66,6 +72,10 @@ const ROUTE_TABLE: Routes = [
   {
     path: 'life-cycle-do-check',
     component: DoCheckBaseComponent
+  },
+  {
+    path: 'life-cycle-after-content',
+    component: AfterContentBaseComponent
   },
   {
     path: 'parent-child',
@@ -135,6 +145,12 @@ const ROUTE_TABLE: Routes = [
     // onChange の検証
     OnChangeBaseComponent,
     OnChangeVerificationComponent,
+    // AfterContentInit と AfterContentChecked の検証
+    AfterContentBaseComponent,
+    AfterContentParentComponent,
+    AfterContentChildComponent,
+    NgContentParentComponent,
+    NgContentChildComponent,
   ],
   entryComponents: [
     ModalComponent,

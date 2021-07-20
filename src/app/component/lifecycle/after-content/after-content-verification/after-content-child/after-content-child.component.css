@@ -1,0 +1,21 @@
+#after-content-child-area {
+  height: 100%;
+}
+
+#log-block-child {
+  height: 70%;
+}
+
+#log-label-child {
+  display: block;
+}
+
+#log-text-area-child {
+  padding: 0 20px;
+  font-size: 1.1em;
+  color: #b7a007;
+  border: solid 0.5px;
+  height: 60%;
+  width: 90%;
+  resize: none;
+}

@@ -14,11 +14,6 @@ export class OnChangeVerificationComponent implements OnInit, OnChanges {
    */
    private textAreaElement: any;
 
-   /**
-    * ログを画面上に出力するための関数をセットする入れ物
-    */
-   private consoleLog: any;
-
   constructor(
     private element: ElementRef,
   ) {

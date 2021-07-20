@@ -3,26 +3,27 @@ p {
   padding: 0;
 }
 
-#reference-base-area {
+#after-content-base-area {
   margin: 0 0 0 15px;
   padding: 0;
   width: calc(100% - 20px);
   height: 100%;
 }
 
-#child-component {
-  height: 50%;
+#ng-content-verification-block, #after-content-verification-block {
   border: 1px solid #b7a007;
   border-radius: 20px;
 }
 
-#external-contents {
-  height: 50%;
-  border: 1px solid #b7a007;
-  border-radius: 20px;
+#ng-content-verification-block {
+  height: 30%;
 }
 
-.reference-header {
+#after-content-verification-block {
+  height: 70%;
+}
+
+.after-content-block-header {
   margin: 0;
   padding: 10px 10px;
   color: #b7a007;
@@ -31,9 +32,12 @@ p {
   height: 25px;
 }
 
-.reference-body {
+.after-content-block-body {
   margin: 0;
   padding: 5px 10px;
-  height: 100%;
-  border-radius: 20px;
+  height: calc(100% - 50px);
+}
+
+.note {
+  color: #f33e33;
 }

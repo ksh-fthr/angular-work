@@ -9,7 +9,7 @@
         <label for="inputText">入力項目: </label>
         <input id="inputText" name="inputText" type="text" [(ngModel)]="childComponentParameter" />
         <br />
-        <small class="note">( ngOnChanges を走らせたときの動作を確認する )</small>
+        <small class="note">( <strong>ngOnChanges</strong> を走らせたときの動きをログで確認します )</small>
       </p>
       <app-on-change-verification [ngOnChangesValue]="childComponentParameter"></app-on-change-verification>
     </div>
