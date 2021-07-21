@@ -1,5 +1,5 @@
 #do-check-verification-area {
-  height: calc(100% - 50px);
+  height: calc(100% - 80px);
 }
 
 .lifecycle-verification-block {
@@ -24,7 +24,7 @@
   font-size: 1.1em;
   color: #b7a007;
   border: solid 0.5px;
-  height: 88%;
+  height: 90%;
   width: 90%;
   resize: none;
 }

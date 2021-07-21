@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./on-change-base.component.css']
 })
 export class OnChangeBaseComponent implements OnInit {
-  childComponentParameter: string = 'initial value';
+  childComponentParameter = 'initial value';
 
   constructor() { }
 
