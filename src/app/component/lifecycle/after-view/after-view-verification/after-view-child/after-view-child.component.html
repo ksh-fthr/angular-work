@@ -1,0 +1,16 @@
+<div id="after-view-child-area">
+  <div class="lifecycle-verification-block">
+    <p>
+      子コンポーネントの入力フォームからビューの変更を確認する｡<br />
+      <small class="note">( <strong>ngAfterViewInit</strong> と <strong>ngAfterViewChecked</strong> を走らせたときの動きをログで確認します )</small>
+    </p>
+
+    <label for="inputText">入力項目(子): </label>
+    <input class="inputText" name="inputText" type="text" [(ngModel)]="ngAfterViewCheckValue" />
+  </div>
+
+  <div class="log-block">
+    <label class="log-label">ログ出力</label>
+    <textarea readonly class="log-text-area"></textarea>
+  </div>
+</div>

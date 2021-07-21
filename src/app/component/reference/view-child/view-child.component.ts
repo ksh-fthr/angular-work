@@ -9,10 +9,8 @@ export class ViewChildComponent {
 
   /**
    * テキストボックスの入力値
-   *
-   * @type {string}
    */
-  public inputValue: string = '';
+  public inputValue = '';
 
   constructor() { }
 }

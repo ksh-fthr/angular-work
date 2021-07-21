@@ -1,4 +1,8 @@
-#parent-to-child {
+#child-wrap {
+  height: 100%;
+}
+
+#sent-data {
   padding: 0 20px;
   color: #b7a007;
   border: dashed 0.5px;
@@ -6,6 +10,14 @@
   /* 子要素を中央に配置する */
   display: flex;
   align-items: center;
+}
+
+#parent-to-child {
+  height: 40%;
+}
+
+#child-to-parent {
+  height: 30%;
 }
 
 #sent-data {

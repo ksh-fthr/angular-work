@@ -57,6 +57,10 @@ import { AfterContentParentComponent } from './component/lifecycle/after-content
 import { AfterContentChildComponent } from './component/lifecycle/after-content/after-content-verification/after-content-child/after-content-child.component';
 import { NgContentParentComponent } from './component/lifecycle/after-content/ng-content-verification/ng-content-parent/ng-content-parent.component';
 import { NgContentChildComponent } from './component/lifecycle/after-content/ng-content-verification/ng-content-child/ng-content-child.component';
+// AfterViewInit と AfterViewChecked の検証
+import { AfterViewBaseComponent } from './component/lifecycle/after-view/after-view-base.component';
+import { AfterViewParentComponent } from './component/lifecycle/after-view/after-view-verification/after-view-parent/after-view-parent.component';
+import { AfterViewChildComponent } from './component/lifecycle/after-view/after-view-verification/after-view-child/after-view-child.component';
 
 
 // Routing を行う対象のコンポーネントを管理する
@@ -76,6 +80,10 @@ const ROUTE_TABLE: Routes = [
   {
     path: 'life-cycle-after-content',
     component: AfterContentBaseComponent
+  },
+  {
+    path: 'life-cycle-after-view',
+    component: AfterViewBaseComponent
   },
   {
     path: 'parent-child',
@@ -151,6 +159,10 @@ const ROUTE_TABLE: Routes = [
     AfterContentChildComponent,
     NgContentParentComponent,
     NgContentChildComponent,
+    // AfterViewInit と AfterViewChecked の検証
+    AfterViewBaseComponent,
+    AfterViewParentComponent,
+    AfterViewChildComponent,
   ],
   entryComponents: [
     ModalComponent,

@@ -1,12 +1,12 @@
 #on-change-verification-area {
-  height: calc(100% - 50px);
+  height: calc(100% - 70px);
 }
 
-#lifecycle-verification-block {
+.lifecycle-verification-block {
   height: 10%;
 }
 
-#log-block {
+.log-block {
   height: 90%;
 }
 
@@ -15,11 +15,11 @@
   color: #b7a007;
 }
 
-#log-label {
+.log-label {
   display: block;
 }
 
-#log-text-area {
+.log-text-area {
   padding: 0 20px;
   font-size: 1.1em;
   color: #b7a007;

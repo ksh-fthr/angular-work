@@ -1,0 +1,17 @@
+#after-view-parent-area {
+  margin: 0;
+  padding: 0;
+  height: calc(100% - 15px);
+}
+
+#after-view-parent-block {
+  height: 15%;;
+}
+
+#after-view-child-block {
+  height: 80%;
+}
+
+.note {
+  color: #f33e33;
+}

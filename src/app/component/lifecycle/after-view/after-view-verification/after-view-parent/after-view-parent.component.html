@@ -1,0 +1,19 @@
+<div id="after-view-parent-area">
+  <div id="after-view-parent-block">
+    <p>
+      親コンポーネントの入力フォームからビューの変更を確認する｡<br />
+      <small class="note">( <strong>ngAfterViewInit</strong> と <strong>ngAfterViewChecked</strong> を走らせたときの動きをログで確認します )</small>
+    </p>
+
+    <label for="inputText">入力項目(親): </label>
+    <input class="inputText" name="inputText" type="text" [(ngModel)]="ngAfterViewCheckValue" />
+  </div>
+
+  <hr />
+
+  <div id="after-view-child-block">
+    <!-- 子コンポーネントを登録 -->
+    <app-after-view-child>
+    </app-after-view-child>
+  </div>
+</div>

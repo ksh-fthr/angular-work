@@ -2,12 +2,8 @@
   height: 90%;
 }
 
-#header-parent-to-child {
-  font-size: 1.2em;
-}
-
-#header-child-to-parent {
-  font-size: 1.2em;
+#parent-to-child, #child-to-parent {
+  height: 50%;
 }
 
 #event-data {
