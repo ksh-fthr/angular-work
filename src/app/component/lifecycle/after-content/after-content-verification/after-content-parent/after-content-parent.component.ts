@@ -13,12 +13,12 @@ export class AfterContentParentComponent implements OnInit {
   @ContentChild(AfterContentChildComponent) child!: AfterContentChildComponent;
 
   // 子コンポーネントのパラメータの値をセットする変数
-  private parentContents: string = '';
+  private parentContents = '';
 
   /**
    * ログ出力を行うテキストエリアの HTML エレメント
    */
-   private textAreaElement: any;
+  private textAreaElement: any;
 
   constructor(
     private element: ElementRef,
@@ -35,7 +35,7 @@ export class AfterContentParentComponent implements OnInit {
     // 画面上のログは外部コンテンツのエリアに出力する
     this.textAreaElement = this.element.nativeElement.querySelector('.log-text-area');
 
-    const message: string = '[AfterContentParentComponent][ngOnInit] fired';
+    const message = '[AfterContentParentComponent][ngOnInit] fired';
     console.log(message);
     Logging.info(this.textAreaElement, message);
   }
@@ -46,7 +46,7 @@ export class AfterContentParentComponent implements OnInit {
   ngAfterContentInit() {
     this.parentContents = this.child.childContents;
 
-    const message: string = `[AfterContentParentComponent][ngAfterContentInit] fired. parentContents={ ${this.parentContents} }`;
+    const message = `[AfterContentParentComponent][ngAfterContentInit] fired. parentContents={ ${this.parentContents} }`;
     console.log(message);
     Logging.info(this.textAreaElement, message);
   }
@@ -57,7 +57,7 @@ export class AfterContentParentComponent implements OnInit {
   ngAfterContentChecked() {
     this.parentContents = this.child.childContents;
 
-    const message: string = `[AfterContentParentComponent][ngAfterContentChecked] fired. parentContents={ ${this.parentContents} }`;
+    const message = `[AfterContentParentComponent][ngAfterContentChecked] fired. parentContents={ ${this.parentContents} }`;
     console.log(message);
     Logging.info(this.textAreaElement, message);
   }
