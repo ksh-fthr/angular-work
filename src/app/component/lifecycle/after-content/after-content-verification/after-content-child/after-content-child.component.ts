@@ -28,7 +28,7 @@ export class AfterContentChildComponent implements OnInit {
     const message: string = `[AfterContentChildComponent][ngOnInit] fired. childContents={ ${this.childContents} }`;
     console.log(message);
 
-    this.textAreaElement = this.element.nativeElement.querySelector('#log-text-area-child');
+    this.textAreaElement = this.element.nativeElement.querySelector('.log-text-area');
     Logging.info(this.textAreaElement, message);
   }
 

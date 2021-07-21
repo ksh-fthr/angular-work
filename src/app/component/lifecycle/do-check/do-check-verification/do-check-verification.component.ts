@@ -48,7 +48,7 @@ export class DoCheckVerificationComponent implements OnInit, OnChanges, DoCheck 
     //
     // を行う
     // ( ngOninit で行うと HTML 要素が取得される前にログ出力を行おうとするので例外が発生する )
-    this.textAreaElement = this.element.nativeElement.querySelector('#log-text-area');
+    this.textAreaElement = this.element.nativeElement.querySelector('.log-text-area');
 
     // こちらもコンソールログと画面上の両方に出力する
     const message: string = `[ngOnChanges] fired. ngOnChangesValue={ ${this.ngOnChangesValue} }`;

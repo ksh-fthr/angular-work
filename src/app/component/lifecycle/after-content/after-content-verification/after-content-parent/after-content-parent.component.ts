@@ -33,7 +33,7 @@ export class AfterContentParentComponent implements OnInit {
    */
   ngOnInit() {
     // 画面上のログは外部コンテンツのエリアに出力する
-    this.textAreaElement = this.element.nativeElement.querySelector('#log-text-area-child');
+    this.textAreaElement = this.element.nativeElement.querySelector('.log-text-area');
 
     const message: string = '[AfterContentParentComponent][ngOnInit] fired';
     console.log(message);
