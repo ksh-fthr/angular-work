@@ -1,0 +1,22 @@
+div {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.block-header {
+  margin: 15px 0 0 0;
+  padding: 10px 10px;
+  background: rgb(82, 109, 228);
+  color: rgb(255, 255, 255);
+}
+
+.block-body {
+  margin: 0;
+  padding: 5px 10px;
+  background: rgb(219, 210, 224);
+}

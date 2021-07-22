@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // form を作成するために必要
 import { FormsModule } from '@angular/forms';
+// HTTP クライアントのための import
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
@@ -62,6 +64,10 @@ import { AfterViewBaseComponent } from './component/lifecycle/after-view/after-v
 import { AfterViewParentComponent } from './component/lifecycle/after-view/after-view-verification/after-view-parent/after-view-parent.component';
 import { AfterViewChildComponent } from './component/lifecycle/after-view/after-view-verification/after-view-child/after-view-child.component';
 
+// Http モジュールを利用した Http クライアントの実装検証用コンポーネント/サービス
+import { HttpClientBaseComponent } from './component/http-client/http-client-base.component';
+import { HttpClientVerificationComponent } from './component/http-client/http-client-verification/http-client-verification.component';
+import { HttpClientService } from './service/http-client/http-client.service';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -69,6 +75,10 @@ import { AfterViewChildComponent } from './component/lifecycle/after-view/after-
 //    '' で [/] のルートパスを指定できる
 //    '*＊' でワイルドカードを指定できる
 const ROUTE_TABLE: Routes = [
+  {
+    path: '',
+    component: OnChangeBaseComponent
+  },
   {
     path: 'life-cycle-on-change',
     component: OnChangeBaseComponent
@@ -114,6 +124,10 @@ const ROUTE_TABLE: Routes = [
   {
     path: 'tab',
     component: TabBaseComponent
+  },
+  {
+    path: 'http-client',
+    component: HttpClientBaseComponent
   },
 ];
 
@@ -163,6 +177,9 @@ const ROUTE_TABLE: Routes = [
     AfterViewBaseComponent,
     AfterViewParentComponent,
     AfterViewChildComponent,
+    // Http モジュールを利用した Http クライアントの実装検証用コンポーネント/サービス
+    HttpClientBaseComponent,
+    HttpClientVerificationComponent,
   ],
   entryComponents: [
     ModalComponent,
@@ -171,11 +188,13 @@ const ROUTE_TABLE: Routes = [
     BrowserModule,
     RouterModule.forRoot(ROUTE_TABLE), // 追加. routing の情報を登録する
     FormsModule,
+    HttpClientModule,
   ],
   providers: [
     ModalService,
     SwitchTabService,
     DataShareService,
+    HttpClientService,
     Logging,
   ],
   bootstrap: [AppComponent]
