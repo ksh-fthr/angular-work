@@ -1,0 +1,45 @@
+table.table {
+  width: 100%;
+  border: solid 0.5px rgb(100, 100, 120);
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background: rgb(221, 221, 245);
+}
+
+tr:nth-child(odd) {
+  background: rgb(211, 211, 247);
+}
+
+th {
+  background: rgb(172, 172, 241);
+  color: rgb(107, 114, 124);
+  border: solid 0.5px rgb(100, 100, 120);
+}
+
+th#th-id {
+  width: 10%;
+}
+
+th#th-message {
+  width: 90%;
+}
+
+td {
+  color: rgb(107, 114, 124);
+  border: solid 0.5px rgb(100, 100, 120);
+  text-align: center;
+}
+
+form {
+  width: 100%;
+}
+
+input#form-id {
+  width: 9%;
+}
+
+input#form-message {
+  width: 89%;
+}
