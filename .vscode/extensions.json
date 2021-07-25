@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "vismalietuva.vscode-angular-support",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-complete-tag",
+    "steoates.autoimport",
+    "formulahendry.auto-rename-tag",
+    "wmaurer.change-case",
+    "naumovs.color-highlight",
+    "ms-azuretools.vscode-docker",
+    "dbaeumer.vscode-eslint",
+    "mhutchie.git-graph",
+    "donjayamanne.githistory",
+    "vincaslt.highlight-matching-tag",
+    "ms-ceintl.vscode-language-pack-ja",
+    "esbenp.prettier-vscode",
+    "wayou.vscode-todo-highlight"
+  ]
+}
