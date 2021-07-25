@@ -2,15 +2,26 @@
   "git.ignoreLimitWarning": true,
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
-
   // editor
   "editor.tabSize": 2,
   "editor.tabCompletion": "on",
   "editor.insertSpaces": true,
   "editor.wordWrap": "off",
-  "editor.autoIndent": true,
-  "editor.matchBrackets": true,
-
+  "editor.autoIndent": "full",
+  "editor.matchBrackets": "always",
+  "editor.formatOnSave": true,  // ファイル保存時にPrettierでフォーマット
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // ファイル保存時にESLintでフォーマット
+  },
+  // フォーマッタをprettierに指定
+  "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // html
   "html.format.wrapLineLength": 0,
   "html.format.enable": false,
@@ -18,31 +29,14 @@
   "html.format.indentInnerHtml": true,
   "html.suggest.html5": true,
   "html.format.wrapAttributes": "preserve",
-
-  // typescript, javascript
+  // javascript/typescript
   "javascript.preferences.quoteStyle": "single",
   "prettier.singleQuote": true,
-  "prettier.eslintIntegration": true,
-  "prettier.tslintIntegration": true,
+  "prettier.jsxSingleQuote": true,
   "typescript.preferences.quoteStyle": "single",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "tslint.configFile": "./tslint.json",
-  "tslint.alwaysShowRuleFailuresAsWarnings": true,
-
-  // --------------------------------------------------------------
-  // ファイル保存時に tslint.json のルールに則って自動整形する
-  // --------------------------------------------------------------
-  // エディタの自動整形機能は Off にしておく
-  "editor.formatOnSave": false,
-  "editor.formatOnPaste": false,
-  "editor.formatOnType": false,
-  // 下記の [1], [2] いずれかが設定されていれば良い
-  // [1] TSLint の設定 ( https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin ) が必要
-  "editor.codeActionsOnSave": {
-    "source.fixAll.tslint": true
-  },
-  // [2] TSLint(deprecated) の設定 ( https://marketplace.visualstudio.com/items?itemName=eg2.tslint ) が必要
-  "tslint.autoFixOnSave": true,
+  "eslint.format.enable": true,
+  // カラーテーマ
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#fa1b49",
     "activityBar.activeBorder": "#155e02",
@@ -59,5 +53,5 @@
     "titleBar.inactiveBackground": "#dd053199",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#dd0531"
+  "peacock.color": "#dd0531",
 }

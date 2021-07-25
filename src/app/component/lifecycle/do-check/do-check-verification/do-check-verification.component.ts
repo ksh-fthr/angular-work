@@ -3,10 +3,9 @@ import { Logging } from '../../../../utils/logging';
 @Component({
   selector: 'app-do-check-verification',
   templateUrl: './do-check-verification.component.html',
-  styleUrls: ['./do-check-verification.component.css']
+  styleUrls: ['./do-check-verification.component.css'],
 })
 export class DoCheckVerificationComponent implements OnInit, OnChanges, DoCheck {
-
   /**
    * ngOnChanges の確認のためのパラメータ
    *
@@ -25,9 +24,7 @@ export class DoCheckVerificationComponent implements OnInit, OnChanges, DoCheck 
    */
   private textAreaElement: any;
 
-  constructor(
-    private element: ElementRef,
-  ) {
+  constructor(private element: ElementRef) {
     // コンストラクタは画面描画の前に実行されるので画面上の要素を取得することができない
     // よって､ここではコンソールログに出力するだけになる
     console.log('[constructor] fired');
