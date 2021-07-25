@@ -1,10 +1,31 @@
 <div id="http-client-verification-area">
+  <div id="http-client-verification-note">
+    <div id="http-client-verification-note-items">
+      <p>
+        ※ 注釈 ※<br />
+        このコンポーネントの確認を行う際は､予め次のリポジトリのいずれかを取得してきて起動しておいてください｡
+      </p>
+      <ul>
+        <li><a href="https://github.com/ksh-fthr/express-work">express-work</a></li>
+        <li><a href="https://github.com/ksh-fthr/backend-in-docker">backend-in-docker</a></li>
+      </ul>
+      <p>
+        また Angular アプリの起動は <code>npm run start</code> で行って下さい｡<br />
+      </p>
+    </div>
+  </div>
+
   <div id="http-client-verification-header">
+    <div id="http-client-verification-header-items">
     <p id="header-caption">
-      バックエンドから取得したメッセージリスト<br />
-      <small class="header-note">メッセージを登録する際は入力フォームにメッセージを入力して｢登録｣ボタンを実行してください</small>
-      <small class="header-note">メッセージを削除する際は削除したい入力フォームにフォーカスして｢削除｣ボタンを実行してください</small>
+      バックエンドから取得したメッセージリスト
     </p>
+      <ul>
+        <li class="header-note">メッセージを登録する際はメッセージを入力して｢<font class="font-decoration"> 登録 </font>｣ボタンを実行してください</li>
+        <li class="header-note">メッセージを更新する際はメッセージを入力して｢<font class="font-decoration"> 更新 </font>｣ボタンを実行してください</li>
+        <li class="header-note">メッセージを削除する際はIDを指定して｢<font class="font-decoration"> 削除 </font>｣ボタンを実行してください</li>
+      </ul>
+    </div>
   </div>
 
   <div id="http-client-verification-body">
@@ -28,7 +49,6 @@
       </form>
     </div>
   </div>
-
   <div id="http-client-verification-footer">
     <input type="button" class="event-button" id="register" value="登録" (click)="onClickRegister($event)">
     <input type="button" class="event-button" id="update" value="更新" (click)="onClickUpdate($event)">
