@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 
 import { Logging } from './utils/logging';
 
+// TOP ページ用の README
+import { ReadmeComponent } from './component/readme/readme.component';
+
 // ルーティング実装検証用コンポーネント/サービス
 import { RoutingComponent } from './component/routing/routing.component';
 import { PageAComponent } from './component/routing/page-a/page-a.component';
@@ -77,35 +80,47 @@ import { HttpClientService } from './service/http-client/http-client.service';
 const ROUTE_TABLE: Routes = [
   {
     path: '',
-    component: OnChangeBaseComponent
+    component: ReadmeComponent,
+  },
+  {
+    path: 'readme',
+    component: ReadmeComponent,
   },
   {
     path: 'life-cycle-on-change',
-    component: OnChangeBaseComponent
+    component: OnChangeBaseComponent,
   },
   {
     path: 'life-cycle-do-check',
-    component: DoCheckBaseComponent
+    component: DoCheckBaseComponent,
   },
   {
     path: 'life-cycle-after-content',
-    component: AfterContentBaseComponent
+    component: AfterContentBaseComponent,
   },
   {
     path: 'life-cycle-after-view',
-    component: AfterViewBaseComponent
-  },
-  {
-    path: 'parent-child',
-    component: ParentChildBaseComponent
+    component: AfterViewBaseComponent,
   },
   {
     path: 'reference',
-    component: ReferenceBaseComponent
+    component: ReferenceBaseComponent,
+  },
+  {
+    path: 'parent-child',
+    component: ParentChildBaseComponent,
   },
   {
     path: 'data-share',
-    component: DataShareBaseComponent
+    component: DataShareBaseComponent,
+  },
+  {
+    path: 'http-client',
+    component: HttpClientBaseComponent,
+  },
+  {
+    path: 'tab',
+    component: TabBaseComponent,
   },
   {
     path: 'routing',
@@ -114,20 +129,12 @@ const ROUTE_TABLE: Routes = [
     children: [
       { path: 'page-a', component: PageAComponent },
       { path: 'page-b', component: PageBComponent },
-      { path: 'page-c', component: PageCComponent }
-    ]
+      { path: 'page-c', component: PageCComponent },
+    ],
   },
   {
     path: 'modal',
-    component: ModalBaseComponent
-  },
-  {
-    path: 'tab',
-    component: TabBaseComponent
-  },
-  {
-    path: 'http-client',
-    component: HttpClientBaseComponent
+    component: ModalBaseComponent,
   },
 ];
 
@@ -180,23 +187,16 @@ const ROUTE_TABLE: Routes = [
     // Http モジュールを利用した Http クライアントの実装検証用コンポーネント/サービス
     HttpClientBaseComponent,
     HttpClientVerificationComponent,
+    ReadmeComponent,
   ],
-  entryComponents: [
-    ModalComponent,
-  ],
+  entryComponents: [ModalComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTE_TABLE), // 追加. routing の情報を登録する
     FormsModule,
     HttpClientModule,
   ],
-  providers: [
-    ModalService,
-    SwitchTabService,
-    DataShareService,
-    HttpClientService,
-    Logging,
-  ],
-  bootstrap: [AppComponent]
+  providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
