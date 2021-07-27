@@ -14,6 +14,22 @@
     "vincaslt.highlight-matching-tag",
     "ms-ceintl.vscode-language-pack-ja",
     "esbenp.prettier-vscode",
-    "wayou.vscode-todo-highlight"
+    "wayou.vscode-todo-highlight",
+    "angular.ng-template",
+    "gydunhn.angular-essentials",
+    "eamodio.gitlens",
+    "dbaeumer.jshint",
+    "eg2.vscode-npm-script",
+    "christian-kohler.npm-intellisense",
+    "nrwl.angular-console",
+    "johnpapa.vscode-peacock",
+    "rbbit.typescript-hero",
+    "pmneo.tsimporter",
+    "gydunhn.typescript-essentials",
+    "msjsdiag.debugger-for-chrome",
+    "firefox-devtools.vscode-firefox-debug",
+    "oouo-diogo-perdigao.docthis",
+    "xabikos.javascriptsnippets",
+    "gydunhn.javascript-essentials"
   ]
 }
