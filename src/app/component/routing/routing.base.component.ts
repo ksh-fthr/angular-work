@@ -2,20 +2,17 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-routing',
-  templateUrl: './routing.component.html',
-  styleUrls: ['./routing.component.css']
+  templateUrl: './routing.base.component.html',
+  styleUrls: ['./routing.base.component.css'],
 })
-export class RoutingComponent implements OnInit {
-
+export class RoutingBaseComponent implements OnInit {
   /**
    * コンストラクタ( 本コンポーネントではなにもしない )
    */
-  constructor() { }
+  constructor() {}
 
   /**
    * 初期処理
    */
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -14,7 +14,7 @@ import { Logging } from './utils/logging';
 import { ReadmeComponent } from './component/readme/readme.component';
 
 // ルーティング実装検証用コンポーネント/サービス
-import { RoutingComponent } from './component/routing/routing.component';
+import { RoutingBaseComponent } from './component/routing/routing.base.component';
 import { PageAComponent } from './component/routing/page-a/page-a.component';
 import { PageBComponent } from './component/routing/page-b/page-b.component';
 import { PageCComponent } from './component/routing/page-c/page-c.component';
@@ -124,7 +124,7 @@ const ROUTE_TABLE: Routes = [
   },
   {
     path: 'routing',
-    component: RoutingComponent,
+    component: RoutingBaseComponent,
     // children 要素によって `<router-outlet></router-outlet>` の入れ子が実現できる
     children: [
       { path: 'page-a', component: PageAComponent },
@@ -142,7 +142,7 @@ const ROUTE_TABLE: Routes = [
   declarations: [
     AppComponent,
     // ルーティング実装検証用コンポーネント
-    RoutingComponent,
+    RoutingBaseComponent,
     PageAComponent,
     PageBComponent,
     PageCComponent,
