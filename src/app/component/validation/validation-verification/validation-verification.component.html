@@ -1,0 +1,45 @@
+<form #formCheck="ngForm" class="form-check">
+  <div class="form-area">
+    <div class="input-network-address">
+      <label class="label-common">IPアドレス:</label>
+      <input
+        type="text"
+        class="input-text"
+        name="input-ip-address"
+        [(ngModel)]="inputIP"
+        #inputIPinfo="ngModel"
+        required
+        minlength="{{minNetworkAddressLength}}"
+        maxlength="{{maxNetworkAddressLength}}"
+        pattern="{{networkAddressPattern}}"
+        (keyup)="onKeyUp('inputIPinfo', inputIPinfo.errors)"
+      >
+    </div>
+    <div class="input-network-address">
+      <label class="label-common">サブネットマスク:</label>
+      <input
+        type="text"
+        class="input-text"
+        name="input-subnet-mask"
+        [(ngModel)]="inputSubnetMask"
+        #inputSubnetMaskInfo="ngModel"
+        required
+        minlength="{{minNetworkAddressLength}}"
+        maxlength="{{maxNetworkAddressLength}}"
+        pattern="{{networkAddressPattern}}"
+        (keyup)="onKeyUp('inputSubnetMaskInfo', inputSubnetMaskInfo.errors)"
+      >
+    </div>
+    <div class="validation-error-information">
+      <div class="caution" *ngIf="validationError">
+        <div [hidden]="!validationError?.required">※ 項目が未入力です</div>
+        <div [hidden]="!validationError?.minlength">※ 入力した内容が短すぎます</div>
+        <div [hidden]="!validationError?.maxlength">※ 入力した内容が長すぎます</div>
+        <div [hidden]="!validationError?.pattern">※ 入力した内容に誤りがあります</div>
+      </div>
+    </div>
+  </div>
+  <div class="button-area">
+    <input type="button" class="button-ok" name="button-ok" value="OK" (click)="onClickOK($event)" [disabled]="formCheck.invalid">
+  </div>
+</form>
