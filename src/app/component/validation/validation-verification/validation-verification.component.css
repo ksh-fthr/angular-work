@@ -1,5 +1,23 @@
-.form-area {
-  height: 100px;
+
+#validation-verification-body {
+  height: calc(100% - 80px);
+}
+
+#validation-verification-footer {
+  background: #e2cda7;
+  padding: 0;
+  height: 80px;
+  bottom: 0;
+  border-radius: 0 0 20px 20px;
+  /* 子要素を中央に配置する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#validation-verification-form-area {
+  height: 100%;
+  margin: 25px 10px;
 }
 
 .input-network-address {
@@ -7,10 +25,21 @@
   height: 30px;
 }
 
-.validation-error-information {
-  height: 50px;
-  width: 100%;
+#validation-verification-error-area {
+  height: 150px;
+  margin: 25px 10px;
 }
+
+#validation-verification-error-information {
+  height: 150px;
+  padding: 0 20px;
+  color: #b7a007;
+  border: dashed 0.5px;
+  /* 子要素を上下中央に配置する */
+  display: flex;
+  align-items: center;
+}
+
 .caution {
   color: rgba(255, 0, 0, 1);
 }
@@ -20,10 +49,17 @@
   display: inline-block;
 }
 
-.button-area {
-  height: 50px;
+.event-button {
+  height: 40px;
+  width: 100px;
+  font-size: 1.0em;
+  border-radius: 15px;
+  border: solid 0.5px #b7a007;
+  color: #ffffff;
+  background: linear-gradient(#ffffff, #b7a007);
 }
 
-.button-area .button-ok {
-  margin: 15px auto;
+.event-button:disabled {
+  color: #bbbbbb;
+  background: #ffffff;
 }

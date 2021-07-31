@@ -28,6 +28,6 @@
 
 #validation-body {
   margin: 0;
-  padding: 5px 10px;
-  height: calc(100% - 125px)
+  padding: 0;
+  height: calc(100% - 70px);
 }

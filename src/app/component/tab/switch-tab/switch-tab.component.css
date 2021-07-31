@@ -1,7 +1,7 @@
 div.tab-area-base {
   width: 90%;
   margin: auto;
-  height: calc(100% - 80px)
+  height: calc(100% - 80px);
 }
 
 ul.tab-menu-base {
