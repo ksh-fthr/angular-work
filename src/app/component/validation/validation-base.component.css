@@ -1,17 +1,17 @@
-#http-client-base-area {
+#validation-base-area {
   margin: 0 0 0 15px;
   padding: 0;
   width: calc(100% - 20px);
   height: 100%;
 }
 
-#http-client-wrap {
+#validation-wrap {
   height: 100%;
   border: 1px solid #b7a007;
   border-radius: 20px;
 }
 
-#http-client-header {
+#validation-header {
   margin: 0;
   padding: 10px 10px;
   color: #b7a007;
@@ -21,13 +21,13 @@
   border-radius: 20px 20px 0 0;
 }
 
-#http-client-header > p {
+#validation-header > p {
   margin: 0;
   padding: 0;
 }
 
-#http-client-body {
+#validation-body {
   margin: 0;
   padding: 0;
-  height: calc(100% - 125px);
+  height: calc(100% - 70px);
 }

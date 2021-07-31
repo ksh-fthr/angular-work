@@ -72,6 +72,10 @@ import { HttpClientBaseComponent } from './component/http-client/http-client-bas
 import { HttpClientVerificationComponent } from './component/http-client/http-client-verification/http-client-verification.component';
 import { HttpClientService } from './service/http-client/http-client.service';
 
+// Validation 機能の検証用コンポーネント
+import { ValidationBaseComponent } from './component/validation/validation-base.component';
+import { ValidationVerificationComponent } from './component/validation/validation-verification/validation-verification.component';
+
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
 // 下記のように明示する以外にも
@@ -117,6 +121,10 @@ const ROUTE_TABLE: Routes = [
   {
     path: 'http-client',
     component: HttpClientBaseComponent,
+  },
+  {
+    path: 'validation',
+    component: ValidationBaseComponent,
   },
   {
     path: 'tab',
@@ -188,6 +196,9 @@ const ROUTE_TABLE: Routes = [
     HttpClientBaseComponent,
     HttpClientVerificationComponent,
     ReadmeComponent,
+    // Validation 機能の検証用コンポーネント
+    ValidationBaseComponent,
+    ValidationVerificationComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [
