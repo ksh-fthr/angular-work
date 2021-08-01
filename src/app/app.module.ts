@@ -76,6 +76,11 @@ import { HttpClientService } from './service/http-client/http-client.service';
 import { ValidationBaseComponent } from './component/validation/validation-base.component';
 import { ValidationVerificationComponent } from './component/validation/validation-verification/validation-verification.component';
 
+// 属性ディレクティブの実装検証用コンポーネント/ディレクティブ
+import { TemplateDirective } from './directive/attribute/template/template.directive';
+import { UseAttributeDirectiveBaseComponent } from './component/use-attribute-directive/use-attribute-directive-base.component';
+import { AttributeDirectiveVerificationComponent } from './component/use-attribute-directive/attribute-directive-verification/attribute-directive-verification.component';
+
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
 // 下記のように明示する以外にも
@@ -125,6 +130,10 @@ const ROUTE_TABLE: Routes = [
   {
     path: 'validation',
     component: ValidationBaseComponent,
+  },
+  {
+    path: 'attribute-directive',
+    component: UseAttributeDirectiveBaseComponent,
   },
   {
     path: 'tab',
@@ -199,6 +208,10 @@ const ROUTE_TABLE: Routes = [
     // Validation 機能の検証用コンポーネント
     ValidationBaseComponent,
     ValidationVerificationComponent,
+    // 属性ディレクティブの実装検証用コンポーネント/ディレクティブ
+    TemplateDirective,
+    UseAttributeDirectiveBaseComponent,
+    AttributeDirectiveVerificationComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [
