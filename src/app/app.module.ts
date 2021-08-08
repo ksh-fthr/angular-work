@@ -80,6 +80,9 @@ import { ValidationVerificationComponent } from './component/validation/validati
 import { TemplateDirective } from './directive/attribute/template/template.directive';
 import { UseAttributeDirectiveBaseComponent } from './component/use-attribute-directive/use-attribute-directive-base.component';
 import { AttributeDirectiveVerificationComponent } from './component/use-attribute-directive/attribute-directive-verification/attribute-directive-verification.component';
+// 属性ディレクティブのイベント実装検証用コンポーネント/ディレクティブ
+import { EventDirective } from './directive/attribute/event/event.directive';
+import { AttributeDirectiveEventVerificationComponent } from './component/use-attribute-directive/attribute-directive-event-verification/attribute-directive-event-verification.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -212,6 +215,9 @@ const ROUTE_TABLE: Routes = [
     TemplateDirective,
     UseAttributeDirectiveBaseComponent,
     AttributeDirectiveVerificationComponent,
+    // 属性ディレクティブのイベント実装検証用コンポーネント/ディレクティブ
+    EventDirective,
+    AttributeDirectiveEventVerificationComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [
