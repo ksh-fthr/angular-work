@@ -1,4 +1,6 @@
 .directive-event {
+  color: #b7a007;
+  border: 1px dotted #b7a007;
+  margin: 0;
   padding: 5px;
-  border: dotted 1px black;
 }

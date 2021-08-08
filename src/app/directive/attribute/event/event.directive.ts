@@ -19,7 +19,8 @@ export class EventDirective {
    */
   @HostListener('mouseenter', ['$event.target']) changeBackgroundColor(target: any) {
     console.log(target);
-    this.elementRef.nativeElement.style.backgroundColor = 'rgb(255, 0, 0)';
+    this.elementRef.nativeElement.style.backgroundColor = '#ff0000';
+    this.elementRef.nativeElement.style.color = '#ffffffff';
   }
 
   /**
@@ -30,6 +31,7 @@ export class EventDirective {
    */
   @HostListener('mouseleave', ['$event.target']) restoreBackgroundColor(target: any) {
     console.log(target);
-    this.elementRef.nativeElement.style.backgroundColor = 'rgb(219, 210, 224)';
+    this.elementRef.nativeElement.style.backgroundColor = '#b7a007';
+    this.elementRef.nativeElement.style.color = '#ffffffff';
   }
 }

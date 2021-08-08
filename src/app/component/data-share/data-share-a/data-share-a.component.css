@@ -10,6 +10,9 @@
 .initial-data {
   font-size: 1.1em;
   color: #b7a007;
+  border: 1px dotted #b7a007;
+  margin: 0;
+  padding: 5px;
 }
 
 .updated-data-block {
