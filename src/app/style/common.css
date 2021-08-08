@@ -1,3 +1,8 @@
+div {
+  margin: 0;
+  padding: 0;;
+}
+
 .base-area {
   margin: 0 0 0 15px;
   padding: 0;
@@ -60,22 +65,55 @@
   padding: 18px 0 0 0;
 }
 
-.block-separate-fifty {
-  margin: 0;
-  padding: 0;
-  height: 50%;
+.block-separate-ten {
+  height: 10%;
+}
+
+.block-separate-twenty {
+  height: 20%;
+}
+
+.block-separate-twenty-five {
+  height: 25%;
 }
 
 .block-separate-thirty {
-  margin: 0;
-  padding: 0;
   height: 30%;
 }
 
+.block-separate-thirty-five {
+  height: 30%;
+}
+
+.block-separate-fourty {
+  height: 40%;
+}
+
+.block-separate-fifty {
+  height: 50%;
+}
+
+.block-separate-sixty {
+  height: 60%;
+}
+
 .block-separate-seventy {
+  height: 70%;
+}
+
+.block-separate-eighty {
+  height: 80%;
+}
+
+
+.block-separate-ninety {
+  height: 90%;
+}
+
+.block-separate-trisect {
   margin: 0;
   padding: 0;
-  height: 70%;
+  height: 33%;
 }
 
 .menu-block {

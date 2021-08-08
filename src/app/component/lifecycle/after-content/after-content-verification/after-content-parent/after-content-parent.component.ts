@@ -5,10 +5,9 @@ import { Logging } from '../../../../../utils/logging';
 @Component({
   selector: 'app-after-content-parent',
   templateUrl: './after-content-parent.component.html',
-  styleUrls: ['./after-content-parent.component.css']
+  styleUrls: ['./after-content-parent.component.css'],
 })
 export class AfterContentParentComponent implements OnInit {
-
   // 外部コンテンツである子コンポーネントを参照
   @ContentChild(AfterContentChildComponent) child!: AfterContentChildComponent;
 
@@ -20,9 +19,7 @@ export class AfterContentParentComponent implements OnInit {
    */
   private textAreaElement: any;
 
-  constructor(
-    private element: ElementRef,
-  ) {
+  constructor(private element: ElementRef) {
     // コンストラクタは画面描画の前に実行されるので画面上の要素を取得することができない
     // よって､ここではコンソールログに出力するだけになる
     console.log('[AfterContentParentComponent][constructor] fired');
@@ -31,7 +28,7 @@ export class AfterContentParentComponent implements OnInit {
   /**
    * コンポーネントの初期化
    */
-  ngOnInit() {
+  ngOnInit(): void {
     // 画面上のログは外部コンテンツのエリアに出力する
     this.textAreaElement = this.element.nativeElement.querySelector('.log-text-area');
 
