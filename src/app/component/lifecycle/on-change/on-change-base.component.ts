@@ -3,14 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-on-change-base',
   templateUrl: './on-change-base.component.html',
-  styleUrls: ['./on-change-base.component.css']
+  styleUrls: ['../../../style/common.css'],
 })
 export class OnChangeBaseComponent implements OnInit {
   childComponentParameter = 'initial value';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

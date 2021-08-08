@@ -5,10 +5,9 @@ import { Logging } from '../../../../../utils/logging';
 @Component({
   selector: 'app-after-view-parent',
   templateUrl: './after-view-parent.component.html',
-  styleUrls: ['./after-view-parent.component.css']
+  styleUrls: ['../../../../../style/common.css', './after-view-parent.component.css'],
 })
 export class AfterViewParentComponent implements OnInit, AfterViewInit, AfterViewChecked {
-
   /**
    * ngAfterViewInit と ngAfterViewChecked の確認のためのパラメータ
    */
@@ -24,9 +23,7 @@ export class AfterViewParentComponent implements OnInit, AfterViewInit, AfterVie
    */
   private textAreaElement: any;
 
-  constructor(
-    private element: ElementRef,
-  ) {
+  constructor(private element: ElementRef) {
     // コンストラクタは画面描画の前に実行されるので画面上の要素を取得することができない
     // よって､ここではコンソールログに出力するだけになる
     console.log('[AfterViewParentComponent][constructor] fired');

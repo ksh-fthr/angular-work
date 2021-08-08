@@ -3,7 +3,7 @@
 }
 
 #attribute-directive-verification-wrap {
-  margin: 25px 10px;
+  margin: 20px 0px;
   height: calc(100% - 30px);
 }
 
@@ -11,7 +11,7 @@
   font-size: 1.1em;
   color: #b7a007;
   border: dashed 0.5px;
-  height: 95%;
+  height: 90%;
   /* 子要素を上下中央に配置する */
   display: flex;
   align-items: center;

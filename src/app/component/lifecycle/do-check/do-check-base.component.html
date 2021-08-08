@@ -1,17 +1,18 @@
-<div id="do-check-base-area">
-  <div id="do-check-wrap">
-    <div id="do-check-header">
-      <p>ライフサイクル- ngDoCheck の動きを確認する</p>
-    </div>
+<div class="base-area">
+  <div class="header-block">
+    <p>ライフサイクル-ngDoCheck の確認</p>
+  </div>
 
-    <div id="do-check-body">
-      <p class="input-block">
-        <label for="inputText">入力項目(親から子に渡る): </label>
-        <input class="inputText" name="inputText" type="text" [(ngModel)]="childComponentParameter" />
-        <br />
-        <small class="note">( <strong>ngOnChanges</strong> を走らせたときの動きをログで確認します )</small>
-      </p>
-      <app-do-check-verification [ngOnChangesValue]="childComponentParameter"></app-do-check-verification>
-    </div>
+  <div class="body-block">
+    <p class="input-block">
+      <label for="inputText">入力項目(親から子に渡る): </label>
+      <input class="inputText" name="inputText" type="text" [(ngModel)]="childComponentParameter" />
+      <br />
+      <small class="note">( <strong>ngOnChanges</strong> を走らせたときの動きをログで確認します )</small>
+    </p>
+    <app-do-check-verification [ngOnChangesValue]="childComponentParameter"></app-do-check-verification>
+  </div>
+
+  <div class="footer-block">
   </div>
 </div>

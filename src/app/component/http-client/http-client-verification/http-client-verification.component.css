@@ -1,7 +1,3 @@
-#http-client-verification-area {
-  height: 100%;
-}
-
 #http-client-verification-note {
   height: 30%;
   font-size: 0.8em;
@@ -98,11 +94,9 @@ input#form-message {
 }
 
 #http-client-verification-footer {
-  background: #e2cda7;
   padding: 0;
-  height: 80px;
   bottom: 0;
-  border-radius: 0 0 20px 20px;
+  height: 80px;
   /* 子要素を中央に配置する */
   display: flex;
   justify-content: center;

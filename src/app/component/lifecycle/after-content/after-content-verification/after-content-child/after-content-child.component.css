@@ -1,9 +1,9 @@
 #after-content-child-area {
-  height: 100%;
+  height: 70%;
 }
 
 .log-block {
-  height: 70%;
+  height: 90%;
 }
 
 .log-label {
@@ -15,7 +15,7 @@
   font-size: 1.1em;
   color: #b7a007;
   border: solid 0.5px;
-  height: 60%;
+  height: 70%;
   width: 90%;
   resize: none;
 }

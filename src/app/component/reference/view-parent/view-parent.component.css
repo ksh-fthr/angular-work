@@ -3,7 +3,7 @@
   font-size: 1.1em;
   color: #b7a007;
   border: dashed 0.5px;
-  height: 100px;
+  height: 80px;
   /* 子要素を上下中央に配置する */
   display: flex;
   align-items: center;

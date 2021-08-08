@@ -1,55 +1,54 @@
-<div id="http-client-verification-area">
-  <div id="http-client-verification-note">
-    <div id="http-client-verification-note-items">
-      <p>
-        ※ 注釈 ※<br />
-        このコンポーネントの確認を行う際は､予め次のリポジトリのいずれかを取得してきて起動しておいてください｡
-      </p>
-      <ul>
-        <li><a href="https://github.com/ksh-fthr/express-work">express-work</a></li>
-        <li><a href="https://github.com/ksh-fthr/backend-in-docker">backend-in-docker</a></li>
-      </ul>
-      <p>
-        また Angular アプリの起動は <code>npm run start</code> で行って下さい｡<br />
-      </p>
-    </div>
-  </div>
-
-  <div id="http-client-verification-header">
-    <div id="http-client-verification-header-items">
-    <p id="header-caption">
-      バックエンドから取得したメッセージリスト
+<div id="http-client-verification-note">
+  <div id="http-client-verification-note-items">
+    <p>
+      ※ 注釈 ※<br />
+      このコンポーネントの確認を行う際は､予め次のリポジトリのいずれかを取得してきて起動しておいてください
     </p>
-      <ul>
-        <li class="header-note">メッセージを登録する際はメッセージを入力して｢<font class="font-decoration"> 登録 </font>｣ボタンを実行してください</li>
-        <li class="header-note">メッセージを更新する際はメッセージを入力して｢<font class="font-decoration"> 更新 </font>｣ボタンを実行してください</li>
-        <li class="header-note">メッセージを削除する際はIDを指定して｢<font class="font-decoration"> 削除 </font>｣ボタンを実行してください</li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="http-client-verification-body">
-    <!-- 片方向データバインドでバックエンドから取得した情報を表示する -->
-    <table class="table">
-      <tr>
-        <th id="th-id">ID</th>
-        <th id="th-message">メッセージ</th>
-      </tr>
-      <!--インデックス番号（index）に変数iでアクセスできるように-->
-      <tr *ngFor="let messageInfo of messageInfoList; index as i">
-        <td>{{messageInfo.id}}</td>
-        <td>{{messageInfo.message}}</td>
-      </tr>
-    </table>
-
-    <div id="form-block">
-      <form #formCheck="ngForm" class="formCheck">
-        <input type="text" id="form-id" class="input-text" name="message-id" [(ngModel)]="messageId">
-        <input type="text" id="form-message" class="input-text" name="message" [(ngModel)]="message">
-      </form>
-    </div>
+    <ul>
+      <li><a href="https://github.com/ksh-fthr/express-work">express-work</a></li>
+      <li><a href="https://github.com/ksh-fthr/backend-in-docker">backend-in-docker</a></li>
+    </ul>
+    <p>
+      また Angular アプリの起動は <code>npm run start</code> で行って下さい<br />
+    </p>
   </div>
 </div>
+
+<div id="http-client-verification-header">
+  <div id="http-client-verification-header-items">
+  <p id="header-caption">
+    バックエンドから取得したメッセージリスト
+  </p>
+    <ul>
+      <li class="header-note">メッセージを登録する際はメッセージを入力して｢<font class="font-decoration"> 登録 </font>｣ボタンを実行してください</li>
+      <li class="header-note">メッセージを更新する際はメッセージを入力して｢<font class="font-decoration"> 更新 </font>｣ボタンを実行してください</li>
+      <li class="header-note">メッセージを削除する際はIDを指定して｢<font class="font-decoration"> 削除 </font>｣ボタンを実行してください</li>
+    </ul>
+  </div>
+</div>
+
+<div id="http-client-verification-body">
+  <!-- 片方向データバインドでバックエンドから取得した情報を表示する -->
+  <table class="table">
+    <tr>
+      <th id="th-id">ID</th>
+      <th id="th-message">メッセージ</th>
+    </tr>
+    <!--インデックス番号（index）に変数iでアクセスできるように-->
+    <tr *ngFor="let messageInfo of messageInfoList; index as i">
+      <td>{{messageInfo.id}}</td>
+      <td>{{messageInfo.message}}</td>
+    </tr>
+  </table>
+
+  <div id="form-block">
+    <form #formCheck="ngForm" class="formCheck">
+      <input type="text" id="form-id" class="input-text" name="message-id" [(ngModel)]="messageId">
+      <input type="text" id="form-message" class="input-text" name="message" [(ngModel)]="message">
+    </form>
+  </div>
+</div>
+
 <div id="http-client-verification-footer">
   <input type="button" class="event-button" id="register" value="登録" (click)="onClickRegister($event)">
   <input type="button" class="event-button" id="update" value="更新" (click)="onClickUpdate($event)">

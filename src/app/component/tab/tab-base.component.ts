@@ -10,19 +10,15 @@ import { TabModel } from '../../model/tab-model';
 @Component({
   selector: 'app-tab-base',
   templateUrl: './tab-base.component.html',
-  styleUrls: ['./tab-base.component.css']
+  styleUrls: ['../../style/common.css'],
 })
 export class TabBaseComponent implements OnInit {
-
   private _tabs: Array<TabModel> = new Array();
 
   /**
    * コンストラクタ ( 本コンポーネントではなにもしない )
    */
-  constructor(
-    private switchTabService: SwitchTabService
-  ) {
-  }
+  constructor(private switchTabService: SwitchTabService) {}
 
   /**
    * 初期処理

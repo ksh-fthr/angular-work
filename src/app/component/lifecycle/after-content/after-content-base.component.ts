@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-after-content-base',
   templateUrl: './after-content-base.component.html',
-  styleUrls: ['./after-content-base.component.css']
+  styleUrls: ['../../../style/common.css'],
 })
 export class AfterContentBaseComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

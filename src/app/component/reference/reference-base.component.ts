@@ -3,7 +3,7 @@ import { Component, AfterContentInit, AfterContentChecked, ContentChild } from '
 @Component({
   selector: 'app-root',
   templateUrl: './reference-base.component.html',
-  styleUrls: ['./reference-base.component.css']
+  styleUrls: ['../../style/common.css'],
 })
 export class ReferenceBaseComponent {
   constructor() {}
