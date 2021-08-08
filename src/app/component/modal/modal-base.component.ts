@@ -1,5 +1,4 @@
-
-import { Component, OnInit, OnDestroy  } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 // モーダルダイアログとして表示するコンポーネント
@@ -11,10 +10,9 @@ import { ModalService } from '../../service/modal/modal.service';
 @Component({
   selector: 'app-modal-base',
   templateUrl: './modal-base.component.html',
-  styleUrls: ['./modal-base.component.css']
+  styleUrls: ['../../style/common.css'],
 })
-export class ModalBaseComponent implements OnInit, OnDestroy  {
-
+export class ModalBaseComponent implements OnInit, OnDestroy {
   // モーダルダイアログが閉じた際のイベントをキャッチするための subscription
   private subscription!: Subscription;
 
@@ -24,22 +22,18 @@ export class ModalBaseComponent implements OnInit, OnDestroy  {
   /**
    * コンストラクタ
    */
-  constructor(
-    private modalService: ModalService
-  ) {}
+  constructor(private modalService: ModalService) {}
 
   /**
    * 初期処理
    */
   ngOnInit(): void {
     // モーダルダイアログを閉じた際のイベントを処理する
-    this.subscription = this.modalService.closeEventObservable$.subscribe(
-      () => {
-        // プロパティ modal に null をセットすることでコンポーネントを破棄する
-        // このタイミングで ModalComponent では ngOnDestroy が走る
-        this.modal = null;
-      }
-    );
+    this.subscription = this.modalService.closeEventObservable$.subscribe(() => {
+      // プロパティ modal に null をセットすることでコンポーネントを破棄する
+      // このタイミングで ModalComponent では ngOnDestroy が走る
+      this.modal = null;
+    });
   }
 
   /**

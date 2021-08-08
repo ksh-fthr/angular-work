@@ -10,7 +10,7 @@ import { DataShareService } from '../../../service/data-share/data-share.service
 @Component({
   selector: 'app-data-share-b',
   templateUrl: './data-share-b.component.html',
-  styleUrls: ['./data-share-b.component.css']
+  styleUrls: ['../../../style/common.css', './data-share-b.component.css'],
   // サービスを登録する
   // コンポーネントで DI する場合はこのコメントアウトを外す
   // providers: [
@@ -43,10 +43,7 @@ export class DataShareBComponent implements OnInit, OnDestroy, AfterViewChecked 
    *
    * @param {DataShareService} dataShareService 共通サービス
    */
-  constructor(
-    private dataShareService: DataShareService,
-    private element: ElementRef,
-  ) { }
+  constructor(private dataShareService: DataShareService, private element: ElementRef) {}
 
   /**
    * ライフサイクルメソッド｡コンポーネントの初期化で使用する
@@ -54,20 +51,18 @@ export class DataShareBComponent implements OnInit, OnDestroy, AfterViewChecked 
   ngOnInit(): void {
     // イベント登録
     // サービスで共有しているデータが更新されたら発火されるイベントをキャッチする
-    this.subscription = this.dataShareService.sharedDataSource$.subscribe(
-      (msg: any) => {
-        console.log('[Component-B] shared data updated.');
-        this.serviceProp = msg;
-      }
-    );
+    this.subscription = this.dataShareService.sharedDataSource$.subscribe((msg: any) => {
+      console.log('[Component-B] shared data updated.');
+      this.serviceProp = msg;
+    });
   }
 
   /**
    * コンポーネント終了時の処理
    */
   ngOnDestroy(): void {
-     //  リソースリーク防止のため DataShareService から subcribe したオブジェクトを破棄する
-     this.subscription.unsubscribe();
+    //  リソースリーク防止のため DataShareService から subcribe したオブジェクトを破棄する
+    this.subscription.unsubscribe();
   }
 
   /**
@@ -81,9 +76,9 @@ export class DataShareBComponent implements OnInit, OnDestroy, AfterViewChecked 
     }
   }
 
-   /**
-    * ボタンクリック時のイベントハンドラ
-    */
+  /**
+   * ボタンクリック時のイベントハンドラ
+   */
   onClicSendMessage() {
     // DataShareService のデータ更新を行う
     console.log('[Component-B] onClicSendMessage fired.');

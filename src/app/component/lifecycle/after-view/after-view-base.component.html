@@ -1,13 +1,19 @@
-<div id="after-view-base-area">
-  <div id="after-view-wrap">
-    <div id="after-view-header">
-      <p>ngAfterViewInit と ngAfterViewChecked の動きを確認する</p>
-    </div>
+<div class="base-area">
+  <div class="header-block">
+    <p>
+      ライフサイクル-ngAfterView[XX] の確認
+    </p>
+  </div>
 
-    <div id="after-view-body">
-      <!-- 親コンポーネントを登録 -->
-      <app-after-view-parent>
-      </app-after-view-parent>
-    </div>
+  <div class="body-block">
+    <p class="description">
+      <strong>ngAfterViewInit</strong> と <strong>ngAfterViewChecked</strong> を走らせたときの動きをログで確認
+    </p>
+    <!-- 親コンポーネントを登録 -->
+    <app-after-view-parent>
+    </app-after-view-parent>
+  </div>
+
+  <div class="footer-block">
   </div>
 </div>

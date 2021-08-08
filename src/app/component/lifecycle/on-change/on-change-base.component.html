@@ -1,17 +1,18 @@
-<div id="on-change-base-area">
-  <div id="on-change-wrap">
-    <div id="on-change-header">
-      <p>ライフサイクル- ngOnChange の動きを確認する</p>
-    </div>
+<div class="base-area">
+  <div class="header-block">
+    <p>ライフサイクル-ngOnChange の確認</p>
+  </div>
 
-    <div id="on-change-body">
-      <p class="input-block">
-        <label for="inputText">入力項目: </label>
-        <input id="inputText" name="inputText" type="text" [(ngModel)]="childComponentParameter" />
-        <br />
-        <small class="note">( <strong>ngOnChanges</strong> を走らせたときの動きをログで確認します )</small>
-      </p>
-      <app-on-change-verification [ngOnChangesValue]="childComponentParameter"></app-on-change-verification>
-    </div>
+  <div class="body-block">
+    <p class="input-block">
+      <label for="inputText">入力項目: </label>
+      <input id="inputText" name="inputText" type="text" [(ngModel)]="childComponentParameter" />
+      <br />
+      <small class="note">( <strong>ngOnChanges</strong> を走らせたときの動きをログで確認します )</small>
+    </p>
+    <app-on-change-verification [ngOnChangesValue]="childComponentParameter"></app-on-change-verification>
+  </div>
+
+  <div class="footer-block">
   </div>
 </div>

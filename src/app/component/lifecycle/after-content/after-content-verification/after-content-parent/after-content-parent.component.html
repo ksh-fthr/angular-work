@@ -1,15 +1,13 @@
 <div id="after-content-parent-area">
   <div id="external-content-verification-1">
     <p>
-      子コンポーネントを親コンポーネントのコンテンツをとして埋め込んだコードの確認｡<br />
-      <small class="note">( <strong>ngAfterContentInit</strong> と <strong>ngAfterContentChecked</strong> を走らせたときの動きをログで確認します )</small>
+      子コンポーネントを <strong>親コンポーネントのコンテンツとして埋め込んだ</strong> ときの動きを確認する
     </p>
     <ng-content select=".external-contents-component"></ng-content>
   </div>
-  <hr />
   <div id="external-content-verification-2">
     <p>
-      css の class 属性の値と select 属性の値を対応させることで任意の場所にコンテンツを埋め込んだコードの確認｡<br />
+      <strong>css の class 属性の値と select 属性の値を対応</strong> させることで <strong>任意の場所にコンテンツを埋め込んだ</strong> ときの動きを確認する
     </p>
     <div id="set-contents-by-class-and-select-block">
       <ng-content select=".external-contents-sentence"></ng-content>

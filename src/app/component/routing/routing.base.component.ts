@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-routing',
   templateUrl: './routing.base.component.html',
-  styleUrls: ['./routing.base.component.css'],
+  styleUrls: ['../../style/common.css'],
 })
 export class RoutingBaseComponent implements OnInit {
   /**

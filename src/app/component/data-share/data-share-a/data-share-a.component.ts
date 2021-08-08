@@ -10,7 +10,7 @@ import { DataShareService } from '../../../service/data-share/data-share.service
 @Component({
   selector: 'app-data-share-a',
   templateUrl: './data-share-a.component.html',
-  styleUrls: ['./data-share-a.component.css']
+  styleUrls: ['../../../style/common.css', './data-share-a.component.css'],
   // サービスを登録する
   // コンポーネントで DI する場合はこのコメントアウトを外す
   // providers: [
@@ -18,11 +18,11 @@ import { DataShareService } from '../../../service/data-share/data-share.service
   // ]
 })
 export class DataShareAComponent implements OnInit, OnDestroy {
- /**
-  * DataShareService の変数の参照を取得するプロパティ
-  *
-  * @type {string}
-  */
+  /**
+   * DataShareService の変数の参照を取得するプロパティ
+   *
+   * @type {string}
+   */
   public serviceProp: string = 'Initialized by Component-A';
 
   /**
@@ -37,17 +37,14 @@ export class DataShareAComponent implements OnInit, OnDestroy {
    * サービスで共有するデータが更新されたかをチェックするためのデータ
    * @type {string}
    */
-   private preData: string = this.serviceProp;
+  private preData: string = this.serviceProp;
 
   /**
    * コンストラクタ. ServiceSample1Component のインスタンスを生成する
    *
    * @param {DataShareService} dataShareService 共通サービス
    */
-  constructor(
-    private dataShareService: DataShareService,
-    private element: ElementRef,
-  ) { }
+  constructor(private dataShareService: DataShareService, private element: ElementRef) {}
 
   /**
    * ライフサイクルメソッド｡コンポーネントの初期化で使用する
@@ -55,12 +52,10 @@ export class DataShareAComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // イベント登録
     // サービスで共有しているデータが更新されたら発火されるイベントをキャッチする
-    this.subscription = this.dataShareService.sharedDataSource$.subscribe(
-      (msg: any) => {
-        console.log('[Component-A] shared data updated.');
-        this.serviceProp = msg;
-      }
-    );
+    this.subscription = this.dataShareService.sharedDataSource$.subscribe((msg: any) => {
+      console.log('[Component-A] shared data updated.');
+      this.serviceProp = msg;
+    });
   }
 
   /**
@@ -74,7 +69,7 @@ export class DataShareAComponent implements OnInit, OnDestroy {
   /**
    * View の変更検知処理
    */
-   ngAfterViewChecked(): void {
+  ngAfterViewChecked(): void {
     // 泥臭いがデータ変更が検知されたら描画する
     // TODO: もっとスマートなやり方があるはず...
     if (this.preData !== this.serviceProp) {

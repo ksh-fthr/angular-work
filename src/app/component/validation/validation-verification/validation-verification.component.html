@@ -37,7 +37,7 @@
         入力に誤りがある場合は下記にエラー内容が表示されます。
       </p>
       <div id="validation-verification-error-information">
-        <div class="caution" *ngIf="validationError">
+        <div class="note" *ngIf="validationError">
           <div [hidden]="!validationError?.required">※ 項目が未入力です</div>
           <div [hidden]="!validationError?.minlength">※ 入力した内容が短すぎます</div>
           <div [hidden]="!validationError?.maxlength">※ 入力した内容が長すぎます</div>
@@ -47,6 +47,7 @@
     </div>
   </form>
 </div>
+
 <div id="validation-verification-footer">
   <input type="button" class="event-button" name="button-ok" value="OK" (click)="onClickOK($event)" [disabled]="formCheck.invalid">
 </div>

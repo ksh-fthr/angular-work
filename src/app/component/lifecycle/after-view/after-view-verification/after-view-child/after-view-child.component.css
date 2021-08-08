@@ -19,11 +19,7 @@
   font-size: 1.1em;
   color: #b7a007;
   border: solid 0.5px;
-  height: 92%;
+  height: 80%;
   width: 90%;
   resize: none;
-}
-
-.note {
-  color: #f33e33;
 }

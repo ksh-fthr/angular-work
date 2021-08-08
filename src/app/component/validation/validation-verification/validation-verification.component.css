@@ -1,14 +1,11 @@
 
 #validation-verification-body {
-  height: calc(100% - 80px);
+  height: 100%;
 }
 
 #validation-verification-footer {
-  background: #e2cda7;
   padding: 0;
-  height: 80px;
   bottom: 0;
-  border-radius: 0 0 20px 20px;
   /* 子要素を中央に配置する */
   display: flex;
   justify-content: center;
@@ -17,7 +14,7 @@
 
 #validation-verification-form-area {
   height: 100%;
-  margin: 25px 10px;
+  margin: 20px 0px;
 }
 
 .input-network-address {
@@ -27,7 +24,7 @@
 
 #validation-verification-error-area {
   height: 150px;
-  margin: 25px 10px;
+  margin: 25px 0px;
 }
 
 #validation-verification-error-information {
@@ -38,10 +35,6 @@
   /* 子要素を上下中央に配置する */
   display: flex;
   align-items: center;
-}
-
-.caution {
-  color: rgba(255, 0, 0, 1);
 }
 
 .label-common {
