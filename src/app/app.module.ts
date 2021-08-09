@@ -83,6 +83,9 @@ import { AttributeDirectiveVerificationComponent } from './component/use-attribu
 // 属性ディレクティブのイベント実装検証用コンポーネント/ディレクティブ
 import { EventDirective } from './directive/attribute/event/event.directive';
 import { AttributeDirectiveEventVerificationComponent } from './component/use-attribute-directive/attribute-directive-event-verification/attribute-directive-event-verification.component';
+// 属性ディレクティブの Validation 実装検証用コンポーネント/ディレクティブ
+import { NetworkAddressValidatorDirective } from './directive/attribute/validator/network-address-validator.directive';
+import { AttributeDirectiveValidatorVerificationComponent } from './component/use-attribute-directive/attribute-directive-validator-verification/attribute-directive-validator-verification.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -218,6 +221,9 @@ const ROUTE_TABLE: Routes = [
     // 属性ディレクティブのイベント実装検証用コンポーネント/ディレクティブ
     EventDirective,
     AttributeDirectiveEventVerificationComponent,
+    // 属性ディレクティブの Validation 実装検証用コンポーネント/ディレクティブ
+    NetworkAddressValidatorDirective,
+    AttributeDirectiveValidatorVerificationComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [

@@ -30,7 +30,7 @@ export class TemplateDirective implements OnInit {
    * 本ディレクティブではこのタイミングで親コンポーネントから受け取ったデータを
    * DOMの innerHTML にセットする
    */
-  public ngOnInit() {
+  ngOnInit(): void {
     const element = this.elementRef.nativeElement;
     element.innerHTML = this.greet + ' ' + this.name + '.';
   }

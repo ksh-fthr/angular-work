@@ -1,49 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-validation-verification',
-  templateUrl: './validation-verification.component.html',
-  styleUrls: ['./validation-verification.component.css'],
+  selector: 'app-attribute-directive-validator-verification',
+  templateUrl: './attribute-directive-validator-verification.component.html',
+  styleUrls: ['./attribute-directive-validator-verification.component.css'],
 })
-export class ValidationVerificationComponent implements OnInit {
+export class AttributeDirectiveValidatorVerificationComponent implements OnInit {
   /**
-   * validaion のための双方向データバインドを行うプロパティ
+   * 入力されたアドレス
    *
    * @type {string}
    */
-  public inputIP: string = '';
+  public inputAddress: string = '';
 
   /**
-   * validaion のための双方向データバインドを行うプロパティ
+   * 入力されたアドレス
    *
    * @type {string}
    */
   public inputSubnetMask: string = '';
-
-  /**
-   * 入力された内容の最小文字数チェック
-   * IPアドレスの最小文字数である x.x.x.x の ７ を定義
-   *
-   * @type {number}
-   */
-  public readonly minNetworkAddressLength: number = 7;
-
-  /**
-   * 入力された内容の最大文字数チェック
-   * IPアドレスの最大文字数である xxx.xxx.xxx.xxx の 15 を定義
-   *
-   * @type {number}
-   */
-  public readonly maxNetworkAddressLength: number = 15;
-
-  /**
-   * 入力された内容のパターンチェック
-   * 正規表現で x.x.x.x ~ xxx.xxx.xxx.xxx のパターンマッチングを実現させる
-   *
-   * @type {string}
-   */
-  public readonly networkAddressPattern: string =
-    '^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])[¥.]){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$';
 
   /**
    * 入力エラー情報を画面に表示するためのプロパティ
@@ -60,8 +35,14 @@ export class ValidationVerificationComponent implements OnInit {
    */
   private validationErrorList: any = [];
 
+  /**
+   * コンストラクタ ( 本コンポーネントではなにもしない )
+   */
   constructor() {}
 
+  /**
+   * 初期処理 ( 本コンポーネントではなにもしない )
+   */
   ngOnInit(): void {}
 
   /**
