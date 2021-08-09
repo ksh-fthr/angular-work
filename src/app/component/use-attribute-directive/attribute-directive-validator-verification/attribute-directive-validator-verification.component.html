@@ -1,4 +1,4 @@
-<div id="validation-verification-body">
+<div class="validation-body">
   <form #formCheck="ngForm" class="form-check">
     <div class="form-area">
       <div class="input-network-address">
@@ -27,7 +27,7 @@
           (keyup)="onKeyUp('inputSubnetMaskInfo', inputSubnetMaskInfo.errors)"
         >
       </div>
-      <div class="validation-error-information">
+      <div class="validation-error-information validation-error-information-h-70">
         <div class="note" *ngIf="validationError">
           <div [hidden]="!validationError?.required">※ 項目が未入力です</div>
           <div [hidden]="!validationError?.minLength">※ 入力した内容が短すぎます</div>
@@ -38,6 +38,6 @@
     </div>
   </form>
 </div>
-<div id="validation-verification-footer">
+<div>
   <input type="button" class="event-button" name="button-ok" value="OK" (click)="onClickOK($event)" [disabled]="formCheck.invalid">
 </div>

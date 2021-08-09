@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-reactive-form-verification',
   templateUrl: './reactive-form-verification.component.html',
-  styleUrls: ['../../../style/common.css', './reactive-form-verification.component.css'],
+  styleUrls: ['../../../style/common.css'],
 })
 export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
   /**

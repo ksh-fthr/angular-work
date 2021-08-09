@@ -1,10 +1,3 @@
-#readme-area {
-  margin: 0 0 0 15px;
-  padding: 0;
-  width: calc(100% - 20px);
-  height: 100%;
-}
-
 #readme-header-block {
   height: 35%;
 }
@@ -57,10 +50,18 @@ table#menu-table {
   border-collapse: collapse;
 }
 
-td {
-  padding: 5px 10px;
+/* テーブルのヘッダ部を固定してボディ部をスクロールさせる */
+thead, tbody {
+  display: block;
 }
 
+tbody#menu-table-body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 400px;
+}
+
+/* 各行をストライプで色分け */
 tr:nth-child(even) {
   background: #f7f3ea;
 }
@@ -72,5 +73,20 @@ tr:nth-child(odd) {
 th {
   background: #e2cda7;
   color: #6b727c;
-  border: solid 0.5px #b7a007;
+}
+
+/* thead, tbody を block: display にした関係で表示が崩れるので各カラムの幅を明示的に指定する */
+.col-branch {
+  width: 180px;
+}
+.col-menu {
+  width: 380px;
+}
+.col-qiita {
+  width: 580px;
+}
+
+/* 各カラムの上下左右の空白を微調整する */
+th, td {
+  padding: 7px 10px;
 }
