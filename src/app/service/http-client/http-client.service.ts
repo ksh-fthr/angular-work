@@ -4,33 +4,30 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HttpClientService {
-
   /**
    * Http クライアントを実行する際のヘッダオプション
    * @private
    * @type {*}
-   * @memberof HttpClientService
    * @description
    * 認証トークンを使用するために `httpOptions` としてオブジェクトを用意した。
    */
-   private httpOptions: any = {
+  private httpOptions: any = {
     // ヘッダ情報
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     }),
     // DELETE 実行時に `body` が必要になるケースがあるのでプロパティとして用意しておく
     // ( ここで用意しなくても追加できるけど... )
-    body: null
+    body: null,
   };
 
   /**
    * RST-API 実行時に指定する URL
    *
    * @private
-   * @memberof HttpClientService
    * @description
    * バックエンドは Express で実装し、ポート番号「3000」で待ち受けているため、
    * そのまま指定すると CORS でエラーになる
@@ -43,7 +40,6 @@ export class HttpClientService {
    * コンストラクタ. HttpClientService のインスタンスを生成する
    *
    * @param {Http} http Httpサービスを DI する
-   * @memberof HttpClientService
    */
   constructor(private http: HttpClient) {
     // `Authorization` に `Bearer トークン` をセットする
@@ -55,18 +51,18 @@ export class HttpClientService {
    * (toPromise.then((res) =>{}) を利用する場合のコード)
    *
    * @returns {Promise<any[]>}
-   * @memberof HttpClientService
    */
   public get(): Promise<any[]> {
-    return this.http.get(this.host + '/get', this.httpOptions)
-    .toPromise()
-    .then((res) => {
-      // response の型は any ではなく class で型を定義した方が良いが
-      // ここでは簡便さから any としておく
-      const response: any = res;
-      return response;
-    })
-    .catch(this.errorHandler);
+    return this.http
+      .get(this.host + '/get', this.httpOptions)
+      .toPromise()
+      .then((res) => {
+        // response の型は any ではなく class で型を定義した方が良いが
+        // ここでは簡便さから any としておく
+        const response: any = res;
+        return response;
+      })
+      .catch(this.errorHandler);
   }
 
   /**
@@ -74,7 +70,6 @@ export class HttpClientService {
    * (subscribe((res) =>{}) を利用する場合のコード)
    *
    * @param {*} callback HTTP GET の実行結果を受け取って処理するためのコールバック処理
-   * @memberof HttpClientService
    */
   // public get(callback: any) {
   //   this.http.get(this.host + '/get', this.httpOptions)
@@ -97,16 +92,16 @@ export class HttpClientService {
    *
    * @param {*} body リクエストボディ
    * @returns {Promise<any[]>} バックエンドからのレスポンス
-   * @memberof HttpClientService
    */
   public register(body: any): Promise<any[]> {
-    return this.http.post(this.host + '/post', body, this.httpOptions)
-    .toPromise()
-    .then((res) => {
-      const response: any = res;
-      return response;
-    })
-    .catch(this.errorHandler);
+    return this.http
+      .post(this.host + '/post', body, this.httpOptions)
+      .toPromise()
+      .then((res) => {
+        const response: any = res;
+        return response;
+      })
+      .catch(this.errorHandler);
   }
 
   /**
@@ -114,16 +109,54 @@ export class HttpClientService {
    *
    * @param {*} body リクエストボディ
    * @returns {Promise<any[]>} バックエンドからのレスポンス
-   * @memberof HttpClientService
    */
   public update(body: any): Promise<any[]> {
-    return this.http.put(this.host + '/put', body, this.httpOptions)
-    .toPromise()
-    .then((res) => {
-      const response: any = res;
-      return response;
-    })
-    .catch(this.errorHandler);
+    return this.http
+      .put(this.host + '/put', body, this.httpOptions)
+      .toPromise()
+      .then((res) => {
+        const response: any = res;
+        return response;
+      })
+      .catch(this.errorHandler);
+  }
+
+  /**
+   * HTTP GET メソッドを実行する
+   * (toPromise.then((res) =>{}) を利用する場合のコード)
+   *
+   * @returns {Promise<any>}
+   */
+  public getCsv(): Promise<any> {
+    return this.http
+      .get(this.host + '/csv', this.httpOptions)
+      .toPromise()
+      .then((res) => {
+        // response の型は any ではなく class で型を定義した方が良いが
+        // ここでは簡便さから any としておく
+        const response: any = res;
+        return response;
+      })
+      .catch(this.errorHandler);
+  }
+
+  /**
+   * HTTP GET メソッドを実行する
+   * (toPromise.then((res) =>{}) を利用する場合のコード)
+   *
+   * @returns {Promise<any>}
+   */
+  public getZip(): Promise<any> {
+    return this.http
+      .get(this.host + '/zip', this.httpOptions)
+      .toPromise()
+      .then((res) => {
+        // response の型は any ではなく class で型を定義した方が良いが
+        // ここでは簡便さから any としておく
+        const response: any = res;
+        return response;
+      })
+      .catch(this.errorHandler);
   }
 
   /**
@@ -131,17 +164,17 @@ export class HttpClientService {
    *
    * @param {*} body リクエストボディ
    * @returns {Promise<any[]>} バックエンドからのレスポンス
-   * @memberof HttpClientService
    */
   public delete(body: any): Promise<any[]> {
     this.httpOptions.body = body;
-    return this.http.delete(this.host + '/delete', this.httpOptions)
-    .toPromise()
-    .then((res) => {
-      const response: any = res;
-      return response;
-    })
-    .catch(this.errorHandler);
+    return this.http
+      .delete(this.host + '/delete', this.httpOptions)
+      .toPromise()
+      .then((res) => {
+        const response: any = res;
+        return response;
+      })
+      .catch(this.errorHandler);
   }
 
   /**
@@ -150,7 +183,6 @@ export class HttpClientService {
    *
    * @private
    * @param {any} err エラー情報
-   * @memberof HttpClientService
    */
   private errorHandler(err: any): Promise<never> {
     console.log('Error occured.', err);
@@ -162,7 +194,6 @@ export class HttpClientService {
    *
    * @param {string} token 認証トークン
    * @returns {void}
-   * @memberof HttpClientService
    * @description
    * トークンを動的に設定できるようメソッド化している
    * Bearer トークンをヘッダに設定したい場合はこのメソッドを利用する
