@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 // HTTP クライアントのための import
 import { HttpClientModule } from '@angular/common/http';
+// RactiveForm を使用するために必要
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -87,6 +89,10 @@ import { AttributeDirectiveEventVerificationComponent } from './component/use-at
 import { NetworkAddressValidatorDirective } from './directive/attribute/validator/network-address-validator.directive';
 import { AttributeDirectiveValidatorVerificationComponent } from './component/use-attribute-directive/attribute-directive-validator-verification/attribute-directive-validator-verification.component';
 
+// ReactiveFormsModule の検証用コンポーネント
+import { ReactiveFormBaseComponent } from './component/reactive-form/reactive-form-base.component';
+import { ReactiveFormVerificationComponent } from './component/reactive-form/reactive-form-verification/reactive-form-verification.component';
+
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
 // 下記のように明示する以外にも
@@ -140,6 +146,10 @@ const ROUTE_TABLE: Routes = [
   {
     path: 'attribute-directive',
     component: UseAttributeDirectiveBaseComponent,
+  },
+  {
+    path: 'reactive-form',
+    component: ReactiveFormBaseComponent,
   },
   {
     path: 'tab',
@@ -224,6 +234,8 @@ const ROUTE_TABLE: Routes = [
     // 属性ディレクティブの Validation 実装検証用コンポーネント/ディレクティブ
     NetworkAddressValidatorDirective,
     AttributeDirectiveValidatorVerificationComponent,
+    ReactiveFormBaseComponent,
+    ReactiveFormVerificationComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [
@@ -231,6 +243,7 @@ const ROUTE_TABLE: Routes = [
     RouterModule.forRoot(ROUTE_TABLE), // 追加. routing の情報を登録する
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
