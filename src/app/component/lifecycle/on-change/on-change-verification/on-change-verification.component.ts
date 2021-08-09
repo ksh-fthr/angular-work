@@ -4,7 +4,7 @@ import { Logging } from 'src/app/utils/logging';
 @Component({
   selector: 'app-on-change-verification',
   templateUrl: './on-change-verification.component.html',
-  styleUrls: ['./on-change-verification.component.css']
+  styleUrls: ['../../../../style/common.css', './on-change-verification.component.css'],
 })
 export class OnChangeVerificationComponent implements OnInit, OnChanges {
   @Input() ngOnChangesValue: string = '';
@@ -12,11 +12,9 @@ export class OnChangeVerificationComponent implements OnInit, OnChanges {
   /**
    * ログ出力を行うテキストエリアの HTML エレメント
    */
-   private textAreaElement: any;
+  private textAreaElement: any;
 
-  constructor(
-    private element: ElementRef,
-  ) {
+  constructor(private element: ElementRef) {
     // コンストラクタは画面描画の前に実行されるので画面上の要素を取得することができない
     // よって､ここではコンソールログに出力するだけになる
     console.log('[constructor] execute');
@@ -59,7 +57,7 @@ export class OnChangeVerificationComponent implements OnInit, OnChanges {
           }
           return previousValue;
         })(change.previousValue),
-        currentValue: change.currentValue
+        currentValue: change.currentValue,
       };
       message = `[ngOnChanges] ${JSON.stringify(messageJson)}`;
       console.log(message);

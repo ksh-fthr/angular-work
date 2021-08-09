@@ -3,7 +3,7 @@ import { Logging } from '../../../../utils/logging';
 @Component({
   selector: 'app-do-check-verification',
   templateUrl: './do-check-verification.component.html',
-  styleUrls: ['./do-check-verification.component.css'],
+  styleUrls: ['../../../../style/common.css', './do-check-verification.component.css'],
 })
 export class DoCheckVerificationComponent implements OnInit, OnChanges, DoCheck {
   /**

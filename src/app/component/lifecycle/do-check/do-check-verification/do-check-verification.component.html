@@ -8,20 +8,18 @@
     <hr />
     <div id="do-check-block">
       <p>
-        <label for="inputText">入力項目(子だけ): </label>
+        <label for="inputText">入力項目(<font class="note">子だけ</font>): </label>
         <input class="inputText" name="inputText" type="text" [(ngModel)]="ngDoCheckValue" />
-        <br />
-        <small class="note">( <strong>ngDoCheck</strong> を走らせたときの動きをログで確認します )</small>
       </p>
       <p>
         子コンポーネントで入力された値は... <font class="input-data">{{ngDoCheckValue}}</font>
       </p>
     </div>
-  </div>
 
-  <div class="log-block">
-    <label class="log-label">ログ出力</label>
-    <textarea readonly class="log-text-area"></textarea>
+    <div class="log-block">
+      <label class="log-label">ログ出力</label>
+      <textarea readonly class="log-text-area"></textarea>
+    </div>
   </div>
 </div>
 

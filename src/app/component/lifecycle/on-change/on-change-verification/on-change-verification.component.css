@@ -7,12 +7,7 @@
 }
 
 .log-block {
-  height: 90%;
-}
-
-.input-data {
-  font-size: 1.2em;
-  color: #b7a007;
+  height: 85%;
 }
 
 .log-label {
@@ -27,8 +22,4 @@
   height: 90%;
   width: 90%;
   resize: none;
-}
-
-.note {
-  color: #f33e33;
 }

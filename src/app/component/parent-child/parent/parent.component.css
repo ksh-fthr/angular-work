@@ -1,9 +1,13 @@
 #parent-wrap {
-  height: 90%;
+  height: 100%;
 }
 
-#parent-to-child, #child-to-parent {
-  height: 50%;
+#parent-to-child {
+  height: 60%;
+}
+
+#child-to-parent {
+  height: 40%;
 }
 
 #event-data {

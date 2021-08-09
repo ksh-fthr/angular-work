@@ -4,13 +4,19 @@
   </div>
 
   <div class="body-block">
-    <p class="input-block">
-      <label for="inputText">入力項目(親から子に渡る): </label>
-      <input class="inputText" name="inputText" type="text" [(ngModel)]="childComponentParameter" />
-      <br />
-      <small class="note">( <strong>ngOnChanges</strong> を走らせたときの動きをログで確認します )</small>
-    </p>
-    <app-do-check-verification [ngOnChangesValue]="childComponentParameter"></app-do-check-verification>
+    <div class="block-separate-fifteen">
+      <p class="description">
+        <strong>ngDoCheck</strong> と <strong>ngDoCheck</strong> を走らせたときの動きをログで確認
+      </p>
+      <p class="input-block">
+        <label for="inputText">入力項目(<font class="note">親から子に渡る</font>): </label>
+        <input class="inputText" name="inputText" type="text" [(ngModel)]="childComponentParameter" />
+      </p>
+    </div>
+
+    <div class="block-separate-eighty">
+      <app-do-check-verification [ngOnChangesValue]="childComponentParameter"></app-do-check-verification>
+    </div>
   </div>
 
   <div class="footer-block">
