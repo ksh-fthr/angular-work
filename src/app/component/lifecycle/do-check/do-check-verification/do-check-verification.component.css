@@ -1,18 +1,13 @@
 #do-check-verification-area {
-  height: calc(100% - 80px);
+  height: 100%;
 }
 
 .lifecycle-verification-block {
-  height: 35%;
+  height: 100%;
 }
 
 .log-block {
-  height: 65%;
-}
-
-.input-data {
-  font-size: 1.2em;
-  color: #b7a007;
+  height: 70%;
 }
 
 .log-label {
@@ -27,8 +22,4 @@
   height: 90%;
   width: 90%;
   resize: none;
-}
-
-.note {
-  color: #f33e33;
 }

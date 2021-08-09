@@ -17,11 +17,6 @@
   margin: 20px 0px;
 }
 
-.input-network-address {
-  width: inherit;
-  height: 30px;
-}
-
 #validation-verification-error-area {
   height: 150px;
   margin: 25px 0px;
@@ -29,30 +24,10 @@
 
 #validation-verification-error-information {
   height: 150px;
-  padding: 0 20px;
+  padding: 0 10px;
   color: #b7a007;
   border: dashed 0.5px;
   /* 子要素を上下中央に配置する */
   display: flex;
   align-items: center;
-}
-
-.label-common {
-  width: 140px;
-  display: inline-block;
-}
-
-.event-button {
-  height: 40px;
-  width: 100px;
-  font-size: 1.0em;
-  border-radius: 15px;
-  border: solid 0.5px #b7a007;
-  color: #ffffff;
-  background: linear-gradient(#ffffff, #b7a007);
-}
-
-.event-button:disabled {
-  color: #bbbbbb;
-  background: #ffffff;
 }

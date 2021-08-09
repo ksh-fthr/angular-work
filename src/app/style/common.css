@@ -1,8 +1,14 @@
+/**
+ * html 要素そのものに対する設定
+ */
 div {
   margin: 0;
   padding: 0;;
 }
 
+/**
+ * 全体のレイアウトに関する設定
+ */
 .base-area {
   margin: 0 0 0 15px;
   padding: 0;
@@ -56,17 +62,15 @@ div {
   border-radius: 20px;
 }
 
-.note {
-  color: #f33e33;
-}
-
-.input-block {
-  margin: 0;
-  padding: 18px 0 0 0;
-}
-
+/**
+ * 各ブロックの分割関連の設定
+ */
 .block-separate-ten {
   height: 10%;
+}
+
+.block-separate-fifteen {
+  height: 15%;
 }
 
 .block-separate-twenty {
@@ -105,7 +109,6 @@ div {
   height: 80%;
 }
 
-
 .block-separate-ninety {
   height: 90%;
 }
@@ -116,6 +119,68 @@ div {
   height: 33%;
 }
 
+.separate-dotted {
+	background-color: #fff;
+	border-top: 0.5px dotted #8c8b8b;
+}
+
+/**
+ * 注釈関連の設定
+ */
+.note {
+  color: #f33e33;
+}
+
+/**
+ * 入力フォーム関連の設定
+ */
+.input-block {
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+
+.input-data {
+  font-size: 1.2em;
+  color: #b7a007;
+  border: 1px dotted #b7a007;
+  margin: 0;
+  padding: 5px;
+}
+
+.input-network-address {
+  width: inherit;
+  height: 30px;
+}
+
+/**
+ * ボタン関連の設定
+ */
+.event-button {
+  height: 40px;
+  width: 100px;
+  font-size: 1.0em;
+  border-radius: 15px;
+  border: solid 0.5px #b7a007;
+  color: #ffffff;
+  background: linear-gradient(#ffffff, #b7a007);
+}
+
+.event-button:disabled {
+  color: #bbbbbb;
+  background: #ffffff;
+}
+
+.event-button-w-300 {
+  width: 300px;
+}
+
+.event-button-w-400 {
+  width: 400px;
+}
+
+/**
+ * メニュー関連の設定
+ */
 .menu-block {
   height: 25px;
   padding: auto;
@@ -132,16 +197,17 @@ div {
   height: 100%;
 }
 
+/**
+ * ラベル関連の設定
+ */
+.label-common {
+  width: 140px;
+  display: inline-block;
+}
+
+/**
+ * その他
+ */
 .description {
   font-size: 1.1em;
-}
-
-.separate-dotted {
-	background-color: #fff;
-	border-top: 0.5px dotted #8c8b8b;
-}
-
-.input-block {
-  margin: 0;
-  padding: 10px 0 0 0;
 }

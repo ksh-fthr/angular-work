@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-attribute-directive-validator-verification',
   templateUrl: './attribute-directive-validator-verification.component.html',
-  styleUrls: ['./attribute-directive-validator-verification.component.css'],
+  styleUrls: ['../../../style/common.css', './attribute-directive-validator-verification.component.css'],
 })
 export class AttributeDirectiveValidatorVerificationComponent implements OnInit {
   /**

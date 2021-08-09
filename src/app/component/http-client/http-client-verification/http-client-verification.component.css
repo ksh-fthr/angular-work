@@ -103,16 +103,6 @@ input#form-message {
   align-items: center;
 }
 
-.event-button {
-  height: 40px;
-  width: 100px;
-  font-size: 1.0em;
-  border-radius: 15px;
-  border: solid 0.5px #b7a007;
-  color: #ffffff;
-  background: linear-gradient(#ffffff, #b7a007);
-}
-
 code {
   padding: 5px 10px;
   font-size: 1.2em;

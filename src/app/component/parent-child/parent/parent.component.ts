@@ -3,10 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
-  styleUrls: ['./parent.component.css']
+  styleUrls: ['../../../style/common.css', './parent.component.css'],
 })
 export class ParentComponent implements OnInit {
-
   /**
    * 子コンポーネントに渡すための文字列をセットするパラメータ
    *
@@ -23,7 +22,7 @@ export class ParentComponent implements OnInit {
    */
   public eventData: string = '';
 
-  constructor() { }
+  constructor() {}
 
   /**
    * コンポーネントの初期化処理
