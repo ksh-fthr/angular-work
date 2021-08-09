@@ -152,6 +152,40 @@ div {
   height: 30px;
 }
 
+
+.validation-body {
+  height: 100%;
+}
+
+.validation-footer {
+  padding: 0;
+  bottom: 0;
+  /* 子要素を中央に配置する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.validation-form-area {
+  height: 100%;
+  margin: 20px 0px;
+}
+
+.validation-error-area {
+  height: 150px;
+  margin: 25px 0px;
+}
+
+.validation-error-information {
+  height: 150px;
+  padding: 0 10px;
+  color: #b7a007;
+  border: dashed 0.5px;
+  /* 子要素を上下中央に配置する */
+  display: flex;
+  align-items: center;
+}
+
 /**
  * ボタン関連の設定
  */

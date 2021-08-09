@@ -1,4 +1,4 @@
-#validation-verification-body {
+.validation-body {
   height: 60%;
 }
 
@@ -6,13 +6,6 @@
   height: 100px;
 }
 
-.validation-error-information {
+.validation-error-information-h-70 {
   height: 70px;
-  width: 100%;
-  padding: 0 10px;
-  color: #b7a007;
-  border: dashed 0.5px;
-  /* 子要素を上下中央に配置する */
-  display: flex;
-  align-items: center;
 }

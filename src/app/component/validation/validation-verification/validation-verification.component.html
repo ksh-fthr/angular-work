@@ -1,6 +1,9 @@
-<div id="validation-verification-body">
+<div class="validation-body">
+  <p class="description">
+    <strong>標準機能を利用した Validation </strong>の動きを確認する
+  </p>
   <form #formCheck="ngForm" class="form-check">
-    <div id="validation-verification-form-area">
+    <div class="validation-form-area">
       <div class="input-network-address">
         <label class="label-common">IPアドレス: </label>
         <input
@@ -32,11 +35,11 @@
         >
       </div>
     </div>
-    <div id="validation-verification-error-area">
+    <div class="validation-error-area">
       <p>
         入力に誤りがある場合は下記にエラー内容が表示されます。
       </p>
-      <div id="validation-verification-error-information">
+      <div class="validation-error-information">
         <div class="note" *ngIf="validationError">
           <div [hidden]="!validationError?.required">※ 項目が未入力です</div>
           <div [hidden]="!validationError?.minlength">※ 入力した内容が短すぎます</div>
@@ -48,6 +51,6 @@
   </form>
 </div>
 
-<div id="validation-verification-footer">
+<div class="validation-footer">
   <input type="button" class="event-button" name="button-ok" value="OK" (click)="onClickOK($event)" [disabled]="formCheck.invalid">
 </div>
