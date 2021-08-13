@@ -93,6 +93,10 @@ import { AttributeDirectiveValidatorVerificationComponent } from './component/us
 import { ReactiveFormBaseComponent } from './component/reactive-form/reactive-form-base.component';
 import { ReactiveFormVerificationComponent } from './component/reactive-form/reactive-form-verification/reactive-form-verification.component';
 
+// csv ファイル出力と zip ファイル出力の検証用コンポーネント
+import { CsvAndZipBaseComponent } from './component/csv-and-zip/csv-and-zip-base.component';
+import { CsvAndZipVerificationComponent } from './component/csv-and-zip/csv-and-zip-verification/csv-and-zip-verification.component';
+
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
 // 下記のように明示する以外にも
@@ -169,6 +173,10 @@ const ROUTE_TABLE: Routes = [
     path: 'modal',
     component: ModalBaseComponent,
   },
+  {
+    path: 'csv-and-zip',
+    component: CsvAndZipBaseComponent,
+  },
 ];
 
 @NgModule({
@@ -236,6 +244,8 @@ const ROUTE_TABLE: Routes = [
     AttributeDirectiveValidatorVerificationComponent,
     ReactiveFormBaseComponent,
     ReactiveFormVerificationComponent,
+    CsvAndZipBaseComponent,
+    CsvAndZipVerificationComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [

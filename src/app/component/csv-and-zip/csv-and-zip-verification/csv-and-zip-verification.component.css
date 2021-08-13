@@ -1,0 +1,7 @@
+.button-block {
+  height: 30px;
+}
+.buttons {
+  display: block;
+  float: left;
+}
