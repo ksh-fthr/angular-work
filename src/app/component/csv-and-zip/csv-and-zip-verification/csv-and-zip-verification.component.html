@@ -1,10 +1,31 @@
+<div class="note-block">
+  <div class="note-block-items">
+    <p>
+      ※ 注釈 ※<br />
+      動作確認の際は､予め次のリポジトリを取得してきて起動しておいてください
+    </p>
+    <ul>
+      <li><a href="https://github.com/ksh-fthr/flask-work">flask-work</a></li>
+    </ul>
+    <p>
+      また Angular アプリの起動は <code>proxy.conf.json</code> で指定しているポート番号を <code>5000</code> とした上で <code>npm run start</code> で行って下さい<br />
+    </p>
+  </div>
+</div>
 <div class="button-block">
-  <div class="buttons">
-    <button type="button" class="btn btn1" (click)="outputCsv($event)">CSVファイル出力</button>
+  <div class="block-separate-fifty">
+    <p class="description">
+      バックエンドと疎通して csv データをレスポンスで受け取り､ csv ファイルとして出力します
+    </p>
+    <button type="button" class="event-button event-button-w-200" (click)="outputCsv($event)">CSVファイル出力</button>
     <a id="csv-donwload"></a>
   </div>
-  <div class="buttons">
-    <button type="button" class="btn btn1" (click)="outputZip($event)">ZIPファイル出力</button>
+  <hr class="separate-dotted"/>
+  <div class="block-separate-fifty">
+    <p class="description">
+      バックエンドと疎通して csv データをレスポンスで受け取り､ zip ファイルとして出力します
+    </p>
+    <button type="block-separate-fifty" class="event-button event-button-w-200" (click)="outputZip($event)">ZIPファイル出力</button>
     <a id="zip-donwload"></a>
   </div>
 </div>

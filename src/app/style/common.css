@@ -6,6 +6,13 @@ div {
   padding: 0;;
 }
 
+code {
+  padding: 5px 10px;
+  font-size: 1.2em;
+  color: #ffffff;
+  background: #888686;
+}
+
 /**
  * 全体のレイアウトに関する設定
  */
@@ -86,7 +93,7 @@ div {
 }
 
 .block-separate-thirty-five {
-  height: 30%;
+  height: 35%;
 }
 
 .block-separate-fourty {
@@ -129,6 +136,22 @@ div {
  */
 .note {
   color: #f33e33;
+}
+
+.note-block {
+  height: 30%;
+  font-size: 0.8em;
+  border-bottom: solid 0.5px #b7a007;
+  /* 子要素を中央に配置するための準備 */
+  position: relative;
+}
+
+.note-block-items {
+  /* 親要素に対して自分自身を中央に配置する */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
 
 /**
@@ -202,6 +225,10 @@ div {
 .event-button:disabled {
   color: #bbbbbb;
   background: #ffffff;
+}
+
+.event-button-w-200 {
+  width: 200px;
 }
 
 .event-button-w-300 {
