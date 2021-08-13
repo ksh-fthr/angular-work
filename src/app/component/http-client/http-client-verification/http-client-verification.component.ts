@@ -68,8 +68,9 @@ export class HttpClientVerificationComponent implements OnInit {
     // ------
     this.httpClientService
       .get()
-      .then((response) => {
-        this.param = response;
+      .then((response: any) => {
+        console.log(`[get] response: ${JSON.stringify(response)}`);
+        this.param = response.body;
         this.messageInfoList = this.param.messages;
       })
       .catch((error) => console.log(error));
@@ -123,8 +124,9 @@ export class HttpClientVerificationComponent implements OnInit {
     };
     this.httpClientService
       .register(body)
-      .then((response) => {
-        this.param = response;
+      .then((response: any) => {
+        console.log(`[post] response: ${JSON.stringify(response)}`);
+        this.param = response.body;
         this.messageInfoList = this.param.messages;
       })
       .catch((error) => console.log(error));
@@ -142,8 +144,9 @@ export class HttpClientVerificationComponent implements OnInit {
     };
     this.httpClientService
       .update(body)
-      .then((response) => {
-        this.param = response;
+      .then((response: any) => {
+        console.log(`[put] response: ${JSON.stringify(response)}`);
+        this.param = response.body;
         this.messageInfoList = this.param.messages;
       })
       .catch((error) => console.log(error));
@@ -160,8 +163,9 @@ export class HttpClientVerificationComponent implements OnInit {
     };
     this.httpClientService
       .delete(body)
-      .then((response) => {
-        this.param = response;
+      .then((response: any) => {
+        console.log(`[delete] response: ${JSON.stringify(response)}`);
+        this.param = response.body;
         this.messageInfoList = this.param.messages;
       })
       .catch((error) => console.log(error));
