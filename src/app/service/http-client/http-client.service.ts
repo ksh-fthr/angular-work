@@ -19,6 +19,8 @@ export class HttpClientService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
+    // レスポンスにヘッダ情報を入れるための設定
+    observe: 'response',
     // DELETE 実行時に `body` が必要になるケースがあるのでプロパティとして用意しておく
     // ( ここで用意しなくても追加できるけど... )
     body: null,
