@@ -91,8 +91,9 @@ export class HttpClientComponent implements OnInit {
     // subscribe((res) =>{}) を利用する場合のコード
     // ------
     // HTTP GET の実行結果を受け取るためのコールバックを引数に､ get() を呼び出す
-    // this.httpClientService.get((response) => {
-    //   this.param = response;
+    // this.httpClientService.get((response: any) => {
+    //   console.log(`[get] response: ${JSON.stringify(response)}`);
+    //   this.param = response.body;
     //   this.messageInfoList = this.param.messages;
     // });
   }
