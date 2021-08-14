@@ -46,7 +46,7 @@ export class HttpClientComponent implements OnInit {
    * @type {number}
    * @memberof HttpClientComponent
    */
-  public messageId: number = 1;
+  public messageId = 1;
 
   /**
    * 入力メッセージ
@@ -54,7 +54,7 @@ export class HttpClientComponent implements OnInit {
    * @type {string}
    * @memberof HttpClientComponent
    */
-  public message: string = '';
+  public message = '';
 
   /**
    * コンストラクタ. HttpClientComponent のインスタンスを生成する
@@ -71,14 +71,15 @@ export class HttpClientComponent implements OnInit {
    *
    * @memberof HttpClientComponent
    */
-  ngOnInit() {
+  ngOnInit(): void {
     // ------
     // toPromise.then((res) =>{}) を利用する場合のコード
     // ------
     this.httpClientService.get()
     .then(
-      (response) => {
-        this.param = response;
+      (response: any) => {
+        console.log(`[get] response: ${JSON.stringify(response)}`);
+        this.param = response.body;
         this.messageInfoList = this.param.messages;
       }
     )
@@ -102,7 +103,7 @@ export class HttpClientComponent implements OnInit {
    * @param {*} event イベント情報
    * @memberof HttpClientComponent
    */
-  public onClickRegister(event: any) {
+  public onClickRegister(event: any): void {
     this.doRegister();
   }
 
@@ -112,7 +113,7 @@ export class HttpClientComponent implements OnInit {
    * @param {*} event イベント情報
    * @memberof HttpClientComponent
    */
-  public onClickUpdate(event: any) {
+  public onClickUpdate(event: any): void {
     this.doUpdate();
   }
 
@@ -122,7 +123,7 @@ export class HttpClientComponent implements OnInit {
    * @param {*} event イベント情報
    * @memberof HttpClientComponent
    */
-  public onClickDelete(event: any) {
+  public onClickDelete(event: any): void {
     this.doDelete();
   }
 
@@ -132,15 +133,16 @@ export class HttpClientComponent implements OnInit {
    * @private
    * @memberof HttpClientComponent
    */
-  private doRegister() {
+  private doRegister(): void {
     const body: any = {
       id: this.messageId,
       message: this.message
     };
     this.httpClientService.register(body)
     .then(
-      (response) => {
-        this.param = response;
+      (response: any) => {
+        console.log(`[post] response: ${JSON.stringify(response)}`);
+        this.param = response.body;
         this.messageInfoList = this.param.messages;
       }
     )
@@ -155,15 +157,16 @@ export class HttpClientComponent implements OnInit {
    * @private
    * @memberof HttpClientComponent
    */
-  private doUpdate() {
+  private doUpdate(): void {
     const body: any = {
       id: this.messageId,
       message: this.message
     };
     this.httpClientService.update(body)
     .then(
-      (response) => {
-        this.param = response;
+      (response: any) => {
+        console.log(`[put] response: ${JSON.stringify(response)}`);
+        this.param = response.body;
         this.messageInfoList = this.param.messages;
       }
     )
@@ -178,14 +181,15 @@ export class HttpClientComponent implements OnInit {
    * @private
    * @memberof HttpClientComponent
    */
-  private doDelete() {
+  private doDelete(): void {
     const body: any = {
       id: this.messageId
     };
     this.httpClientService.delete(body)
     .then(
-      (response) => {
-        this.param = response;
+      (response: any) => {
+        console.log(`[delete] response: ${JSON.stringify(response)}`);
+        this.param = response.body;
         this.messageInfoList = this.param.messages;
       }
     )

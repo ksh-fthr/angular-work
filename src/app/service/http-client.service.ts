@@ -19,6 +19,8 @@ export class HttpClientService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     }),
+    // レスポンスにヘッダ情報を入れるための設定
+    observe: 'response',
     // DELETE 実行時に `body` が必要になるケースがあるのでプロパティとして用意しておく
     // ( ここで用意しなくても追加できるけど... )
     body: null
@@ -35,7 +37,7 @@ export class HttpClientService {
    * それを回避するため、ここではフロントエンドのポート番号「4200」を指定し、
    * Angular CLI のリバースプロキシを利用してバックエンドとの通信を実現する
    */
-  private host: string = 'http://localhost:4200/app';
+  private host = 'http://localhost:4200/app';
 
   /**
    * コンストラクタ. HttpClientService のインスタンスを生成する
@@ -169,7 +171,7 @@ export class HttpClientService {
     if (!token) {
       return;
     }
-    const bearerToken: string = `Bearer ${token}`;
+    const bearerToken = `Bearer ${token}`;
     this.httpOptions.headers = this.httpOptions.headers.set('Authorization', bearerToken);
   }
 }
