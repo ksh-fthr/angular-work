@@ -15,12 +15,16 @@ export class HttpClientService {
    * 認証トークンを使用するために `httpOptions` としてオブジェクトを用意した。
    */
   private httpOptions: any = {
+    //
     // ヘッダ情報
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
+    //
     // レスポンスにヘッダ情報を入れるための設定
+    // https://angular.io/guide/http#reading-the-full-response
     observe: 'response',
+    //
     // DELETE 実行時に `body` が必要になるケースがあるのでプロパティとして用意しておく
     // ( ここで用意しなくても追加できるけど... )
     body: null,
