@@ -40,8 +40,8 @@ export class CsvAndZipVerificationComponent implements OnInit {
     this.httpClientService
       .getCsv()
       .then((response: any) => {
-        const csv = response.csv;
-        const filename = response.fileName;
+        const csv = response.body.csv;
+        const filename = response.body.fileName;
 
         //-------------------------------------------
         // 2. レスポンスを加工してCSVファイルとURLを作る
@@ -79,8 +79,8 @@ export class CsvAndZipVerificationComponent implements OnInit {
     this.httpClientService
       .getZip()
       .then((response: any) => {
-        const zip = response.zip;
-        const filename = response.fileName;
+        const zip = response.body.zip;
+        const filename = response.body.fileName;
 
         // -------------------------------------------
         // 2. レスポンスを加工して ZIP ファイルと URL を作る
