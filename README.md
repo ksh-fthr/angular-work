@@ -60,7 +60,8 @@ typescript                      4.0.2
 基本的にそのとき確認した内容ごとにブランチを切ります。
 現在は次のブランチがあります。
 
-* [feature/merge_branch](https://github.com/ksh-fthr/angular-work/tree/feature/merge_branch)
+* [feature/develop](https://github.com/ksh-fthr/angular-work/tree/feature/develop)
+  * GitHub 上のデフォルトブランチ
   * 他のブランチで確認したコードを取り込んだブランチ
   * HTML のレイアウトやスタイルは変えているが､Angular の実装は大きく変えていない
   * ブランチを切り替えずにそれぞれのコードを確認できることが目的
