@@ -1,0 +1,66 @@
+.overlay {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  /* 子要素を中央に配置する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  overflow: hidden;
+  height: 200px;
+  width: 400px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+  border: solid 1px #000;
+  z-index: 1001;
+}
+
+.modal-header {
+  height: 20%;
+  width: 100%;
+  font-size: 1.2em;
+  border-bottom: solid 1px #000;
+  /* 子要素を中央に配置する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-header > #modal-header-label {
+  display: block;
+}
+
+.modal-contents {
+  height: 60%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.modal-footer {
+  height: 20%;
+  width: 100%;
+  border-top: solid 1px #000;
+  /* 子要素を中央に配置する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-footer > #close_button {
+  display: block;
+  width: 30%;
+  height: 70%;
+  font-size: 1.2em;
+  color: #fff;
+  background: linear-gradient(#ffffff, #b7a007);
+  border: 1px solid #b7a007;
+  border-radius: 20px;
+}

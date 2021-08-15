@@ -1,0 +1,25 @@
+#after-view-child-area {
+  height: 100%;;
+}
+
+.lifecycle-verification-block {
+  height: 20%;
+}
+
+.log-block {
+  height: 80%;
+}
+
+.log-label {
+  display: block;
+}
+
+.log-text-area {
+  padding: 0 20px;
+  font-size: 1.1em;
+  color: #b7a007;
+  border: solid 0.5px;
+  height: 80%;
+  width: 90%;
+  resize: none;
+}

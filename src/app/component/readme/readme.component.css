@@ -1,0 +1,92 @@
+#readme-header-block {
+  height: 35%;
+}
+
+#readme-body-block {
+  height: 65%;
+}
+
+#readme-contents-wrap {
+  height: 100%;
+  border: 1px solid #b7a007;
+  border-radius: 20px;
+}
+
+#readme-header {
+  margin: 0;
+  padding: 10px 10px;
+  color: #b7a007;
+  background: linear-gradient(#ffffff, #e2cda7);
+  height: 25px;
+  width: inherit;
+  border-radius: 20px 20px 0 0;
+}
+
+#readme-header > p {
+  margin: 0;
+  padding: 0;
+}
+
+#readme-header-description {
+  height: 200px;
+  margin: 0;
+  padding: 10px 10px;
+  /* 子要素を中央に配置するための準備 */
+  position: relative;
+}
+
+#readme-header-description div {
+  /* 親要素に対して自分自身を中央に配置する */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+table#menu-table {
+  margin: 0 auto; /* 親要素に対して自分自身を左右中央に配置する */
+  font-size: 0.8em;
+  border: 0.5px solid #b7a007;
+  border-collapse: collapse;
+}
+
+/* テーブルのヘッダ部を固定してボディ部をスクロールさせる */
+thead, tbody {
+  display: block;
+}
+
+tbody#menu-table-body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 400px;
+}
+
+/* 各行をストライプで色分け */
+tr:nth-child(even) {
+  background: #f7f3ea;
+}
+
+tr:nth-child(odd) {
+  background: #f5ebdb;
+}
+
+th {
+  background: #e2cda7;
+  color: #6b727c;
+}
+
+/* thead, tbody を block: display にした関係で表示が崩れるので各カラムの幅を明示的に指定する */
+.col-branch {
+  width: 180px;
+}
+.col-menu {
+  width: 380px;
+}
+.col-qiita {
+  width: 580px;
+}
+
+/* 各カラムの上下左右の空白を微調整する */
+th, td {
+  padding: 7px 10px;
+}

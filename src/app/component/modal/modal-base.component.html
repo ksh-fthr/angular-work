@@ -1,0 +1,13 @@
+<div class="base-area">
+  <div class="header-block">
+    <p>モーダル実装の確認( ngComponentOutlet を使ったモーダルの実装 )</p>
+  </div>
+
+  <div class="body-block">
+    <ng-container *ngComponentOutlet="modal"></ng-container>
+  </div>
+
+  <div class="footer-block">
+    <input class="footer_button" type="button" value="open modal" (click)="onClick($event);">
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div id="child-wrap">
+  <!--
+    親コンポーネントから受け取ったデータを表示する
+    @Inputデコレータで修飾されたパラメータに対して「親コンポーネント側のテンプレートでセット済み」なので
+    ここでは単純にパラメータを単方向データバインドで扱うだけで良い
+  -->
+  <div id="parent-to-child">
+    <p class="description">
+      <strong>子コンポーネント</strong>
+    </p>
+    <p id="sent-data">
+      親コンポーネントから渡された文字列は 「<strong>{{dataFromParent}}</strong>」です。
+    </p>
+  </div>
+
+  <!--
+    親コンポーネントに対してイベントを発火するためのボタンを設置
+    click イベントをキャッチする onClick イベントハンドラ内で親コンポーネントに対してイベントを発火する
+  -->
+  <div id="child-to-parent">
+    <p>
+      今度は子コンポーネントから親コンポーネントにデータを送ってみます <br />
+      下のボタンをクリックすると､親コンポーネントにイベント経由でデータが送られます
+    </p>
+    <input class="event-button event-button-w-300" type="button" value="親コンポーネントへイベント発火" (click)="onClick()"/>
+  </div>
+</div>

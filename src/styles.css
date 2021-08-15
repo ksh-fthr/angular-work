@@ -1,6 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  /* 子孫の要素で height: 100%; でウィンドウの高さを表現するためにココで 100% を指定する */
+  height: 100%;
+  width: 100%;
+}
 
-/* ウィンドウ外周のマージンをなくす */
 body {
+  /* 子孫の要素で height: 100%; でウィンドウの高さを表現するためにココで 100% を指定する */
+  height: 100%;
+  width: 100%;
+
+  /* ウィンドウ外周のマージンをなくす */
   margin: 0;
 }

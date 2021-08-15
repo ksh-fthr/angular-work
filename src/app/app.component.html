@@ -1,4 +1,35 @@
-<div class="footer">
-  <input id="footer_button" type="button" value="open modal" (click)="onClick($event);">
-</div>
-<ng-container *ngComponentOutlet="modal"></ng-container>
+<header id="header-area">
+  <div id="header-contents">
+    <img src="../assets/angular.svg" widht="64" height="64" />
+    <p>Angular-Work</p>
+  </div>
+</header>
+
+<main id="main-area">
+  <nav id="menu-contents">
+    <ul class="item_box">
+      <!-- routing のためのリンク. routerLink に app.module.ts で定義したテーブル: ROUTE_TABLE に登録した path をセットする -->
+      <li class="items"><a class="item_buttons" routerLink="/readme">README</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/life-cycle-on-change">ライフサイクル-ngOnChange の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/life-cycle-do-check">ライフサイクル-ngDoCheck の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/life-cycle-after-content">ライフサイクル-ngAfterContent[XX] の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/life-cycle-after-view">ライフサイクル-ngAfterView[XX] の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/reference">子コンポーネントと外部コンテンツの参照の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/parent-child">Input/Output を使ったデータ授受の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/data-share">サービスを使ったデータ共有の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/http-client">HTTP クライアント実装の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/validation">Validation 機能の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/attribute-directive">属性ディレクティブ実装の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/reactive-form">ReactiveFormsModule を用いた実装の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/tab">タブ実装の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/routing">ルーティング実装の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/modal">モーダル実装の確認</a></li>
+      <li class="items"><a class="item_buttons" routerLink="/csv-and-zip">csv ファイル出力と zip ファイル出力の確認</a></li>
+    </ul>
+  </nav>
+
+  <div id="main-contents">
+    <!-- routing で呼び出されたページは router-outlet で確保された領域に反映される -->
+    <router-outlet></router-outlet>
+  </div>
+</main>

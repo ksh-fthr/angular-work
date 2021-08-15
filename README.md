@@ -60,6 +60,11 @@ typescript                      4.0.2
 基本的にそのとき確認した内容ごとにブランチを切ります。
 現在は次のブランチがあります。
 
+* [feature/develop](https://github.com/ksh-fthr/angular-work)
+  * GitHub 上のデフォルトブランチ
+  * 他のブランチで確認したコードを取り込んだブランチ
+  * HTML のレイアウトやスタイルは変えているが､Angular の実装は大きく変えていない
+  * ブランチを切り替えずにそれぞれのコードを確認できることが目的
 * [feat_life_cycle_docheck](https://github.com/ksh-fthr/angular-work/tree/feat_life_cycle_docheck)
   * Angular コンポーネントのライフサイクルの ngDoCheck について確認するためのブランチ
   * Qiita の [[Angular] ライフサイクルメソッドをみる(ngDoCheck)](https://qiita.com/ksh-fthr/items/f1adea56c17f8c7f6c0d) で扱った

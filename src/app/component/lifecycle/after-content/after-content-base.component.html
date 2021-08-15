@@ -1,0 +1,36 @@
+<div class="base-area">
+  <div class="header-block">
+    <p>ライフサイクル-ngAfterContent[XX] の確認</p>
+  </div>
+
+  <div class="body-block">
+    <div class="block-separate-thirty">
+      <p class="description">
+        (前提知識として) <strong>ng-content</strong> の動きを確認
+      </p>
+      <app-ng-content-parent>
+      </app-ng-content-parent>
+    </div>
+
+    <hr />
+
+    <div class="block-separate-seventy">
+      <p class="description">
+        <strong>ngAfterContentInit</strong> と <strong>ngAfterContentChecked</strong> を走らせたときの動きをログで確認
+      </p>
+      <app-after-content-parent>
+        <!-- 対応する select 属性が付与されたタグに埋め込まれる -->
+        <!-- # class 属性を削除するとコンテンツが表示されなくなるので試してみてください -->
+        <app-after-content-child class="external-contents-component">
+        </app-after-content-child>
+        <p class="external-contents-sentence">
+          css の class 属性と select 属性を対応させているので､この文章は外部コンテンツとして埋め込まれました<br />
+          <small>(実は上の｢入力項目~｣のコンテンツも同じように class 属性と select 属性を対応させています)</small>
+        </p>
+      </app-after-content-parent>
+    </div>
+  </div>
+
+  <div class="footer-block">
+  </div>
+</div>

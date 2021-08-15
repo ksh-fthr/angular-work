@@ -1,0 +1,88 @@
+#http-client-verification-header {
+  height: 25%;
+  /* 子要素を中央に配置するための準備 */
+  position: relative;
+}
+
+.header-note {
+  font-size: 0.8em;
+}
+
+#http-client-verification-header-items {
+  /* 親要素に対して自分自身を中央に配置する */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+#http-client-verification-body {
+  height: 45%;
+}
+
+table.table {
+  margin: 0 auto; /* 親要素に対して自分自身を左右中央に配置する */
+  width: 90%;
+  border: solid 0.5px #b7a007;
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background: #f7f3ea;
+}
+
+tr:nth-child(odd) {
+  background: #f5ebdb;
+}
+
+th {
+  background: #e2cda7;
+  color: #6b727c;
+  border: solid 0.5px #b7a007;
+}
+
+th#th-id {
+  width: 10%;
+}
+
+th#th-message {
+  width: 90%;
+}
+
+td {
+  color: #6b727c;
+  border: solid 0.5px #b7a007;
+  text-align: center;
+}
+
+div#form-block {
+  width: 100%;
+  height: 100%;
+  text-align: center; /* 子要素を左右中央に配置する */
+}
+
+form {
+  width: 100%;
+}
+
+input#form-id {
+  width: 9%;
+}
+
+input#form-message {
+  width: 80%;
+}
+
+.font-decoration {
+  color: #f33e33;
+}
+
+#http-client-verification-footer {
+  padding: 0;
+  bottom: 0;
+  height: 80px;
+  /* 子要素を中央に配置する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

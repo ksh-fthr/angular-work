@@ -1,0 +1,25 @@
+<div id="do-check-verification-area">
+  <div class="lifecycle-verification-block">
+    <div id="on-change-block">
+      <p>
+        親コンポーネントで入力された値は... <font class="input-data">{{ngOnChangesValue}}</font>
+      </p>
+    </div>
+    <hr />
+    <div id="do-check-block">
+      <p>
+        <label for="inputText">入力項目(<font class="note">子だけ</font>): </label>
+        <input class="inputText" name="inputText" type="text" [(ngModel)]="ngDoCheckValue" />
+      </p>
+      <p>
+        子コンポーネントで入力された値は... <font class="input-data">{{ngDoCheckValue}}</font>
+      </p>
+    </div>
+
+    <div class="log-block">
+      <label class="log-label">ログ出力</label>
+      <textarea readonly class="log-text-area"></textarea>
+    </div>
+  </div>
+</div>
+

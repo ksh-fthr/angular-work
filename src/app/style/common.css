@@ -1,0 +1,274 @@
+/**
+ * html 要素そのものに対する設定
+ */
+div {
+  margin: 0;
+  padding: 0;;
+}
+
+code {
+  padding: 5px 10px;
+  font-size: 1.2em;
+  color: #ffffff;
+  background: #888686;
+}
+
+/**
+ * 全体のレイアウトに関する設定
+ */
+.base-area {
+  margin: 0 0 0 15px;
+  padding: 0;
+  width: calc(100% - 20px);
+  height: 100%;
+  border: 1px solid #b7a007;
+  border-radius: 20px;
+}
+
+.header-block {
+  margin: 0;
+  padding: 10px 10px;
+  color: #b7a007;
+  background: linear-gradient(#ffffff, #e2cda7);
+  height: 25px;
+  width: inherit;
+  border-radius: 20px 20px 0 0;
+}
+
+.header-block > p {
+  margin: 0;
+  padding: 0;
+}
+
+.body-block {
+  margin: 0;
+  padding: 5px 10px;
+  height: calc(100% - 125px);
+}
+
+.footer-block {
+  padding: 0;
+  background: linear-gradient(#e2cda7, #ffffff);
+  height: 70px;
+  bottom: 0;
+  border-radius: 0 0 20px 20px;
+  /* 子要素を中央に配置する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_button {
+  display: block;
+  font-size: 1.5em;
+  width: 200px;
+  height: 100%;
+  color: #fff;
+  background: linear-gradient(#ffffff, #b7a007);
+  border: 1px solid #b7a007;
+  border-radius: 20px;
+}
+
+/**
+ * 各ブロックの分割関連の設定
+ */
+.block-separate-ten {
+  height: 10%;
+}
+
+.block-separate-fifteen {
+  height: 15%;
+}
+
+.block-separate-twenty {
+  height: 20%;
+}
+
+.block-separate-twenty-five {
+  height: 25%;
+}
+
+.block-separate-thirty {
+  height: 30%;
+}
+
+.block-separate-thirty-five {
+  height: 35%;
+}
+
+.block-separate-fourty {
+  height: 40%;
+}
+
+.block-separate-fifty {
+  height: 50%;
+}
+
+.block-separate-sixty {
+  height: 60%;
+}
+
+.block-separate-seventy {
+  height: 70%;
+}
+
+.block-separate-eighty {
+  height: 80%;
+}
+
+.block-separate-ninety {
+  height: 90%;
+}
+
+.block-separate-trisect {
+  margin: 0;
+  padding: 0;
+  height: 33%;
+}
+
+.separate-dotted {
+	background-color: #fff;
+	border-top: 0.5px dotted #8c8b8b;
+}
+
+/**
+ * 注釈関連の設定
+ */
+.note {
+  color: #f33e33;
+}
+
+.note-block {
+  height: 30%;
+  font-size: 0.8em;
+  border-bottom: solid 0.5px #b7a007;
+  /* 子要素を中央に配置するための準備 */
+  position: relative;
+}
+
+.note-block-items {
+  /* 親要素に対して自分自身を中央に配置する */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+/**
+ * 入力フォーム関連の設定
+ */
+.input-block {
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+
+.input-data {
+  font-size: 1.2em;
+  color: #b7a007;
+  border: 1px dotted #b7a007;
+  margin: 0;
+  padding: 5px;
+}
+
+.input-network-address {
+  width: inherit;
+  height: 30px;
+}
+
+
+.validation-body {
+  height: 100%;
+}
+
+.validation-footer {
+  padding: 0;
+  bottom: 0;
+  /* 子要素を中央に配置する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.validation-form-area {
+  height: 100%;
+  margin: 20px 0px;
+}
+
+.validation-error-area {
+  height: 150px;
+  margin: 25px 0px;
+}
+
+.validation-error-information {
+  height: 150px;
+  padding: 0 10px;
+  color: #b7a007;
+  border: dashed 0.5px;
+  /* 子要素を上下中央に配置する */
+  display: flex;
+  align-items: center;
+}
+
+/**
+ * ボタン関連の設定
+ */
+.event-button {
+  height: 40px;
+  width: 100px;
+  font-size: 1.0em;
+  border-radius: 15px;
+  border: solid 0.5px #b7a007;
+  color: #ffffff;
+  background: linear-gradient(#ffffff, #b7a007);
+}
+
+.event-button:disabled {
+  color: #bbbbbb;
+  background: #ffffff;
+}
+
+.event-button-w-200 {
+  width: 200px;
+}
+
+.event-button-w-300 {
+  width: 300px;
+}
+
+.event-button-w-400 {
+  width: 400px;
+}
+
+/**
+ * メニュー関連の設定
+ */
+.menu-block {
+  height: 25px;
+  padding: auto;
+  border-bottom: solid 1px #b7a007;
+}
+
+.menu-block ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0 15px;
+}
+
+.routing-block {
+  height: 100%;
+}
+
+/**
+ * ラベル関連の設定
+ */
+.label-common {
+  width: 140px;
+  display: inline-block;
+}
+
+/**
+ * その他
+ */
+.description {
+  font-size: 1.1em;
+}

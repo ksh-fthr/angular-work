@@ -1,0 +1,20 @@
+#attribute-directive-verification-wrap {
+  margin: 20px 0px;
+  height: calc(100% - 30px);
+}
+
+#attribute-directive-verification-area {
+  font-size: 1.1em;
+  color: #b7a007;
+  border: dashed 0.5px;
+  height: 90%;
+  /* 子要素を上下中央に配置する */
+  display: flex;
+  align-items: center;
+}
+
+#attribute-directive-template {
+  display: block;
+  height: 100%;
+  margin: 25px 10px;
+}
