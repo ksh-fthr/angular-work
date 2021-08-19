@@ -78,7 +78,7 @@ export class HttpClientService {
    * @param {*} callback HTTP GET の実行結果を受け取って処理するためのコールバック処理
    */
   // public get(callback: any) {
-  //   this.http.get(this.host + '/get', this.httpOptions).subscribe(
+  //   this.http.get(this.host + '/message/get', this.httpOptions).subscribe(
   //     (res) => {
   //       const response: any = res;
   //       callback(response);
