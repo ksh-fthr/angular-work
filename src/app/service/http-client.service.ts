@@ -58,7 +58,7 @@ export class HttpClientService {
    * @memberof HttpClientService
    */
   public get(): Promise<any[]> {
-    return this.http.get(this.host + '/get', this.httpOptions)
+    return this.http.get(this.host + '/message/get', this.httpOptions)
     .toPromise()
     .then((res) => {
       // response の型は any ではなく class で型を定義した方が良いが
@@ -77,7 +77,7 @@ export class HttpClientService {
    * @memberof HttpClientService
    */
   // public get(callback: any) {
-  //   this.http.get(this.host + '/get', this.httpOptions)
+  //   this.http.get(this.host + '/message/get', this.httpOptions)
   //   .subscribe(
   //     (res) => {
   //       const response: any = res;
@@ -100,7 +100,7 @@ export class HttpClientService {
    * @memberof HttpClientService
    */
   public register(body: any): Promise<any[]> {
-    return this.http.post(this.host + '/post', body, this.httpOptions)
+    return this.http.post(this.host + '/message/post', body, this.httpOptions)
     .toPromise()
     .then((res) => {
       const response: any = res;
@@ -117,7 +117,7 @@ export class HttpClientService {
    * @memberof HttpClientService
    */
   public update(body: any): Promise<any[]> {
-    return this.http.put(this.host + '/put', body, this.httpOptions)
+    return this.http.put(this.host + '/message/put', body, this.httpOptions)
     .toPromise()
     .then((res) => {
       const response: any = res;
@@ -135,7 +135,7 @@ export class HttpClientService {
    */
   public delete(body: any): Promise<any[]> {
     this.httpOptions.body = body;
-    return this.http.delete(this.host + '/delete', this.httpOptions)
+    return this.http.delete(this.host + '/message/delete', this.httpOptions)
     .toPromise()
     .then((res) => {
       const response: any = res;
