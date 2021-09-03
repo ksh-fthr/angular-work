@@ -25,10 +25,10 @@
     "rbbit.typescript-hero",
     "pmneo.tsimporter",
     "gydunhn.typescript-essentials",
-    "msjsdiag.debugger-for-chrome",
     "firefox-devtools.vscode-firefox-debug",
     "oouo-diogo-perdigao.docthis",
     "xabikos.javascriptsnippets",
-    "gydunhn.javascript-essentials"
+    "gydunhn.javascript-essentials",
+    "pkief.material-icon-theme"
   ]
 }
