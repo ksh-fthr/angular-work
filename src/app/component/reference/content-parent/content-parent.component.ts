@@ -20,7 +20,7 @@ export class ContentParentComponent implements AfterContentChecked {
    *
    * @type {string}
    */
-  public contentValue: string = '';
+  public contentValue = '';
 
   /**
    * 外部コンテンツの参照

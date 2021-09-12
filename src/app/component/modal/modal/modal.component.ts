@@ -13,7 +13,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   /**
    * コンストラクタ
    *
-   * @param {ModalService} modalService
+   * @param modalService
    */
   constructor(
     private modalService: ModalService
@@ -35,7 +35,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   /**
    * クリックイベント
    *
-   * @param {*} $event イベント情報
+   * @param $event イベント情報
    */
   public onClick($event: any) {
     this.notifyCloseModal();

@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ModalService {
-
   // データの変更を通知するためのオブジェクト
   private closeEventSubject = new Subject<string>();
 
@@ -15,7 +14,7 @@ export class ModalService {
   /**
    * コンストラクタ
    */
-  constructor() { }
+  constructor() {}
 
   /**
    * イベント通知のリクエストを処理する( モーダルダイアログを閉じる )

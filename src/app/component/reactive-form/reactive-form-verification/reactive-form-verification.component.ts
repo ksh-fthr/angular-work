@@ -100,12 +100,12 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
 
     // フォーム生成時に指定した入力項目( FormControl ) 分、validation の状態を監視する
     // 状態が変化したらイベントをキャッチするので、それをトリガーにエラー情報の管理を行う
-    this.ipControlSubscription = this.networkForm.controls['ipControl'].statusChanges.subscribe((data) => {
-      this.manageValidationError('ipControl', this.networkForm.controls['ipControl'].errors);
+    this.ipControlSubscription = this.networkForm.controls.ipControl.statusChanges.subscribe((data) => {
+      this.manageValidationError('ipControl', this.networkForm.controls.ipControl.errors);
     });
 
-    this.subnetmaskSubscription = this.networkForm.controls['subnetmaskControl'].statusChanges.subscribe((data) => {
-      this.manageValidationError('subnetmaskControl', this.networkForm.controls['subnetmaskControl'].errors);
+    this.subnetmaskSubscription = this.networkForm.controls.subnetmaskControl.statusChanges.subscribe((data) => {
+      this.manageValidationError('subnetmaskControl', this.networkForm.controls.subnetmaskControl.errors);
     });
 
     this.changeFormEnabledDisabled();
@@ -129,8 +129,8 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
     // この例では常に「有効」となる
 
     // 有効にしたい場合
-    this.networkForm.controls['ipControl'].enable();
-    this.networkForm.controls['subnetmaskControl'].enable();
+    this.networkForm.controls.ipControl.enable();
+    this.networkForm.controls.subnetmaskControl.enable();
     // 無効にしたい場合
     // this.networkForm.controls['ipControl'].disable();
     // this.networkForm.controls['subnetmaskControl'].disable();
@@ -140,12 +140,12 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
    * OKボタンがクリックされた時のイベントハンドラ
    * ここでは単純にアラートを出すだけ
    *
-   * @param {any} $event イベント情報
+   * @param $event イベント情報
    */
   public onClickOK($event: any) {
     const inputValue: any = {
-      ipAddress: this.networkForm.controls['ipControl'].value,
-      subnetmask: this.networkForm.controls['subnetmaskControl'].value,
+      ipAddress: this.networkForm.controls.ipControl.value,
+      subnetmask: this.networkForm.controls.subnetmaskControl.value,
     };
     alert('input value: ' + JSON.stringify(inputValue));
   }
@@ -157,8 +157,8 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
    * # ビューに表示するためのエラー情報にリストの最後の情報をセットする
    *
    * @private
-   * @param {any} validationKey エラーが発生した入力フォーム
-   * @param {any} errorInformation バリデーションエラー情報
+   * @param validationKey エラーが発生した入力フォーム
+   * @param errorInformation バリデーションエラー情報
    */
   private manageValidationError(validationKey: any, errorInformation: any) {
     // validation のエラー情報を管理する

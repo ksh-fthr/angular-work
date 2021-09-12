@@ -34,8 +34,8 @@ export class NetworkAddressValidatorDirective implements Validator {
   /**
    * 入力値に対する validation を実施する
    *
-   * @param {AbstractControl} control 検証対象の form 要素
-   * @returns {{[key: string]: any}} 検証結果
+   * @param control 検証対象の form 要素
+   * @returns 検証結果
    */
   validate(control: AbstractControl): { [key: string]: any } {
     const address: string = control.value;

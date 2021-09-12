@@ -11,7 +11,7 @@ export class ContentChildComponent {
    *
    * @type {string}
    */
-  public inputValue: string = '';
+  public inputValue = '';
 
   constructor() {}
 }

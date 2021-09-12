@@ -20,9 +20,10 @@ import { DataShareService } from '../../../service/data-share/data-share.service
 export class DataShareBComponent implements OnInit, OnDestroy, AfterViewChecked {
   /**
    * DataShareService の変数の参照を取得するプロパティ
+   *
    * @type {string}
    */
-  public serviceProp: string = 'Initialized by Component-B';
+  public serviceProp = 'Initialized by Component-B';
 
   /**
    * subscribe を保持するための Subscription
@@ -34,6 +35,7 @@ export class DataShareBComponent implements OnInit, OnDestroy, AfterViewChecked 
 
   /**
    * サービスで共有するデータが更新されたかをチェックするためのデータ
+   *
    * @type {string}
    */
   private preData: string = this.serviceProp;
@@ -41,7 +43,7 @@ export class DataShareBComponent implements OnInit, OnDestroy, AfterViewChecked 
   /**
    * コンストラクタ. ServiceSample2Component のインスタンスを生成する
    *
-   * @param {DataShareService} dataShareService 共通サービス
+   * @param dataShareService 共通サービス
    */
   constructor(private dataShareService: DataShareService, private element: ElementRef) {}
 

@@ -9,6 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class HttpClientService {
   /**
    * Http クライアントを実行する際のヘッダオプション
+   *
    * @private
    * @type {*}
    * @description
@@ -18,6 +19,7 @@ export class HttpClientService {
     //
     // ヘッダ情報
     headers: new HttpHeaders({
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       'Content-Type': 'application/json',
     }),
     //
@@ -45,7 +47,7 @@ export class HttpClientService {
   /**
    * コンストラクタ. HttpClientService のインスタンスを生成する
    *
-   * @param {Http} http Httpサービスを DI する
+   * @param http Httpサービスを DI する
    */
   constructor(private http: HttpClient) {
     // `Authorization` に `Bearer トークン` をセットする
@@ -56,7 +58,7 @@ export class HttpClientService {
    * HTTP GET メソッドを実行する
    * (toPromise.then((res) =>{}) を利用する場合のコード)
    *
-   * @returns {Promise<any[]>}
+   * @returns
    */
   public get(): Promise<any[]> {
     return this.http
@@ -95,8 +97,8 @@ export class HttpClientService {
   /**
    * メッセージ登録
    *
-   * @param {*} body リクエストボディ
-   * @returns {Promise<any[]>} バックエンドからのレスポンス
+   * @param body リクエストボディ
+   * @returns バックエンドからのレスポンス
    */
   public register(body: any): Promise<any[]> {
     return this.http
@@ -112,8 +114,8 @@ export class HttpClientService {
   /**
    * メッセージ更新
    *
-   * @param {*} body リクエストボディ
-   * @returns {Promise<any[]>} バックエンドからのレスポンス
+   * @param body リクエストボディ
+   * @returns バックエンドからのレスポンス
    */
   public update(body: any): Promise<any[]> {
     return this.http
@@ -129,8 +131,8 @@ export class HttpClientService {
   /**
    * メッセージ削除
    *
-   * @param {*} body リクエストボディ
-   * @returns {Promise<any[]>} バックエンドからのレスポンス
+   * @param body リクエストボディ
+   * @returns バックエンドからのレスポンス
    */
   public delete(body: any): Promise<any[]> {
     this.httpOptions.body = body;
@@ -148,7 +150,7 @@ export class HttpClientService {
    * HTTP GET メソッドを実行する
    * (toPromise.then((res) =>{}) を利用する場合のコード)
    *
-   * @returns {Promise<any>}
+   * @returns
    */
   public getCsv(): Promise<any> {
     return this.http
@@ -167,7 +169,7 @@ export class HttpClientService {
    * HTTP GET メソッドを実行する
    * (toPromise.then((res) =>{}) を利用する場合のコード)
    *
-   * @returns {Promise<any>}
+   * @returns
    */
   public getZip(): Promise<any> {
     return this.http
@@ -187,7 +189,7 @@ export class HttpClientService {
    * (toPromise.then((res) =>{}) を利用する場合のコード)
    *
    * @private
-   * @param {any} err エラー情報
+   * @param err エラー情報
    */
   private errorHandler(err: any): Promise<never> {
     console.log('Error occured.', err);
@@ -197,10 +199,10 @@ export class HttpClientService {
   /**
    * Authorizatino に認証トークンを設定しする
    *
-   * @param {string} token 認証トークン
-   * @returns {void}
+   * @param token 認証トークン
+   * @returns
    * @description
-   * トークンを動的に設定できるようメソッド化している
+トークンを動的に設定できるようメソッド化している
    * Bearer トークンをヘッダに設定したい場合はこのメソッドを利用する
    */
   public setAuthorization(token: string = ''): void {

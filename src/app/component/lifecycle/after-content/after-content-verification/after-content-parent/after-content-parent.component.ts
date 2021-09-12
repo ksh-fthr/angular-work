@@ -1,4 +1,4 @@
-import { Component, OnInit, ContentChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ContentChild, ElementRef, AfterContentInit, AfterContentChecked } from '@angular/core';
 import { AfterContentChildComponent } from '../after-content-child/after-content-child.component';
 import { Logging } from '../../../../../utils/logging';
 
@@ -7,7 +7,7 @@ import { Logging } from '../../../../../utils/logging';
   templateUrl: './after-content-parent.component.html',
   styleUrls: ['./after-content-parent.component.css'],
 })
-export class AfterContentParentComponent implements OnInit {
+export class AfterContentParentComponent implements OnInit, AfterContentInit, AfterContentChecked {
   // 外部コンテンツである子コンポーネントを参照
   @ContentChild(AfterContentChildComponent) child!: AfterContentChildComponent;
 
@@ -40,7 +40,7 @@ export class AfterContentParentComponent implements OnInit {
   /**
    * 外部コンテンツが初期化された後に処理
    */
-  ngAfterContentInit() {
+  ngAfterContentInit(): void {
     this.parentContents = this.child.childContents;
 
     const message = `[AfterContentParentComponent][ngAfterContentInit] fired. parentContents={ ${this.parentContents} }`;
@@ -51,7 +51,7 @@ export class AfterContentParentComponent implements OnInit {
   /**
    * 外部コンテンツの確認後に処理
    */
-  ngAfterContentChecked() {
+  ngAfterContentChecked(): void {
     this.parentContents = this.child.childContents;
 
     const message = `[AfterContentParentComponent][ngAfterContentChecked] fired. parentContents={ ${this.parentContents} }`;

@@ -17,7 +17,7 @@ export class ChildComponent implements OnInit {
    *
    * @type {string}
    */
-  @Input() dataFromParent: string = '';
+  @Input() dataFromParent = '';
 
   /**
    * 親コンポーネントに対してイベントを発火するためのパラメータ

@@ -6,11 +6,11 @@ export class TabModel {
   /**
    * コンストラクタ
    *
-   * @param {string} _name タブ名
-   * @param {*} _contents コンテンツ( 実態はコンポーネントそのもの )
-   * @param {boolean} _current 現在表示中か否かを示すフラグ
+   * @param _name タブ名
+   * @param _contents コンテンツ( 実態はコンポーネントそのもの )
+   * @param _current 現在表示中か否かを示すフラグ
    */
-  constructor(_name: string, _contents: any, _current: boolean) {
+  constructor(_name: string, _contents: any, _current: boolean = false) {
     this._name = _name;
     this._contents = _contents;
     this._current = _current;
