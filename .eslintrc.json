@@ -21,25 +21,27 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
-    "semi": [
-      "error",
-      "always"
-    ],
-    "semi-spacing": [
-      "error",
-      {
-        "after": true,
-        "before": false
-      }
-    ],
-    "semi-style": [
-      "error",
-      "last"
-    ],
-    "no-extra-semi": "error",
-    "no-unexpected-multiline": "error",
-    "no-unreachable": "error",
-    "no-underscore-dangle": "off",
+        // ===> ここからセミコロン必須の設定
+        "semi": [
+          "error",
+          "always"
+        ],
+        "semi-spacing": [
+          "error",
+          {
+            "after": true,
+            "before": false
+          }
+        ],
+        "semi-style": [
+          "error",
+          "last"
+        ],
+        "no-extra-semi": "error",
+        "no-unexpected-multiline": "error",
+        "no-unreachable": "error",
+        "no-underscore-dangle": "off",
+        // <=== ここまでセミコロン必須の設定
         "@typescript-eslint/member-ordering": "off",
         "max-len": [
           "error", {
