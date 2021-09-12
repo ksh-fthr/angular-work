@@ -8,7 +8,7 @@ import { Logging } from '../../../../../utils/logging';
 })
 export class AfterContentChildComponent implements OnInit {
   // 親コンポーネントに渡す値をセットする変数
-  public childContents: string = '';
+  public childContents = '';
 
   /**
    * ログ出力を行うテキストエリアの HTML エレメント
@@ -25,7 +25,7 @@ export class AfterContentChildComponent implements OnInit {
 
   ngOnInit(): void {
     this.childContents = '子コンポーネント で初期化しました。';
-    const message: string = `[AfterContentChildComponent][ngOnInit] fired. childContents={ ${this.childContents} }`;
+    const message = `[AfterContentChildComponent][ngOnInit] fired. childContents={ ${this.childContents} }`;
     console.log(message);
 
     this.textAreaElement = this.element.nativeElement.querySelector('.log-text-area');

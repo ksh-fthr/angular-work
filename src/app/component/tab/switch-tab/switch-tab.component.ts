@@ -45,7 +45,7 @@ export class SwitchTabComponent implements OnInit {
   /**
    * ボタンがクリックされた時のイベントハンドラ
    *
-   * @param {any} $event イベント情報
+   * @param $event イベント情報
    */
   public onClick($event: any) {
     // クリックされたタブに応じて表示するコンテンツ( component ) を切り替える

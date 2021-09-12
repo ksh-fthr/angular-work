@@ -11,14 +11,14 @@ export class AttributeDirectiveValidatorVerificationComponent implements OnInit 
    *
    * @type {string}
    */
-  public inputAddress: string = '';
+  public inputAddress = '';
 
   /**
    * 入力されたアドレス
    *
    * @type {string}
    */
-  public inputSubnetMask: string = '';
+  public inputSubnetMask = '';
 
   /**
    * 入力エラー情報を画面に表示するためのプロパティ
@@ -49,7 +49,7 @@ export class AttributeDirectiveValidatorVerificationComponent implements OnInit 
    * OKボタンがクリックされた時のイベントハンドラ
    * ここでは単純にアラートを出すだけ
    *
-   * @param {any} $event イベント情報
+   * @param $event イベント情報
    */
   public onClickOK($event: any) {
     alert('OK button had clicked.');
@@ -59,8 +59,8 @@ export class AttributeDirectiveValidatorVerificationComponent implements OnInit 
    * keyup イベントのイベントハンドラ
    * このイベントをトリガーに入力エラー情報を管理する
    *
-   * @param {any} validationKey
-   * @param {any} errorInformation
+   * @param validationKey
+   * @param errorInformation
    */
   public onKeyUp(validationKey: any, errorInformation: any) {
     this.manageValidationError(validationKey, errorInformation);
@@ -73,8 +73,8 @@ export class AttributeDirectiveValidatorVerificationComponent implements OnInit 
    * # ビューに表示するためのエラー情報にリストの最後の情報をセットする
    *
    * @private
-   * @param {any} validationKey エラーが発生した入力フォーム
-   * @param {any} errorInformation バリデーションエラー情報
+   * @param validationKey エラーが発生した入力フォーム
+   * @param errorInformation バリデーションエラー情報
    */
   private manageValidationError(validationKey: any, errorInformation: any) {
     for (const target in this.validationErrorList) {

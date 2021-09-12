@@ -1,3 +1,4 @@
+/* eslint-disable @angular-eslint/no-conflicting-lifecycle */
 import { Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Logging } from '../../../../utils/logging';
 @Component({
@@ -12,12 +13,12 @@ export class DoCheckVerificationComponent implements OnInit, OnChanges, DoCheck 
    * @type {string}
    */
   @Input()
-  ngOnChangesValue: string = '';
+  ngOnChangesValue = '';
 
   /**
    * ngDoCheck の確認のためのパラメータ
    */
-  ngDoCheckValue: string = 'Initial Value';
+  ngDoCheckValue = 'Initial Value';
 
   /**
    * ログ出力を行うテキストエリアの HTML エレメント
@@ -32,7 +33,7 @@ export class DoCheckVerificationComponent implements OnInit, OnChanges, DoCheck 
 
   ngOnInit(): void {
     // こちらはコンソールログと画面上の両方に出力する
-    const message: string = '[ngOnInit] fired';
+    const message = '[ngOnInit] fired';
     console.log(message);
     Logging.info(this.textAreaElement, message);
   }
@@ -48,14 +49,14 @@ export class DoCheckVerificationComponent implements OnInit, OnChanges, DoCheck 
     this.textAreaElement = this.element.nativeElement.querySelector('.log-text-area');
 
     // こちらもコンソールログと画面上の両方に出力する
-    const message: string = `[ngOnChanges] fired. ngOnChangesValue={ ${this.ngOnChangesValue} }`;
+    const message = `[ngOnChanges] fired. ngOnChangesValue={ ${this.ngOnChangesValue} }`;
     console.log(message);
     Logging.info(this.textAreaElement, message);
   }
 
   ngDoCheck(): void {
     // こちらもコンソールログと画面上の両方に出力する
-    const message: string = `[ngDoCheck] fired. ngDoCheckValue={ ${this.ngDoCheckValue} }`;
+    const message = `[ngDoCheck] fired. ngDoCheckValue={ ${this.ngDoCheckValue} }`;
     console.log(message);
     Logging.info(this.textAreaElement, message);
   }

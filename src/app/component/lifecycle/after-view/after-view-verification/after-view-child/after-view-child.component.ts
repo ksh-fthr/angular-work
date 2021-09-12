@@ -30,7 +30,7 @@ export class AfterViewChildComponent implements OnInit, AfterViewInit, AfterView
     this.ngAfterViewCheckValue = 'ngOnInitで初期化した';
 
     this.textAreaElement = this.element.nativeElement.querySelector('.log-text-area');
-    const message: string = `[AfterViewChildComponent][ngOnInit] fired. ngAfterViewCheckValue = { ${this.ngAfterViewCheckValue} }`;
+    const message = `[AfterViewChildComponent][ngOnInit] fired. ngAfterViewCheckValue = { ${this.ngAfterViewCheckValue} }`;
     console.log(message);
     Logging.info(this.textAreaElement, message);
   }
@@ -39,7 +39,7 @@ export class AfterViewChildComponent implements OnInit, AfterViewInit, AfterView
    * ビューの初期化をフックする
    */
   ngAfterViewInit(): void {
-    const message: string = '[AfterViewChildComponent][ngAfterViewInit] fired.';
+    const message = '[AfterViewChildComponent][ngAfterViewInit] fired.';
     console.log(message);
     Logging.info(this.textAreaElement, message);
   }
@@ -48,7 +48,7 @@ export class AfterViewChildComponent implements OnInit, AfterViewInit, AfterView
    * ビューの変更をフックする
    */
   ngAfterViewChecked(): void {
-    const message: string = `[AfterViewChildComponent][ngAfterViewChecked] fired. ngAfterViewCheckValue = { ${this.ngAfterViewCheckValue} }`;
+    const message = `[AfterViewChildComponent][ngAfterViewChecked] fired. ngAfterViewCheckValue = { ${this.ngAfterViewCheckValue} }`;
     console.log(message);
     Logging.info(this.textAreaElement, message);
   }

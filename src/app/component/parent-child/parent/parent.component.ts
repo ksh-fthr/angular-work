@@ -12,7 +12,7 @@ export class ParentComponent implements OnInit {
    * @public
    * @type {string}
    */
-  public parentData: string = '';
+  public parentData = '';
 
   /**
    * 子コンポーネントからイベント発火で渡された文字列をセットするパラメータ
@@ -20,7 +20,7 @@ export class ParentComponent implements OnInit {
    * @public
    * @type {string}
    */
-  public eventData: string = '';
+  public eventData = '';
 
   constructor() {}
 
@@ -35,7 +35,7 @@ export class ParentComponent implements OnInit {
    * イベントハンドラ
    * 子コンポーネントから発火されたイベントをキャッチして文字列を受け取る
    *
-   * @param {string} eventData 子コンポーネントから渡される文字列
+   * @param eventData 子コンポーネントから渡される文字列
    */
   onReceiveEventFromChild(eventData: string) {
     this.eventData = eventData;

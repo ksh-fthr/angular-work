@@ -54,7 +54,7 @@ export class HttpClientVerificationComponent implements OnInit {
    * コンストラクタ. HttpClientComponent のインスタンスを生成する
    * 自作した HttpClientService を DI する
    *
-   * @param {HttpClientService} httpClientService HTTP通信を担当するサービス
+   * @param httpClientService HTTP通信を担当するサービス
    */
   constructor(private httpClientService: HttpClientService) {}
 
@@ -89,7 +89,7 @@ export class HttpClientVerificationComponent implements OnInit {
   /**
    * 登録ボタンクリック時のイベントハンドラ
    *
-   * @param {*} event イベント情報
+   * @param event イベント情報
    */
   public onClickRegister(event: any): void {
     this.doRegister();
@@ -98,7 +98,7 @@ export class HttpClientVerificationComponent implements OnInit {
   /**
    * 更新ボタンクリック時のイベントハンドラ
    *
-   * @param {*} event イベント情報
+   * @param event イベント情報
    */
   public onClickUpdate(event: any): void {
     this.doUpdate();
@@ -107,7 +107,7 @@ export class HttpClientVerificationComponent implements OnInit {
   /**
    * 削除ボタンクリック時のイベントハンドラ
    *
-   * @param {*} event イベント情報
+   * @param event イベント情報
    */
   public onClickDelete(event: any): void {
     this.doDelete();
