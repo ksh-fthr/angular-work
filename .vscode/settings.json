@@ -16,13 +16,13 @@
   },
   // フォーマッタをprettierに指定
   "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
-},
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
+  },
   "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
-},
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
+  },
   // html
   "html.format.wrapLineLength": 0,
   "html.format.enable": false,
