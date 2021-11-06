@@ -2,19 +2,22 @@
 Angular CLI で作成したプロジェクトを使用して、Angular の理解を深めるためにアレコレすることを目的としたものです。
 したがって、完全に個人での利用を目的としたものであり、更新のたびに以前の機能が無くなることがあります。
 
-上記より master ブランチは意味のある役割を持っていません。
-もし学習の内容が気になる場合は各ブランチをご参照ください。
+学習の内容が気になる場合は各ブランチをご参照ください。
+
+なお [develop](https://github.com/ksh-fthr/angular-work) ブランチには各ブランチで学習/実装した機能をマージしております。
+表示される画面に違いはありますが、コンポーネントやサービス、ディレクティブにおける基本的な実装内容に大きな違いはありません。
 
 # 環境について
-以下の環境で実行・確認しています。
+[develop](https://github.com/ksh-fthr/angular-work) ブランチの内容は 以下の環境で実行・確認しています。
+他のブランチの確認バージョンについては、後述の各ブランチ の README をご参照下さい。
 
 | 環境                                          | バージョン | 備考               |
 | --------------------------------------------- | ---------- | ------------------ |
-| [Angular CLI](https://cli.angular.io/)        | v11.0.5    | `$ ng --version`   |
-| [Angular](https://angular.io/)                | v11.0.5    | 同上               |
-| [TypeScript](https://www.typescriptlang.org/) | v4.0.2     | 同上               |
-| [Node.js](https://nodejs.org/ja/)             | v12.18.3   | `$ node --version` |
-| [npm](https://www.npmjs.com/)                 | v6.14.6    | `$ npm --version`  |
+| [Angular CLI](https://cli.angular.io/)        | v12.2.13   | `$ ng --version`   |
+| [Angular](https://angular.io/)                | v12.2.13   | 同上               |
+| [TypeScript](https://www.typescriptlang.org/) | v4.3.5     | 同上               |
+| [Node.js](https://nodejs.org/ja/)             | v14.17.0   | `$ node --version` |
+| [npm](https://www.npmjs.com/)                 | v6.14.13   | `$ npm --version`  |
 
 <details>
 <div>
@@ -31,25 +34,24 @@ $ ng version
                 |___/
 
 
-Angular CLI: 11.0.5
-Node: 12.18.3
+Angular CLI: 12.2.13
+Node: 14.17.0
+Package Manager: npm 6.14.13
 OS: darwin x64
 
-Angular: 11.0.5
+Angular: 12.2.13
 ... animations, cli, common, compiler, compiler-cli, core, forms
 ... platform-browser, platform-browser-dynamic, router
-Ivy Workspace: Yes
 
 Package                         Version
 ---------------------------------------------------------
-@angular-devkit/architect       0.1100.5
-@angular-devkit/build-angular   0.1100.5
-@angular-devkit/core            11.0.5
-@angular-devkit/schematics      11.0.5
-@schematics/angular             11.0.5
-@schematics/update              0.1100.5
+@angular-devkit/architect       0.1202.13
+@angular-devkit/build-angular   12.2.13
+@angular-devkit/core            12.2.13
+@angular-devkit/schematics      12.2.13
+@schematics/angular             12.2.13
 rxjs                            6.6.0
-typescript                      4.0.2
+typescript                      4.3.5
 ```
 
 </div>
@@ -60,7 +62,7 @@ typescript                      4.0.2
 基本的にそのとき確認した内容ごとにブランチを切ります。
 現在は次のブランチがあります。
 
-* [feature/develop](https://github.com/ksh-fthr/angular-work)
+* [develop](https://github.com/ksh-fthr/angular-work)
   * GitHub 上のデフォルトブランチ
   * 他のブランチで確認したコードを取り込んだブランチ
   * HTML のレイアウトやスタイルは変えているが､Angular の実装は大きく変えていない
