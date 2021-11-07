@@ -8,9 +8,8 @@ describe('DataShareAComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataShareAComponent ]
-    })
-    .compileComponents();
+      declarations: [DataShareAComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

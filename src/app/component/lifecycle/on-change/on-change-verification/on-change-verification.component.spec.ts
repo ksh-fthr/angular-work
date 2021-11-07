@@ -8,9 +8,8 @@ describe('OnChangeVerificationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OnChangeVerificationComponent ]
-    })
-    .compileComponents();
+      declarations: [OnChangeVerificationComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

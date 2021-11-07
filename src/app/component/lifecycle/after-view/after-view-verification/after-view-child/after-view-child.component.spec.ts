@@ -8,9 +8,8 @@ describe('AfterViewChildComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AfterViewChildComponent ]
-    })
-    .compileComponents();
+      declarations: [AfterViewChildComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

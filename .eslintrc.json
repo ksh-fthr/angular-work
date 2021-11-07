@@ -3,7 +3,13 @@
   "ignorePatterns": [
     "projects/**/*"
   ],
-  "overrides": [
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "env": {
+      "es6": true
+    },
+    "overrides": [
     {
       "files": [
         "*.ts"
@@ -21,6 +27,13 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        "indent": [
+          "error",
+          2,
+          {
+            "SwitchCase": 1
+          }
+        ],
         // ===> ここからセミコロン必須の設定
         "semi": [
           "error",
@@ -75,9 +88,7 @@
       ],
       "extends": [
         "plugin:@angular-eslint/template/recommended"
-      ],
-      "rules": {
-      }
+      ]
     }
   ]
 }

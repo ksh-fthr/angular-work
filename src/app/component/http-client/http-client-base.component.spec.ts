@@ -8,9 +8,8 @@ describe('HttpClientBaseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HttpClientBaseComponent ]
-    })
-    .compileComponents();
+      declarations: [HttpClientBaseComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -8,9 +8,8 @@ describe('HttpClientVerificationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HttpClientVerificationComponent ]
-    })
-    .compileComponents();
+      declarations: [HttpClientVerificationComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
