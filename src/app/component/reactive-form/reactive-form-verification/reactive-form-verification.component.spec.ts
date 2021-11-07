@@ -8,9 +8,8 @@ describe('ReactiveFormVerificationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReactiveFormVerificationComponent ]
-    })
-    .compileComponents();
+      declarations: [ReactiveFormVerificationComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
