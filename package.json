@@ -7,9 +7,13 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "eslint --fix --ext .js,.ts --ignore-path .gitignore .",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "preinstall": "npx npm-force-resolutions"
   },
   "private": true,
+  "resolutions": {
+    "ansi-html": "https://registry.npmjs.org/ansi-html-community/-/ansi-html-community-0.0.8.tgz"
+  },
   "dependencies": {
     "@angular/animations": "12.2.13",
     "@angular/common": "12.2.13",
