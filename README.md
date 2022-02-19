@@ -13,9 +13,9 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 
 | 環境                                          | バージョン | 備考               |
 | --------------------------------------------- | ---------- | ------------------ |
-| [Angular CLI](https://cli.angular.io/)        | v12.2.13   | `$ ng --version`   |
-| [Angular](https://angular.io/)                | v12.2.13   | 同上               |
-| [TypeScript](https://www.typescriptlang.org/) | v4.3.5     | 同上               |
+| [Angular CLI](https://cli.angular.io/)        | v13.2.4    | `$ ng --version`   |
+| [Angular](https://angular.io/)                | v13.2.3    | 同上               |
+| [TypeScript](https://www.typescriptlang.org/) | v4.5.5     | 同上               |
 | [Node.js](https://nodejs.org/ja/)             | v14.17.0   | `$ node --version` |
 | [npm](https://www.npmjs.com/)                 | v6.14.13   | `$ npm --version`  |
 
@@ -34,24 +34,25 @@ $ ng version
                 |___/
 
 
-Angular CLI: 12.2.13
+Angular CLI: 13.2.4
 Node: 14.17.0
 Package Manager: npm 6.14.13
 OS: darwin x64
 
-Angular: 12.2.13
-... animations, cli, common, compiler, compiler-cli, core, forms
+Angular: 13.2.3
+... animations, common, compiler, compiler-cli, core, forms
 ... platform-browser, platform-browser-dynamic, router
 
 Package                         Version
 ---------------------------------------------------------
-@angular-devkit/architect       0.1202.13
-@angular-devkit/build-angular   12.2.13
-@angular-devkit/core            12.2.13
-@angular-devkit/schematics      12.2.13
-@schematics/angular             12.2.13
+@angular-devkit/architect       0.1302.4
+@angular-devkit/build-angular   13.2.4
+@angular-devkit/core            13.2.4
+@angular-devkit/schematics      13.2.4
+@angular/cli                    13.2.4
+@schematics/angular             13.2.4
 rxjs                            6.6.0
-typescript                      4.3.5
+typescript                      4.5.5
 ```
 
 </div>

@@ -247,14 +247,7 @@ const ROUTE_TABLE: Routes = [
     CsvAndZipBaseComponent,
     CsvAndZipVerificationComponent,
   ],
-  entryComponents: [ModalComponent],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(ROUTE_TABLE), // 追加. routing の情報を登録する
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(ROUTE_TABLE), FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
 })
