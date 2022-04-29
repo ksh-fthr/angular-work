@@ -60,7 +60,6 @@
     "statusBarItem.remoteBackground": "#dd0531",
     "statusBarItem.remoteForeground": "#e7e7e7"
   },
-  "peacock.color": "#dd0531",
   // 拡張機能をおすすめさせる
   "extensions.ignoreRecommendations": false
 }
