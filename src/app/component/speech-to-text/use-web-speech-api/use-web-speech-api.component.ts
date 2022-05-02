@@ -4,7 +4,7 @@ declare const webkitSpeechRecognition: any;
 @Component({
   selector: 'app-use-web-speech-api',
   templateUrl: './use-web-speech-api.component.html',
-  styleUrls: ['./use-web-speech-api.component.css'],
+  styleUrls: ['../../../style/common.css', './use-web-speech-api.component.css'],
 })
 export class UseWebSpeechApiComponent implements OnInit {
   title = 'WebSpeachAPI を使ったサンプル';
@@ -18,7 +18,7 @@ export class UseWebSpeechApiComponent implements OnInit {
     this.speech = new webkitSpeechRecognition();
     this.speech.lang = 'ja-JP';
 
-    this.outputArea = this.elementRef.nativeElement.querySelector('.output-area');
+    this.outputArea = this.elementRef.nativeElement.querySelector('.output-text');
 
     // 音声認識 ~ 文字起こし
     this.speech.onresult = (e: any) => {

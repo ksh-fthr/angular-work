@@ -4,6 +4,10 @@
 }
 
 .output-area {
+  padding: 20px 0px;
+}
+
+.output-text {
   width: 80%;
   height: 80%;
 }

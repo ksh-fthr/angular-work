@@ -227,6 +227,10 @@ code {
   background: #ffffff;
 }
 
+.event-button-w-100 {
+  width: 200px;
+}
+
 .event-button-w-200 {
   width: 200px;
 }

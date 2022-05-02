@@ -3,10 +3,10 @@
     <h2 class="h2-style">{{title}}</h2>
   </div>
   <div>
-    <button (click)="startVoiceRecognition($event)">音声認識-開始</button>
-    <button (click)="stopVoiceRecognition($event)">音声認識-終了</button>
+    <button type="button" class="event-button event-button-w-100" (click)="startVoiceRecognition($event)">音声認識-開始</button>
+    <button type="button" class="event-button event-button-w-100" (click)="stopVoiceRecognition($event)">音声認識-終了</button>
   </div>
-  <div>
-    <textarea class="output-area" readonly placeholder="WebSpeechAPI でも文字変換された情報が出力されます."></textarea>
+  <div class="output-area">
+    <textarea class="output-text" readonly placeholder="WebSpeechAPI でも文字変換された情報が出力されます."></textarea>
   </div>
 </div>
