@@ -97,6 +97,10 @@ import { ReactiveFormVerificationComponent } from './component/reactive-form/rea
 import { CsvAndZipBaseComponent } from './component/csv-and-zip/csv-and-zip-base.component';
 import { CsvAndZipVerificationComponent } from './component/csv-and-zip/csv-and-zip-verification/csv-and-zip-verification.component';
 
+// 音声認識-文字起こしの検証用コンポーネント
+import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-text-base.component';
+import { UseWebSpeechApiComponent } from './component/speech-to-text/use-web-speech-api/use-web-speech-api.component';
+
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
 // 下記のように明示する以外にも
@@ -177,6 +181,10 @@ const ROUTE_TABLE: Routes = [
     path: 'csv-and-zip',
     component: CsvAndZipBaseComponent,
   },
+  {
+    path: 'speech-to-text',
+    component: SpeechToTextBaseComponent,
+  },
 ];
 
 @NgModule({
@@ -244,8 +252,12 @@ const ROUTE_TABLE: Routes = [
     AttributeDirectiveValidatorVerificationComponent,
     ReactiveFormBaseComponent,
     ReactiveFormVerificationComponent,
+    // csv ファイル出力と zip ファイル出力の検証用コンポーネント
     CsvAndZipBaseComponent,
     CsvAndZipVerificationComponent,
+    // 音声認識-文字起こしの検証用コンポーネント
+    SpeechToTextBaseComponent,
+    UseWebSpeechApiComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(ROUTE_TABLE), FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
