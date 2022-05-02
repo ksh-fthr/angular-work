@@ -128,5 +128,5 @@ typescript                      4.5.5
 * [feat_zip](https://github.com/ksh-fthr/angular-work/tree/feat_zip)
   * base64 文字列化したZIPファイルをバックエンドから取得してファイル出力する実装を試すブランチ
   * Qiita の [[Angular] base64 文字列をバイナリに戻してダウンロードする](https://qiita.com/ksh-fthr/items/b3e3afb7f8e51759a1ed) で扱った
-* [feature/speach-to-text/use-webspeechapi](https://github.com/ksh-fthr/angular-work/tree/feature/speach-to-text/use-webspeechapi)
+* [feature/speech-to-text/use-webspeechapi](https://github.com/ksh-fthr/angular-work/tree/feature/speech-to-text/use-webspeechapi)
   * WebSpeechAPI を使った音声認識と文字起こしの実装を試すブランチ
