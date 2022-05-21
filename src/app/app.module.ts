@@ -100,6 +100,7 @@ import { CsvAndZipVerificationComponent } from './component/csv-and-zip/csv-and-
 // 音声認識-文字起こしの検証用コンポーネント
 import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-text-base.component';
 import { UseWebSpeechApiComponent } from './component/speech-to-text/use-web-speech-api/use-web-speech-api.component';
+import { UseAwsTranscribeStreamingComponent } from './component/speech-to-text/use-aws-transcribe-streaming/use-aws-transcribe-streaming.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -184,6 +185,10 @@ const ROUTE_TABLE: Routes = [
   {
     path: 'speech-to-text',
     component: SpeechToTextBaseComponent,
+    children: [
+      { path: 'use-web-speech-api', component: UseWebSpeechApiComponent },
+      { path: 'use-aws-transcribe', component: UseAwsTranscribeStreamingComponent },
+    ],
   },
 ];
 
@@ -258,6 +263,7 @@ const ROUTE_TABLE: Routes = [
     // 音声認識-文字起こしの検証用コンポーネント
     SpeechToTextBaseComponent,
     UseWebSpeechApiComponent,
+    UseAwsTranscribeStreamingComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(ROUTE_TABLE), FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
