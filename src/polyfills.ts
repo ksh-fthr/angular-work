@@ -56,7 +56,7 @@ import 'zone.js'; // Included with Angular CLI.
 // https://stackoverflow.com/questions/50313745/angular-6-process-is-not-defined-when-trying-to-serve-application
 // https://www.npmjs.com/package/process
 import * as process from 'process';
-window.process = process;
+(window as any).process = process;
 
 // https://github.com/isaacs/core-util-is/issues/27
 // https://www.npmjs.com/package/buffer
