@@ -25,7 +25,7 @@ let micStream: any = null;
   styleUrls: ['../../../style/common.css', './use-aws-transcribe-streaming.component.css'],
 })
 export class UseAwsTranscribeStreamingComponent implements OnInit {
-  title = 'AWS Transcribe を使ったサンプル';
+  title = 'AWS Transcribe Streaming を使ったサンプル';
 
   private outputArea: any = null;
 
