@@ -40,14 +40,14 @@ export class UseAwsTranscribeStreamingComponent implements OnInit {
     credentials: {
       accessKeyId: 'hogehoge',
       secretAccessKey: 'hogehoge',
-      sessionToken: 'hogehoge',
+      // sessionToken: 'hogehoge', // ここは必要に応じて設定
     },
   });
 
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {
-    this.outputArea = this.elementRef.nativeElement.querySelector('.output-area');
+    this.outputArea = this.elementRef.nativeElement.querySelector('.output-text');
   }
 
   /**
