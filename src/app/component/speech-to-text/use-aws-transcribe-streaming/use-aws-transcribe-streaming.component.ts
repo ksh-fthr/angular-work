@@ -32,6 +32,9 @@ export class UseAwsTranscribeStreamingComponent implements OnInit {
   // AWS Transcribe Streaming を使うための準備
   // この処理でクライアントインスタンスが生成される
   // ここで生成したインスタンスは後述の処理で AWS Transcribe Streaming にコマンドを送る際に使用する
+  //
+  // サンプルコードなので credentials をハードコーディングしているがセキュリティ推奨されない
+  // Cognito 認証と絡める等､別の手段で認証を通すことを検討するべき
   private client = new TranscribeStreamingClient({
     region: 'ap-northeast-1',
     credentials: {
@@ -67,7 +70,7 @@ export class UseAwsTranscribeStreamingComponent implements OnInit {
     // AWS Transcribe Streaming に流す音声データのパラメータ
     // 肝は `AudioStream: this.audioStream()` の部分。ここで音声データを作っている
     const params: StartStreamTranscriptionCommandInput = {
-      // https://docs.aws.amazon.com/ja_jp/transcribe/latest/dg/API_streaming_StartStreamTranscription.html
+      // https://docs.aws.amazon.com/ja_jp/transcribe/latest/dg/API_streaming_StartStreamTranscription.html#API_streaming_StartStreamTranscription_RequestSyntax
       LanguageCode: LanguageCode.JA_JP,
       MediaSampleRateHertz: 44_100, // 有効範囲: 最小値は 8,000. 最大値は 48,000
       MediaEncoding: MediaEncoding.PCM,
@@ -94,7 +97,7 @@ export class UseAwsTranscribeStreamingComponent implements OnInit {
    * -> https://github.com/aws/aws-sdk-js-v3/tree/d8475f8d972d28fbc15cd7e23abfe18f9eab0644/clients/client-transcribe-streaming#handling-text-stream
    *
    * レスポンスの構成については下記を参照
-   * -> https://docs.aws.amazon.com/ja_jp/transcribe/latest/dg/API_streaming_StartStreamTranscription.html
+   * -> https://docs.aws.amazon.com/ja_jp/transcribe/latest/dg/API_streaming_StartStreamTranscription.html#API_streaming_StartStreamTranscription_ResponseSyntax
    * */
   async handleResponse(response: StartStreamTranscriptionCommandOutput) {
     for await (const event of response.TranscriptResultStream!) {
