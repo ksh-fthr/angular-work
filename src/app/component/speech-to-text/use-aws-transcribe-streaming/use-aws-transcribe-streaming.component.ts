@@ -40,7 +40,7 @@ export class UseAwsTranscribeStreamingComponent implements OnInit {
     credentials: {
       accessKeyId: 'hogehoge',
       secretAccessKey: 'hogehoge',
-      // sessionToken: 'hogehoge', // ここは必要に応じて設定
+      // sessionToken: 'hogehoge', // ここは必要に応じて設定する
     },
   });
 
@@ -75,6 +75,7 @@ export class UseAwsTranscribeStreamingComponent implements OnInit {
       MediaSampleRateHertz: 44_100, // 有効範囲: 最小値は 8,000. 最大値は 48,000
       MediaEncoding: MediaEncoding.PCM,
       AudioStream: this.audioStream(),
+      // VocabularyName: 'custom_vocabulary' // カスタム語彙を指定する場合はここを設定する
     };
 
     // 音声自動文字起こし機能
