@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 // RactiveForm を使用するために必要
 import { ReactiveFormsModule } from '@angular/forms';
+// Angular Material を使用するために必要
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
@@ -101,7 +103,9 @@ import { CsvAndZipVerificationComponent } from './component/csv-and-zip/csv-and-
 import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-text-base.component';
 import { UseWebSpeechApiComponent } from './component/speech-to-text/use-web-speech-api/use-web-speech-api.component';
 import { UseAwsTranscribeStreamingComponent } from './component/speech-to-text/use-aws-transcribe-streaming/use-aws-transcribe-streaming.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Angular Material の検証用コンポーネント
+import { UseAngularMaterialBaseComponent } from './component/use-angular-material/use-angular-material-base.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -191,6 +195,10 @@ const ROUTE_TABLE: Routes = [
       { path: 'use-aws-transcribe', component: UseAwsTranscribeStreamingComponent },
     ],
   },
+  {
+    path: 'angular-material',
+    component: UseAngularMaterialBaseComponent,
+  },
 ];
 
 @NgModule({
@@ -265,8 +273,17 @@ const ROUTE_TABLE: Routes = [
     SpeechToTextBaseComponent,
     UseWebSpeechApiComponent,
     UseAwsTranscribeStreamingComponent,
+    // Angular Material の検証用コンポーネント
+    UseAngularMaterialBaseComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(ROUTE_TABLE), FormsModule, HttpClientModule, ReactiveFormsModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(ROUTE_TABLE),
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+  ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
 })

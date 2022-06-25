@@ -11,20 +11,22 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 [develop](https://github.com/ksh-fthr/angular-work) ブランチの内容は 以下の環境で実行・確認しています。
 他のブランチの確認バージョンについては、後述の各ブランチ の README をご参照下さい。
 
-| 環境                                          | バージョン | 備考               |
-| --------------------------------------------- | ---------- | ------------------ |
-| [Angular CLI](https://cli.angular.io/)        | v13.2.4    | `$ ng --version`   |
-| [Angular](https://angular.io/)                | v13.2.3    | 同上               |
-| [TypeScript](https://www.typescriptlang.org/) | v4.5.5     | 同上               |
-| [Node.js](https://nodejs.org/ja/)             | v14.17.0   | `$ node --version` |
-| [npm](https://www.npmjs.com/)                 | v6.14.13   | `$ npm --version`  |
+| 環境                                                        | バージョン | 備考               |
+| ----------------------------------------------------------- | ---------- | ------------------ |
+| [Angular CLI](https://cli.angular.io/)                      | v13.2.4    | `$ ng --version`   |
+| [Angular](https://angular.io/)                              | v13.2.3    | 同上               |
+| [Angular Material](https://material.angular.io/)            | v13.3.9    | 同上               |
+| [Angular CDK](https://github.com/angular/components#readme) | v13.3.9    | 同上               |
+| [TypeScript](https://www.typescriptlang.org/)               | v4.5.5     | 同上               |
+| [Node.js](https://nodejs.org/ja/)                           | v14.17.0   | `$ node --version` |
+| [npm](https://www.npmjs.com/)                               | v6.14.13   | `$ npm --version`  |
 
 <details>
 <div>
 <summary>Angular のバージョン詳細( ng version の結果 )</summary>
 
 ```bash
-$ ng version
+$ ng --version
 
      _                      _                 ____ _     ___
     / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
@@ -46,10 +48,12 @@ Angular: 13.2.3
 Package                         Version
 ---------------------------------------------------------
 @angular-devkit/architect       0.1302.4
-@angular-devkit/build-angular   13.2.4
+@angular-devkit/build-angular   13.3.7
 @angular-devkit/core            13.2.4
 @angular-devkit/schematics      13.2.4
+@angular/cdk                    13.3.9
 @angular/cli                    13.2.4
+@angular/material               13.3.9
 @schematics/angular             13.2.4
 rxjs                            6.6.0
 typescript                      4.5.5
@@ -132,3 +136,5 @@ typescript                      4.5.5
   * WebSpeechAPI を使った音声認識と文字起こしの実装を試すブランチ
 * [feature/speech-to-text/use-aws-transcribe-streaming](https://github.com/ksh-fthr/angular-work/tree/feature/speech-to-text/use-aws-transcribe-streaming)
   * AWS Transcribe Streaming を使った音声認識と文字起こしの実装を試すブランチ
+* [feature/investigate/angular-material](https://github.com/ksh-fthr/angular-work/tree/feature/investigate/angular-material)
+  * Angular Material の検証を行うブランチ
