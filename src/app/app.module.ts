@@ -105,8 +105,13 @@ import { UseWebSpeechApiComponent } from './component/speech-to-text/use-web-spe
 import { UseAwsTranscribeStreamingComponent } from './component/speech-to-text/use-aws-transcribe-streaming/use-aws-transcribe-streaming.component';
 
 // Angular Material の検証用コンポーネント
+import { FeatureAngularMaterialModule } from './modules/feature-angular-material.modules';
+// routing のために必要なベースコンポーネント
+// `FeatureAngularMaterialModule` を import することでこのコンポーネントも巻き込んで import されるが､
+// routing を行うには宣言しておく必要がある
 import { UseAngularMaterialBaseComponent } from './component/use-angular-material/use-angular-material-base.component';
 
+// TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
 // 下記のように明示する以外にも
@@ -273,8 +278,6 @@ const ROUTE_TABLE: Routes = [
     SpeechToTextBaseComponent,
     UseWebSpeechApiComponent,
     UseAwsTranscribeStreamingComponent,
-    // Angular Material の検証用コンポーネント
-    UseAngularMaterialBaseComponent,
   ],
   imports: [
     BrowserModule,
@@ -283,6 +286,7 @@ const ROUTE_TABLE: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    FeatureAngularMaterialModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
