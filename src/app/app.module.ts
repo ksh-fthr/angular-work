@@ -97,9 +97,9 @@ import { ReactiveFormVerificationComponent } from './component/reactive-form/rea
 import { CsvAndZipBaseComponent } from './component/csv-and-zip/csv-and-zip-base.component';
 import { CsvAndZipVerificationComponent } from './component/csv-and-zip/csv-and-zip-verification/csv-and-zip-verification.component';
 
-// 音声認識-文字起こしの検証用モジュール & コンポーネント
-import { FeaturSpeechToTextlModule } from './modules/feature-speech-to-text.modules';
+// 音声認識-文字起こしの検証用コンポーネント
 import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-text-base.component';
+import { UseWebSpeechApiComponent } from './component/speech-to-text/use-web-speech-api/use-web-speech-api.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -257,15 +257,9 @@ const ROUTE_TABLE: Routes = [
     CsvAndZipVerificationComponent,
     // 音声認識-文字起こしの検証用コンポーネント
     SpeechToTextBaseComponent,
+    UseWebSpeechApiComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(ROUTE_TABLE),
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FeaturSpeechToTextlModule,
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(ROUTE_TABLE), FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
 })
