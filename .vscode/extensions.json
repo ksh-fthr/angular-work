@@ -14,7 +14,6 @@
     "vincaslt.highlight-matching-tag",
     "ms-ceintl.vscode-language-pack-ja",
     "esbenp.prettier-vscode",
-    "wayou.vscode-todo-highlight",
     "angular.ng-template",
     "gydunhn.angular-essentials",
     "eamodio.gitlens",
@@ -29,6 +28,7 @@
     "oouo-diogo-perdigao.docthis",
     "xabikos.javascriptsnippets",
     "gydunhn.javascript-essentials",
-    "pkief.material-icon-theme"
+    "pkief.material-icon-theme",
+    "jgclark.vscode-todo-highlight"
   ]
 }
