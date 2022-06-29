@@ -1,16 +1,20 @@
 <p class="description">最初のアイテムにハイライトをあてるオプション付きの autocompolete</p>
 <form class="form-style">
+  <!-- appearance に設定できるのは 'legacy' | 'standard' | 'fill' | 'outline' のいずれか -->
   <mat-form-field class="form-full-width" appearance="fill">
     <mat-label>Number</mat-label>
     <input type="text"
           placeholder="Pick one"
           aria-label="Number"
           matInput
-          [formControl]="myControl"
-          [matAutocomplete]="auto">
+          [formControl]="autocompleteControl"
+          [matAutocomplete]="auto"
+    >
+    <!-- autoActiveFirstOption を設定することで autocomplete のリストの最初のアイテムにハイライトを当てることができる -->
+    <!-- これは [autoActiveFirstOption]="true" と書いても同様の効果が得られる -->
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{option}}
+      <mat-option *ngFor="let autocompleteItem of filteredAutocompleteItemList | async" [value]="autocompleteItem">
+        {{autocompleteItem}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
