@@ -1,0 +1,17 @@
+<p class="description">最初のアイテムにハイライトをあてるオプション付きの autocompolete</p>
+<form class="form-style">
+  <mat-form-field class="form-full-width" appearance="fill">
+    <mat-label>Number</mat-label>
+    <input type="text"
+          placeholder="Pick one"
+          aria-label="Number"
+          matInput
+          [formControl]="myControl"
+          [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
