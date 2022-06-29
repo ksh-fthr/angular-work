@@ -9,6 +9,11 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['../../../../style/common.css', './highlight-firs-item.component.css'],
 })
 export class HightlightFirstItemComponent implements OnInit {
+  //
+  // NOTE: 下記のサンプル実装をもとに実装
+  // https://material.angular.io/components/autocomplete/overview#automatically-highlighting-the-first-option
+  //
+
   // テンプレートの `input` からデータを流すための器
   // 入力された情報に応じてフィルタするために利用する
   autocompleteControl = new FormControl('');
