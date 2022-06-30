@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import { MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { Observable, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
@@ -60,6 +60,12 @@ export class HightlightFirstItemComponent implements OnInit {
   openPanel(event: Event, trigger: MatAutocompleteTrigger) {
     event.stopPropagation();
     trigger.openPanel();
+  }
+
+  onItemSelected(event: MatAutocompleteSelectedEvent) {
+    const message = `autocompolete からアイテム=${event.option.value}が選択されました`;
+    alert(message);
+    console.log(message);
   }
 
   private _filter(value: string): string[] {
