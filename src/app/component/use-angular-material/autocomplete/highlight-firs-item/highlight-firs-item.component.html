@@ -15,9 +15,15 @@
           [formControl]="autocompleteControl"
           [matAutocomplete]="auto"
     >
-    <!-- autoActiveFirstOption を設定することで autocomplete のリストの最初のアイテムにハイライトを当てることができる -->
-    <!-- これは [autoActiveFirstOption]="true" と書いても同様の効果が得られる -->
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    <!-- mat-autocomplete についてのメモ -->
+    <!-- * autoActiveFirstOption を設定することで autocomplete のリストの最初のアイテムにハイライトを当てることができる -->
+    <!--   * これは [autoActiveFirstOption]="true" と書いても同様の効果が得られる -->
+    <!-- * アイテムが選択されたときのイベント処理をしたければ optionSelected をウォッチする -->
+    <mat-autocomplete
+      autoActiveFirstOption
+      #auto="matAutocomplete"
+      (optionSelected)="onItemSelected($event)"
+    >
       <mat-option *ngFor="let autocompleteItem of filteredAutocompleteItemList | async" [value]="autocompleteItem">
         {{autocompleteItem}}
       </mat-option>
