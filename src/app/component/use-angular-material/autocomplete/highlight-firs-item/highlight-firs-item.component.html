@@ -3,10 +3,15 @@
   <!-- appearance に設定できるのは 'legacy' | 'standard' | 'fill' | 'outline' のいずれか -->
   <mat-form-field class="form-full-width" appearance="fill">
     <mat-label>Number</mat-label>
+    <!-- autoCompleteInput はフォーカスをあてるために使用する､本要素を指定するためのテンプレート変数 -->
+    <!-- trigger は autocomplete パネルを開く処理: openPanel を実行するための MatAutocompleteTrigger オブジェクト -->
     <input type="text"
           placeholder="Pick one"
           aria-label="Number"
+          #autoCompleteInput
           matInput
+          #trigger="matAutocompleteTrigger"
+          (focus)="openPanel($event, trigger)"
           [formControl]="autocompleteControl"
           [matAutocomplete]="auto"
     >

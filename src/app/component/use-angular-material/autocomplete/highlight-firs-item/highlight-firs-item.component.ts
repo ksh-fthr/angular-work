@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { Observable, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
@@ -13,6 +14,8 @@ export class HightlightFirstItemComponent implements OnInit {
   // NOTE: 下記のサンプル実装をもとに実装
   // https://material.angular.io/components/autocomplete/overview#automatically-highlighting-the-first-option
   //
+
+  @ViewChild('autoCompleteInput') autoCompleteInput!: ElementRef;
 
   // テンプレートの `input` からデータを流すための器
   // 入力された情報に応じてフィルタするために利用する
@@ -38,6 +41,25 @@ export class HightlightFirstItemComponent implements OnInit {
       // ここの処理で input で入力された内容に応じて表示するデータが絞り込まれる
       map((value) => this._filter(value || ''))
     );
+
+    // 画面表示時に入力欄にフォーカスをあてることで autocomplete パネルを表示させる
+    // ここ (ngOninit) でこれをやると､画面表示時に autocomplete パネルが開く
+    //
+    // 遅延評価させているのは描画時に発生するエラー対応
+    setTimeout(() => {
+      this.autoCompleteInput.nativeElement.focus();
+    }, 1);
+  }
+
+  // autocomplete のパネルを明示的に開くための処理
+  //
+  // 処理の流れは以下の通り
+  // 1. ngOnInit でテンプレート変数: autoCompleteInput に対して focus() でフォーカスをあてる
+  // 2. ページ描画時､テンプレートでは｢フォーカスがあたった｣となり､ focus イベントが発火する
+  // 3. focus イベントの発火を受けて､それに紐づく本メソッドが実行される
+  openPanel(event: Event, trigger: MatAutocompleteTrigger) {
+    event.stopPropagation();
+    trigger.openPanel();
   }
 
   private _filter(value: string): string[] {
