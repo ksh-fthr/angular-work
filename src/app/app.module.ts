@@ -17,23 +17,28 @@ import { Logging } from './utils/logging';
 // TOP ページ用の README
 import { ReadmeComponent } from './component/readme/readme.component';
 
-// ルーティング実装検証用コンポーネント/サービス
+// サービスはまとめておく
+import { ModalService } from './service/modal/modal.service'; // モーダル実装検証用
+import { SwitchTabService } from './service/switch-tab/switch-tab.service'; // タブ実装検証用
+import { DataShareService } from './service/data-share/data-share.service'; // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用
+import { HttpClientService } from './service/http-client/http-client.service'; // Http クライアントの実装検証用
+
+// ルーティング実装検証用コンポーネント
 import { RoutingBaseComponent } from './component/routing/routing.base.component';
 import { PageAComponent } from './component/routing/page-a/page-a.component';
 import { PageBComponent } from './component/routing/page-b/page-b.component';
 import { PageCComponent } from './component/routing/page-c/page-c.component';
 
-// モーダル実装検証用コンポーネント/サービス
+// モーダル実装検証用コンポーネント
 import { ModalBaseComponent } from './component/modal/modal-base.component';
 import { ModalComponent } from './component/modal/modal/modal.component';
-import { ModalService } from './service/modal/modal.service';
 
 // タブ実装検証用コンポーネント/サービス
-import { SwitchTabComponent } from './component/tab/switch-tab/switch-tab.component';
+import { FeatureTabVerificationModule } from './modules/feature-tab-verification.modules';
+// routing のために必要なベースコンポーネント
+// `FeatureTabVerificationModule` を import することでこのコンポーネントも巻き込んで import されるが､
+// routing を行うには宣言しておく必要がある
 import { TabBaseComponent } from './component/tab/tab-base.component';
-import { TabAComponent } from './component/tab/tab-a/tab-a.component';
-import { TabBComponent } from './component/tab/tab-b/tab-b.component';
-import { SwitchTabService } from './service/switch-tab/switch-tab.service';
 
 // 子コンポーネントや外部コンテンツの参照を取得する検証用コンポーネント/サービス
 import { ReferenceBaseComponent } from './component/reference/reference-base.component';
@@ -46,7 +51,6 @@ import { ViewParentComponent } from './component/reference/view-parent/view-pare
 import { ParentChildBaseComponent } from './component/parent-child/parent-child-base.component';
 import { ParentComponent } from './component/parent-child/parent/parent.component';
 import { ChildComponent } from './component/parent-child/child/child.component';
-import { DataShareService } from './service/data-share/data-share.service';
 
 // コンポーネント間のデータ共有の検証用コンポーネント/サービス
 import { DataShareBaseComponent } from './component/data-share/data-share-base.component';
@@ -74,7 +78,6 @@ import { AfterViewChildComponent } from './component/lifecycle/after-view/after-
 // Http モジュールを利用した Http クライアントの実装検証用コンポーネント/サービス
 import { HttpClientBaseComponent } from './component/http-client/http-client-base.component';
 import { HttpClientVerificationComponent } from './component/http-client/http-client-verification/http-client-verification.component';
-import { HttpClientService } from './service/http-client/http-client.service';
 
 // Validation 機能の検証用コンポーネント
 import { ValidationBaseComponent } from './component/validation/validation-base.component';
@@ -217,11 +220,6 @@ const ROUTE_TABLE: Routes = [
     // モーダル実装検証用コンポーネント
     ModalComponent,
     ModalBaseComponent,
-    // タブ実装検証用コンポーネント
-    TabBaseComponent,
-    SwitchTabComponent,
-    TabAComponent,
-    TabBComponent,
     // 子コンポーネントや外部コンテンツの参照を取得する検証用コンポーネント
     ReferenceBaseComponent,
     ContentChildComponent,
@@ -286,6 +284,7 @@ const ROUTE_TABLE: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    FeatureTabVerificationModule,
     FeatureAngularMaterialModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],

@@ -14,8 +14,8 @@ ul.tab-menu-base {
 
 ul.tab-menu-base li {
   float: left;
-  margin: 20px 8px 0 0 ;
-  padding: 0;
+  margin: 10px 8px 0 0 ;
+  padding: 5px;
   background: rgb(245, 245, 245);
   border-radius: 10px 10px 0 0;
   height: 100%;
