@@ -33,19 +33,14 @@ import { PageCComponent } from './component/routing/page-c/page-c.component';
 import { ModalBaseComponent } from './component/modal/modal-base.component';
 import { ModalComponent } from './component/modal/modal/modal.component';
 
-// タブ実装検証用コンポーネント/サービス
+// タブ実装検証用モジュール
 import { FeatureTabVerificationModule } from './modules/feature-tab-verification.modules';
-// routing のために必要なベースコンポーネント
-// `FeatureTabVerificationModule` を import することでこのコンポーネントも巻き込んで import されるが､
-// routing を行うには宣言しておく必要がある
-import { TabBaseComponent } from './component/tab/tab-base.component';
 
-// 子コンポーネントや外部コンテンツの参照を取得する検証用コンポーネント/サービス
-import { ReferenceBaseComponent } from './component/reference/reference-base.component';
-import { ContentChildComponent } from './component/reference/content-child/content-child.component';
-import { ContentParentComponent } from './component/reference/content-parent/content-parent.component';
-import { ViewChildComponent } from './component/reference/view-child/view-child.component';
-import { ViewParentComponent } from './component/reference/view-parent/view-parent.component';
+// 子コンポーネントや外部コンテンツの参照を取得する検証用モジュール
+import { FeatureReferenceContentVerificationModule } from './modules/feature-reference-content-verification.modules';
+
+// Angular Material の検証用モジュール
+import { FeatureAngularMaterialModule } from './modules/feature-angular-material.modules';
 
 // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用コンポーネント/サービス
 import { ParentChildBaseComponent } from './component/parent-child/parent-child-base.component';
@@ -107,11 +102,11 @@ import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-
 import { UseWebSpeechApiComponent } from './component/speech-to-text/use-web-speech-api/use-web-speech-api.component';
 import { UseAwsTranscribeStreamingComponent } from './component/speech-to-text/use-aws-transcribe-streaming/use-aws-transcribe-streaming.component';
 
-// Angular Material の検証用コンポーネント
-import { FeatureAngularMaterialModule } from './modules/feature-angular-material.modules';
 // routing のために必要なベースコンポーネント
-// `FeatureAngularMaterialModule` を import することでこのコンポーネントも巻き込んで import されるが､
+// 各モジュールを import することでこれらのコンポーネントも巻き込んで import されるが､
 // routing を行うには宣言しておく必要がある
+import { TabBaseComponent } from './component/tab/tab-base.component';
+import { ReferenceBaseComponent } from './component/reference/reference-base.component';
 import { UseAngularMaterialBaseComponent } from './component/use-angular-material/use-angular-material-base.component';
 
 // TODO: ROUTING もモジュール分割したい
@@ -220,12 +215,6 @@ const ROUTE_TABLE: Routes = [
     // モーダル実装検証用コンポーネント
     ModalComponent,
     ModalBaseComponent,
-    // 子コンポーネントや外部コンテンツの参照を取得する検証用コンポーネント
-    ReferenceBaseComponent,
-    ContentChildComponent,
-    ContentParentComponent,
-    ViewChildComponent,
-    ViewParentComponent,
     // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用コンポーネント
     ParentChildBaseComponent,
     ParentComponent,
@@ -285,6 +274,7 @@ const ROUTE_TABLE: Routes = [
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FeatureTabVerificationModule,
+    FeatureReferenceContentVerificationModule,
     FeatureAngularMaterialModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
