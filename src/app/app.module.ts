@@ -28,7 +28,7 @@ import { HttpClientService } from './service/http-client/http-client.service'; /
 // ----------------------------------------------
 // モジュールもまとめておく
 // ----------------------------------------------
-import { FeatureTabVerificationModule } from './modules/feature-tab-verification.modules'; // タブ実装検証用モジュール
+import { FeatureTabModule } from './modules/feature-tab.modules'; // タブ実装検証用モジュール
 import { FeatureReferenceContentModule } from './modules/feature-reference-content.modules'; // 子コンポーネントや外部コンテンツの参照を取得する検証用モジュール
 import { FeatureAngularMaterialModule } from './modules/feature-angular-material.modules'; // Angular Material の検証用モジュール
 import { FeatureModalModule } from './modules/feature-modal.modules'; // モーダルの実装検証用モジュール
@@ -270,7 +270,7 @@ const ROUTE_TABLE: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FeatureTabVerificationModule,
+    FeatureTabModule,
     FeatureReferenceContentModule,
     FeatureAngularMaterialModule,
     FeatureModalModule,

@@ -11,4 +11,4 @@ import { TabBComponent } from '../component/tab/tab-b/tab-b.component';
   imports: [CommonModule],
   exports: [SwitchTabComponent, TabBaseComponent, TabAComponent, TabBComponent],
 })
-export class FeatureTabVerificationModule {}
+export class FeatureTabModule {}
