@@ -31,16 +31,13 @@ import { HttpClientService } from './service/http-client/http-client.service'; /
 import { FeatureTabVerificationModule } from './modules/feature-tab-verification.modules'; // タブ実装検証用モジュール
 import { FeatureReferenceContentModule } from './modules/feature-reference-content.modules'; // 子コンポーネントや外部コンテンツの参照を取得する検証用モジュール
 import { FeatureAngularMaterialModule } from './modules/feature-angular-material.modules'; // Angular Material の検証用モジュール
+import { FeatureModalModule } from './modules/feature-modal.modules'; // モーダルの実装検証用モジュール
 
 // ルーティング実装検証用コンポーネント
 import { RoutingBaseComponent } from './component/routing/routing.base.component';
 import { PageAComponent } from './component/routing/page-a/page-a.component';
 import { PageBComponent } from './component/routing/page-b/page-b.component';
 import { PageCComponent } from './component/routing/page-c/page-c.component';
-
-// モーダル実装検証用コンポーネント
-import { ModalBaseComponent } from './component/modal/modal-base.component';
-import { ModalComponent } from './component/modal/modal/modal.component';
 
 // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用コンポーネント/サービス
 import { ParentChildBaseComponent } from './component/parent-child/parent-child-base.component';
@@ -110,6 +107,7 @@ import { UseAwsTranscribeStreamingComponent } from './component/speech-to-text/u
 import { TabBaseComponent } from './component/tab/tab-base.component';
 import { ReferenceBaseComponent } from './component/reference/reference-base.component';
 import { UseAngularMaterialBaseComponent } from './component/use-angular-material/use-angular-material-base.component';
+import { ModalBaseComponent } from './component/modal/modal-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -214,9 +212,6 @@ const ROUTE_TABLE: Routes = [
     PageAComponent,
     PageBComponent,
     PageCComponent,
-    // モーダル実装検証用コンポーネント
-    ModalComponent,
-    ModalBaseComponent,
     // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用コンポーネント
     ParentChildBaseComponent,
     ParentComponent,
@@ -278,6 +273,7 @@ const ROUTE_TABLE: Routes = [
     FeatureTabVerificationModule,
     FeatureReferenceContentModule,
     FeatureAngularMaterialModule,
+    FeatureModalModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
