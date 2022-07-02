@@ -25,4 +25,4 @@ import { ViewParentComponent } from '../component/reference/view-parent/view-par
     ViewParentComponent,
   ],
 })
-export class FeatureReferenceContentVerificationModule {}
+export class FeatureReferenceContentModule {}
