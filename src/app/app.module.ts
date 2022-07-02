@@ -17,11 +17,20 @@ import { Logging } from './utils/logging';
 // TOP ページ用の README
 import { ReadmeComponent } from './component/readme/readme.component';
 
+// ----------------------------------------------
 // サービスはまとめておく
+// ----------------------------------------------
 import { ModalService } from './service/modal/modal.service'; // モーダル実装検証用
 import { SwitchTabService } from './service/switch-tab/switch-tab.service'; // タブ実装検証用
 import { DataShareService } from './service/data-share/data-share.service'; // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用
 import { HttpClientService } from './service/http-client/http-client.service'; // Http クライアントの実装検証用
+
+// ----------------------------------------------
+// モジュールもまとめておく
+// ----------------------------------------------
+import { FeatureTabVerificationModule } from './modules/feature-tab-verification.modules'; // タブ実装検証用モジュール
+import { FeatureReferenceContentModule } from './modules/feature-reference-content.modules'; // 子コンポーネントや外部コンテンツの参照を取得する検証用モジュール
+import { FeatureAngularMaterialModule } from './modules/feature-angular-material.modules'; // Angular Material の検証用モジュール
 
 // ルーティング実装検証用コンポーネント
 import { RoutingBaseComponent } from './component/routing/routing.base.component';
@@ -32,15 +41,6 @@ import { PageCComponent } from './component/routing/page-c/page-c.component';
 // モーダル実装検証用コンポーネント
 import { ModalBaseComponent } from './component/modal/modal-base.component';
 import { ModalComponent } from './component/modal/modal/modal.component';
-
-// タブ実装検証用モジュール
-import { FeatureTabVerificationModule } from './modules/feature-tab-verification.modules';
-
-// 子コンポーネントや外部コンテンツの参照を取得する検証用モジュール
-import { FeatureReferenceContentVerificationModule } from './modules/feature-reference-content-verification.modules';
-
-// Angular Material の検証用モジュール
-import { FeatureAngularMaterialModule } from './modules/feature-angular-material.modules';
 
 // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用コンポーネント/サービス
 import { ParentChildBaseComponent } from './component/parent-child/parent-child-base.component';
@@ -102,7 +102,9 @@ import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-
 import { UseWebSpeechApiComponent } from './component/speech-to-text/use-web-speech-api/use-web-speech-api.component';
 import { UseAwsTranscribeStreamingComponent } from './component/speech-to-text/use-aws-transcribe-streaming/use-aws-transcribe-streaming.component';
 
+// ----------------------------------------------
 // routing のために必要なベースコンポーネント
+// ----------------------------------------------
 // 各モジュールを import することでこれらのコンポーネントも巻き込んで import されるが､
 // routing を行うには宣言しておく必要がある
 import { TabBaseComponent } from './component/tab/tab-base.component';
@@ -274,7 +276,7 @@ const ROUTE_TABLE: Routes = [
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FeatureTabVerificationModule,
-    FeatureReferenceContentVerificationModule,
+    FeatureReferenceContentModule,
     FeatureAngularMaterialModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
