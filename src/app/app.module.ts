@@ -1,14 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// form を作成するために必要
-import { FormsModule } from '@angular/forms';
-// HTTP クライアントのための import
-import { HttpClientModule } from '@angular/common/http';
-// RactiveForm を使用するために必要
-import { ReactiveFormsModule } from '@angular/forms';
-// Angular Material を使用するために必要
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms'; // form を作成するために必要
+import { HttpClientModule } from '@angular/common/http'; // HTTP クライアントのための import
+import { ReactiveFormsModule } from '@angular/forms'; // RactiveForm を使用するために必要
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Angular Material を使用するために必要
 
 import { AppComponent } from './app.component';
 
@@ -33,17 +29,13 @@ import { FeatureReferenceContentModule } from './modules/feature-reference-conte
 import { FeatureAngularMaterialModule } from './modules/feature-angular-material.modules'; // Angular Material の検証用モジュール
 import { FeatureModalModule } from './modules/feature-modal.modules'; // モーダルの実装検証用モジュール
 import { FeatureHttpClientModule } from './modules/feature-http-client.modules'; // Http モジュールを利用した Http クライアントの実装検証用モジュール
+import { FeatureParentChildModule } from './modules/feature-parent-child.modules'; // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用モジュール
 
 // ルーティング実装検証用コンポーネント
 import { RoutingBaseComponent } from './component/routing/routing.base.component';
 import { PageAComponent } from './component/routing/page-a/page-a.component';
 import { PageBComponent } from './component/routing/page-b/page-b.component';
 import { PageCComponent } from './component/routing/page-c/page-c.component';
-
-// 親子関係にあるコンポーネント間でのデータ受け渡しの検証用コンポーネント/サービス
-import { ParentChildBaseComponent } from './component/parent-child/parent-child-base.component';
-import { ParentComponent } from './component/parent-child/parent/parent.component';
-import { ChildComponent } from './component/parent-child/child/child.component';
 
 // コンポーネント間のデータ共有の検証用コンポーネント/サービス
 import { DataShareBaseComponent } from './component/data-share/data-share-base.component';
@@ -106,6 +98,7 @@ import { ReferenceBaseComponent } from './component/reference/reference-base.com
 import { UseAngularMaterialBaseComponent } from './component/use-angular-material/use-angular-material-base.component';
 import { ModalBaseComponent } from './component/modal/modal-base.component';
 import { HttpClientBaseComponent } from './component/http-client/http-client-base.component';
+import { ParentChildBaseComponent } from './component/parent-child/parent-child-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -211,10 +204,7 @@ const ROUTE_TABLE: Routes = [
     PageAComponent,
     PageBComponent,
     PageCComponent,
-    // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用コンポーネント
-    ParentChildBaseComponent,
-    ParentComponent,
-    ChildComponent,
+    // コンポーネント間のデータ共有の検証用コンポーネント/サービス
     DataShareAComponent,
     DataShareBComponent,
     DataShareBaseComponent,
@@ -270,6 +260,7 @@ const ROUTE_TABLE: Routes = [
     FeatureAngularMaterialModule,
     FeatureModalModule,
     FeatureHttpClientModule,
+    FeatureParentChildModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
