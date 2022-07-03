@@ -32,6 +32,7 @@ import { FeatureTabModule } from './modules/feature-tab.modules'; // タブ実�
 import { FeatureReferenceContentModule } from './modules/feature-reference-content.modules'; // 子コンポーネントや外部コンテンツの参照を取得する検証用モジュール
 import { FeatureAngularMaterialModule } from './modules/feature-angular-material.modules'; // Angular Material の検証用モジュール
 import { FeatureModalModule } from './modules/feature-modal.modules'; // モーダルの実装検証用モジュール
+import { FeatureHttpClientModule } from './modules/feature-http-client.modules'; // Http モジュールを利用した Http クライアントの実装検証用モジュール
 
 // ルーティング実装検証用コンポーネント
 import { RoutingBaseComponent } from './component/routing/routing.base.component';
@@ -66,10 +67,6 @@ import { NgContentChildComponent } from './component/lifecycle/after-content/ng-
 import { AfterViewBaseComponent } from './component/lifecycle/after-view/after-view-base.component';
 import { AfterViewParentComponent } from './component/lifecycle/after-view/after-view-verification/after-view-parent/after-view-parent.component';
 import { AfterViewChildComponent } from './component/lifecycle/after-view/after-view-verification/after-view-child/after-view-child.component';
-
-// Http モジュールを利用した Http クライアントの実装検証用コンポーネント/サービス
-import { HttpClientBaseComponent } from './component/http-client/http-client-base.component';
-import { HttpClientVerificationComponent } from './component/http-client/http-client-verification/http-client-verification.component';
 
 // Validation 機能の検証用コンポーネント
 import { ValidationBaseComponent } from './component/validation/validation-base.component';
@@ -108,6 +105,7 @@ import { TabBaseComponent } from './component/tab/tab-base.component';
 import { ReferenceBaseComponent } from './component/reference/reference-base.component';
 import { UseAngularMaterialBaseComponent } from './component/use-angular-material/use-angular-material-base.component';
 import { ModalBaseComponent } from './component/modal/modal-base.component';
+import { HttpClientBaseComponent } from './component/http-client/http-client-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -207,6 +205,7 @@ const ROUTE_TABLE: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    ReadmeComponent,
     // ルーティング実装検証用コンポーネント
     RoutingBaseComponent,
     PageAComponent,
@@ -236,10 +235,6 @@ const ROUTE_TABLE: Routes = [
     AfterViewBaseComponent,
     AfterViewParentComponent,
     AfterViewChildComponent,
-    // Http モジュールを利用した Http クライアントの実装検証用コンポーネント/サービス
-    HttpClientBaseComponent,
-    HttpClientVerificationComponent,
-    ReadmeComponent,
     // Validation 機能の検証用コンポーネント
     ValidationBaseComponent,
     ValidationVerificationComponent,
@@ -274,6 +269,7 @@ const ROUTE_TABLE: Routes = [
     FeatureReferenceContentModule,
     FeatureAngularMaterialModule,
     FeatureModalModule,
+    FeatureHttpClientModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
