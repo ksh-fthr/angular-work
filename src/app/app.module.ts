@@ -30,17 +30,13 @@ import { FeatureAngularMaterialModule } from './modules/feature-angular-material
 import { FeatureModalModule } from './modules/feature-modal.modules'; // モーダルの実装検証用モジュール
 import { FeatureHttpClientModule } from './modules/feature-http-client.modules'; // Http モジュールを利用した Http クライアントの実装検証用モジュール
 import { FeatureParentChildModule } from './modules/feature-parent-child.modules'; // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用モジュール
+import { FeatureDataShareModule } from './modules/feature-data-share.modules'; // コンポーネント間のデータ共有の検証用モジュール
 
 // ルーティング実装検証用コンポーネント
 import { RoutingBaseComponent } from './component/routing/routing.base.component';
 import { PageAComponent } from './component/routing/page-a/page-a.component';
 import { PageBComponent } from './component/routing/page-b/page-b.component';
 import { PageCComponent } from './component/routing/page-c/page-c.component';
-
-// コンポーネント間のデータ共有の検証用コンポーネント/サービス
-import { DataShareBaseComponent } from './component/data-share/data-share-base.component';
-import { DataShareAComponent } from './component/data-share/data-share-a/data-share-a.component';
-import { DataShareBComponent } from './component/data-share/data-share-b/data-share-b.component';
 
 // コンポーネントのライフサイクル検証用コンポーネント
 // doCheck の検証
@@ -99,6 +95,7 @@ import { UseAngularMaterialBaseComponent } from './component/use-angular-materia
 import { ModalBaseComponent } from './component/modal/modal-base.component';
 import { HttpClientBaseComponent } from './component/http-client/http-client-base.component';
 import { ParentChildBaseComponent } from './component/parent-child/parent-child-base.component';
+import { DataShareBaseComponent } from './component/data-share/data-share-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -204,10 +201,6 @@ const ROUTE_TABLE: Routes = [
     PageAComponent,
     PageBComponent,
     PageCComponent,
-    // コンポーネント間のデータ共有の検証用コンポーネント/サービス
-    DataShareAComponent,
-    DataShareBComponent,
-    DataShareBaseComponent,
     // コンポーネントのライフサイクル検証用コンポーネント
     // doCheck の検証
     DoCheckBaseComponent,
@@ -261,6 +254,7 @@ const ROUTE_TABLE: Routes = [
     FeatureModalModule,
     FeatureHttpClientModule,
     FeatureParentChildModule,
+    FeatureDataShareModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
