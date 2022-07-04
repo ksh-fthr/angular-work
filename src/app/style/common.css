@@ -183,6 +183,7 @@ code {
 .validation-footer {
   padding: 0;
   bottom: 0;
+  height: 80px;
   /* 子要素を中央に配置する */
   display: flex;
   justify-content: center;
