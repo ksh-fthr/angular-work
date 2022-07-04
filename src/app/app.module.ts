@@ -24,13 +24,13 @@ import { HttpClientService } from './service/http-client/http-client.service'; /
 // ----------------------------------------------
 // モジュールもまとめておく
 // ----------------------------------------------
-import { FeatureTabModule } from './modules/feature-tab.modules'; // タブ実装検証用モジュール
-import { FeatureReferenceContentModule } from './modules/feature-reference-content.modules'; // 子コンポーネントや外部コンテンツの参照を取得する検証用モジュール
-import { FeatureAngularMaterialModule } from './modules/feature-angular-material.modules'; // Angular Material の検証用モジュール
-import { FeatureModalModule } from './modules/feature-modal.modules'; // モーダルの実装検証用モジュール
-import { FeatureHttpClientModule } from './modules/feature-http-client.modules'; // Http モジュールを利用した Http クライアントの実装検証用モジュール
-import { FeatureParentChildModule } from './modules/feature-parent-child.modules'; // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用モジュール
-import { FeatureDataShareModule } from './modules/feature-data-share.modules'; // コンポーネント間のデータ共有の検証用モジュール
+import { FeatureTabModule } from './modules/feature-tab.module'; // タブ実装検証用モジュール
+import { FeatureReferenceContentModule } from './modules/feature-reference-content.module'; // 子コンポーネントや外部コンテンツの参照を取得する検証用モジュール
+import { FeatureAngularMaterialModule } from './modules/feature-angular-material.module'; // Angular Material の検証用モジュール
+import { FeatureModalModule } from './modules/feature-modal.module'; // モーダルの実装検証用モジュール
+import { FeatureHttpClientModule } from './modules/feature-http-client.module'; // Http モジュールを利用した Http クライアントの実装検証用モジュール
+import { FeatureParentChildModule } from './modules/feature-parent-child.module'; // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用モジュール
+import { FeatureDataShareModule } from './modules/feature-data-share.module'; // コンポーネント間のデータ共有の検証用モジュール
 import { FeatureCsvAndArchiveModule } from './modules/feature-csv-and-archive.module'; // csv ファイル出力と zip ファイル出力の検証用モジュール
 
 // ルーティング実装検証用コンポーネント
