@@ -32,6 +32,7 @@ import { FeatureHttpClientModule } from './modules/feature-http-client.module'; 
 import { FeatureParentChildModule } from './modules/feature-parent-child.module'; // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用モジュール
 import { FeatureDataShareModule } from './modules/feature-data-share.module'; // コンポーネント間のデータ共有の検証用モジュール
 import { FeatureCsvAndArchiveModule } from './modules/feature-csv-and-archive.module'; // csv ファイル出力と zip ファイル出力の検証用モジュール
+import { FeatureReactiveForm } from './modules/feature-reactive-form.module'; // ReactiveFormsModule の検証用モジュール
 
 // ルーティング実装検証用コンポーネント
 import { RoutingBaseComponent } from './component/routing/routing.base.component';
@@ -72,10 +73,6 @@ import { AttributeDirectiveEventVerificationComponent } from './component/use-at
 import { NetworkAddressValidatorDirective } from './directive/attribute/validator/network-address-validator.directive';
 import { AttributeDirectiveValidatorVerificationComponent } from './component/use-attribute-directive/attribute-directive-validator-verification/attribute-directive-validator-verification.component';
 
-// ReactiveFormsModule の検証用コンポーネント
-import { ReactiveFormBaseComponent } from './component/reactive-form/reactive-form-base.component';
-import { ReactiveFormVerificationComponent } from './component/reactive-form/reactive-form-verification/reactive-form-verification.component';
-
 // 音声認識-文字起こしの検証用コンポーネント
 import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-text-base.component';
 import { UseWebSpeechApiComponent } from './component/speech-to-text/use-web-speech-api/use-web-speech-api.component';
@@ -94,6 +91,7 @@ import { HttpClientBaseComponent } from './component/http-client/http-client-bas
 import { ParentChildBaseComponent } from './component/parent-child/parent-child-base.component';
 import { DataShareBaseComponent } from './component/data-share/data-share-base.component';
 import { CsvAndZipBaseComponent } from './component/csv-and-zip/csv-and-zip-base.component';
+import { ReactiveFormBaseComponent } from './component/reactive-form/reactive-form-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -229,8 +227,6 @@ const ROUTE_TABLE: Routes = [
     // 属性ディレクティブの Validation 実装検証用コンポーネント/ディレクティブ
     NetworkAddressValidatorDirective,
     AttributeDirectiveValidatorVerificationComponent,
-    ReactiveFormBaseComponent,
-    ReactiveFormVerificationComponent,
     // 音声認識-文字起こしの検証用コンポーネント
     SpeechToTextBaseComponent,
     UseWebSpeechApiComponent,
@@ -251,6 +247,7 @@ const ROUTE_TABLE: Routes = [
     FeatureParentChildModule,
     FeatureDataShareModule,
     FeatureCsvAndArchiveModule,
+    FeatureReactiveForm,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
