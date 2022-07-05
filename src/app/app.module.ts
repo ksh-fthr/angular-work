@@ -33,6 +33,7 @@ import { FeatureParentChildModule } from './modules/feature-parent-child.module'
 import { FeatureDataShareModule } from './modules/feature-data-share.module'; // コンポーネント間のデータ共有の検証用モジュール
 import { FeatureCsvAndArchiveModule } from './modules/feature-csv-and-archive.module'; // csv ファイル出力と zip ファイル出力の検証用モジュール
 import { FeatureReactiveForm } from './modules/feature-reactive-form.module'; // ReactiveFormsModule の検証用モジュール
+import { FeatureNormalValidationModule } from './modules/feature-normal-validation.module'; // Validation 機能の検証用モジュール
 
 // ルーティング実装検証用コンポーネント
 import { RoutingBaseComponent } from './component/routing/routing.base.component';
@@ -57,10 +58,6 @@ import { NgContentChildComponent } from './component/lifecycle/after-content/ng-
 import { AfterViewBaseComponent } from './component/lifecycle/after-view/after-view-base.component';
 import { AfterViewParentComponent } from './component/lifecycle/after-view/after-view-verification/after-view-parent/after-view-parent.component';
 import { AfterViewChildComponent } from './component/lifecycle/after-view/after-view-verification/after-view-child/after-view-child.component';
-
-// Validation 機能の検証用コンポーネント
-import { ValidationBaseComponent } from './component/validation/validation-base.component';
-import { ValidationVerificationComponent } from './component/validation/validation-verification/validation-verification.component';
 
 // 属性ディレクティブの実装検証用コンポーネント/ディレクティブ
 import { TemplateDirective } from './directive/attribute/template/template.directive';
@@ -92,6 +89,7 @@ import { ParentChildBaseComponent } from './component/parent-child/parent-child-
 import { DataShareBaseComponent } from './component/data-share/data-share-base.component';
 import { CsvAndZipBaseComponent } from './component/csv-and-zip/csv-and-zip-base.component';
 import { ReactiveFormBaseComponent } from './component/reactive-form/reactive-form-base.component';
+import { ValidationBaseComponent } from './component/validation/validation-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -214,9 +212,6 @@ const ROUTE_TABLE: Routes = [
     AfterViewBaseComponent,
     AfterViewParentComponent,
     AfterViewChildComponent,
-    // Validation 機能の検証用コンポーネント
-    ValidationBaseComponent,
-    ValidationVerificationComponent,
     // 属性ディレクティブの実装検証用コンポーネント/ディレクティブ
     TemplateDirective,
     UseAttributeDirectiveBaseComponent,
@@ -248,6 +243,7 @@ const ROUTE_TABLE: Routes = [
     FeatureDataShareModule,
     FeatureCsvAndArchiveModule,
     FeatureReactiveForm,
+    FeatureNormalValidationModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
