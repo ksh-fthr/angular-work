@@ -24,6 +24,7 @@ import { HttpClientService } from './service/http-client/http-client.service'; /
 // ----------------------------------------------
 // モジュールもまとめておく
 // ----------------------------------------------
+import { FeatureLifeCycleModule } from './modules/feature-life-cycle.module'; // ライフサイクルの検証用モジュール
 import { FeatureTabModule } from './modules/feature-tab.module'; // タブ実装検証用モジュール
 import { FeatureReferenceContentModule } from './modules/feature-reference-content.module'; // 子コンポーネントや外部コンテンツの参照を取得する検証用モジュール
 import { FeatureAngularMaterialModule } from './modules/feature-angular-material.module'; // Angular Material の検証用モジュール
@@ -41,24 +42,6 @@ import { RoutingBaseComponent } from './component/routing/routing.base.component
 import { PageAComponent } from './component/routing/page-a/page-a.component';
 import { PageBComponent } from './component/routing/page-b/page-b.component';
 import { PageCComponent } from './component/routing/page-c/page-c.component';
-
-// コンポーネントのライフサイクル検証用コンポーネント
-// doCheck の検証
-import { DoCheckBaseComponent } from './component/lifecycle/do-check/do-check-base.component';
-import { DoCheckVerificationComponent } from './component/lifecycle/do-check/do-check-verification/do-check-verification.component';
-// onChange の検証
-import { OnChangeBaseComponent } from './component/lifecycle/on-change/on-change-base.component';
-import { OnChangeVerificationComponent } from './component/lifecycle/on-change/on-change-verification/on-change-verification.component';
-// AfterContentInit と AfterContentChecked の検証
-import { AfterContentBaseComponent } from './component/lifecycle/after-content/after-content-base.component';
-import { AfterContentParentComponent } from './component/lifecycle/after-content/after-content-verification/after-content-parent/after-content-parent.component';
-import { AfterContentChildComponent } from './component/lifecycle/after-content/after-content-verification/after-content-child/after-content-child.component';
-import { NgContentParentComponent } from './component/lifecycle/after-content/ng-content-verification/ng-content-parent/ng-content-parent.component';
-import { NgContentChildComponent } from './component/lifecycle/after-content/ng-content-verification/ng-content-child/ng-content-child.component';
-// AfterViewInit と AfterViewChecked の検証
-import { AfterViewBaseComponent } from './component/lifecycle/after-view/after-view-base.component';
-import { AfterViewParentComponent } from './component/lifecycle/after-view/after-view-verification/after-view-parent/after-view-parent.component';
-import { AfterViewChildComponent } from './component/lifecycle/after-view/after-view-verification/after-view-child/after-view-child.component';
 
 // 音声認識-文字起こしの検証用コンポーネント
 import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-text-base.component';
@@ -81,6 +64,10 @@ import { CsvAndZipBaseComponent } from './component/csv-and-zip/csv-and-zip-base
 import { ReactiveFormBaseComponent } from './component/reactive-form/reactive-form-base.component';
 import { ValidationBaseComponent } from './component/validation/validation-base.component';
 import { UseAttributeDirectiveBaseComponent } from './component/use-attribute-directive/use-attribute-directive-base.component';
+import { DoCheckBaseComponent } from './component/lifecycle/do-check/do-check-base.component';
+import { OnChangeBaseComponent } from './component/lifecycle/on-change/on-change-base.component';
+import { AfterContentBaseComponent } from './component/lifecycle/after-content/after-content-base.component';
+import { AfterViewBaseComponent } from './component/lifecycle/after-view/after-view-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -186,23 +173,6 @@ const ROUTE_TABLE: Routes = [
     PageAComponent,
     PageBComponent,
     PageCComponent,
-    // コンポーネントのライフサイクル検証用コンポーネント
-    // doCheck の検証
-    DoCheckBaseComponent,
-    DoCheckVerificationComponent,
-    // onChange の検証
-    OnChangeBaseComponent,
-    OnChangeVerificationComponent,
-    // AfterContentInit と AfterContentChecked の検証
-    AfterContentBaseComponent,
-    AfterContentParentComponent,
-    AfterContentChildComponent,
-    NgContentParentComponent,
-    NgContentChildComponent,
-    // AfterViewInit と AfterViewChecked の検証
-    AfterViewBaseComponent,
-    AfterViewParentComponent,
-    AfterViewChildComponent,
     // 音声認識-文字起こしの検証用コンポーネント
     SpeechToTextBaseComponent,
     UseWebSpeechApiComponent,
@@ -215,6 +185,7 @@ const ROUTE_TABLE: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    FeatureLifeCycleModule,
     FeatureTabModule,
     FeatureReferenceContentModule,
     FeatureAngularMaterialModule,
