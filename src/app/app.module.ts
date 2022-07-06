@@ -34,6 +34,7 @@ import { FeatureDataShareModule } from './modules/feature-data-share.module'; //
 import { FeatureCsvAndArchiveModule } from './modules/feature-csv-and-archive.module'; // csv ファイル出力と zip ファイル出力の検証用モジュール
 import { FeatureReactiveForm } from './modules/feature-reactive-form.module'; // ReactiveFormsModule の検証用モジュール
 import { FeatureNormalValidationModule } from './modules/feature-normal-validation.module'; // Validation 機能の検証用モジュール
+import { FeatureUseAttributeDirectiveModule } from './modules/feature-use-attribute-directive.module'; // 属性ディレクティブの検証用モジュール
 
 // ルーティング実装検証用コンポーネント
 import { RoutingBaseComponent } from './component/routing/routing.base.component';
@@ -59,17 +60,6 @@ import { AfterViewBaseComponent } from './component/lifecycle/after-view/after-v
 import { AfterViewParentComponent } from './component/lifecycle/after-view/after-view-verification/after-view-parent/after-view-parent.component';
 import { AfterViewChildComponent } from './component/lifecycle/after-view/after-view-verification/after-view-child/after-view-child.component';
 
-// 属性ディレクティブの実装検証用コンポーネント/ディレクティブ
-import { TemplateDirective } from './directive/attribute/template/template.directive';
-import { UseAttributeDirectiveBaseComponent } from './component/use-attribute-directive/use-attribute-directive-base.component';
-import { AttributeDirectiveVerificationComponent } from './component/use-attribute-directive/attribute-directive-verification/attribute-directive-verification.component';
-// 属性ディレクティブのイベント実装検証用コンポーネント/ディレクティブ
-import { EventDirective } from './directive/attribute/event/event.directive';
-import { AttributeDirectiveEventVerificationComponent } from './component/use-attribute-directive/attribute-directive-event-verification/attribute-directive-event-verification.component';
-// 属性ディレクティブの Validation 実装検証用コンポーネント/ディレクティブ
-import { NetworkAddressValidatorDirective } from './directive/attribute/validator/network-address-validator.directive';
-import { AttributeDirectiveValidatorVerificationComponent } from './component/use-attribute-directive/attribute-directive-validator-verification/attribute-directive-validator-verification.component';
-
 // 音声認識-文字起こしの検証用コンポーネント
 import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-text-base.component';
 import { UseWebSpeechApiComponent } from './component/speech-to-text/use-web-speech-api/use-web-speech-api.component';
@@ -90,6 +80,7 @@ import { DataShareBaseComponent } from './component/data-share/data-share-base.c
 import { CsvAndZipBaseComponent } from './component/csv-and-zip/csv-and-zip-base.component';
 import { ReactiveFormBaseComponent } from './component/reactive-form/reactive-form-base.component';
 import { ValidationBaseComponent } from './component/validation/validation-base.component';
+import { UseAttributeDirectiveBaseComponent } from './component/use-attribute-directive/use-attribute-directive-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -212,16 +203,6 @@ const ROUTE_TABLE: Routes = [
     AfterViewBaseComponent,
     AfterViewParentComponent,
     AfterViewChildComponent,
-    // 属性ディレクティブの実装検証用コンポーネント/ディレクティブ
-    TemplateDirective,
-    UseAttributeDirectiveBaseComponent,
-    AttributeDirectiveVerificationComponent,
-    // 属性ディレクティブのイベント実装検証用コンポーネント/ディレクティブ
-    EventDirective,
-    AttributeDirectiveEventVerificationComponent,
-    // 属性ディレクティブの Validation 実装検証用コンポーネント/ディレクティブ
-    NetworkAddressValidatorDirective,
-    AttributeDirectiveValidatorVerificationComponent,
     // 音声認識-文字起こしの検証用コンポーネント
     SpeechToTextBaseComponent,
     UseWebSpeechApiComponent,
@@ -244,6 +225,7 @@ const ROUTE_TABLE: Routes = [
     FeatureCsvAndArchiveModule,
     FeatureReactiveForm,
     FeatureNormalValidationModule,
+    FeatureUseAttributeDirectiveModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
