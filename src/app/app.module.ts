@@ -36,12 +36,7 @@ import { FeatureCsvAndArchiveModule } from './modules/feature-csv-and-archive.mo
 import { FeatureReactiveForm } from './modules/feature-reactive-form.module'; // ReactiveFormsModule の検証用モジュール
 import { FeatureNormalValidationModule } from './modules/feature-normal-validation.module'; // Validation 機能の検証用モジュール
 import { FeatureUseAttributeDirectiveModule } from './modules/feature-use-attribute-directive.module'; // 属性ディレクティブの検証用モジュール
-
-// ルーティング実装検証用コンポーネント
-import { RoutingBaseComponent } from './component/routing/routing.base.component';
-import { PageAComponent } from './component/routing/page-a/page-a.component';
-import { PageBComponent } from './component/routing/page-b/page-b.component';
-import { PageCComponent } from './component/routing/page-c/page-c.component';
+import { FeatureVerificationRoutingModule } from './modules/feature-verification-routing.module'; // ルーティング実装検証用モジュール
 
 // 音声認識-文字起こしの検証用コンポーネント
 import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-text-base.component';
@@ -68,6 +63,7 @@ import { DoCheckBaseComponent } from './component/lifecycle/do-check/do-check-ba
 import { OnChangeBaseComponent } from './component/lifecycle/on-change/on-change-base.component';
 import { AfterContentBaseComponent } from './component/lifecycle/after-content/after-content-base.component';
 import { AfterViewBaseComponent } from './component/lifecycle/after-view/after-view-base.component';
+import { RoutingBaseComponent } from './component/routing/routing.base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -135,12 +131,6 @@ const ROUTE_TABLE: Routes = [
   {
     path: 'routing',
     component: RoutingBaseComponent,
-    // children 要素によって `<router-outlet></router-outlet>` の入れ子が実現できる
-    children: [
-      { path: 'page-a', component: PageAComponent },
-      { path: 'page-b', component: PageBComponent },
-      { path: 'page-c', component: PageCComponent },
-    ],
   },
   {
     path: 'modal',
@@ -168,11 +158,6 @@ const ROUTE_TABLE: Routes = [
   declarations: [
     AppComponent,
     ReadmeComponent,
-    // ルーティング実装検証用コンポーネント
-    RoutingBaseComponent,
-    PageAComponent,
-    PageBComponent,
-    PageCComponent,
     // 音声認識-文字起こしの検証用コンポーネント
     SpeechToTextBaseComponent,
     UseWebSpeechApiComponent,
@@ -197,6 +182,7 @@ const ROUTE_TABLE: Routes = [
     FeatureReactiveForm,
     FeatureNormalValidationModule,
     FeatureUseAttributeDirectiveModule,
+    FeatureVerificationRoutingModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
