@@ -1,3 +1,4 @@
+// 公式・サードパティ製ライブラリ
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -6,12 +7,11 @@ import { HttpClientModule } from '@angular/common/http'; // HTTP クライアン
 import { ReactiveFormsModule } from '@angular/forms'; // RactiveForm を使用するために必要
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Angular Material を使用するために必要
 
+/////////////////////////////////////////////////
+// ここから ↓ は実装したもの
 import { AppComponent } from './app.component';
-
 import { Logging } from './utils/logging';
-
-// TOP ページ用の README
-import { ReadmeComponent } from './component/readme/readme.component';
+import { ReadmeComponent } from './component/readme/readme.component'; // TOP ページ用の README
 
 // ----------------------------------------------
 // サービスはまとめておく
