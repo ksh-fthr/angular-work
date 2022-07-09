@@ -37,11 +37,7 @@ import { FeatureReactiveForm } from './modules/feature-reactive-form.module'; //
 import { FeatureNormalValidationModule } from './modules/feature-normal-validation.module'; // Validation 機能の検証用モジュール
 import { FeatureUseAttributeDirectiveModule } from './modules/feature-use-attribute-directive.module'; // 属性ディレクティブの検証用モジュール
 import { FeatureVerificationRoutingModule } from './modules/feature-verification-routing.module'; // ルーティング実装検証用モジュール
-
-// 音声認識-文字起こしの検証用コンポーネント
-import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-text-base.component';
-import { UseWebSpeechApiComponent } from './component/speech-to-text/use-web-speech-api/use-web-speech-api.component';
-import { UseAwsTranscribeStreamingComponent } from './component/speech-to-text/use-aws-transcribe-streaming/use-aws-transcribe-streaming.component';
+import { FeatureSpeechToTextModule } from './modules/feature-speech-to-text.module'; // 音声認識-文字起こしの検証用モジュール
 
 // ----------------------------------------------
 // routing のために必要なベースコンポーネント
@@ -64,6 +60,7 @@ import { OnChangeBaseComponent } from './component/lifecycle/on-change/on-change
 import { AfterContentBaseComponent } from './component/lifecycle/after-content/after-content-base.component';
 import { AfterViewBaseComponent } from './component/lifecycle/after-view/after-view-base.component';
 import { RoutingBaseComponent } from './component/routing/routing.base.component';
+import { SpeechToTextBaseComponent } from './component/speech-to-text/speech-to-text-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -143,10 +140,6 @@ const ROUTE_TABLE: Routes = [
   {
     path: 'speech-to-text',
     component: SpeechToTextBaseComponent,
-    children: [
-      { path: 'use-web-speech-api', component: UseWebSpeechApiComponent },
-      { path: 'use-aws-transcribe', component: UseAwsTranscribeStreamingComponent },
-    ],
   },
   {
     path: 'angular-material',
@@ -155,14 +148,7 @@ const ROUTE_TABLE: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ReadmeComponent,
-    // 音声認識-文字起こしの検証用コンポーネント
-    SpeechToTextBaseComponent,
-    UseWebSpeechApiComponent,
-    UseAwsTranscribeStreamingComponent,
-  ],
+  declarations: [AppComponent, ReadmeComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTE_TABLE),
@@ -183,6 +169,7 @@ const ROUTE_TABLE: Routes = [
     FeatureNormalValidationModule,
     FeatureUseAttributeDirectiveModule,
     FeatureVerificationRoutingModule,
+    FeatureSpeechToTextModule,
   ],
   providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
   bootstrap: [AppComponent],
