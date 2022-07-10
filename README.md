@@ -96,7 +96,7 @@ typescript                      4.5.5
 * [feat_http_client](https://github.com/ksh-fthr/angular-work/tree/feat_http_client)
   * Http モジュールを利用した Http クライアントの実装を確認するためのブランチ
   * Qiita の [[Angular] HTTPクライアント(RESTクライアント)を実装する](https://qiita.com/ksh-fthr/items/840ae54472892a87f48d) で扱った
-* [feat_validation](https://github.com/ksh-fthr/angular-work/tree/feat_validation)
+* [feature/validation](https://github.com/ksh-fthr/angular-work/tree/feature/validation)
   * Angular による validation 機能を確認するためのブランチ
   * Qiita の [[Angular] 標準機能を利用して validation を実現する](https://qiita.com/ksh-fthr/items/ee9b026da40cae96ac38) で扱った
 * [feat_generics](https://github.com/ksh-fthr/angular-work/tree/feat_generics)
