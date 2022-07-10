@@ -21,6 +21,13 @@ export class ValidationVerificationComponent implements OnInit {
   public inputSubnetMask = '';
 
   /**
+   * 入力された数値の最小/最大値チェック
+   *
+   * @type {number}
+   */
+  public inputNumber = 0;
+
+  /**
    * 入力された内容の最小文字数チェック
    * IPアドレスの最小文字数である x.x.x.x の ７ を定義
    *
@@ -44,13 +51,6 @@ export class ValidationVerificationComponent implements OnInit {
    */
   public readonly networkAddressPattern: string =
     '^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])[¥.]){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$';
-
-  /**
-   * 入力された数値の最小/最大値チェック
-   *
-   * @type {number}
-   */
-  public inputNumber = 0;
 
   /**
    * 入力エラー情報を画面に表示するためのプロパティ
@@ -89,8 +89,6 @@ export class ValidationVerificationComponent implements OnInit {
    * @param errorInformation
    */
   public onKeyUp(validationKey: any, errorInformation: any) {
-    console.dir(validationKey);
-    console.dir(errorInformation);
     this.manageValidationError(validationKey, errorInformation);
   }
 
