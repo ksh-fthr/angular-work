@@ -20,7 +20,7 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 | [TypeScript](https://www.typescriptlang.org/)               | v4.5.5     | 同上               |
 | [Node.js](https://nodejs.org/ja/)                           | v14.17.0   | `$ node --version` |
 | [npm](https://www.npmjs.com/)                               | v6.14.13   | `$ npm --version`  |
-| [ngx-toastr](https://www.npmjs.com/package/ngx-toastr)      | v15.0.0    | package.json       |
+| [ngx-toastr](https://www.npmjs.com/package/ngx-toastr)      | v14.3.0	   | angular v13 はこのバージョンを指定する必要あり |
 
 <details>
 <div>
