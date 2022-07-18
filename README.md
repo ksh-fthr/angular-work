@@ -20,6 +20,7 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 | [TypeScript](https://www.typescriptlang.org/)               | v4.5.5     | 同上               |
 | [Node.js](https://nodejs.org/ja/)                           | v14.17.0   | `$ node --version` |
 | [npm](https://www.npmjs.com/)                               | v6.14.13   | `$ npm --version`  |
+| [ngx-toastr](https://www.npmjs.com/package/ngx-toastr)      | v15.0.0    | package.json       |
 
 <details>
 <div>
@@ -138,3 +139,5 @@ typescript                      4.5.5
   * AWS Transcribe Streaming を使った音声認識と文字起こしの実装を試すブランチ
 * [feature/investigate/angular-material](https://github.com/ksh-fthr/angular-work/tree/feature/investigate/angular-material)
   * Angular Material の検証を行うブランチ
+* [feature/use-toastr](https://github.com/ksh-fthr/angular-work/tree/feature/use-toastr)
+  * [ngx-toastr](https://www.npmjs.com/package/ngx-toastr) の使用感を検証するブランチ
