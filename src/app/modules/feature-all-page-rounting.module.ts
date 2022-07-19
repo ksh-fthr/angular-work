@@ -25,6 +25,7 @@ import { AfterContentBaseComponent } from '../component/lifecycle/after-content/
 import { AfterViewBaseComponent } from '../component/lifecycle/after-view/after-view-base.component';
 import { RoutingBaseComponent } from '../component/routing/routing.base.component';
 import { SpeechToTextBaseComponent } from '../component/speech-to-text/speech-to-text-base.component';
+import { ToastBaseComponent } from '../component/toast/toast-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -108,6 +109,10 @@ const ROUTE_TABLE: Routes = [
   {
     path: 'angular-material',
     component: UseAngularMaterialBaseComponent,
+  },
+  {
+    path: 'toast',
+    component: ToastBaseComponent,
   },
 ];
 
