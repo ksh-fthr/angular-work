@@ -18,6 +18,7 @@ import { ModalService } from './service/modal/modal.service'; // モーダル実
 import { SwitchTabService } from './service/switch-tab/switch-tab.service'; // タブ実装検証用
 import { DataShareService } from './service/data-share/data-share.service'; // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用
 import { HttpClientService } from './service/http-client/http-client.service'; // Http クライアントの実装検証用
+import { ToasterService } from './service/toaster/toaster.service'; // ngx-toastr の検証用
 
 // ----------------------------------------------
 // モジュールもまとめておく
@@ -37,6 +38,7 @@ import { FeatureNormalValidationModule } from './modules/feature-normal-validati
 import { FeatureUseAttributeDirectiveModule } from './modules/feature-use-attribute-directive.module'; // 属性ディレクティブの検証用モジュール
 import { FeatureVerificationRoutingModule } from './modules/feature-verification-routing.module'; // ルーティング実装検証用モジュール
 import { FeatureSpeechToTextModule } from './modules/feature-speech-to-text.module'; // 音声認識-文字起こしの検証用モジュール
+import { FeatureUseNgxToastr } from './modules/feature-use-ngx-toastr.module'; // ngx-toasr の使用感の検証用モジュール
 
 @NgModule({
   declarations: [AppComponent],
@@ -61,8 +63,9 @@ import { FeatureSpeechToTextModule } from './modules/feature-speech-to-text.modu
     FeatureUseAttributeDirectiveModule,
     FeatureVerificationRoutingModule,
     FeatureSpeechToTextModule,
+    FeatureUseNgxToastr,
   ],
-  providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, Logging],
+  providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, ToasterService, Logging],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
