@@ -1,6 +1,61 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    "group:allNonMajor"
+  ],
+  "dependencyDashboard": false,
+  "requiredStatusChecks": null,
+  "timezone": "Asia/Tokyo",
+  "schedule": [
+    "every 1 hour after 00:00 and before 23:59 every day"
+  ],
+  "automergeSchedule": [
+    "every 1 hour after 00:00 and before 23:59 every day"
+  ],
+  "major": {
+    "enabled": false
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": ["angular"],
+      "groupName": "angular",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": ["rxjs"],
+      "groupName": "rxjs",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": ["typescript", "tslib", "ts-node"],
+      "groupName": "typescript",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": ["aws-sdk"],
+      "groupName": "aws-sdk",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": ["eslint"],
+      "groupName": "eslint",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": ["jasmine", "karma"],
+      "groupName": "test-framework",
+      "automerge": true
+    }
   ]
 }
