@@ -25,18 +25,18 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchPackagePatterns": ["angular"],
       "groupName": "angular",
-      "automerge": true
-    },
-    {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchPackagePatterns": ["rxjs"],
-      "groupName": "rxjs",
-      "automerge": true
+      "automerge": false
     },
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchPackagePatterns": ["typescript", "tslib", "ts-node"],
       "groupName": "typescript",
+      "automerge": false
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": ["rxjs"],
+      "groupName": "rxjs",
       "automerge": true
     },
     {
