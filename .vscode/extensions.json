@@ -27,6 +27,7 @@
     "xabikos.javascriptsnippets",
     "gydunhn.javascript-essentials",
     "pkief.material-icon-theme",
-    "jgclark.vscode-todo-highlight"
+    "jgclark.vscode-todo-highlight",
+    "usernamehw.errorlens"
   ]
 }
