@@ -35,6 +35,13 @@
     },
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": ["zone"],
+      "groupName": "zone",
+      "automerge": false
+    },
+    {
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchPackagePatterns": ["rxjs"],
       "groupName": "rxjs",
       "automerge": true
@@ -47,7 +54,7 @@
     },
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchPackagePatterns": ["eslint"],
+      "matchPackagePatterns": ["eslint", "eslint-config-prettier", "eslint-plugin-import", "eslint-plugin-jsdoc", "eslint-plugin-prefer-arrow"],
       "groupName": "eslint",
       "automerge": true
     },
