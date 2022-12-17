@@ -60,6 +60,11 @@
     "statusBarItem.remoteBackground": "#dd0531",
     "statusBarItem.remoteForeground": "#e7e7e7"
   },
-  // 拡張機能をおすすめさせる
-  "extensions.ignoreRecommendations": false
+  // 拡張機能をおすすめさせる(これ false で おすすめとして出る のがややこしい)
+  "extensions.ignoreRecommendations": false, // ignore を false だから「おすすめ」ということになる
+
+  // markdownlint の設定
+  "markdownlint.config": {
+    "MD033": false  // no-inline-html: Inline HTML [Element: details]markdownlintMD033 を黙らせる
+  }
 }
