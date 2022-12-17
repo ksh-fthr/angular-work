@@ -1,4 +1,5 @@
 # このアプリについて
+
 Angular CLI で作成したプロジェクトを使用して、Angular の理解を深めるためにアレコレすることを目的としたものです。
 したがって、完全に個人での利用を目的としたものであり、更新のたびに以前の機能が無くなることがあります。
 
@@ -8,6 +9,7 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 表示される画面に違いはありますが、コンポーネントやサービス、ディレクティブにおける基本的な実装内容に大きな違いはありません。
 
 # 環境について
+
 [develop](https://github.com/ksh-fthr/angular-work) ブランチの内容は 以下の環境で実行・確認しています。
 他のブランチの確認バージョンについては、後述の各ブランチ の README をご参照下さい。
 
@@ -20,7 +22,7 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 | [TypeScript](https://www.typescriptlang.org/)               | v4.5.5     | 同上               |
 | [Node.js](https://nodejs.org/ja/)                           | v14.17.0   | `$ node --version` |
 | [npm](https://www.npmjs.com/)                               | v6.14.13   | `$ npm --version`  |
-| [ngx-toastr](https://www.npmjs.com/package/ngx-toastr)      | v14.3.0	   | angular v13 はこのバージョンを指定する必要あり |
+| [ngx-toastr](https://www.npmjs.com/package/ngx-toastr)      | v14.3.0    | angular v13 はこのバージョンを指定する必要あり |
 
 <details>
 <div>
@@ -63,8 +65,8 @@ typescript                      4.5.5
 </div>
 </details>
 
-
 # ブランチについて
+
 基本的にそのとき確認した内容ごとにブランチを切ります。
 現在は次のブランチがあります。
 
