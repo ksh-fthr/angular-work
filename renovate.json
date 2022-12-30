@@ -40,7 +40,6 @@
       "automerge": false
     },
     {
-    {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchPackagePatterns": ["rxjs"],
       "groupName": "rxjs",
