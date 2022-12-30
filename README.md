@@ -19,7 +19,7 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 | [Angular](https://angular.io/)                              | v14.2.12   | 同上               |
 | [Angular Material](https://material.angular.io/)            | v14.2.7    | 同上               |
 | [Angular CDK](https://github.com/angular/components#readme) | v14.2.7    | 同上               |
-| [TypeScript](https://www.typescriptlang.org/)               | v4.6.4     | 同上               |
+| [TypeScript](https://www.typescriptlang.org/)               | v4.7.4     | 同上               |
 | [RxJS](https://rxjs.dev/)                                   | v6.6.7     | 同上               |
 | [Node.js](https://nodejs.org/ja/)                           | v16.19.0   | `$ node --version` |
 | [npm](https://www.npmjs.com/)                               | v8.19.3    | `$ npm --version`  |
@@ -60,7 +60,7 @@ Package                         Version
 @angular/material               14.2.7
 @schematics/angular             14.2.10
 rxjs                            6.6.7
-typescript                      4.6.4
+typescript                      4.7.4
 ```
 
 </div>
