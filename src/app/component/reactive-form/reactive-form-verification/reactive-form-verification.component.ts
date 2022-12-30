@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -13,7 +13,7 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
    *
    * @type {FormGroup}
    */
-  public networkForm!: FormGroup;
+  public networkForm!: UntypedFormGroup;
 
   /**
    * 入力された内容の最小文字数チェック
@@ -81,16 +81,16 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
    */
   public ngOnInit(): void {
     // 複数の入力項目を設置するフォームを生成する
-    this.networkForm = new FormGroup({
+    this.networkForm = new UntypedFormGroup({
       // IPアドレスの入力項目
-      ipControl: new FormControl('', [
+      ipControl: new UntypedFormControl('', [
         Validators.required, // 必須入力をチェック
         Validators.minLength(this.minNetworkAddressLength), // 最少入力桁数をチェック
         Validators.maxLength(this.maxNetworkAddressLength), // 最大入力桁数をチェック
         Validators.pattern(this.networkAddressPattern), // 入力パターンをチェック
       ]),
       // サブネットマスクの入力項目
-      subnetmaskControl: new FormControl('', [
+      subnetmaskControl: new UntypedFormControl('', [
         Validators.required, // 必須入力をチェック
         Validators.minLength(this.minNetworkAddressLength), // 最少入力桁数をチェック
         Validators.maxLength(this.maxNetworkAddressLength), // 最大入力桁数をチェック
@@ -100,12 +100,12 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
 
     // フォーム生成時に指定した入力項目( FormControl ) 分、validation の状態を監視する
     // 状態が変化したらイベントをキャッチするので、それをトリガーにエラー情報の管理を行う
-    this.ipControlSubscription = this.networkForm.controls['ipControl'].statusChanges.subscribe((data) => {
-      this.manageValidationError('ipControl', this.networkForm.controls['ipControl'].errors);
+    this.ipControlSubscription = this.networkForm.controls.ipControl.statusChanges.subscribe((data) => {
+      this.manageValidationError('ipControl', this.networkForm.controls.ipControl.errors);
     });
 
-    this.subnetmaskSubscription = this.networkForm.controls['subnetmaskControl'].statusChanges.subscribe((data) => {
-      this.manageValidationError('subnetmaskControl', this.networkForm.controls['subnetmaskControl'].errors);
+    this.subnetmaskSubscription = this.networkForm.controls.subnetmaskControl.statusChanges.subscribe((data) => {
+      this.manageValidationError('subnetmaskControl', this.networkForm.controls.subnetmaskControl.errors);
     });
 
     this.changeFormEnabledDisabled();
@@ -129,8 +129,8 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
     // この例では常に「有効」となる
 
     // 有効にしたい場合
-    this.networkForm.controls['ipControl'].enable();
-    this.networkForm.controls['subnetmaskControl'].enable();
+    this.networkForm.controls.ipControl.enable();
+    this.networkForm.controls.subnetmaskControl.enable();
     // 無効にしたい場合
     // this.networkForm.controls['ipControl'].disable();
     // this.networkForm.controls['subnetmaskControl'].disable();
@@ -140,12 +140,12 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
    * OKボタンがクリックされた時のイベントハンドラ
    * ここでは単純にアラートを出すだけ
    *
-   * @param {any} $event イベント情報
+   * @param $event イベント情報
    */
   public onClickOK($event: any) {
     const inputValue: any = {
-      ipAddress: this.networkForm.controls['ipControl'].value,
-      subnetmask: this.networkForm.controls['subnetmaskControl'].value,
+      ipAddress: this.networkForm.controls.ipControl.value,
+      subnetmask: this.networkForm.controls.subnetmaskControl.value,
     };
     alert('input value: ' + JSON.stringify(inputValue));
   }
@@ -157,8 +157,8 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
    * # ビューに表示するためのエラー情報にリストの最後の情報をセットする
    *
    * @private
-   * @param {any} validationKey エラーが発生した入力フォーム
-   * @param {any} errorInformation バリデーションエラー情報
+   * @param validationKey エラーが発生した入力フォーム
+   * @param errorInformation バリデーションエラー情報
    */
   private manageValidationError(validationKey: any, errorInformation: any) {
     // validation のエラー情報を管理する

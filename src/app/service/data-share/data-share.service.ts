@@ -26,7 +26,7 @@ export class DataShareService {
   /**
    * データの更新イベント
    *
-   * @param {string} updated 更新データ
+   * @param updated 更新データ
    */
   public onNotifySharedDataChanged(updated: string) {
     console.log('[DataShareService] onNotifySharedDataChanged fired.');

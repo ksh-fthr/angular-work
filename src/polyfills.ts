@@ -18,16 +18,6 @@
  * BROWSER POLYFILLS
  */
 
-/** IE11 requires the following for NgClass support on SVG elements */
-// import 'classlist.js';  // Run `npm install --save classlist.js`.
-
-/**
- * Web Animations `@angular/platform-browser/animations`
- * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
- * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
- */
-// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
-
 /**
  * By default, zone.js will patch all possible macroTask and DomEvents
  * user can disable parts of macroTask/DomEvents patch by setting following flags
@@ -55,9 +45,20 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
-
+import 'zone.js'; // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+// "global is not defined"の対応
+(window as any).global = window;
+
+// https://stackoverflow.com/questions/50313745/angular-6-process-is-not-defined-when-trying-to-serve-application
+// https://www.npmjs.com/package/process
+import * as process from 'process';
+(window as any).process = process;
+
+// https://github.com/isaacs/core-util-is/issues/27
+// https://www.npmjs.com/package/buffer
+import * as buffer from 'buffer';
+(window as any).Buffer = buffer.Buffer;

@@ -1,20 +1,29 @@
 # このアプリについて
+
 Angular CLI で作成したプロジェクトを使用して、Angular の理解を深めるためにアレコレすることを目的としたものです。
 したがって、完全に個人での利用を目的としたものであり、更新のたびに以前の機能が無くなることがあります。
 
-上記より master ブランチは意味のある役割を持っていません。
-もし学習の内容が気になる場合は各ブランチをご参照ください。
+学習の内容が気になる場合は各ブランチをご参照ください。
+
+なお [develop](https://github.com/ksh-fthr/angular-work) ブランチには各ブランチで学習/実装した機能をマージしております。
+表示される画面に違いはありますが、コンポーネントやサービス、ディレクティブにおける基本的な実装内容に大きな違いはありません。
 
 # 環境について
-以下の環境で実行・確認しています。
 
-| 環境                                          | バージョン | 備考               |
-| --------------------------------------------- | ---------- | ------------------ |
-| [Angular CLI](https://cli.angular.io/)        | v11.0.5    | `$ ng --version`   |
-| [Angular](https://angular.io/)                | v11.0.5    | 同上               |
-| [TypeScript](https://www.typescriptlang.org/) | v4.0.2     | 同上               |
-| [Node.js](https://nodejs.org/ja/)             | v12.18.3   | `$ node --version` |
-| [npm](https://www.npmjs.com/)                 | v6.14.6    | `$ npm --version`  |
+[develop](https://github.com/ksh-fthr/angular-work) ブランチの内容は 以下の環境で実行・確認しています。
+他のブランチの確認バージョンについては、後述の各ブランチ の README をご参照下さい。
+
+| 環境                                                        | バージョン | 備考               |
+| ----------------------------------------------------------- | ---------- | ------------------ |
+| [Angular CLI](https://cli.angular.io/)                      | v14.2.10   | `$ ng version`   |
+| [Angular](https://angular.io/)                              | v14.2.12   | 同上               |
+| [Angular Material](https://material.angular.io/)            | v14.2.7    | 同上               |
+| [Angular CDK](https://github.com/angular/components#readme) | v14.2.7    | 同上               |
+| [TypeScript](https://www.typescriptlang.org/)               | v4.6.4     | 同上               |
+| [RxJS](https://rxjs.dev/)                                   | v6.6.7     | 同上               |
+| [Node.js](https://nodejs.org/ja/)                           | v16.19.0   | `$ node --version` |
+| [npm](https://www.npmjs.com/)                               | v8.19.3    | `$ npm --version`  |
+| [ngx-toastr](https://github.com/scttcper/ngx-toastr)        | v15.2.2    | angular v14 はこのバージョンを指定する必要あり |
 
 <details>
 <div>
@@ -31,36 +40,38 @@ $ ng version
                 |___/
 
 
-Angular CLI: 11.0.5
-Node: 12.18.3
+Angular CLI: 14.2.10
+Node: 16.19.0
+Package Manager: npm 8.19.3
 OS: darwin x64
 
-Angular: 11.0.5
-... animations, cli, common, compiler, compiler-cli, core, forms
+Angular: 14.2.12
+... animations, common, compiler, compiler-cli, core, forms
 ... platform-browser, platform-browser-dynamic, router
-Ivy Workspace: Yes
 
 Package                         Version
 ---------------------------------------------------------
-@angular-devkit/architect       0.1100.5
-@angular-devkit/build-angular   0.1100.5
-@angular-devkit/core            11.0.5
-@angular-devkit/schematics      11.0.5
-@schematics/angular             11.0.5
-@schematics/update              0.1100.5
-rxjs                            6.6.0
-typescript                      4.0.2
+@angular-devkit/architect       0.1402.10
+@angular-devkit/build-angular   14.2.10
+@angular-devkit/core            14.2.10
+@angular-devkit/schematics      14.2.10
+@angular/cdk                    14.2.7
+@angular/cli                    14.2.10
+@angular/material               14.2.7
+@schematics/angular             14.2.10
+rxjs                            6.6.7
+typescript                      4.6.4
 ```
 
 </div>
 </details>
 
-
 # ブランチについて
+
 基本的にそのとき確認した内容ごとにブランチを切ります。
 現在は次のブランチがあります。
 
-* [feature/develop](https://github.com/ksh-fthr/angular-work)
+* [develop](https://github.com/ksh-fthr/angular-work)
   * GitHub 上のデフォルトブランチ
   * 他のブランチで確認したコードを取り込んだブランチ
   * HTML のレイアウトやスタイルは変えているが､Angular の実装は大きく変えていない
@@ -89,7 +100,7 @@ typescript                      4.0.2
 * [feat_http_client](https://github.com/ksh-fthr/angular-work/tree/feat_http_client)
   * Http モジュールを利用した Http クライアントの実装を確認するためのブランチ
   * Qiita の [[Angular] HTTPクライアント(RESTクライアント)を実装する](https://qiita.com/ksh-fthr/items/840ae54472892a87f48d) で扱った
-* [feat_validation](https://github.com/ksh-fthr/angular-work/tree/feat_validation)
+* [feature/validation](https://github.com/ksh-fthr/angular-work/tree/feature/validation)
   * Angular による validation 機能を確認するためのブランチ
   * Qiita の [[Angular] 標準機能を利用して validation を実現する](https://qiita.com/ksh-fthr/items/ee9b026da40cae96ac38) で扱った
 * [feat_generics](https://github.com/ksh-fthr/angular-work/tree/feat_generics)
@@ -125,3 +136,11 @@ typescript                      4.0.2
 * [feat_zip](https://github.com/ksh-fthr/angular-work/tree/feat_zip)
   * base64 文字列化したZIPファイルをバックエンドから取得してファイル出力する実装を試すブランチ
   * Qiita の [[Angular] base64 文字列をバイナリに戻してダウンロードする](https://qiita.com/ksh-fthr/items/b3e3afb7f8e51759a1ed) で扱った
+* [feature/speech-to-text/use-webspeechapi](https://github.com/ksh-fthr/angular-work/tree/feature/speech-to-text/use-webspeechapi)
+  * WebSpeechAPI を使った音声認識と文字起こしの実装を試すブランチ
+* [feature/speech-to-text/use-aws-transcribe-streaming](https://github.com/ksh-fthr/angular-work/tree/feature/speech-to-text/use-aws-transcribe-streaming)
+  * AWS Transcribe Streaming を使った音声認識と文字起こしの実装を試すブランチ
+* [feature/investigate/angular-material](https://github.com/ksh-fthr/angular-work/tree/feature/investigate/angular-material)
+  * Angular Material の検証を行うブランチ
+* [feature/use-toastr](https://github.com/ksh-fthr/angular-work/tree/feature/use-toastr)
+  * [ngx-toastr](https://www.npmjs.com/package/ngx-toastr) の使用感を検証するブランチ

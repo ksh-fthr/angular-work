@@ -8,9 +8,8 @@ describe('DoCheckVerificationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DoCheckVerificationComponent ]
-    })
-    .compileComponents();
+      declarations: [DoCheckVerificationComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -11,14 +11,21 @@ export class ValidationVerificationComponent implements OnInit {
    *
    * @type {string}
    */
-  public inputIP: string = '';
+  public inputIP = '';
 
   /**
    * validaion のための双方向データバインドを行うプロパティ
    *
    * @type {string}
    */
-  public inputSubnetMask: string = '';
+  public inputSubnetMask = '';
+
+  /**
+   * 入力された数値の最小/最大値チェック
+   *
+   * @type {number}
+   */
+  public inputNumber = 0;
 
   /**
    * 入力された内容の最小文字数チェック
@@ -68,7 +75,7 @@ export class ValidationVerificationComponent implements OnInit {
    * OKボタンがクリックされた時のイベントハンドラ
    * ここでは単純にアラートを出すだけ
    *
-   * @param {any} $event イベント情報
+   * @param $event イベント情報
    */
   public onClickOK($event: any) {
     alert('OK button had clicked.');
@@ -78,8 +85,8 @@ export class ValidationVerificationComponent implements OnInit {
    * keyup イベントのイベントハンドラ
    * このイベントをトリガーに入力エラー情報を管理する
    *
-   * @param {any} validationKey
-   * @param {any} errorInformation
+   * @param validationKey
+   * @param errorInformation
    */
   public onKeyUp(validationKey: any, errorInformation: any) {
     this.manageValidationError(validationKey, errorInformation);
@@ -92,8 +99,8 @@ export class ValidationVerificationComponent implements OnInit {
    * # ビューに表示するためのエラー情報にリストの最後の情報をセットする
    *
    * @private
-   * @param {any} validationKey エラーが発生した入力フォーム
-   * @param {any} errorInformation バリデーションエラー情報
+   * @param validationKey エラーが発生した入力フォーム
+   * @param errorInformation バリデーションエラー情報
    */
   private manageValidationError(validationKey: any, errorInformation: any) {
     for (const target in this.validationErrorList) {

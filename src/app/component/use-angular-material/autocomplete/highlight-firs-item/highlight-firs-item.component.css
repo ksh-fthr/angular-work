@@ -1,0 +1,9 @@
+.form-style {
+  min-width: 300px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-full-width {
+  width: 100%;
+}

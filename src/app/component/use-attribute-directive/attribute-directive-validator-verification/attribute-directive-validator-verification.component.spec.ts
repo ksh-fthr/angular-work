@@ -8,9 +8,8 @@ describe('AttributeDirectiveValidatorVerificationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AttributeDirectiveValidatorVerificationComponent ]
-    })
-    .compileComponents();
+      declarations: [AttributeDirectiveValidatorVerificationComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

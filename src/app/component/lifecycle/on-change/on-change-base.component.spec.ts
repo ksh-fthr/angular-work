@@ -8,9 +8,8 @@ describe('OnChangeBaseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OnChangeBaseComponent ]
-    })
-    .compileComponents();
+      declarations: [OnChangeBaseComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

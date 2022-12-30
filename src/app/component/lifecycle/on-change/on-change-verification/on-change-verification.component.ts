@@ -7,7 +7,7 @@ import { Logging } from 'src/app/utils/logging';
   styleUrls: ['../../../../style/common.css', './on-change-verification.component.css'],
 })
 export class OnChangeVerificationComponent implements OnInit, OnChanges {
-  @Input() ngOnChangesValue: string = '';
+  @Input() ngOnChangesValue = '';
 
   /**
    * ログ出力を行うテキストエリアの HTML エレメント
@@ -22,7 +22,7 @@ export class OnChangeVerificationComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     // こちらはコンソールログと画面上の両方に出力する
-    let message: string = '[ngOnInit] fired';
+    const message = '[ngOnInit] fired';
     console.log(message);
     Logging.info(this.textAreaElement, message);
   }
@@ -38,12 +38,16 @@ export class OnChangeVerificationComponent implements OnInit, OnChanges {
     this.textAreaElement = this.element.nativeElement.querySelector('.log-text-area');
 
     // こちらもコンソールログと画面上の両方に出力する
-    let message: string = '[ngOnChanges] fired';
+    let message = '[ngOnChanges] fired';
     console.log(message);
     Logging.info(this.textAreaElement, message);
 
     // SimpleChanges を使って変更前の値と変更後の値、そして変更されているかをログ出力する
     for (const prop in changes) {
+      if (!changes.hasOwnProperty(prop)) {
+        continue;
+      }
+
       const change = changes[prop];
       const messageJson = {
         property: prop,

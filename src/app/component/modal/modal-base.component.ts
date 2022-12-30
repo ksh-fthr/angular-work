@@ -46,7 +46,7 @@ export class ModalBaseComponent implements OnInit, OnDestroy {
   /**
    * クリックイベント
    *
-   * @param {*} $event イベント情報
+   * @param $event イベント情報
    */
   public onClick($event: any) {
     this.setModal();

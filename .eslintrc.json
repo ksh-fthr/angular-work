@@ -1,0 +1,96 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "env": {
+      "es6": true
+    },
+    "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json",
+          "e2e/tsconfig.e2e.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/ng-cli-compat",
+        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        // メソッドの返り値を明示する
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "indent": [
+          "error",
+          2,
+          {
+            "SwitchCase": 1
+          }
+        ],
+        // ===> ここからセミコロン必須の設定
+        "semi": [
+          "error",
+          "always"
+        ],
+        "semi-spacing": [
+          "error",
+          {
+            "after": true,
+            "before": false
+          }
+        ],
+        "semi-style": [
+          "error",
+          "last"
+        ],
+        "no-extra-semi": "error",
+        "no-unexpected-multiline": "error",
+        "no-unreachable": "error",
+        "no-underscore-dangle": "off",
+        // <=== ここまでセミコロン必須の設定
+        "@typescript-eslint/member-ordering": "off",
+        "max-len": [
+          "error", {
+            "code": 160,
+            "tabWidth": 2,
+            "ignoreUrls": true,
+            "ignorePattern": "^import\\s.+\\sfrom\\s.+;$"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ]
+    }
+  ]
+}

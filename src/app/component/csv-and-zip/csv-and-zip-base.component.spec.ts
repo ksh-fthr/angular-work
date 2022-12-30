@@ -8,9 +8,8 @@ describe('CsvAndZipBaseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CsvAndZipBaseComponent ]
-    })
-    .compileComponents();
+      declarations: [CsvAndZipBaseComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

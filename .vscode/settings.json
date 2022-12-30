@@ -16,13 +16,13 @@
   },
   // フォーマッタをprettierに指定
   "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
-},
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
+  },
   "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
-},
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
+  },
   // html
   "html.format.wrapLineLength": 0,
   "html.format.enable": false,
@@ -52,9 +52,19 @@
     "titleBar.activeBackground": "#dd0531",
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveBackground": "#dd053199",
-    "titleBar.inactiveForeground": "#e7e7e799"
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "editorGroup.border": "#fa1b49",
+    "panel.border": "#fa1b49",
+    "sash.hoverBorder": "#fa1b49",
+    "sideBar.border": "#fa1b49",
+    "statusBarItem.remoteBackground": "#dd0531",
+    "statusBarItem.remoteForeground": "#e7e7e7"
   },
-  "peacock.color": "#dd0531",
-  // 拡張機能をおすすめさせる
-  "extensions.ignoreRecommendations": false
+  // 拡張機能をおすすめさせる(これ false で おすすめとして出る のがややこしい)
+  "extensions.ignoreRecommendations": false, // ignore を false だから「おすすめ」ということになる
+
+  // markdownlint の設定
+  "markdownlint.config": {
+    "MD033": false  // no-inline-html: Inline HTML [Element: details]markdownlintMD033 を黙らせる
+  }
 }

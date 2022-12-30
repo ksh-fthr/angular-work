@@ -1,0 +1,13 @@
+.h2-style {
+  border-left: solid 3px #b7a077;
+  padding: 4px 9px 4px 14px;
+}
+
+.output-area {
+  padding: 20px 0px;
+}
+
+.output-text {
+  width: 80%;
+  height: 80%;
+}

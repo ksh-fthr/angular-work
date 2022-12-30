@@ -7,7 +7,7 @@ export class EventDirective {
   /**
    * コンストラクタ
    *
-   * @param {ElementRef} elementRef このディレクティブがセットされたDOMへの参照
+   * @param elementRef このディレクティブがセットされたDOMへの参照
    */
   constructor(private elementRef: ElementRef) {}
 
@@ -15,7 +15,7 @@ export class EventDirective {
    * イベントリスナー
    * マウスイベントをキャッチして背景色を変更する
    *
-   * @param {*} target このディレクティブが適用されているhtml要素
+   * @param target このディレクティブが適用されているhtml要素
    */
   @HostListener('mouseenter', ['$event.target']) changeBackgroundColor(target: any) {
     console.log(target);
@@ -27,7 +27,7 @@ export class EventDirective {
    * イベントリスナー
    * マウスリーブイベントをキャッチして背景色を変更する
    *
-   * @param {*} target このディレクティブが適用されているhtml要素
+   * @param target このディレクティブが適用されているhtml要素
    */
   @HostListener('mouseleave', ['$event.target']) restoreBackgroundColor(target: any) {
     console.log(target);

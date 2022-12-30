@@ -9,19 +9,19 @@ export class TemplateDirective implements OnInit {
    *
    * @type {string}
    */
-  @Input() public greet: string = '';
+  @Input() public greet = '';
 
   /**
    * 親コンポーネントから受け取るデータ-2
    *
    * @type {string}
    */
-  @Input() public name: string = '';
+  @Input() public name = '';
 
   /**
    * コンストラクタ
    *
-   * @param {ElementRef} elementRef このディレクティブがセットされたDOMへの参照
+   * @param elementRef このディレクティブがセットされたDOMへの参照
    */
   constructor(private elementRef: ElementRef) {}
 

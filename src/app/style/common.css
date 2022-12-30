@@ -170,11 +170,14 @@ code {
   padding: 5px;
 }
 
-.input-network-address {
+.input-network-address, .input-number {
   width: inherit;
   height: 30px;
 }
 
+.input-data-column {
+  width: 150px;
+}
 
 .validation-body {
   height: 100%;
@@ -183,6 +186,7 @@ code {
 .validation-footer {
   padding: 0;
   bottom: 0;
+  height: 80px;
   /* 子要素を中央に配置する */
   display: flex;
   justify-content: center;
@@ -227,6 +231,10 @@ code {
   background: #ffffff;
 }
 
+.event-button-w-100 {
+  width: 200px;
+}
+
 .event-button-w-200 {
   width: 200px;
 }
@@ -262,7 +270,7 @@ code {
  * ラベル関連の設定
  */
 .label-common {
-  width: 140px;
+  width: 200px;
   display: inline-block;
 }
 

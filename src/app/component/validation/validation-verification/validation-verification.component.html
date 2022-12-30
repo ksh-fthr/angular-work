@@ -4,11 +4,12 @@
   </p>
   <form #formCheck="ngForm" class="form-check">
     <div class="validation-form-area">
+      <p>require, minLength, maxLength, pattern のチェック</p>
       <div class="input-network-address">
         <label class="label-common">IPアドレス: </label>
         <input
           type="text"
-          class="input-text"
+          class="input-data-column"
           name="input-ip-address"
           [(ngModel)]="inputIP"
           #inputIPinfo="ngModel"
@@ -23,7 +24,7 @@
         <label class="label-common">サブネットマスク: </label>
         <input
           type="text"
-          class="input-text"
+          class="input-data-column"
           name="input-subnet-mask"
           [(ngModel)]="inputSubnetMask"
           #inputSubnetMaskInfo="ngModel"
@@ -32,6 +33,22 @@
           maxlength="{{maxNetworkAddressLength}}"
           pattern="{{networkAddressPattern}}"
           (keyup)="onKeyUp('inputSubnetMaskInfo', inputSubnetMaskInfo.errors)"
+        >
+      </div>
+    </div>
+    <div class="validation-form-area">
+      <p>数値の最小/最大値のチェック</p>
+      <div class="input-number">
+        <label class="label-common">数値: </label>
+        <input
+          type="number"
+          class="input-data-column"
+          name="input-number"
+          [(ngModel)]="inputNumber"
+          #inputNumberInfo="ngModel"
+          min="0"
+          max="10"
+          (keyup)="onKeyUp('inputNumberInfo', inputNumberInfo.errors)"
         >
       </div>
     </div>
@@ -45,6 +62,8 @@
           <div [hidden]="!validationError?.minlength">※ 入力した内容が短すぎます</div>
           <div [hidden]="!validationError?.maxlength">※ 入力した内容が長すぎます</div>
           <div [hidden]="!validationError?.pattern">※ 入力した内容に誤りがあります</div>
+          <div [hidden]="!validationError?.min">※ 入力された数値が小さすぎます</div>
+          <div [hidden]="!validationError?.max">※ 入力された数値が大きすぎます</div>
         </div>
       </div>
     </div>

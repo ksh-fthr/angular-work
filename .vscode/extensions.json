@@ -1,6 +1,5 @@
 {
   "recommendations": [
-    "vismalietuva.vscode-angular-support",
     "formulahendry.auto-close-tag",
     "formulahendry.auto-complete-tag",
     "steoates.autoimport",
@@ -14,21 +13,22 @@
     "vincaslt.highlight-matching-tag",
     "ms-ceintl.vscode-language-pack-ja",
     "esbenp.prettier-vscode",
-    "wayou.vscode-todo-highlight",
     "angular.ng-template",
     "gydunhn.angular-essentials",
     "eamodio.gitlens",
     "dbaeumer.jshint",
     "eg2.vscode-npm-script",
     "christian-kohler.npm-intellisense",
-    "johnpapa.vscode-peacock",
     "rbbit.typescript-hero",
     "pmneo.tsimporter",
     "gydunhn.typescript-essentials",
-    "msjsdiag.debugger-for-chrome",
     "firefox-devtools.vscode-firefox-debug",
     "oouo-diogo-perdigao.docthis",
     "xabikos.javascriptsnippets",
-    "gydunhn.javascript-essentials"
+    "gydunhn.javascript-essentials",
+    "pkief.material-icon-theme",
+    "jgclark.vscode-todo-highlight",
+    "usernamehw.errorlens",
+    "davidanson.vscode-markdownlint"
   ]
 }

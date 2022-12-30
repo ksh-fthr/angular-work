@@ -13,8 +13,8 @@ export class CsvAndZipVerificationComponent implements OnInit {
    * コンストラクタ. HttpClientComponent のインスタンスを生成する
    * 自作した HttpClientService を DI する
    *
-   * @param {HttpClientService} httpClientService HTTP通信を担当するサービス
-   * @param {ElementRef} elementRef DOM参照のためのモジュール
+   * @param httpClientService HTTP通信を担当するサービス
+   * @param elementRef DOM参照のためのモジュール
    */
   constructor(private httpClientService: HttpClientService, private elementRef: ElementRef) {
     this.element = this.elementRef.nativeElement;
@@ -107,12 +107,10 @@ export class CsvAndZipVerificationComponent implements OnInit {
    * bas64 文字列になっている ZIP ファイル(バイナリデータ) をバイナリデータに変換する
    *
    * @private
-   * @param {string} base64 バイナリデータを base64 エンコードして更に文字列化した文字列
-   * @returns {Blob} 引数の文字列をバイナリに戻したバイナリデータ
-   * @description
-   *  ZIP ファイルへの変換のみ対応している
-   * @see
-   *  https://developer.mozilla.org/ja/docs/Web/API/WindowBase64/atob
+   * @param base64 バイナリデータを base64 エンコードして更に文字列化した文字列
+   * @returns 引数の文字列をバイナリに戻したバイナリデータ
+   * @description ZIP ファイルへの変換のみ対応している
+   * @see https://developer.mozilla.org/ja/docs/Web/API/WindowBase64/atob
    *  https://developer.mozilla.org/ja/docs/Web/API/Blob
    *  https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_objects/Uint8Array
    */
