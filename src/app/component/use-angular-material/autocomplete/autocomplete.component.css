@@ -1,0 +1,9 @@
+.tab-area-inner {
+  height: 100%;
+  width: inherit;
+  background: rgb(252, 246, 246);
+}
+
+.component-item {
+  padding: 20px;
+}

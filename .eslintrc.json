@@ -27,6 +27,8 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        // メソッドの返り値を明示する
+        "@typescript-eslint/explicit-function-return-type": "error",
         "indent": [
           "error",
           2,

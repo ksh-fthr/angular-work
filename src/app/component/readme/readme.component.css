@@ -28,9 +28,9 @@
 }
 
 #readme-header-description {
-  height: 200px;
+  height: 150px;
   margin: 0;
-  padding: 10px 10px;
+  padding: 20px 10px;
   /* 子要素を中央に配置するための準備 */
   position: relative;
 }
@@ -44,6 +44,7 @@
 }
 
 table#menu-table {
+  height: 90%;
   margin: 0 auto; /* 親要素に対して自分自身を左右中央に配置する */
   font-size: 0.8em;
   border: 0.5px solid #b7a007;
@@ -58,7 +59,7 @@ thead, tbody {
 tbody#menu-table-body {
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 400px;
+  height: 92%;
 }
 
 /* 各行をストライプで色分け */

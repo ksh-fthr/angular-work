@@ -4,7 +4,15 @@
   </div>
 
   <div class="body-block">
-    <app-use-web-speech-api></app-use-web-speech-api>
+    <div class="menu-block">
+      <ul>
+        <li><a routerLink="/speech-to-text/use-web-speech-api">WebSpeechApi を使ったサンプル</a></li>
+        <li><a routerLink="/speech-to-text/use-aws-transcribe">AWS Transcribe Streaming を使ったサンプル</a></li>
+      </ul>
+    </div>
+    <div class="routing-block">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 
   <div class="footer-block">

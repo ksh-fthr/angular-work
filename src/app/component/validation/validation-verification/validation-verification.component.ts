@@ -21,6 +21,13 @@ export class ValidationVerificationComponent implements OnInit {
   public inputSubnetMask = '';
 
   /**
+   * 入力された数値の最小/最大値チェック
+   *
+   * @type {number}
+   */
+  public inputNumber = 0;
+
+  /**
    * 入力された内容の最小文字数チェック
    * IPアドレスの最小文字数である x.x.x.x の ７ を定義
    *

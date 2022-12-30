@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -13,7 +13,7 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
    *
    * @type {FormGroup}
    */
-  public networkForm!: FormGroup;
+  public networkForm!: UntypedFormGroup;
 
   /**
    * 入力された内容の最小文字数チェック
@@ -81,16 +81,16 @@ export class ReactiveFormVerificationComponent implements OnInit, OnDestroy {
    */
   public ngOnInit(): void {
     // 複数の入力項目を設置するフォームを生成する
-    this.networkForm = new FormGroup({
+    this.networkForm = new UntypedFormGroup({
       // IPアドレスの入力項目
-      ipControl: new FormControl('', [
+      ipControl: new UntypedFormControl('', [
         Validators.required, // 必須入力をチェック
         Validators.minLength(this.minNetworkAddressLength), // 最少入力桁数をチェック
         Validators.maxLength(this.maxNetworkAddressLength), // 最大入力桁数をチェック
         Validators.pattern(this.networkAddressPattern), // 入力パターンをチェック
       ]),
       // サブネットマスクの入力項目
-      subnetmaskControl: new FormControl('', [
+      subnetmaskControl: new UntypedFormControl('', [
         Validators.required, // 必須入力をチェック
         Validators.minLength(this.minNetworkAddressLength), // 最少入力桁数をチェック
         Validators.maxLength(this.maxNetworkAddressLength), // 最大入力桁数をチェック
