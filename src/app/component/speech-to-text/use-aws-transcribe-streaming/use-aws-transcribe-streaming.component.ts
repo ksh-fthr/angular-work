@@ -62,6 +62,9 @@ export class UseAwsTranscribeStreamingComponent implements OnInit {
     // AudioContext.close() については下記を参照
     // https://developer.mozilla.org/ja/docs/Web/API/AudioContext/close
     if (!micStream) {
+      // FIXME: 2022/12/30 現在､ Chrome DevTools のコンソールに下記が出力される
+      // ---
+      // [Deprecation] The ScriptProcessorNode is deprecated. Use AudioWorkletNode instead. (https://bit.ly/audio-worklet)
       micStream = new MicrophoneStream();
     }
 
