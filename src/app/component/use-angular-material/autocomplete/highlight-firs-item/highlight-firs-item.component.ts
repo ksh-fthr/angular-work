@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { Observable, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -19,7 +19,7 @@ export class HightlightFirstItemComponent implements OnInit {
 
   // テンプレートの `input` からデータを流すための器
   // 入力された情報に応じてフィルタするために利用する
-  autocompleteControl = new FormControl('');
+  autocompleteControl = new UntypedFormControl('');
 
   // autocomplete でリストされたデータを動的にフィルタするための器
   // テンプレートの `mat-option` から参照される
