@@ -15,21 +15,22 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 
 | 環境                                                        | バージョン | 備考               |
 | ----------------------------------------------------------- | ---------- | ------------------ |
-| [Angular CLI](https://cli.angular.io/)                      | v13.2.4    | `$ ng --version`   |
-| [Angular](https://angular.io/)                              | v13.2.3    | 同上               |
-| [Angular Material](https://material.angular.io/)            | v13.3.9    | 同上               |
-| [Angular CDK](https://github.com/angular/components#readme) | v13.3.9    | 同上               |
-| [TypeScript](https://www.typescriptlang.org/)               | v4.5.5     | 同上               |
-| [Node.js](https://nodejs.org/ja/)                           | v14.17.0   | `$ node --version` |
-| [npm](https://www.npmjs.com/)                               | v6.14.13   | `$ npm --version`  |
-| [ngx-toastr](https://www.npmjs.com/package/ngx-toastr)      | v14.3.0    | angular v13 はこのバージョンを指定する必要あり |
+| [Angular CLI](https://cli.angular.io/)                      | v14.2.10   | `$ ng version`   |
+| [Angular](https://angular.io/)                              | v14.2.12   | 同上               |
+| [Angular Material](https://material.angular.io/)            | v14.2.7    | 同上               |
+| [Angular CDK](https://github.com/angular/components#readme) | v14.2.7    | 同上               |
+| [TypeScript](https://www.typescriptlang.org/)               | v4.6.4     | 同上               |
+| [RxJS](https://rxjs.dev/)                                   | v6.6.7     | 同上               |
+| [Node.js](https://nodejs.org/ja/)                           | v16.19.0   | `$ node --version` |
+| [npm](https://www.npmjs.com/)                               | v8.19.3    | `$ npm --version`  |
+| [ngx-toastr](https://github.com/scttcper/ngx-toastr)        | v15.2.2    | angular v14 はこのバージョンを指定する必要あり |
 
 <details>
 <div>
 <summary>Angular のバージョン詳細( ng version の結果 )</summary>
 
 ```bash
-$ ng --version
+$ ng version
 
      _                      _                 ____ _     ___
     / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
@@ -39,27 +40,27 @@ $ ng --version
                 |___/
 
 
-Angular CLI: 13.2.4
-Node: 14.17.0
-Package Manager: npm 6.14.13
+Angular CLI: 14.2.10
+Node: 16.19.0
+Package Manager: npm 8.19.3
 OS: darwin x64
 
-Angular: 13.2.3
+Angular: 14.2.12
 ... animations, common, compiler, compiler-cli, core, forms
 ... platform-browser, platform-browser-dynamic, router
 
 Package                         Version
 ---------------------------------------------------------
-@angular-devkit/architect       0.1302.4
-@angular-devkit/build-angular   13.3.7
-@angular-devkit/core            13.2.4
-@angular-devkit/schematics      13.2.4
-@angular/cdk                    13.3.9
-@angular/cli                    13.2.4
-@angular/material               13.3.9
-@schematics/angular             13.2.4
-rxjs                            6.6.0
-typescript                      4.5.5
+@angular-devkit/architect       0.1402.10
+@angular-devkit/build-angular   14.2.10
+@angular-devkit/core            14.2.10
+@angular-devkit/schematics      14.2.10
+@angular/cdk                    14.2.7
+@angular/cli                    14.2.10
+@angular/material               14.2.7
+@schematics/angular             14.2.10
+rxjs                            6.6.7
+typescript                      4.6.4
 ```
 
 </div>
