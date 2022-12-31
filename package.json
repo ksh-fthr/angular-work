@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "14.2.12",
     "@angular/router": "14.2.12",
     "@aws-sdk/client-transcribe-streaming": "3.226.0",
-    "@babel/runtime": "7.20.6",
+    "@babel/runtime": "7.20.7",
     "ansi-html-community": "0.0.8",
     "ansi-regex": "6.0.1",
     "buffer": "6.0.3",
@@ -32,7 +32,7 @@
     "process": "0.11.10",
     "rxjs": "6.6.7",
     "tslib": "2.4.1",
-    "zone.js": "0.11.5"
+    "zone.js": "0.12.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "14.2.10",
@@ -44,9 +44,9 @@
     "@angular/cli": "14.2.10",
     "@angular/compiler-cli": "14.2.12",
     "@types/jasmine": "3.10.7",
-    "@types/node": "16.18.8",
-    "@typescript-eslint/eslint-plugin": "5.46.0",
-    "@typescript-eslint/parser": "5.46.0",
+    "@types/node": "16.18.11",
+    "@typescript-eslint/eslint-plugin": "5.47.1",
+    "@typescript-eslint/parser": "5.47.1",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "latest",
