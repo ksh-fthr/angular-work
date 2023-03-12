@@ -1,6 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
-import { MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import {
+  MatAutocompleteSelectedEvent,
+  MatAutocompleteTrigger,
+} from '@angular/material/autocomplete';
 import { Observable, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
@@ -57,12 +60,12 @@ export class HightlightFirstItemComponent implements OnInit {
   // 1. ngOnInit でテンプレート変数: autoCompleteInput に対して focus() でフォーカスをあてる
   // 2. ページ描画時､テンプレートでは｢フォーカスがあたった｣となり､ focus イベントが発火する
   // 3. focus イベントの発火を受けて､それに紐づく本メソッドが実行される
-  openPanel(event: Event, trigger: MatAutocompleteTrigger) {
+  openPanel(event: Event, trigger: MatAutocompleteTrigger): void {
     event.stopPropagation();
     trigger.openPanel();
   }
 
-  onItemSelected(event: MatAutocompleteSelectedEvent) {
+  onItemSelected(event: MatAutocompleteSelectedEvent): void {
     const message = `autocompolete からアイテム=${event.option.value}が選択されました`;
     alert(message);
     console.log(message);
