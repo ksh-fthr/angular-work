@@ -13,17 +13,18 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 [develop](https://github.com/ksh-fthr/angular-work) ブランチの内容は 以下の環境で実行・確認しています。
 他のブランチの確認バージョンについては、後述の各ブランチ の README をご参照下さい。
 
-| 環境                                                        | バージョン | 備考                    |
-| ----------------------------------------------------------- | ---------- | ----------------------- |
-| [Angular CLI](https://cli.angular.io/)                      | v15.2.2    | `ng version` で確認     |
-| [Angular](https://angular.io/)                              | v15.2.2    | 同上                    |
-| [RxJS](https://rxjs.dev/)                                   | v6.6.7     | 同上                    |
-| [Node.js](https://nodejs.org/ja/)                           | v18.15.0   | 同上                    |
-| [npm](https://www.npmjs.com/)                               | v9.5.0     | 同上                    |
-| [TypeScript](https://www.typescriptlang.org/)               | v4.9.5     | 同上                    |
-| [Angular Material](https://material.angular.io/)            | v15.2.2    | `package.json` で確認   |
-| [Angular CDK](https://github.com/angular/components#readme) | v15.2.2    | 同上                    |
+| 環境                                                        | バージョン | 備考                     |
+| ----------------------------------------------------------- | ---------- | ------------------------ |
+| [Angular CLI](https://cli.angular.io/)                      | v16.2.11   | `ng version` で確認      |
+| [Angular](https://angular.io/)                              | v16.2.11   | 同上                     |
+| [Angular Material](https://material.angular.io/)            | v16.2.12   | `package.json` で確認    |
+| [Angular CDK](https://github.com/angular/components#readme) | v16.2.12   | 同上                     |
 | [ngx-toastr](https://github.com/scttcper/ngx-toastr)        | v16.1.0    | angular v15 以上は最新版 |
+| [RxJS](https://rxjs.dev/)                                   | v6.6.7     | 同上                     |
+| [TypeScript](https://www.typescriptlang.org/)               | v4.9.5     | 同上                     |
+| [zone.js](https://www.npmjs.com/package/zone.js)            | v0.13.3    | 同上                     |
+| [Node.js](https://nodejs.org/ja/)                           | v18.15.0   | 同上                     |
+| [npm](https://www.npmjs.com/)                               | v9.5.0     | 同上                     |
 
 <details>
 <div>
@@ -40,25 +41,26 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
                 |___/
 
 
-Angular CLI: 15.2.2
+Angular CLI: 16.2.11
 Node: 18.15.0
 Package Manager: npm 9.5.0
 OS: darwin x64
 
-Angular: 15.2.2
-... animations, cdk, cli, common, compiler, compiler-cli, core
-... forms, material, platform-browser, platform-browser-dynamic
-... router
+Angular: 16.2.12
+... animations, cdk, common, compiler, compiler-cli, core, forms
+... material, platform-browser, platform-browser-dynamic, router
 
 Package                         Version
 ---------------------------------------------------------
-@angular-devkit/architect       0.1502.2
-@angular-devkit/build-angular   15.2.2
-@angular-devkit/core            15.2.2
-@angular-devkit/schematics      15.2.2
-@schematics/angular             15.2.2
+@angular-devkit/architect       0.1602.11
+@angular-devkit/build-angular   16.2.11
+@angular-devkit/core            16.2.11
+@angular-devkit/schematics      16.2.11
+@angular/cli                    16.2.11
+@schematics/angular             16.2.11
 rxjs                            6.6.7
 typescript                      4.9.5
+zone.js                         0.13.3
 ```
 
 </div>
