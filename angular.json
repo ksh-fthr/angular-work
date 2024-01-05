@@ -37,7 +37,15 @@
             "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            //
+            // See: https://angular.io/guide/build#configuring-commonjs-dependencies
+            //
+            "allowedCommonJsDependencies": [
+              "@aws-crypto/sha256-browser",
+              "@aws-crypto/crc32",
+              "microphone-stream"
+            ]
           },
           "configurations": {
             "production": {
