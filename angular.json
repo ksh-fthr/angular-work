@@ -37,7 +37,12 @@
             "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "allowedCommonJsDependencies": [
+              "@aws-crypto/sha256-browser",
+              "@aws-crypto/crc32",
+              "microphone-stream"
+            ]
           },
           "configurations": {
             "production": {
