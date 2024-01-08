@@ -39,32 +39,33 @@
   "eslint.format.enable": true,
   // カラーテーマ
   "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#fa1b49",
     "activityBar.activeBorder": "#155e02",
+    "activityBar.activeBackground": "#fa1b49",
     "activityBar.background": "#fa1b49",
     "activityBar.foreground": "#e7e7e7",
     "activityBar.inactiveForeground": "#e7e7e799",
     "activityBarBadge.background": "#155e02",
     "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#fa1b49",
     "statusBar.background": "#dd0531",
     "statusBar.foreground": "#e7e7e7",
     "statusBarItem.hoverBackground": "#fa1b49",
+    "statusBarItem.remoteBackground": "#dd0531",
+    "statusBarItem.remoteForeground": "#e7e7e7",
     "titleBar.activeBackground": "#dd0531",
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveBackground": "#dd053199",
-    "titleBar.inactiveForeground": "#e7e7e799",
-    "editorGroup.border": "#fa1b49",
-    "panel.border": "#fa1b49",
-    "sash.hoverBorder": "#fa1b49",
-    "sideBar.border": "#fa1b49",
-    "statusBarItem.remoteBackground": "#dd0531",
-    "statusBarItem.remoteForeground": "#e7e7e7"
+    "titleBar.inactiveForeground": "#e7e7e799"
   },
+
+  "peacock.color": "#dd0531",
+
   // 拡張機能をおすすめさせる(これ false で おすすめとして出る のがややこしい)
   "extensions.ignoreRecommendations": false, // ignore を false だから「おすすめ」ということになる
 
   // markdownlint の設定
   "markdownlint.config": {
     "MD033": false  // no-inline-html: Inline HTML [Element: details]markdownlintMD033 を黙らせる
-  }
+  },
 }
