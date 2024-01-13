@@ -1,8 +1,8 @@
 <div class="tab-area-base">
   <ul class="tab-menu-base">
-    <ng-container *ngFor="let tab of tabs">
-        <li [class.current]="tab.current" (click)="onClick($event)">{{tab.name}}</li>
-    </ng-container>
+    @for (tab of tabs; track tab) {
+      <li [class.current]="tab.current" (click)="onClick($event)">{{tab.name}}</li>
+    }
   </ul>
 
   <!-- ngComponentOutlet で動的にコンポーネントを読み込む -->
