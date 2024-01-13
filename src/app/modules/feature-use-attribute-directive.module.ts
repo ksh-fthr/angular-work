@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 // 属性ディレクティブの実装検証用コンポーネント/ディレクティブ
@@ -25,7 +24,7 @@ import { AttributeDirectiveValidatorVerificationComponent } from '../component/u
     NetworkAddressValidatorDirective,
     AttributeDirectiveValidatorVerificationComponent,
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   exports: [
     TemplateDirective,
     UseAttributeDirectiveBaseComponent,

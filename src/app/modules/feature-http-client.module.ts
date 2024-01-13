@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 // Http モジュールを利用した Http クライアントの実装検証用コンポーネント
@@ -8,7 +7,7 @@ import { HttpClientVerificationComponent } from '../component/http-client/http-c
 
 @NgModule({
   declarations: [HttpClientBaseComponent, HttpClientVerificationComponent],
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   exports: [HttpClientBaseComponent, HttpClientVerificationComponent],
 })
 export class FeatureHttpClientModule {}

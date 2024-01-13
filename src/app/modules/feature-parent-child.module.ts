@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用コンポーネント
@@ -9,7 +8,7 @@ import { ChildComponent } from '../component/parent-child/child/child.component'
 
 @NgModule({
   declarations: [ParentChildBaseComponent, ParentComponent, ChildComponent],
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   exports: [ParentChildBaseComponent, ParentComponent, ChildComponent],
 })
 export class FeatureParentChildModule {}

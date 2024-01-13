@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 // Validation 機能の検証用コンポーネント
@@ -8,7 +7,7 @@ import { ValidationVerificationComponent } from '../component/validation/validat
 
 @NgModule({
   declarations: [ValidationBaseComponent, ValidationVerificationComponent],
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   exports: [ValidationBaseComponent, ValidationVerificationComponent],
 })
 export class FeatureNormalValidationModule {}

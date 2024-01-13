@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms'; // RactiveForm を使用するために必要
 
 // ReactiveFormsModule の検証用コンポーネント
@@ -8,7 +7,7 @@ import { ReactiveFormVerificationComponent } from '../component/reactive-form/re
 
 @NgModule({
   declarations: [ReactiveFormBaseComponent, ReactiveFormVerificationComponent],
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   exports: [ReactiveFormBaseComponent, ReactiveFormVerificationComponent],
 })
 export class FeatureReactiveForm {}

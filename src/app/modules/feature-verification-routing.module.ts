@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 // ルーティング実装検証用コンポーネント
@@ -22,7 +21,7 @@ const ROUTE_TABLE: Routes = [
 ];
 @NgModule({
   declarations: [RoutingBaseComponent, PageAComponent, PageBComponent, PageCComponent],
-  imports: [CommonModule, RouterModule.forRoot(ROUTE_TABLE)],
+  imports: [RouterModule.forRoot(ROUTE_TABLE)],
   exports: [RoutingBaseComponent, PageAComponent, PageBComponent, PageCComponent, RouterModule],
 })
 export class FeatureVerificationRoutingModule {}

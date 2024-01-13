@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 // コンポーネントのライフサイクル検証用コンポーネント
@@ -35,7 +34,7 @@ import { AfterViewChildComponent } from '../component/lifecycle/after-view/after
     AfterViewParentComponent,
     AfterViewChildComponent,
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   exports: [
     DoCheckBaseComponent,
     DoCheckVerificationComponent,
