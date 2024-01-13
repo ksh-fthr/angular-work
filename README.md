@@ -15,15 +15,15 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 
 | 環境                                                        | バージョン | 備考                     |
 | ----------------------------------------------------------- | ---------- | ------------------------ |
-| [Angular CLI](https://cli.angular.io/)                      | v17.0.9    | `ng version` で確認      |
-| [Angular](https://angular.io/)                              | v17.0.8    | 同上                     |
-| [Angular Material](https://material.angular.io/)            | v17.0.4    | 同上                     |
-| [Angular CDK](https://github.com/angular/components#readme) | v17.0.4    | 同上                     |
+| [Angular CLI](https://cli.angular.io/)                      | v17.0.10   | `ng version` で確認      |
+| [Angular](https://angular.io/)                              | v17.0.9    | 同上                     |
+| [Angular Material](https://material.angular.io/)            | v17.0.5    | 同上                     |
+| [Angular CDK](https://github.com/angular/components#readme) | v17.0.5    | 同上                     |
 | [RxJS](https://rxjs.dev/)                                   | v6.6.7     | 同上                     |
 | [TypeScript](https://www.typescriptlang.org/)               | v5.2.2     | 同上                     |
-| [zone.js](https://www.npmjs.com/package/zone.js)            | v0.14.2    | 同上                     |
-| [Node.js](https://nodejs.org/ja/)                           | v18.15.0   | 同上                     |
-| [npm](https://www.npmjs.com/)                               | v9.5.0     | 同上                     |
+| [zone.js](https://www.npmjs.com/package/zone.js)            | v0.14.3    | 同上                     |
+| [Node.js](https://nodejs.org/ja/)                           | v18.19.0   | 同上                     |
+| [npm](https://www.npmjs.com/)                               | v10.2.3    | 同上                     |
 | [ngx-toastr](https://github.com/scttcper/ngx-toastr)        | v16.1.0    | `package.json` で確認    |
 
 <details>
