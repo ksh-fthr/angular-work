@@ -16,9 +16,9 @@
 
 <div id="http-client-verification-header">
   <div id="http-client-verification-header-items">
-  <p id="header-caption">
-    バックエンドから取得したメッセージリスト
-  </p>
+    <p id="header-caption">
+      バックエンドから取得したメッセージリスト
+    </p>
     <ul>
       <li class="header-note">メッセージを登録する際はメッセージを入力して｢<font class="font-decoration"> 登録 </font>｣ボタンを実行してください</li>
       <li class="header-note">メッセージを更新する際はメッセージを入力して｢<font class="font-decoration"> 更新 </font>｣ボタンを実行してください</li>
@@ -35,10 +35,12 @@
       <th id="th-message">メッセージ</th>
     </tr>
     <!--インデックス番号（index）に変数iでアクセスできるように-->
-    <tr *ngFor="let messageInfo of messageInfoList; index as i">
-      <td>{{messageInfo.id}}</td>
-      <td>{{messageInfo.message}}</td>
-    </tr>
+    @for (messageInfo of messageInfoList; track messageInfo; let i = $index) {
+      <tr>
+        <td>{{messageInfo.id}}</td>
+        <td>{{messageInfo.message}}</td>
+      </tr>
+    }
   </table>
 
   <div id="form-block">

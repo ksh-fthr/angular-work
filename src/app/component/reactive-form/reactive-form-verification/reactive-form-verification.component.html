@@ -3,33 +3,33 @@
     <strong>ReactiveFormsModule</strong> と <strong>statusChanges</strong> の動きを Validation を実装して確認する
   </p>
   <!--
-    [formGroup]="networkForm" でコンポーネントで生成した FormGroup をセット
+  [formGroup]="networkForm" でコンポーネントで生成した FormGroup をセット
   -->
   <form #formCheck="ngForm" [formGroup]="networkForm" class="form-check">
     <div class="validation-form-area">
       <div class="input-network-address">
         <label class="label-common">IPアドレス:</label>
         <!--
-          [formControl]="networkForm.controls['ipControl']" でコンポーネントで生成した FormControl をセット
+        [formControl]="networkForm.controls['ipControl']" でコンポーネントで生成した FormControl をセット
         -->
         <input
           type="text"
           class="input-text"
           name="input-ip-address"
           formControlName="ipControl"
-        >
+          >
       </div>
       <div class="input-network-address">
         <label class="label-common">サブネットマスク:</label>
         <!--
-          [formControl]="networkForm.controls['subnetmaskControl']" でコンポーネントで生成した FormControl をセット
+        [formControl]="networkForm.controls['subnetmaskControl']" でコンポーネントで生成した FormControl をセット
         -->
         <input
           type="text"
           class="input-text"
           name="input-subnet-mask"
           formControlName="subnetmaskControl"
-        >
+          >
       </div>
     </div>
     <div class="validation-error-area">
@@ -38,16 +38,18 @@
       </p>
 
       <!--
-        *ngIf=validationError で validation のエラー有無をチェックしてエラーが発生していれば表示する
-        (networkForm.dirty || networkForm.touched) は一回でも入力があったかを判断する
+      *ngIf=validationError で validation のエラー有無をチェックしてエラーが発生していれば表示する
+      (networkForm.dirty || networkForm.touched) は一回でも入力があったかを判断する
       -->
       <div class="validation-error-information">
-        <div class="note" *ngIf="validationError && (networkForm.dirty || networkForm.touched)">
-          <div [hidden]="!validationError?.required">※ 項目が未入力です</div>
-          <div [hidden]="!validationError?.minlength">※ 入力した内容が短すぎます</div>
-          <div [hidden]="!validationError?.maxlength">※ 入力した内容が長すぎます</div>
-          <div [hidden]="!validationError?.pattern">※ 入力した内容に誤りがあります</div>
-        </div>
+        @if (validationError && (networkForm.dirty || networkForm.touched)) {
+          <div class="note">
+            <div [hidden]="!validationError?.required">※ 項目が未入力です</div>
+            <div [hidden]="!validationError?.minlength">※ 入力した内容が短すぎます</div>
+            <div [hidden]="!validationError?.maxlength">※ 入力した内容が長すぎます</div>
+            <div [hidden]="!validationError?.pattern">※ 入力した内容に誤りがあります</div>
+          </div>
+        }
       </div>
     </div>
   </form>
@@ -55,7 +57,7 @@
 
 <div class="validation-footer">
   <!--
-    form タグの属性にセットしていた #formCheck="ngForm" から formCheck.invalid を判定することでボタンの有効/無効を制御
+  form タグの属性にセットしていた #formCheck="ngForm" から formCheck.invalid を判定することでボタンの有効/無効を制御
   -->
   <input type="button" class="event-button" name="button-ok" value="OK" (click)="onClickOK($event)" [disabled]="formCheck.invalid">
 </div>

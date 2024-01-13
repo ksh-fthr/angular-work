@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { ReferenceBaseComponent } from '../component/reference/reference-base.component';
@@ -16,7 +15,7 @@ import { ViewParentComponent } from '../component/reference/view-parent/view-par
     ViewChildComponent,
     ViewParentComponent,
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   exports: [
     ReferenceBaseComponent,
     ContentChildComponent,

@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 // 音声認識-文字起こしの検証用コンポーネント
@@ -19,7 +18,7 @@ const ROUTE_TABLE: Routes = [
 ];
 @NgModule({
   declarations: [SpeechToTextBaseComponent, UseWebSpeechApiComponent, UseAwsTranscribeStreamingComponent],
-  imports: [CommonModule, RouterModule.forRoot(ROUTE_TABLE)],
+  imports: [RouterModule.forRoot(ROUTE_TABLE)],
   exports: [SpeechToTextBaseComponent, UseWebSpeechApiComponent, UseAwsTranscribeStreamingComponent, RouterModule],
 })
 export class FeatureSpeechToTextModule {}

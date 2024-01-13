@@ -6,15 +6,15 @@
     <!-- autoCompleteInput はフォーカスをあてるために使用する､本要素を指定するためのテンプレート変数 -->
     <!-- trigger は autocomplete パネルを開く処理: openPanel を実行するための MatAutocompleteTrigger オブジェクト -->
     <input type="text"
-          placeholder="Pick one"
-          aria-label="Number"
-          #autoCompleteInput
-          matInput
-          #trigger="matAutocompleteTrigger"
-          (focus)="openPanel($event, trigger)"
-          [formControl]="autocompleteControl"
-          [matAutocomplete]="auto"
-    >
+      placeholder="Pick one"
+      aria-label="Number"
+      #autoCompleteInput
+      matInput
+      #trigger="matAutocompleteTrigger"
+      (focus)="openPanel($event, trigger)"
+      [formControl]="autocompleteControl"
+      [matAutocomplete]="auto"
+      >
     <!-- mat-autocomplete についてのメモ -->
     <!-- * autoActiveFirstOption を設定することで autocomplete のリストの最初のアイテムにハイライトを当てることができる -->
     <!--   * これは [autoActiveFirstOption]="true" と書いても同様の効果が得られる -->
@@ -23,10 +23,12 @@
       autoActiveFirstOption
       #auto="matAutocomplete"
       (optionSelected)="onItemSelected($event)"
-    >
-      <mat-option *ngFor="let autocompleteItem of filteredAutocompleteItemList | async" [value]="autocompleteItem">
-        {{autocompleteItem}}
-      </mat-option>
+      >
+      @for (autocompleteItem of filteredAutocompleteItemList | async; track autocompleteItem) {
+        <mat-option [value]="autocompleteItem">
+          {{autocompleteItem}}
+        </mat-option>
+      }
     </mat-autocomplete>
   </mat-form-field>
 </form>

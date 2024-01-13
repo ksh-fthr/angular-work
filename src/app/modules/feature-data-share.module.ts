@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 // コンポーネント間のデータ共有の検証用コンポーネント/サービス
@@ -9,7 +8,7 @@ import { DataShareBComponent } from '../component/data-share/data-share-b/data-s
 
 @NgModule({
   declarations: [DataShareBaseComponent, DataShareAComponent, DataShareBComponent],
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   exports: [DataShareBaseComponent, DataShareAComponent, DataShareBComponent],
 })
 export class FeatureDataShareModule {}

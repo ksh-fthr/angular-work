@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 // ----------------------------------------------
@@ -118,7 +117,7 @@ const ROUTE_TABLE: Routes = [
 
 @NgModule({
   declarations: [ReadmeComponent],
-  imports: [CommonModule, RouterModule.forRoot(ROUTE_TABLE)],
+  imports: [RouterModule.forRoot(ROUTE_TABLE)],
   exports: [ReadmeComponent, RouterModule],
 })
 export class FeatureAllPageRoutingModule {}
