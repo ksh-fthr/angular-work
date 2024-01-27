@@ -15,12 +15,12 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 
 | 環境                                                        | バージョン | 備考                     |
 | ----------------------------------------------------------- | ---------- | ------------------------ |
-| [Angular CLI](https://cli.angular.io/)                      | v17.0.10   | `ng version` で確認      |
-| [Angular](https://angular.io/)                              | v17.0.9    | 同上                     |
-| [Angular Material](https://material.angular.io/)            | v17.0.5    | 同上                     |
-| [Angular CDK](https://github.com/angular/components#readme) | v17.0.5    | 同上                     |
+| [Angular CLI](https://cli.angular.io/)                      | v17.1.0   | `ng version` で確認      |
+| [Angular](https://angular.io/)                              | v17.1.0    | 同上                     |
+| [Angular Material](https://material.angular.io/)            | v17.1.1    | 同上                     |
+| [Angular CDK](https://github.com/angular/components#readme) | v17.1.1    | 同上                     |
 | [RxJS](https://rxjs.dev/)                                   | v6.6.7     | 同上                     |
-| [TypeScript](https://www.typescriptlang.org/)               | v5.2.2     | 同上                     |
+| [TypeScript](https://www.typescriptlang.org/)               | v5.3.3     | 同上                     |
 | [zone.js](https://www.npmjs.com/package/zone.js)            | v0.14.3    | 同上                     |
 | [Node.js](https://nodejs.org/ja/)                           | v18.19.0   | 同上                     |
 | [npm](https://www.npmjs.com/)                               | v10.2.3    | 同上                     |
@@ -41,27 +41,26 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
                 |___/
 
 
-Angular CLI: 17.0.10
+Angular CLI: 17.1.0
 Node: 18.19.0
 Package Manager: npm 10.2.3
 OS: darwin x64
 
-Angular: 17.0.9
-... animations, common, compiler, compiler-cli, core, forms
+Angular: 17.1.0
+... animations, cli, common, compiler, compiler-cli, core, forms
 ... platform-browser, platform-browser-dynamic, router
 
 Package                         Version
 ---------------------------------------------------------
-@angular-devkit/architect       0.1700.10
-@angular-devkit/build-angular   17.0.10
-@angular-devkit/core            17.0.10
-@angular-devkit/schematics      17.0.10
-@angular/cdk                    17.0.5
-@angular/cli                    17.0.10
-@angular/material               17.0.5
-@schematics/angular             17.0.10
+@angular-devkit/architect       0.1701.0
+@angular-devkit/build-angular   17.1.0
+@angular-devkit/core            17.1.0
+@angular-devkit/schematics      17.1.0
+@angular/cdk                    17.1.1
+@angular/material               17.1.1
+@schematics/angular             17.1.0
 rxjs                            6.6.7
-typescript                      5.2.2
+typescript                      5.3.3
 zone.js                         0.14.3
 ```
 
