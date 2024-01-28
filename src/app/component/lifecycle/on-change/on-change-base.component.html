@@ -11,7 +11,7 @@
       <label for="inputText">入力項目: </label>
       <input id="inputText" name="inputText" type="text" [(ngModel)]="childComponentParameter" />
     </p>
-    <app-on-change-verification [ngOnChangesValue]="childComponentParameter"></app-on-change-verification>
+    <app-on-change-verification [signalInputValue]="childComponentParameter"></app-on-change-verification>
   </div>
 
   <div class="footer-block">

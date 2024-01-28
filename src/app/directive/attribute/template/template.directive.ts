@@ -7,12 +7,12 @@ export class TemplateDirective implements OnInit {
   /**
    * 親コンポーネントから受け取るデータ-1
    */
-  public greet = input<string>();
+  public greet = input<string>('');
 
   /**
    * 親コンポーネントから受け取るデータ-2
    */
-  public name = input<string>();
+  public name = input<string>('');
 
   /**
    * コンストラクタ

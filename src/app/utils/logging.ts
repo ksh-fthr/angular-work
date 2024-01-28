@@ -1,5 +1,6 @@
 export class Logging {
   static info(textAreaElement: HTMLTextAreaElement, message: string): void {
-    textAreaElement.value+=message+'\n';
+    if (!textAreaElement) return;
+    textAreaElement.value += message + '\n';
   }
 }

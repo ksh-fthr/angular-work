@@ -12,7 +12,7 @@ export class ChildComponent implements OnInit {
   /**
    * 親コンポーネントから受け取るデータ(文字列)をセットするパラメータ
    */
-  dataFromParent = input<string>();
+  dataFromParent = input<string>('');
 
   /**
    * 親コンポーネントに対してイベントを発火するためのパラメータ
