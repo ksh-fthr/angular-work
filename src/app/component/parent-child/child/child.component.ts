@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-// @Input デコレータを使用するための import
-import { Input } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 
 // @Output デコレータを使用するための import
 import { Output, EventEmitter } from '@angular/core';
@@ -14,10 +11,8 @@ import { Output, EventEmitter } from '@angular/core';
 export class ChildComponent implements OnInit {
   /**
    * 親コンポーネントから受け取るデータ(文字列)をセットするパラメータ
-   *
-   * @type {string}
    */
-  @Input() dataFromParent = '';
+  dataFromParent = input<string>();
 
   /**
    * 親コンポーネントに対してイベントを発火するためのパラメータ
