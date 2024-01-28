@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, OnInit, input } from '@angular/core';
 
 @Directive({
   selector: '[appTemplate]',
@@ -6,22 +6,16 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 export class TemplateDirective implements OnInit {
   /**
    * 親コンポーネントから受け取るデータ-1
-   *
-   * @type {string}
    */
-  @Input() public greet = '';
+  public greet = input<string>('');
 
   /**
    * 親コンポーネントから受け取るデータ-2
-   *
-   * @type {string}
    */
-  @Input() public name = '';
+  public name = input<string>('');
 
   /**
    * コンストラクタ
-   *
-   * @param elementRef このディレクティブがセットされたDOMへの参照
    */
   constructor(private elementRef: ElementRef) {}
 
@@ -32,6 +26,6 @@ export class TemplateDirective implements OnInit {
    */
   ngOnInit(): void {
     const element = this.elementRef.nativeElement;
-    element.innerHTML = this.greet + ' ' + this.name + '.';
+    element.innerHTML = this.greet() + ' ' + this.name() + '.';
   }
 }
