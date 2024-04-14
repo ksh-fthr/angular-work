@@ -1,7 +1,4 @@
-import { Component, OnInit, input } from '@angular/core';
-
-// @Output デコレータを使用するための import
-import { Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -17,7 +14,7 @@ export class ChildComponent implements OnInit {
   /**
    * 親コンポーネントに対してイベントを発火するためのパラメータ
    */
-  @Output() event = new EventEmitter<string>();
+  event = output<string>();
 
   constructor() {}
 
