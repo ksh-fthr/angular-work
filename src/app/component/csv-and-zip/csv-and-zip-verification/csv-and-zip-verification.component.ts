@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { HttpClientService } from '../../../service/http-client/http-client.service';
+import { CsvModel, HttpClientService, ZipModel } from '../../../service/http-client/http-client.service';
 
 @Component({
   selector: 'app-csv-and-zip-verification',
@@ -39,9 +39,9 @@ export class CsvAndZipVerificationComponent implements OnInit {
     //-------------------------------------------
     this.httpClientService
       .getCsv()
-      .then((response: any) => {
-        const csv = response.body.csv;
-        const filename = response.body.fileName;
+      .then((response: CsvModel) => {
+        const csv = response.csv;
+        const filename = response.fileName;
 
         //-------------------------------------------
         // 2. レスポンスを加工してCSVファイルとURLを作る
@@ -78,9 +78,9 @@ export class CsvAndZipVerificationComponent implements OnInit {
     //-------------------------------------------
     this.httpClientService
       .getZip()
-      .then((response: any) => {
-        const zip = response.body.zip;
-        const filename = response.body.fileName;
+      .then((response: ZipModel) => {
+        const zip = response.zip;
+        const filename = response.fileName;
 
         // -------------------------------------------
         // 2. レスポンスを加工して ZIP ファイルと URL を作る

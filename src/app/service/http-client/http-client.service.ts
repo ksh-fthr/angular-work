@@ -20,6 +20,19 @@ export interface HttpResponseBodyModel {
   messages: MessageModel[];
 }
 
+/**
+ * CSV 情報をやり取りするためのモデル
+ */
+export interface CsvModel {
+  csv: string;
+  fileName: string;
+}
+
+export interface ZipModel {
+  zip: string;
+  fileName: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -175,15 +188,14 @@ export class HttpClientService {
    *
    * @returns
    */
-  public getCsv(): Promise<any> {
+  public getCsv(): Promise<CsvModel> {
     return this.http
       .get(this.host + '/csv', this.httpOptions)
       .toPromise()
       .then((res) => {
-        // response の型は any ではなく class で型を定義した方が良いが
-        // ここでは簡便さから any としておく
+        console.log(`[get] response: ${JSON.stringify(res)}`);
         const response: any = res;
-        return response;
+        return response.body;
       })
       .catch(this.errorHandler);
   }
@@ -194,15 +206,14 @@ export class HttpClientService {
    *
    * @returns
    */
-  public getZip(): Promise<any> {
+  public getZip(): Promise<ZipModel> {
     return this.http
       .get(this.host + '/zip', this.httpOptions)
       .toPromise()
       .then((res) => {
-        // response の型は any ではなく class で型を定義した方が良いが
-        // ここでは簡便さから any としておく
+        console.log(`[get] response: ${JSON.stringify(res)}`);
         const response: any = res;
-        return response;
+        return response.body;
       })
       .catch(this.errorHandler);
   }
