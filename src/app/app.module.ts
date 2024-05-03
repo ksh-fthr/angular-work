@@ -18,6 +18,7 @@ import { ModalService } from './service/modal/modal.service'; // モーダル実
 import { SwitchTabService } from './service/switch-tab/switch-tab.service'; // タブ実装検証用
 import { DataShareService } from './service/data-share/data-share.service'; // 親子関係にあるコンポーネント間でのデータ受け渡しの検証用
 import { HttpClientService } from './service/http-client/http-client.service'; // Http クライアントの実装検証用
+import { CsvZipClientService } from './service/http-client/csv-zip-client/csv-zip-client.service'; // Http クライアントの実装検証用(CSVとZIP用)
 import { ToasterService } from './service/toaster/toaster.service'; // ngx-toastr の検証用
 
 // ----------------------------------------------
@@ -65,7 +66,15 @@ import { FeatureUseNgxToastr } from './modules/feature-use-ngx-toastr.module'; /
     FeatureSpeechToTextModule,
     FeatureUseNgxToastr,
   ],
-  providers: [ModalService, SwitchTabService, DataShareService, HttpClientService, ToasterService, Logging],
+  providers: [
+    ModalService,
+    SwitchTabService,
+    DataShareService,
+    HttpClientService,
+    CsvZipClientService,
+    ToasterService,
+    Logging,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
