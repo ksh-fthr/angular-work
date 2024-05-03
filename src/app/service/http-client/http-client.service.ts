@@ -80,14 +80,14 @@ export class HttpClientService {
    *
    * @returns
    */
-  public get(): Promise<any> {
+  public get(): Promise<HttpResponseBodyModel> {
     return this.http
       .get(this.host + '/message/get', this.httpOptions)
       .toPromise()
       .then((res) => {
         console.log(`[get] response: ${JSON.stringify(res)}`);
-        const response: any = res.body;
-        return response;
+        const response: any = res;
+        return response.body;
       })
       .catch(this.errorHandler);
   }
@@ -103,7 +103,7 @@ export class HttpClientService {
       next: (res) => {
         console.log(`[get] response: ${JSON.stringify(res)}`);
         const response: any = res;
-        callback(response);
+        callback(response.body);
       },
       error: (error) => {
         // subscribe の実装のときに this.errorHandler でエラー処理を
@@ -120,14 +120,14 @@ export class HttpClientService {
    * @param body リクエストボディ
    * @returns バックエンドからのレスポンス
    */
-  public register(body: MessageModel): Promise<any[]> {
+  public register(body: MessageModel): Promise<HttpResponseBodyModel> {
     return this.http
       .post(this.host + '/message/post', body, this.httpOptions)
       .toPromise()
       .then((res) => {
         console.log(`[post] response: ${JSON.stringify(res)}`);
         const response: any = res;
-        return response;
+        return response.body;
       })
       .catch(this.errorHandler);
   }
@@ -138,14 +138,14 @@ export class HttpClientService {
    * @param body リクエストボディ
    * @returns バックエンドからのレスポンス
    */
-  public update(body: MessageModel): Promise<any[]> {
+  public update(body: MessageModel): Promise<HttpResponseBodyModel> {
     return this.http
       .put(this.host + '/message/put', body, this.httpOptions)
       .toPromise()
       .then((res) => {
         console.log(`[put] response: ${JSON.stringify(res)}`);
         const response: any = res;
-        return response;
+        return response.body;
       })
       .catch(this.errorHandler);
   }
@@ -156,7 +156,7 @@ export class HttpClientService {
    * @param body リクエストボディ
    * @returns バックエンドからのレスポンス
    */
-  public delete(body: MessageModel): Promise<any[]> {
+  public delete(body: MessageModel): Promise<HttpResponseBodyModel> {
     this.httpOptions.body = body;
     return this.http
       .delete(this.host + '/message/delete', this.httpOptions)
@@ -164,7 +164,7 @@ export class HttpClientService {
       .then((res) => {
         console.log(`[delete] response: ${JSON.stringify(res)}`);
         const response: any = res;
-        return response;
+        return response.body;
       })
       .catch(this.errorHandler);
   }
