@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientService } from '../../../service/http-client/http-client.service';
+import { HttpClientService, MessageModel } from '../../../service/http-client/http-client.service';
 
 @Component({
   selector: 'app-http-client-verification',
@@ -23,7 +23,7 @@ export class HttpClientVerificationComponent implements OnInit {
    *
    * @type {*}
    */
-  public messageInfo: any = {
+  public messageInfo: MessageModel = {
     id: null,
     message: null,
   };
@@ -33,7 +33,7 @@ export class HttpClientVerificationComponent implements OnInit {
    *
    * @type {*}
    */
-  public messageInfoList: any = [this.messageInfo];
+  public messageInfoList: MessageModel[] = [this.messageInfo];
 
   /**
    * メッセージ登録回数
@@ -69,7 +69,6 @@ export class HttpClientVerificationComponent implements OnInit {
     this.httpClientService
       .get()
       .then((response: any) => {
-        console.log(`[get] response: ${JSON.stringify(response)}`);
         this.param = response.body;
         this.messageInfoList = this.param.messages;
       })
@@ -79,8 +78,7 @@ export class HttpClientVerificationComponent implements OnInit {
     // subscribe((res) =>{}) を利用する場合のコード
     // ------
     // HTTP GET の実行結果を受け取るためのコールバックを引数に､ get() を呼び出す
-    // this.httpClientService.get((response: any) => {
-    //   console.log(`[get] response: ${JSON.stringify(response)}`);
+    // this.httpClientService.get2((response: any) => {
     //   this.param = response.body;
     //   this.messageInfoList = this.param.messages;
     // });
@@ -126,7 +124,6 @@ export class HttpClientVerificationComponent implements OnInit {
     this.httpClientService
       .register(body)
       .then((response: any) => {
-        console.log(`[post] response: ${JSON.stringify(response)}`);
         this.param = response.body;
         this.messageInfoList = this.param.messages;
       })
@@ -146,7 +143,6 @@ export class HttpClientVerificationComponent implements OnInit {
     this.httpClientService
       .update(body)
       .then((response: any) => {
-        console.log(`[put] response: ${JSON.stringify(response)}`);
         this.param = response.body;
         this.messageInfoList = this.param.messages;
       })
@@ -165,7 +161,6 @@ export class HttpClientVerificationComponent implements OnInit {
     this.httpClientService
       .delete(body)
       .then((response: any) => {
-        console.log(`[delete] response: ${JSON.stringify(response)}`);
         this.param = response.body;
         this.messageInfoList = this.param.messages;
       })
