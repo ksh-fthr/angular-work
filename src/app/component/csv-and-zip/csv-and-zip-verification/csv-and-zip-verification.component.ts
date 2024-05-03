@@ -1,5 +1,9 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { HttpClientService } from '../../../service/http-client/http-client.service';
+import {
+  CsvModel,
+  CsvZipClientService,
+  ZipModel,
+} from '../../../service/http-client/csv-zip-client/csv-zip-client.service';
 
 @Component({
   selector: 'app-csv-and-zip-verification',
@@ -13,10 +17,10 @@ export class CsvAndZipVerificationComponent implements OnInit {
    * コンストラクタ. HttpClientComponent のインスタンスを生成する
    * 自作した HttpClientService を DI する
    *
-   * @param httpClientService HTTP通信を担当するサービス
+   * @param csvZipClientService HTTP通信を担当するサービス(CSV と ZIP 用)
    * @param elementRef DOM参照のためのモジュール
    */
-  constructor(private httpClientService: HttpClientService, private elementRef: ElementRef) {
+  constructor(private csvZipClientService: CsvZipClientService, private elementRef: ElementRef) {
     this.element = this.elementRef.nativeElement;
   }
 
@@ -37,11 +41,11 @@ export class CsvAndZipVerificationComponent implements OnInit {
     //-------------------------------------------
     // 1. REST-API を実行して CSV データを取得する
     //-------------------------------------------
-    this.httpClientService
+    this.csvZipClientService
       .getCsv()
-      .then((response: any) => {
-        const csv = response.body.csv;
-        const filename = response.body.fileName;
+      .then((response: CsvModel) => {
+        const csv = response.csv;
+        const filename = response.fileName;
 
         //-------------------------------------------
         // 2. レスポンスを加工してCSVファイルとURLを作る
@@ -76,11 +80,11 @@ export class CsvAndZipVerificationComponent implements OnInit {
     //-------------------------------------------
     // 1. REST-API を実行して ZIP データを取得する
     //-------------------------------------------
-    this.httpClientService
+    this.csvZipClientService
       .getZip()
-      .then((response: any) => {
-        const zip = response.body.zip;
-        const filename = response.body.fileName;
+      .then((response: ZipModel) => {
+        const zip = response.zip;
+        const filename = response.fileName;
 
         // -------------------------------------------
         // 2. レスポンスを加工して ZIP ファイルと URL を作る

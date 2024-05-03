@@ -27,12 +27,12 @@ export class HttpClientService {
   /**
    * Http クライアントを実行する際のヘッダオプション
    *
-   * @private
+   * @protected
    * @type {*}
    * @description
    * 認証トークンを使用するために `httpOptions` としてオブジェクトを用意した。
    */
-  private httpOptions: any = {
+  protected httpOptions: any = {
     //
     // ヘッダ情報
     headers: new HttpHeaders({
@@ -55,21 +55,21 @@ export class HttpClientService {
   /**
    * RST-API 実行時に指定する URL
    *
-   * @private
+   * @protected
    * @description
    * バックエンドは Express で実装し、ポート番号「3000」で待ち受けているため、
    * そのまま指定すると CORS でエラーになる
    * それを回避するため、ここではフロントエンドのポート番号「4200」を指定し、
    * Angular CLI のリバースプロキシを利用してバックエンドとの通信を実現する
    */
-  private host = 'http://localhost:4200/app';
+  protected host = 'http://localhost:4200/app';
 
   /**
    * コンストラクタ. HttpClientService のインスタンスを生成する
    *
    * @param http Httpサービスを DI する
    */
-  constructor(private http: HttpClient) {
+  constructor(protected http: HttpClient) {
     // `Authorization` に `Bearer トークン` をセットする
     this.setAuthorization('my-auth-token');
   }
@@ -170,51 +170,13 @@ export class HttpClientService {
   }
 
   /**
-   * HTTP GET メソッドを実行する
-   * (toPromise.then((res) =>{}) を利用する場合のコード)
-   *
-   * @returns
-   */
-  public getCsv(): Promise<any> {
-    return this.http
-      .get(this.host + '/csv', this.httpOptions)
-      .toPromise()
-      .then((res) => {
-        // response の型は any ではなく class で型を定義した方が良いが
-        // ここでは簡便さから any としておく
-        const response: any = res;
-        return response;
-      })
-      .catch(this.errorHandler);
-  }
-
-  /**
-   * HTTP GET メソッドを実行する
-   * (toPromise.then((res) =>{}) を利用する場合のコード)
-   *
-   * @returns
-   */
-  public getZip(): Promise<any> {
-    return this.http
-      .get(this.host + '/zip', this.httpOptions)
-      .toPromise()
-      .then((res) => {
-        // response の型は any ではなく class で型を定義した方が良いが
-        // ここでは簡便さから any としておく
-        const response: any = res;
-        return response;
-      })
-      .catch(this.errorHandler);
-  }
-
-  /**
    * REST-API 実行時のエラーハンドラ
    * (toPromise.then((res) =>{}) を利用する場合のコード)
    *
    * @private
    * @param err エラー情報
    */
-  private errorHandler(err: any): Promise<never> {
+  protected errorHandler(err: any): Promise<never> {
     console.log('Error occured.', err);
     return Promise.reject(err.message || err);
   }
