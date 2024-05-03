@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientService } from '../../../service/http-client/http-client.service';
+import {
+  HttpClientService,
+  HttpResponseBodyModel,
+  MessageModel,
+} from '../../../service/http-client/http-client.service';
 
 @Component({
   selector: 'app-http-client-verification',
@@ -8,22 +12,11 @@ import { HttpClientService } from '../../../service/http-client/http-client.serv
 })
 export class HttpClientVerificationComponent implements OnInit {
   /**
-   * バックエンドから返却されたレスポンスをセットするプロパティ
-   *
-   * 型は any ではなく class で型を定義した方が良いが
-   * ここでは簡便さから any としておく
-   *
-   * @private
-   * @type {string}
-   */
-  public param: any = {};
-
-  /**
    * バックエンドから返却されたたメッセージをセットするプロパティ
    *
    * @type {*}
    */
-  public messageInfo: any = {
+  public messageInfo: MessageModel = {
     id: null,
     message: null,
   };
@@ -33,7 +26,7 @@ export class HttpClientVerificationComponent implements OnInit {
    *
    * @type {*}
    */
-  public messageInfoList: any = [this.messageInfo];
+  public messageInfoList: MessageModel[] = [this.messageInfo];
 
   /**
    * メッセージ登録回数
@@ -68,10 +61,9 @@ export class HttpClientVerificationComponent implements OnInit {
     // ------
     this.httpClientService
       .get()
-      .then((response: any) => {
-        console.log(`[get] response: ${JSON.stringify(response)}`);
-        this.param = response.body;
-        this.messageInfoList = this.param.messages;
+      .then((response: HttpResponseBodyModel) => {
+        console.log(`[response.messages] response: ${JSON.stringify(response.messages)}`);
+        this.messageInfoList = response.messages;
       })
       .catch((error) => console.log(error));
 
@@ -79,10 +71,8 @@ export class HttpClientVerificationComponent implements OnInit {
     // subscribe((res) =>{}) を利用する場合のコード
     // ------
     // HTTP GET の実行結果を受け取るためのコールバックを引数に､ get() を呼び出す
-    // this.httpClientService.get((response: any) => {
-    //   console.log(`[get] response: ${JSON.stringify(response)}`);
-    //   this.param = response.body;
-    //   this.messageInfoList = this.param.messages;
+    // this.httpClientService.get2((responseBody: HttpResponseBodyModel) => {
+    //   this.messageInfoList = responseBody.messages;
     // });
   }
 
@@ -125,10 +115,8 @@ export class HttpClientVerificationComponent implements OnInit {
     };
     this.httpClientService
       .register(body)
-      .then((response: any) => {
-        console.log(`[post] response: ${JSON.stringify(response)}`);
-        this.param = response.body;
-        this.messageInfoList = this.param.messages;
+      .then((responseBody: HttpResponseBodyModel) => {
+        this.messageInfoList = responseBody.messages;
       })
       .catch((error) => console.log(error));
   }
@@ -145,10 +133,8 @@ export class HttpClientVerificationComponent implements OnInit {
     };
     this.httpClientService
       .update(body)
-      .then((response: any) => {
-        console.log(`[put] response: ${JSON.stringify(response)}`);
-        this.param = response.body;
-        this.messageInfoList = this.param.messages;
+      .then((responseBody: HttpResponseBodyModel) => {
+        this.messageInfoList = responseBody.messages;
       })
       .catch((error) => console.log(error));
   }
@@ -164,10 +150,8 @@ export class HttpClientVerificationComponent implements OnInit {
     };
     this.httpClientService
       .delete(body)
-      .then((response: any) => {
-        console.log(`[delete] response: ${JSON.stringify(response)}`);
-        this.param = response.body;
-        this.messageInfoList = this.param.messages;
+      .then((responseBody: HttpResponseBodyModel) => {
+        this.messageInfoList = responseBody.messages;
       })
       .catch((error) => console.log(error));
   }

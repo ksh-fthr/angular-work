@@ -3,6 +3,23 @@ import { Injectable } from '@angular/core';
 // REST クライアント実装ののためのサービスを import
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+/**
+ * メッセージ情報をやり取りするためのモデル
+ */
+export interface MessageModel {
+  id: number | null;
+  message: string | null;
+}
+
+/**
+ * HTTPレスポンスの body を表すモデル
+ */
+export interface HttpResponseBodyModel {
+  status: number;
+  response: string;
+  messages: MessageModel[];
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -26,6 +43,9 @@ export class HttpClientService {
     // レスポンスにヘッダ情報を入れるための設定
     // https://angular.io/guide/http#reading-the-full-response
     observe: 'response',
+    //
+    // レスポンスタイプは 'arraybuffer'|'blob'|'json'|'text' から指定できる
+    responseType: 'json',
     //
     // DELETE 実行時に `body` が必要になるケースがあるのでプロパティとして用意しておく
     // ( ここで用意しなくても追加できるけど... )
@@ -60,15 +80,14 @@ export class HttpClientService {
    *
    * @returns
    */
-  public get(): Promise<any[]> {
+  public get(): Promise<HttpResponseBodyModel> {
     return this.http
       .get(this.host + '/message/get', this.httpOptions)
       .toPromise()
       .then((res) => {
-        // response の型は any ではなく class で型を定義した方が良いが
-        // ここでは簡便さから any としておく
+        console.log(`[get] response: ${JSON.stringify(res)}`);
         const response: any = res;
-        return response;
+        return response.body;
       })
       .catch(this.errorHandler);
   }
@@ -79,20 +98,21 @@ export class HttpClientService {
    *
    * @param {*} callback HTTP GET の実行結果を受け取って処理するためのコールバック処理
    */
-  // public get(callback: any) {
-  //   this.http.get(this.host + '/message/get', this.httpOptions).subscribe(
-  //     (res) => {
-  //       const response: any = res;
-  //       callback(response);
-  //     },
-  //     (error) => {
-  //       // subscribe の実装のときに this.errorHandler でエラー処理を
-  //       // 行うと Uncaught (in promise) が発生するので、
-  //       // ここではコンソールにログを出すだけにする
-  //       console.log(error);
-  //     }
-  //   );
-  // }
+  public get2(callback: Function) {
+    this.http.get(this.host + '/message/get', this.httpOptions).subscribe({
+      next: (res) => {
+        console.log(`[get] response: ${JSON.stringify(res)}`);
+        const response: any = res;
+        callback(response.body);
+      },
+      error: (error) => {
+        // subscribe の実装のときに this.errorHandler でエラー処理を
+        // 行うと Uncaught (in promise) が発生するので、
+        // ここではコンソールにログを出すだけにする
+        console.log(error);
+      },
+    });
+  }
 
   /**
    * メッセージ登録
@@ -100,13 +120,14 @@ export class HttpClientService {
    * @param body リクエストボディ
    * @returns バックエンドからのレスポンス
    */
-  public register(body: any): Promise<any[]> {
+  public register(body: MessageModel): Promise<HttpResponseBodyModel> {
     return this.http
       .post(this.host + '/message/post', body, this.httpOptions)
       .toPromise()
       .then((res) => {
+        console.log(`[post] response: ${JSON.stringify(res)}`);
         const response: any = res;
-        return response;
+        return response.body;
       })
       .catch(this.errorHandler);
   }
@@ -117,13 +138,14 @@ export class HttpClientService {
    * @param body リクエストボディ
    * @returns バックエンドからのレスポンス
    */
-  public update(body: any): Promise<any[]> {
+  public update(body: MessageModel): Promise<HttpResponseBodyModel> {
     return this.http
       .put(this.host + '/message/put', body, this.httpOptions)
       .toPromise()
       .then((res) => {
+        console.log(`[put] response: ${JSON.stringify(res)}`);
         const response: any = res;
-        return response;
+        return response.body;
       })
       .catch(this.errorHandler);
   }
@@ -134,14 +156,15 @@ export class HttpClientService {
    * @param body リクエストボディ
    * @returns バックエンドからのレスポンス
    */
-  public delete(body: any): Promise<any[]> {
+  public delete(body: MessageModel): Promise<HttpResponseBodyModel> {
     this.httpOptions.body = body;
     return this.http
       .delete(this.host + '/message/delete', this.httpOptions)
       .toPromise()
       .then((res) => {
+        console.log(`[delete] response: ${JSON.stringify(res)}`);
         const response: any = res;
-        return response;
+        return response.body;
       })
       .catch(this.errorHandler);
   }

@@ -100,7 +100,7 @@ export class CsvAndZipVerificationComponent implements OnInit {
         link.download = filename;
         link.click();
       })
-      .catch((error) => console.log(error));
+      .catch((error: any) => console.log(error));
   }
 
   /**
