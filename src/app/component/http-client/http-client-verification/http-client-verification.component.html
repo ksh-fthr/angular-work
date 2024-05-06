@@ -35,7 +35,7 @@
       <th id="th-message">メッセージ</th>
     </tr>
     <!--インデックス番号（index）に変数iでアクセスできるように-->
-    @for ((messageInfo of messageInfoList$ | async); track messageInfo; let i = $index) {
+    @for ((messageInfo of messageInfoList$()); track messageInfo; let i = $index) {
       <tr>
         <td>{{messageInfo.id}}</td>
         <td>{{messageInfo.message}}</td>

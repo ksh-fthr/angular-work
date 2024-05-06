@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Signal } from '@angular/core';
 
 // REST クライアント実装ののためのサービスを import
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/internal/operators/map';
-import { Observable } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 /**
  * メッセージ情報をやり取りするためのモデル
@@ -79,14 +79,16 @@ export class HttpClientService {
   /**
    * HTTP GET メソッドを実行する
    */
-  public get$(): Observable<MessageModel[]> {
-    return this.http.get<HttpResponseBodyModel>(this.host + '/message/get', this.httpOptions).pipe(
+  public get$(): Signal<MessageModel[] | undefined> {
+    const observable = this.http.get<HttpResponseBodyModel>(this.host + '/message/get', this.httpOptions).pipe(
       map((response) => {
         const res: any = response;
         const resBody: HttpResponseBodyModel = res.body;
         return resBody.messages;
       })
     );
+
+    return toSignal(observable);
   }
 
   /**
@@ -94,14 +96,16 @@ export class HttpClientService {
    *
    * @param body リクエストボディ
    */
-  public register$(body: MessageModel): Observable<MessageModel[]> {
-    return this.http.post(this.host + '/message/post', body, this.httpOptions).pipe(
+  public register$(body: MessageModel): Signal<MessageModel[] | undefined> {
+    const observable = this.http.post(this.host + '/message/post', body, this.httpOptions).pipe(
       map((response) => {
         const res: any = response;
         const resBody: HttpResponseBodyModel = res.body;
         return resBody.messages;
       })
     );
+
+    return toSignal(observable);
   }
 
   /**
@@ -109,14 +113,16 @@ export class HttpClientService {
    *
    * @param body リクエストボディ
    */
-  public update$(body: MessageModel): Observable<MessageModel[]> {
-    return this.http.put(this.host + '/message/put', body, this.httpOptions).pipe(
+  public update$(body: MessageModel): Signal<MessageModel[] | undefined> {
+    const observable = this.http.put(this.host + '/message/put', body, this.httpOptions).pipe(
       map((response) => {
         const res: any = response;
         const resBody: HttpResponseBodyModel = res.body;
         return resBody.messages;
       })
     );
+
+    return toSignal(observable);
   }
 
   /**
@@ -124,15 +130,17 @@ export class HttpClientService {
    *
    * @param body リクエストボディ
    */
-  public delete$(body: MessageModel): Observable<MessageModel[]> {
+  public delete$(body: MessageModel): Signal<MessageModel[] | undefined> {
     this.httpOptions.body = body;
-    return this.http.delete(this.host + '/message/delete', this.httpOptions).pipe(
+    const observable = this.http.delete(this.host + '/message/delete', this.httpOptions).pipe(
       map((response) => {
         const res: any = response;
         const resBody: HttpResponseBodyModel = res.body;
         return resBody.messages;
       })
     );
+
+    return toSignal(observable);
   }
 
   /**
