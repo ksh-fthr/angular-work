@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  HttpClientService,
-  HttpResponseBodyModel,
-  MessageModel,
-} from '../../../service/http-client/http-client.service';
+import { HttpClientService, MessageModel } from '../../../service/http-client/http-client.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-http-client-verification',
@@ -26,7 +23,7 @@ export class HttpClientVerificationComponent implements OnInit {
    *
    * @type {*}
    */
-  public messageInfoList: MessageModel[] = [this.messageInfo];
+  public messageInfoList$: Observable<MessageModel[]> = this.httpClientService.get$();
 
   /**
    * メッセージ登録回数
@@ -55,26 +52,7 @@ export class HttpClientVerificationComponent implements OnInit {
    * ライフサイクルメソッド｡コンポーネントの初期化で使用する
    * 今回はコンポーネントの初期化時にバックエンドから情報を取得してビューに表示する
    */
-  ngOnInit(): void {
-    // ------
-    // toPromise.then((res) =>{}) を利用する場合のコード
-    // ------
-    this.httpClientService
-      .get()
-      .then((response: HttpResponseBodyModel) => {
-        console.log(`[response.messages] response: ${JSON.stringify(response.messages)}`);
-        this.messageInfoList = response.messages;
-      })
-      .catch((error) => console.log(error));
-
-    // ------
-    // subscribe((res) =>{}) を利用する場合のコード
-    // ------
-    // HTTP GET の実行結果を受け取るためのコールバックを引数に､ get() を呼び出す
-    // this.httpClientService.get2((responseBody: HttpResponseBodyModel) => {
-    //   this.messageInfoList = responseBody.messages;
-    // });
-  }
+  ngOnInit(): void {}
 
   /**
    * 登録ボタンクリック時のイベントハンドラ
@@ -113,12 +91,7 @@ export class HttpClientVerificationComponent implements OnInit {
       id: this.messageId,
       message: this.message,
     };
-    this.httpClientService
-      .register(body)
-      .then((responseBody: HttpResponseBodyModel) => {
-        this.messageInfoList = responseBody.messages;
-      })
-      .catch((error) => console.log(error));
+    this.messageInfoList$ = this.httpClientService.register$(body);
   }
 
   /**
@@ -131,12 +104,7 @@ export class HttpClientVerificationComponent implements OnInit {
       id: this.messageId,
       message: this.message,
     };
-    this.httpClientService
-      .update(body)
-      .then((responseBody: HttpResponseBodyModel) => {
-        this.messageInfoList = responseBody.messages;
-      })
-      .catch((error) => console.log(error));
+    this.messageInfoList$ = this.httpClientService.update$(body);
   }
 
   /**
@@ -148,11 +116,6 @@ export class HttpClientVerificationComponent implements OnInit {
     const body: any = {
       id: this.messageId,
     };
-    this.httpClientService
-      .delete(body)
-      .then((responseBody: HttpResponseBodyModel) => {
-        this.messageInfoList = responseBody.messages;
-      })
-      .catch((error) => console.log(error));
+    this.messageInfoList$ = this.httpClientService.delete$(body);
   }
 }
