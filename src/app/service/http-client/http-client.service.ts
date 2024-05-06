@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 // REST クライアント実装ののためのサービスを import
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/internal/operators/map';
+import { Observable } from 'rxjs';
 
 /**
  * メッセージ情報をやり取りするためのモデル
@@ -76,97 +78,61 @@ export class HttpClientService {
 
   /**
    * HTTP GET メソッドを実行する
-   * (toPromise.then((res) =>{}) を利用する場合のコード)
-   *
-   * @returns
    */
-  public get(): Promise<HttpResponseBodyModel> {
-    return this.http
-      .get(this.host + '/message/get', this.httpOptions)
-      .toPromise()
-      .then((res) => {
-        console.log(`[get] response: ${JSON.stringify(res)}`);
-        const response: any = res;
-        return response.body;
+  public get$(): Observable<MessageModel[]> {
+    return this.http.get<HttpResponseBodyModel>(this.host + '/message/get', this.httpOptions).pipe(
+      map((response) => {
+        const res: any = response;
+        const resBody: HttpResponseBodyModel = res.body;
+        return resBody.messages;
       })
-      .catch(this.errorHandler);
-  }
-
-  /**
-   * HTTP GET メソッドを実行する
-   * (subscribe((res) =>{}) を利用する場合のコード)
-   *
-   * @param {*} callback HTTP GET の実行結果を受け取って処理するためのコールバック処理
-   */
-  public get2(callback: Function) {
-    this.http.get(this.host + '/message/get', this.httpOptions).subscribe({
-      next: (res) => {
-        console.log(`[get] response: ${JSON.stringify(res)}`);
-        const response: any = res;
-        callback(response.body);
-      },
-      error: (error) => {
-        // subscribe の実装のときに this.errorHandler でエラー処理を
-        // 行うと Uncaught (in promise) が発生するので、
-        // ここではコンソールにログを出すだけにする
-        console.log(error);
-      },
-    });
+    );
   }
 
   /**
    * メッセージ登録
    *
    * @param body リクエストボディ
-   * @returns バックエンドからのレスポンス
    */
-  public register(body: MessageModel): Promise<HttpResponseBodyModel> {
-    return this.http
-      .post(this.host + '/message/post', body, this.httpOptions)
-      .toPromise()
-      .then((res) => {
-        console.log(`[post] response: ${JSON.stringify(res)}`);
-        const response: any = res;
-        return response.body;
+  public register$(body: MessageModel): Observable<MessageModel[]> {
+    return this.http.post(this.host + '/message/post', body, this.httpOptions).pipe(
+      map((response) => {
+        const res: any = response;
+        const resBody: HttpResponseBodyModel = res.body;
+        return resBody.messages;
       })
-      .catch(this.errorHandler);
+    );
   }
 
   /**
    * メッセージ更新
    *
    * @param body リクエストボディ
-   * @returns バックエンドからのレスポンス
    */
-  public update(body: MessageModel): Promise<HttpResponseBodyModel> {
-    return this.http
-      .put(this.host + '/message/put', body, this.httpOptions)
-      .toPromise()
-      .then((res) => {
-        console.log(`[put] response: ${JSON.stringify(res)}`);
-        const response: any = res;
-        return response.body;
+  public update$(body: MessageModel): Observable<MessageModel[]> {
+    return this.http.put(this.host + '/message/put', body, this.httpOptions).pipe(
+      map((response) => {
+        const res: any = response;
+        const resBody: HttpResponseBodyModel = res.body;
+        return resBody.messages;
       })
-      .catch(this.errorHandler);
+    );
   }
 
   /**
    * メッセージ削除
    *
    * @param body リクエストボディ
-   * @returns バックエンドからのレスポンス
    */
-  public delete(body: MessageModel): Promise<HttpResponseBodyModel> {
+  public delete$(body: MessageModel): Observable<MessageModel[]> {
     this.httpOptions.body = body;
-    return this.http
-      .delete(this.host + '/message/delete', this.httpOptions)
-      .toPromise()
-      .then((res) => {
-        console.log(`[delete] response: ${JSON.stringify(res)}`);
-        const response: any = res;
-        return response.body;
+    return this.http.delete(this.host + '/message/delete', this.httpOptions).pipe(
+      map((response) => {
+        const res: any = response;
+        const resBody: HttpResponseBodyModel = res.body;
+        return resBody.messages;
       })
-      .catch(this.errorHandler);
+    );
   }
 
   /**
