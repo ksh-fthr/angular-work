@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EnvironmentInjector, OnInit, inject, runInInjectionContext } from '@angular/core';
 import { HttpClientService, MessageModel } from '../../../service/http-client/http-client.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-http-client-verification',
@@ -8,6 +7,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['../../../style/common.css', './http-client-verification.component.css'],
 })
 export class HttpClientVerificationComponent implements OnInit {
+  injector = inject(EnvironmentInjector);
+
   /**
    * バックエンドから返却されたたメッセージをセットするプロパティ
    *
@@ -23,7 +24,7 @@ export class HttpClientVerificationComponent implements OnInit {
    *
    * @type {*}
    */
-  public messageInfoList$: Observable<MessageModel[]> = this.httpClientService.get$();
+  public messageInfoList$ = this.httpClientService.get$();
 
   /**
    * メッセージ登録回数
@@ -91,7 +92,18 @@ export class HttpClientVerificationComponent implements OnInit {
       id: this.messageId,
       message: this.message,
     };
-    this.messageInfoList$ = this.httpClientService.register$(body);
+
+    //
+    // 下記エラーが発生するので､その対応として runInInjectionContext でラップする.
+    // doUpdate, doDelete も同じ.
+    //
+    // Error:
+    // NG0203: toSignal() can only be used within an injection context such as a constructor, a factory function, a field initializer, or a function used with `runInInjectionContext`.
+    //
+    // 参考: https://github.com/angular/angular/issues/50947
+    runInInjectionContext(this.injector, () => {
+      this.messageInfoList$ = this.httpClientService.register$(body);
+    });
   }
 
   /**
@@ -104,7 +116,9 @@ export class HttpClientVerificationComponent implements OnInit {
       id: this.messageId,
       message: this.message,
     };
-    this.messageInfoList$ = this.httpClientService.update$(body);
+    runInInjectionContext(this.injector, () => {
+      this.messageInfoList$ = this.httpClientService.update$(body);
+    });
   }
 
   /**
@@ -116,6 +130,8 @@ export class HttpClientVerificationComponent implements OnInit {
     const body: any = {
       id: this.messageId,
     };
-    this.messageInfoList$ = this.httpClientService.delete$(body);
+    runInInjectionContext(this.injector, () => {
+      this.messageInfoList$ = this.httpClientService.delete$(body);
+    });
   }
 }
