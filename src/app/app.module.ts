@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // form を作成するために必要
-import { HttpClientModule } from '@angular/common/http'; // HTTP クライアントのための import
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'; // HTTP クライアントのための import
 import { ReactiveFormsModule } from '@angular/forms'; // RactiveForm を使用するために必要
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Angular Material を使用するために必要
 
@@ -41,40 +41,34 @@ import { FeatureVerificationRoutingModule } from './modules/feature-verification
 import { FeatureSpeechToTextModule } from './modules/feature-speech-to-text.module'; // 音声認識-文字起こしの検証用モジュール
 import { FeatureUseNgxToastr } from './modules/feature-use-ngx-toastr.module'; // ngx-toasr の使用感の検証用モジュール
 
-@NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    FeatureAllPageRoutingModule,
-    FeatureLifeCycleModule,
-    FeatureTabModule,
-    FeatureReferenceContentModule,
-    FeatureAngularMaterialModule,
-    FeatureModalModule,
-    FeatureHttpClientModule,
-    FeatureParentChildModule,
-    FeatureDataShareModule,
-    FeatureCsvAndArchiveModule,
-    FeatureReactiveForm,
-    FeatureNormalValidationModule,
-    FeatureUseAttributeDirectiveModule,
-    FeatureVerificationRoutingModule,
-    FeatureSpeechToTextModule,
-    FeatureUseNgxToastr,
-  ],
-  providers: [
-    ModalService,
-    SwitchTabService,
-    DataShareService,
-    HttpClientService,
-    CsvZipClientService,
-    ToasterService,
-    Logging,
-  ],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [AppComponent],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        FeatureAllPageRoutingModule,
+        FeatureLifeCycleModule,
+        FeatureTabModule,
+        FeatureReferenceContentModule,
+        FeatureAngularMaterialModule,
+        FeatureModalModule,
+        FeatureHttpClientModule,
+        FeatureParentChildModule,
+        FeatureDataShareModule,
+        FeatureCsvAndArchiveModule,
+        FeatureReactiveForm,
+        FeatureNormalValidationModule,
+        FeatureUseAttributeDirectiveModule,
+        FeatureVerificationRoutingModule,
+        FeatureSpeechToTextModule,
+        FeatureUseNgxToastr], providers: [
+        ModalService,
+        SwitchTabService,
+        DataShareService,
+        HttpClientService,
+        CsvZipClientService,
+        ToasterService,
+        Logging,
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule {}

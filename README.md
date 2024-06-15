@@ -15,15 +15,15 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 
 | 環境                                                        | バージョン | 備考                     |
 | ----------------------------------------------------------- | ---------- | ------------------------ |
-| [Angular CLI](https://cli.angular.io/)                      | v17.3.6   | `ng version` で確認      |
-| [Angular](https://angular.io/)                              | v17.3.7    | 同上                     |
-| [Angular Material](https://material.angular.io/)            | v17.3.7    | 同上                     |
-| [Angular CDK](https://github.com/angular/components#readme) | v17.3.7    | 同上                     |
+| [Angular CLI](https://cli.angular.io/)                      | v18.0.4    | `ng version` で確認      |
+| [Angular](https://angular.io/)                              | v18.0.3    | 同上                     |
+| [Angular Material](https://material.angular.io/)            | v18.0.3    | 同上                     |
+| [Angular CDK](https://github.com/angular/components#readme) | v18.0.3    | 同上                     |
 | [RxJS](https://rxjs.dev/)                                   | v6.6.7     | 同上                     |
 | [TypeScript](https://www.typescriptlang.org/)               | v5.4.5     | 同上                     |
-| [zone.js](https://www.npmjs.com/package/zone.js)            | v0.14.5    | 同上                     |
-| [Node.js](https://nodejs.org/ja/)                           | v18.19.0   | 同上                     |
-| [npm](https://www.npmjs.com/)                               | v10.5.1    | 同上                     |
+| [zone.js](https://www.npmjs.com/package/zone.js)            | v0.14.7    | 同上                     |
+| [Node.js](https://nodejs.org/ja/)                           | v20.14.0   | 同上                     |
+| [npm](https://www.npmjs.com/)                               | v10.7.0    | 同上                     |
 | [ngx-toastr](https://github.com/scttcper/ngx-toastr)        | v16.1.0    | `package.json` で確認    |
 
 <details>
@@ -41,26 +41,26 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
                 |___/
 
 
-Angular CLI: 17.3.6
-Node: 18.19.0
-Package Manager: npm 10.5.1
+Angular CLI: 18.0.4
+Node: 20.14.0
+Package Manager: npm 10.7.0
 OS: darwin x64
 
-Angular: 17.3.7
+Angular: 18.0.3
 ... animations, cdk, common, compiler, compiler-cli, core, forms
 ... material, platform-browser, platform-browser-dynamic, router
 
 Package                         Version
 ---------------------------------------------------------
-@angular-devkit/architect       0.1703.6
-@angular-devkit/build-angular   17.3.6
-@angular-devkit/core            17.3.6
-@angular-devkit/schematics      17.3.6
-@angular/cli                    17.3.6
-@schematics/angular             17.3.6
+@angular-devkit/architect       0.1800.4
+@angular-devkit/build-angular   18.0.4
+@angular-devkit/core            18.0.4
+@angular-devkit/schematics      18.0.4
+@angular/cli                    18.0.4
+@schematics/angular             18.0.4
 rxjs                            6.6.7
 typescript                      5.4.5
-zone.js                         0.14.5
+zone.js                         0.14.7
 ```
 
 </div>
