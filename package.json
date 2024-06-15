@@ -12,12 +12,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "18.0.3",
-    "@angular/cdk": "^18.0.3",
+    "@angular/cdk": "18.0.3",
     "@angular/common": "18.0.3",
     "@angular/compiler": "18.0.3",
     "@angular/core": "18.0.3",
     "@angular/forms": "18.0.3",
-    "@angular/material": "^18.0.3",
+    "@angular/material": "18.0.3",
     "@angular/platform-browser": "18.0.3",
     "@angular/platform-browser-dynamic": "18.0.3",
     "@angular/router": "18.0.3",
@@ -27,12 +27,12 @@
     "ansi-regex": "6.0.1",
     "buffer": "6.0.3",
     "microphone-stream": "6.0.1",
-    "ngx-toastr": "^16.1.0",
+    "ngx-toastr": "16.1.0",
     "postcss": "8.4.38",
     "process": "0.11.10",
     "rxjs": "6.6.7",
     "tslib": "2.6.3",
-    "zone.js": "^0.14.2"
+    "zone.js": "0.14.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "18.0.4",
@@ -58,6 +58,6 @@
     "prettier": "2.8.8",
     "protractor": "7.0.0",
     "ts-node": "10.9.2",
-    "typescript": "^5.4.5"
+    "typescript": "5.4.5"
   }
 }
