@@ -16,7 +16,7 @@ import {
 
 // AWS Transcribe Streaming に流す audio データを作るのに必要
 // https://github.com/microphone-stream/microphone-stream#readme
-const MicrophoneStream = require('microphone-stream').default;
+import MicrophoneStream from 'microphone-stream';
 let micStream: any = null;
 
 @Component({
