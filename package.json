@@ -21,7 +21,7 @@
     "@angular/platform-browser": "18.2.4",
     "@angular/platform-browser-dynamic": "18.2.4",
     "@angular/router": "18.2.4",
-    "@aws-sdk/client-transcribe-streaming": "3.649.0",
+    "@aws-sdk/client-transcribe-streaming": "3.651.1",
     "@babel/runtime": "7.25.6",
     "ansi-html-community": "0.0.8",
     "ansi-regex": "6.1.0",
