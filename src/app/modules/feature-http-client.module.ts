@@ -7,8 +7,8 @@ import { HttpClientVerificationComponent } from '../component/http-client/http-c
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [HttpClientBaseComponent, HttpClientVerificationComponent],
-  imports: [CommonModule, FormsModule],
-  exports: [HttpClientBaseComponent, HttpClientVerificationComponent],
+    declarations: [HttpClientBaseComponent, HttpClientVerificationComponent],
+    imports: [CommonModule, FormsModule],
+    exports: [HttpClientBaseComponent, HttpClientVerificationComponent],
 })
 export class FeatureHttpClientModule {}

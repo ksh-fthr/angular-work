@@ -5,7 +5,7 @@ import { CsvAndZipBaseComponent } from '../component/csv-and-zip/csv-and-zip-bas
 import { CsvAndZipVerificationComponent } from '../component/csv-and-zip/csv-and-zip-verification/csv-and-zip-verification.component';
 
 @NgModule({
-  declarations: [CsvAndZipBaseComponent, CsvAndZipVerificationComponent],
-  exports: [CsvAndZipBaseComponent, CsvAndZipVerificationComponent],
+    declarations: [CsvAndZipBaseComponent, CsvAndZipVerificationComponent],
+    exports: [CsvAndZipBaseComponent, CsvAndZipVerificationComponent],
 })
 export class FeatureCsvAndArchiveModule {}

@@ -7,8 +7,8 @@ import { DataShareAComponent } from '../component/data-share/data-share-a/data-s
 import { DataShareBComponent } from '../component/data-share/data-share-b/data-share-b.component';
 
 @NgModule({
-  declarations: [DataShareBaseComponent, DataShareAComponent, DataShareBComponent],
-  imports: [FormsModule],
-  exports: [DataShareBaseComponent, DataShareAComponent, DataShareBComponent],
+    declarations: [DataShareBaseComponent, DataShareAComponent, DataShareBComponent],
+    imports: [FormsModule],
+    exports: [DataShareBaseComponent, DataShareAComponent, DataShareBComponent],
 })
 export class FeatureDataShareModule {}

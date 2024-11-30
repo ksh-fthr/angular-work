@@ -10,40 +10,40 @@ import { ViewChildren, QueryList } from '@angular/core';
 import { ViewChildComponent } from '../view-child/view-child.component';
 
 @Component({
-  selector: 'app-view-parent',
-  templateUrl: './view-parent.component.html',
-  styleUrls: ['../../../style/common.css', './view-parent.component.css'],
+    selector: 'app-view-parent',
+    templateUrl: './view-parent.component.html',
+    styleUrls: ['../../../style/common.css', './view-parent.component.css'],
 })
 export class ViewParentComponent implements AfterViewChecked {
-  /**
-   * 子コンポーネントの参照から値をセットするためのパラメータ
-   *
-   * @type {string}
-   */
-  public valueBox: string[] = ['', '', ''];
+    /**
+     * 子コンポーネントの参照から値をセットするためのパラメータ
+     *
+     * @type {string}
+     */
+    public valueBox: string[] = ['', '', ''];
 
-  /**
-   * 子コンポーネントの参照
-   * テンプレートで指定した子コンポーネントをリストで取得できる
-   *
-   * @type {ViewChildComponent}
-   */
-  @ViewChildren(ViewChildComponent) viewChildren!: QueryList<ViewChildComponent>;
+    /**
+     * 子コンポーネントの参照
+     * テンプレートで指定した子コンポーネントをリストで取得できる
+     *
+     * @type {ViewChildComponent}
+     */
+    @ViewChildren(ViewChildComponent) viewChildren!: QueryList<ViewChildComponent>;
 
-  constructor() {}
+    constructor() {}
 
-  /**
-   * ビューの変更をフックする
-   */
-  ngAfterViewChecked(): void {
-    this.viewChildren.forEach((item, index) => {
-      if (this.valueBox[index] !== item.inputValue) {
-        // ERROR Error: ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked
-        // の回避のために遅延評価を行う
-        setTimeout(() => {
-          this.valueBox[index] = item.inputValue;
-        }, 0);
-      }
-    });
-  }
+    /**
+     * ビューの変更をフックする
+     */
+    ngAfterViewChecked(): void {
+        this.viewChildren.forEach((item, index) => {
+            if (this.valueBox[index] !== item.inputValue) {
+                // ERROR Error: ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked
+                // の回避のために遅延評価を行う
+                setTimeout(() => {
+                    this.valueBox[index] = item.inputValue;
+                }, 0);
+            }
+        });
+    }
 }

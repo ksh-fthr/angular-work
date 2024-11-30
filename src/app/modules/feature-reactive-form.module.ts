@@ -6,8 +6,8 @@ import { ReactiveFormBaseComponent } from '../component/reactive-form/reactive-f
 import { ReactiveFormVerificationComponent } from '../component/reactive-form/reactive-form-verification/reactive-form-verification.component';
 
 @NgModule({
-  declarations: [ReactiveFormBaseComponent, ReactiveFormVerificationComponent],
-  imports: [ReactiveFormsModule],
-  exports: [ReactiveFormBaseComponent, ReactiveFormVerificationComponent],
+    declarations: [ReactiveFormBaseComponent, ReactiveFormVerificationComponent],
+    imports: [ReactiveFormsModule],
+    exports: [ReactiveFormBaseComponent, ReactiveFormVerificationComponent],
 })
 export class FeatureReactiveForm {}

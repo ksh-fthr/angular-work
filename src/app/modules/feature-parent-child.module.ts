@@ -7,8 +7,8 @@ import { ParentComponent } from '../component/parent-child/parent/parent.compone
 import { ChildComponent } from '../component/parent-child/child/child.component';
 
 @NgModule({
-  declarations: [ParentChildBaseComponent, ParentComponent, ChildComponent],
-  imports: [FormsModule],
-  exports: [ParentChildBaseComponent, ParentComponent, ChildComponent],
+    declarations: [ParentChildBaseComponent, ParentComponent, ChildComponent],
+    imports: [FormsModule],
+    exports: [ParentChildBaseComponent, ParentComponent, ChildComponent],
 })
 export class FeatureParentChildModule {}
