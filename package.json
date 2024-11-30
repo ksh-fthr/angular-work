@@ -64,10 +64,10 @@
     "typescript": "5.5.4"
   },
   "lint-staged": {
-    "*.ts": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
+    "**/*.{js,css,scss,html,md,yml,yaml},(!src)/**/*.ts": "prettier --write",
+    "src/**/*.ts": [
+      "eslint --fix --ext .js,.ts --ignore-path .gitignore .",
+      "prettier --write"
     ]
   }
 }
