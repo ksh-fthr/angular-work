@@ -16,18 +16,18 @@ import { AutoCompleteComponent } from '../component/use-angular-material/autocom
 import { HightlightFirstItemComponent } from '../component/use-angular-material/autocomplete/highlight-firs-item/highlight-firs-item.component';
 
 @NgModule({
-  declarations: [
-    UseAngularMaterialBaseComponent,
-    ControlFunctionsComponent,
-    AutoCompleteComponent,
-    HightlightFirstItemComponent,
-  ],
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatAutocompleteModule],
-  exports: [
-    UseAngularMaterialBaseComponent,
-    ControlFunctionsComponent,
-    AutoCompleteComponent,
-    HightlightFirstItemComponent,
-  ],
+    declarations: [
+        UseAngularMaterialBaseComponent,
+        ControlFunctionsComponent,
+        AutoCompleteComponent,
+        HightlightFirstItemComponent,
+    ],
+    imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatAutocompleteModule],
+    exports: [
+        UseAngularMaterialBaseComponent,
+        ControlFunctionsComponent,
+        AutoCompleteComponent,
+        HightlightFirstItemComponent,
+    ],
 })
 export class FeatureAngularMaterialModule {}

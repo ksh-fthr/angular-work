@@ -51,14 +51,14 @@ import 'zone.js'; // Included with Angular CLI.
  * APPLICATION IMPORTS
  */
 // "global is not defined"の対応
-(window as any).global = window;
+window.global = window;
 
 // https://stackoverflow.com/questions/50313745/angular-6-process-is-not-defined-when-trying-to-serve-application
 // https://www.npmjs.com/package/process
 import * as process from 'process';
-(window as any).process = process;
+window.process = process;
 
 // https://github.com/isaacs/core-util-is/issues/27
 // https://www.npmjs.com/package/buffer
 import * as buffer from 'buffer';
-(window as any).Buffer = buffer.Buffer;
+window.Buffer = buffer.Buffer;

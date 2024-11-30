@@ -15,24 +15,24 @@ import { NetworkAddressValidatorDirective } from '../directive/attribute/validat
 import { AttributeDirectiveValidatorVerificationComponent } from '../component/use-attribute-directive/attribute-directive-validator-verification/attribute-directive-validator-verification.component';
 
 @NgModule({
-  declarations: [
-    TemplateDirective,
-    UseAttributeDirectiveBaseComponent,
-    AttributeDirectiveVerificationComponent,
-    EventDirective,
-    AttributeDirectiveEventVerificationComponent,
-    NetworkAddressValidatorDirective,
-    AttributeDirectiveValidatorVerificationComponent,
-  ],
-  imports: [FormsModule],
-  exports: [
-    TemplateDirective,
-    UseAttributeDirectiveBaseComponent,
-    AttributeDirectiveVerificationComponent,
-    EventDirective,
-    AttributeDirectiveEventVerificationComponent,
-    NetworkAddressValidatorDirective,
-    AttributeDirectiveValidatorVerificationComponent,
-  ],
+    declarations: [
+        TemplateDirective,
+        UseAttributeDirectiveBaseComponent,
+        AttributeDirectiveVerificationComponent,
+        EventDirective,
+        AttributeDirectiveEventVerificationComponent,
+        NetworkAddressValidatorDirective,
+        AttributeDirectiveValidatorVerificationComponent,
+    ],
+    imports: [FormsModule],
+    exports: [
+        TemplateDirective,
+        UseAttributeDirectiveBaseComponent,
+        AttributeDirectiveVerificationComponent,
+        EventDirective,
+        AttributeDirectiveEventVerificationComponent,
+        NetworkAddressValidatorDirective,
+        AttributeDirectiveValidatorVerificationComponent,
+    ],
 })
 export class FeatureUseAttributeDirectiveModule {}

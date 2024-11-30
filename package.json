@@ -6,7 +6,7 @@
     "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
-    "lint": "eslint --fix --ext .js,.ts --ignore-path .gitignore .",
+    "lint": "eslint --fix -c ./eslint.config.mjs --ignore-pattern .gitignore",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -44,11 +44,13 @@
     "@types/readable-stream": "4.0.18",
     "@typescript-eslint/eslint-plugin": "8.16.0",
     "@typescript-eslint/parser": "8.16.0",
+    "angular-eslint": "19.0.0",
     "eslint": "9.16.0",
     "eslint-config-prettier": "8.10.0",
     "eslint-plugin-import": "latest",
     "eslint-plugin-jsdoc": "latest",
     "eslint-plugin-prefer-arrow": "1.2.3",
+    "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.7",
     "jasmine-core": "3.99.1",
     "jasmine-spec-reporter": "7.0.0",
@@ -57,16 +59,17 @@
     "karma-coverage": "2.2.1",
     "karma-jasmine": "4.0.2",
     "karma-jasmine-html-reporter": "1.7.0",
-    "lint-staged": "^15.2.10",
-    "prettier": "2.8.8",
+    "lint-staged": "15.2.10",
+    "prettier": "3.4.1",
     "protractor": "7.0.0",
     "ts-node": "10.9.2",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "typescript-eslint": "8.16.0"
   },
   "lint-staged": {
     "**/*.{js,css,scss,html,md,yml,yaml},(!src)/**/*.ts": "prettier --write",
     "src/**/*.ts": [
-      "eslint --fix --ext .js,.ts --ignore-path .gitignore .",
+      "eslint --fix -c ./eslint.config.mjs --ignore-pattern .gitignore",
       "prettier --write"
     ]
   }

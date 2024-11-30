@@ -33,91 +33,91 @@ import { ToastBaseComponent } from '../component/toast/toast-base.component';
 //    '' で [/] のルートパスを指定できる
 //    '*＊' でワイルドカードを指定できる
 const ROUTE_TABLE: Routes = [
-  {
-    path: '',
-    component: ReadmeComponent,
-  },
-  {
-    path: 'readme',
-    component: ReadmeComponent,
-  },
-  {
-    path: 'life-cycle-on-change',
-    component: OnChangeBaseComponent,
-  },
-  {
-    path: 'life-cycle-do-check',
-    component: DoCheckBaseComponent,
-  },
-  {
-    path: 'life-cycle-after-content',
-    component: AfterContentBaseComponent,
-  },
-  {
-    path: 'life-cycle-after-view',
-    component: AfterViewBaseComponent,
-  },
-  {
-    path: 'reference',
-    component: ReferenceBaseComponent,
-  },
-  {
-    path: 'parent-child',
-    component: ParentChildBaseComponent,
-  },
-  {
-    path: 'data-share',
-    component: DataShareBaseComponent,
-  },
-  {
-    path: 'http-client',
-    component: HttpClientBaseComponent,
-  },
-  {
-    path: 'validation',
-    component: ValidationBaseComponent,
-  },
-  {
-    path: 'attribute-directive',
-    component: UseAttributeDirectiveBaseComponent,
-  },
-  {
-    path: 'reactive-form',
-    component: ReactiveFormBaseComponent,
-  },
-  {
-    path: 'tab',
-    component: TabBaseComponent,
-  },
-  {
-    path: 'routing',
-    component: RoutingBaseComponent,
-  },
-  {
-    path: 'modal',
-    component: ModalBaseComponent,
-  },
-  {
-    path: 'csv-and-zip',
-    component: CsvAndZipBaseComponent,
-  },
-  {
-    path: 'speech-to-text',
-    component: SpeechToTextBaseComponent,
-  },
-  {
-    path: 'angular-material',
-    component: UseAngularMaterialBaseComponent,
-  },
-  {
-    path: 'toast',
-    component: ToastBaseComponent,
-  },
+    {
+        path: '',
+        component: ReadmeComponent,
+    },
+    {
+        path: 'readme',
+        component: ReadmeComponent,
+    },
+    {
+        path: 'life-cycle-on-change',
+        component: OnChangeBaseComponent,
+    },
+    {
+        path: 'life-cycle-do-check',
+        component: DoCheckBaseComponent,
+    },
+    {
+        path: 'life-cycle-after-content',
+        component: AfterContentBaseComponent,
+    },
+    {
+        path: 'life-cycle-after-view',
+        component: AfterViewBaseComponent,
+    },
+    {
+        path: 'reference',
+        component: ReferenceBaseComponent,
+    },
+    {
+        path: 'parent-child',
+        component: ParentChildBaseComponent,
+    },
+    {
+        path: 'data-share',
+        component: DataShareBaseComponent,
+    },
+    {
+        path: 'http-client',
+        component: HttpClientBaseComponent,
+    },
+    {
+        path: 'validation',
+        component: ValidationBaseComponent,
+    },
+    {
+        path: 'attribute-directive',
+        component: UseAttributeDirectiveBaseComponent,
+    },
+    {
+        path: 'reactive-form',
+        component: ReactiveFormBaseComponent,
+    },
+    {
+        path: 'tab',
+        component: TabBaseComponent,
+    },
+    {
+        path: 'routing',
+        component: RoutingBaseComponent,
+    },
+    {
+        path: 'modal',
+        component: ModalBaseComponent,
+    },
+    {
+        path: 'csv-and-zip',
+        component: CsvAndZipBaseComponent,
+    },
+    {
+        path: 'speech-to-text',
+        component: SpeechToTextBaseComponent,
+    },
+    {
+        path: 'angular-material',
+        component: UseAngularMaterialBaseComponent,
+    },
+    {
+        path: 'toast',
+        component: ToastBaseComponent,
+    },
 ];
 
 @NgModule({
-  declarations: [ReadmeComponent],
-  imports: [RouterModule.forRoot(ROUTE_TABLE)],
-  exports: [ReadmeComponent, RouterModule],
+    declarations: [ReadmeComponent],
+    imports: [RouterModule.forRoot(ROUTE_TABLE)],
+    exports: [ReadmeComponent, RouterModule],
 })
 export class FeatureAllPageRoutingModule {}

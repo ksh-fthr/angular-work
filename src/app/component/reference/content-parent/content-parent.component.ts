@@ -10,34 +10,34 @@ import { ContentChild } from '@angular/core';
 import { ContentChildComponent } from '../content-child/content-child.component';
 
 @Component({
-  selector: 'app-content-parent',
-  templateUrl: './content-parent.component.html',
-  styleUrls: ['../../../style/common.css', './content-parent.component.css'],
+    selector: 'app-content-parent',
+    templateUrl: './content-parent.component.html',
+    styleUrls: ['../../../style/common.css', './content-parent.component.css'],
 })
 export class ContentParentComponent implements AfterContentChecked {
-  /**
-   * 外部コンテンツの参照から値をセットするためのパラメータ
-   *
-   * @type {string}
-   */
-  public contentValue = '';
+    /**
+     * 外部コンテンツの参照から値をセットするためのパラメータ
+     *
+     * @type {string}
+     */
+    public contentValue = '';
 
-  /**
-   * 外部コンテンツの参照
-   * テンプレートで指定した外部コンテンツを取得できる
-   *
-   * @type {ContentChildComponent}
-   */
-  @ContentChild(ContentChildComponent) contentChild!: ContentChildComponent;
+    /**
+     * 外部コンテンツの参照
+     * テンプレートで指定した外部コンテンツを取得できる
+     *
+     * @type {ContentChildComponent}
+     */
+    @ContentChild(ContentChildComponent) contentChild!: ContentChildComponent;
 
-  constructor() {}
+    constructor() {}
 
-  /**
-   * 外部コンテンツの変更をフックする
-   */
-  ngAfterContentChecked(): void {
-    if (this.contentValue !== this.contentChild.inputValue) {
-      this.contentValue = this.contentChild.inputValue;
+    /**
+     * 外部コンテンツの変更をフックする
+     */
+    ngAfterContentChecked(): void {
+        if (this.contentValue !== this.contentChild.inputValue) {
+            this.contentValue = this.contentChild.inputValue;
+        }
     }
-  }
 }

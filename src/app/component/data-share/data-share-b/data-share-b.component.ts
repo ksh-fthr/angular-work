@@ -8,82 +8,85 @@ import { Subscription } from 'rxjs';
 import { DataShareService } from '../../../service/data-share/data-share.service';
 
 @Component({
-  selector: 'app-data-share-b',
-  templateUrl: './data-share-b.component.html',
-  styleUrls: ['../../../style/common.css', './data-share-b.component.css'],
-  // サービスを登録する
-  // コンポーネントで DI する場合はこのコメントアウトを外す
-  // providers: [
-  //   DataShareService
-  // ]
+    selector: 'app-data-share-b',
+    templateUrl: './data-share-b.component.html',
+    styleUrls: ['../../../style/common.css', './data-share-b.component.css'],
+    // サービスを登録する
+    // コンポーネントで DI する場合はこのコメントアウトを外す
+    // providers: [
+    //   DataShareService
+    // ]
 })
 export class DataShareBComponent implements OnInit, OnDestroy, AfterViewChecked {
-  /**
-   * DataShareService の変数の参照を取得するプロパティ
-   *
-   * @type {string}
-   */
-  public serviceProp = 'Initialized by Component-B';
+    /**
+     * DataShareService の変数の参照を取得するプロパティ
+     *
+     * @type {string}
+     */
+    public serviceProp = 'Initialized by Component-B';
 
-  /**
-   * subscribe を保持するための Subscription
-   *
-   * @private
-   * @type {Subscription}
-   */
-  private subscription!: Subscription;
+    /**
+     * subscribe を保持するための Subscription
+     *
+     * @private
+     * @type {Subscription}
+     */
+    private subscription!: Subscription;
 
-  /**
-   * サービスで共有するデータが更新されたかをチェックするためのデータ
-   *
-   * @type {string}
-   */
-  private preData: string = this.serviceProp;
+    /**
+     * サービスで共有するデータが更新されたかをチェックするためのデータ
+     *
+     * @type {string}
+     */
+    private preData: string = this.serviceProp;
 
-  /**
-   * コンストラクタ. ServiceSample2Component のインスタンスを生成する
-   *
-   * @param dataShareService 共通サービス
-   */
-  constructor(private dataShareService: DataShareService, private element: ElementRef) {}
+    /**
+     * コンストラクタ. ServiceSample2Component のインスタンスを生成する
+     *
+     * @param dataShareService 共通サービス
+     */
+    constructor(
+        private dataShareService: DataShareService,
+        private element: ElementRef
+    ) {}
 
-  /**
-   * ライフサイクルメソッド｡コンポーネントの初期化で使用する
-   */
-  ngOnInit(): void {
-    // イベント登録
-    // サービスで共有しているデータが更新されたら発火されるイベントをキャッチする
-    this.subscription = this.dataShareService.sharedDataSource$.subscribe((msg: any) => {
-      console.log('[Component-B] shared data updated.');
-      this.serviceProp = msg;
-    });
-  }
-
-  /**
-   * コンポーネント終了時の処理
-   */
-  ngOnDestroy(): void {
-    //  リソースリーク防止のため DataShareService から subcribe したオブジェクトを破棄する
-    this.subscription.unsubscribe();
-  }
-
-  /**
-   * View の変更検知処理
-   */
-  ngAfterViewChecked(): void {
-    // 泥臭いがデータ変更が検知されたら描画する
-    // TODO: もっとスマートなやり方があるはず...
-    if (this.preData !== this.serviceProp) {
-      this.element.nativeElement.querySelector('.updated-data').style.visibility = 'visible';
+    /**
+     * ライフサイクルメソッド｡コンポーネントの初期化で使用する
+     */
+    ngOnInit(): void {
+        // イベント登録
+        // サービスで共有しているデータが更新されたら発火されるイベントをキャッチする
+        this.subscription = this.dataShareService.sharedDataSource$.subscribe((msg: any) => {
+            console.log('[Component-B] shared data updated.');
+            this.serviceProp = msg;
+        });
     }
-  }
 
-  /**
-   * ボタンクリック時のイベントハンドラ
-   */
-  onClicSendMessage() {
-    // DataShareService のデータ更新を行う
-    console.log('[Component-B] onClicSendMessage fired.');
-    this.dataShareService.onNotifySharedDataChanged('Updated by Component-B.');
-  }
+    /**
+     * コンポーネント終了時の処理
+     */
+    ngOnDestroy(): void {
+        //  リソースリーク防止のため DataShareService から subcribe したオブジェクトを破棄する
+        this.subscription.unsubscribe();
+    }
+
+    /**
+     * View の変更検知処理
+     */
+    ngAfterViewChecked(): void {
+        // 泥臭いがデータ変更が検知されたら描画する
+        // TODO: もっとスマートなやり方があるはず...
+        if (this.preData !== this.serviceProp) {
+            this.element.nativeElement.querySelector('.updated-data').style.visibility = 'visible';
+        }
+    }
+
+    /**
+     * ボタンクリック時のイベントハンドラ
+     */
+    onClicSendMessage() {
+        // DataShareService のデータ更新を行う
+        console.log('[Component-B] onClicSendMessage fired.');
+        this.dataShareService.onNotifySharedDataChanged('Updated by Component-B.');
+    }
 }

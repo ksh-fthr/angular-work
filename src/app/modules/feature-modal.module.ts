@@ -5,8 +5,8 @@ import { ModalBaseComponent } from '../component/modal/modal-base.component';
 import { ModalComponent } from '../component/modal/modal/modal.component';
 
 @NgModule({
-  declarations: [ModalBaseComponent, ModalComponent],
-  imports: [CommonModule],
-  exports: [ModalBaseComponent, ModalComponent],
+    declarations: [ModalBaseComponent, ModalComponent],
+    imports: [CommonModule],
+    exports: [ModalBaseComponent, ModalComponent],
 })
 export class FeatureModalModule {}

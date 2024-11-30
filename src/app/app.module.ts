@@ -41,8 +41,11 @@ import { FeatureVerificationRoutingModule } from './modules/feature-verification
 import { FeatureSpeechToTextModule } from './modules/feature-speech-to-text.module'; // 音声認識-文字起こしの検証用モジュール
 import { FeatureUseNgxToastr } from './modules/feature-use-ngx-toastr.module'; // ngx-toasr の使用感の検証用モジュール
 
-@NgModule({ declarations: [AppComponent],
-    bootstrap: [AppComponent], imports: [BrowserModule,
+@NgModule({
+    declarations: [AppComponent],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
         FormsModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
@@ -61,7 +64,9 @@ import { FeatureUseNgxToastr } from './modules/feature-use-ngx-toastr.module'; /
         FeatureUseAttributeDirectiveModule,
         FeatureVerificationRoutingModule,
         FeatureSpeechToTextModule,
-        FeatureUseNgxToastr], providers: [
+        FeatureUseNgxToastr,
+    ],
+    providers: [
         ModalService,
         SwitchTabService,
         DataShareService,
@@ -70,5 +75,6 @@ import { FeatureUseNgxToastr } from './modules/feature-use-ngx-toastr.module'; /
         ToasterService,
         Logging,
         provideHttpClient(withInterceptorsFromDi()),
-    ] })
+    ],
+})
 export class AppModule {}

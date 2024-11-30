@@ -8,11 +8,11 @@ import { ToastBaseComponent } from '../component/toast/toast-base.component';
 import { ViewToastComponent } from '../component/toast/view-toast/view-toast.component';
 
 @NgModule({
-  declarations: [ToastBaseComponent, ViewToastComponent],
-  imports: [
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
-  ],
-  exports: [ToastBaseComponent, ViewToastComponent],
+    declarations: [ToastBaseComponent, ViewToastComponent],
+    imports: [
+        BrowserAnimationsModule, // required animations module
+        ToastrModule.forRoot(), // ToastrModule added
+    ],
+    exports: [ToastBaseComponent, ViewToastComponent],
 })
 export class FeatureUseNgxToastr {}

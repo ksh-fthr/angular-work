@@ -5,17 +5,17 @@ import { SwitchTabService } from '../../service/switch-tab/switch-tab.service';
 import { TabModel } from '../../model/tab-model';
 
 @Component({
-  selector: 'app-use-anuglar-material-base',
-  templateUrl: './use-angular-material-base.component.html',
-  styleUrls: ['../../style/common.css'],
+    selector: 'app-use-anuglar-material-base',
+    templateUrl: './use-angular-material-base.component.html',
+    styleUrls: ['../../style/common.css'],
 })
 export class UseAngularMaterialBaseComponent implements OnInit {
-  private _tabs: Array<TabModel> = new Array();
+    private _tabs: Array<TabModel> = [];
 
-  constructor(private switchTabService: SwitchTabService) {}
+    constructor(private switchTabService: SwitchTabService) {}
 
-  ngOnInit(): void {
-    this._tabs.push(new TabModel('autocomplete', AutoCompleteComponent, true));
-    this.switchTabService.tabs = this._tabs;
-  }
+    ngOnInit(): void {
+        this._tabs.push(new TabModel('autocomplete', AutoCompleteComponent, true));
+        this.switchTabService.tabs = this._tabs;
+    }
 }

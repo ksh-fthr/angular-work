@@ -8,20 +8,20 @@ import { ViewChildComponent } from '../component/reference/view-child/view-child
 import { ViewParentComponent } from '../component/reference/view-parent/view-parent.component';
 
 @NgModule({
-  declarations: [
-    ReferenceBaseComponent,
-    ContentChildComponent,
-    ContentParentComponent,
-    ViewChildComponent,
-    ViewParentComponent,
-  ],
-  imports: [FormsModule],
-  exports: [
-    ReferenceBaseComponent,
-    ContentChildComponent,
-    ContentParentComponent,
-    ViewChildComponent,
-    ViewParentComponent,
-  ],
+    declarations: [
+        ReferenceBaseComponent,
+        ContentChildComponent,
+        ContentParentComponent,
+        ViewChildComponent,
+        ViewParentComponent,
+    ],
+    imports: [FormsModule],
+    exports: [
+        ReferenceBaseComponent,
+        ContentChildComponent,
+        ContentParentComponent,
+        ViewChildComponent,
+        ViewParentComponent,
+    ],
 })
 export class FeatureReferenceContentModule {}
