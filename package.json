@@ -49,6 +49,7 @@
     "eslint-plugin-import": "latest",
     "eslint-plugin-jsdoc": "latest",
     "eslint-plugin-prefer-arrow": "1.2.3",
+    "husky": "^9.1.7",
     "jasmine-core": "3.99.1",
     "jasmine-spec-reporter": "7.0.0",
     "karma": "6.4.4",
@@ -56,9 +57,17 @@
     "karma-coverage": "2.2.1",
     "karma-jasmine": "4.0.2",
     "karma-jasmine-html-reporter": "1.7.0",
+    "lint-staged": "^15.2.10",
     "prettier": "2.8.8",
     "protractor": "7.0.0",
     "ts-node": "10.9.2",
     "typescript": "5.5.4"
+  },
+  "lint-staged": {
+    "**/*.{js,css,scss,html,md,yml,yaml},(!src)/**/*.ts": "prettier --write",
+    "src/**/*.ts": [
+      "eslint --fix --ext .js,.ts --ignore-path .gitignore .",
+      "prettier --write"
+    ]
   }
 }
