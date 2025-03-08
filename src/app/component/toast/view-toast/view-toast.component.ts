@@ -5,6 +5,7 @@ import { ToasterService } from 'src/app/service/toaster/toaster.service';
     selector: 'app-view-toast',
     templateUrl: './view-toast.component.html',
     styleUrls: ['../../../style/common.css'],
+    standalone: false
 })
 export class ViewToastComponent implements OnInit {
     constructor(private _tostService: ToasterService) {}

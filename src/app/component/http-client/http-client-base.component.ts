@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-http-client-base',
     templateUrl: './http-client-base.component.html',
     styleUrls: ['../../style/common.css'],
+    standalone: false
 })
 export class HttpClientBaseComponent implements OnInit {
     constructor() {}

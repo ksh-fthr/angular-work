@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-page-c',
     templateUrl: './page-c.component.html',
     styleUrls: ['./page-c.component.css'],
+    standalone: false
 })
 export class PageCComponent implements OnInit {
     constructor() {}

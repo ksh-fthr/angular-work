@@ -7,6 +7,7 @@ import { ModalService } from '../../../service/modal/modal.service';
     selector: 'app-modal',
     templateUrl: './modal.component.html',
     styleUrls: ['./modal.component.css'],
+    standalone: false
 })
 export class ModalComponent implements OnInit, OnDestroy {
     /**

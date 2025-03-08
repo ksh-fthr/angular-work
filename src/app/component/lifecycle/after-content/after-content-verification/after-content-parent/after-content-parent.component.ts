@@ -6,6 +6,7 @@ import { Logging } from '../../../../../utils/logging';
     selector: 'app-after-content-parent',
     templateUrl: './after-content-parent.component.html',
     styleUrls: ['./after-content-parent.component.css'],
+    standalone: false
 })
 export class AfterContentParentComponent implements OnInit, AfterContentInit, AfterContentChecked {
     // 外部コンテンツである子コンポーネントを参照

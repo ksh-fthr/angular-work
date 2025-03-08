@@ -5,6 +5,7 @@ import { HttpClientService, MessageModel } from '../../../service/http-client/ht
     selector: 'app-http-client-verification',
     templateUrl: './http-client-verification.component.html',
     styleUrls: ['../../../style/common.css', './http-client-verification.component.css'],
+    standalone: false
 })
 export class HttpClientVerificationComponent implements OnInit {
     injector = inject(EnvironmentInjector);

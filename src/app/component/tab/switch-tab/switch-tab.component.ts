@@ -8,6 +8,7 @@ import { TabModel } from '../../../model/tab-model';
     selector: 'app-switch-tab',
     templateUrl: './switch-tab.component.html',
     styleUrls: ['./switch-tab.component.css'],
+    standalone: false
 })
 export class SwitchTabComponent implements OnInit {
     private _currentTab: any;

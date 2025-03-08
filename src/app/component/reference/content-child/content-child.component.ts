@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
     selector: 'app-content-child',
     templateUrl: './content-child.component.html',
     styleUrls: ['../../../style/common.css'],
+    standalone: false
 })
 export class ContentChildComponent {
     /**

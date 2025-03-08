@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-do-check-base',
     templateUrl: './do-check-base.component.html',
     styleUrls: ['../../../style/common.css'],
+    standalone: false
 })
 export class DoCheckBaseComponent implements OnInit {
     title = 'app';

@@ -4,6 +4,7 @@ import { AbstractControl, NG_VALIDATORS, Validator } from '@angular/forms';
 @Directive({
     selector: '[appNetworkAddressValidator][ngModel]',
     providers: [{ provide: NG_VALIDATORS, useExisting: NetworkAddressValidatorDirective, multi: true }],
+    standalone: false
 })
 export class NetworkAddressValidatorDirective implements Validator {
     /**

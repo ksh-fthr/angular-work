@@ -9,6 +9,7 @@ import {
     selector: 'app-csv-and-zip-verification',
     templateUrl: './csv-and-zip-verification.component.html',
     styleUrls: ['../../../style/common.css', './csv-and-zip-verification.component.css'],
+    standalone: false
 })
 export class CsvAndZipVerificationComponent implements OnInit {
     private element: HTMLElement;

@@ -8,6 +8,7 @@ import { map, startWith } from 'rxjs/operators';
     selector: 'app-highlight-firs-item',
     templateUrl: './highlight-firs-item.component.html',
     styleUrls: ['../../../../style/common.css', './highlight-firs-item.component.css'],
+    standalone: false
 })
 export class HightlightFirstItemComponent implements OnInit {
     //

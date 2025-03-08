@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-tab-b',
     templateUrl: './tab-b.component.html',
     styleUrls: ['./tab-b.component.css'],
+    standalone: false
 })
 export class TabBComponent implements OnInit {
     /**

@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
     selector: 'app-view-child',
     templateUrl: './view-child.component.html',
     styleUrls: ['../../../style/common.css'],
+    standalone: false
 })
 export class ViewChildComponent {
     /**

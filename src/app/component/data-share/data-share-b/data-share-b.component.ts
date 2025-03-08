@@ -11,11 +11,7 @@ import { DataShareService } from '../../../service/data-share/data-share.service
     selector: 'app-data-share-b',
     templateUrl: './data-share-b.component.html',
     styleUrls: ['../../../style/common.css', './data-share-b.component.css'],
-    // サービスを登録する
-    // コンポーネントで DI する場合はこのコメントアウトを外す
-    // providers: [
-    //   DataShareService
-    // ]
+    standalone: false
 })
 export class DataShareBComponent implements OnInit, OnDestroy, AfterViewChecked {
     /**

@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-toast-base',
     templateUrl: './toast-base.component.html',
     styleUrls: ['../../style/common.css'],
+    standalone: false
 })
 export class ToastBaseComponent implements OnInit {
     constructor() {}

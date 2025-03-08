@@ -8,6 +8,7 @@ import { TabModel } from '../../model/tab-model';
     selector: 'app-use-anuglar-material-base',
     templateUrl: './use-angular-material-base.component.html',
     styleUrls: ['../../style/common.css'],
+    standalone: false
 })
 export class UseAngularMaterialBaseComponent implements OnInit {
     private _tabs: Array<TabModel> = [];

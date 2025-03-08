@@ -6,6 +6,7 @@ import { Logging } from '../../../../../utils/logging';
     selector: 'app-after-view-parent',
     templateUrl: './after-view-parent.component.html',
     styleUrls: ['../../../../../style/common.css', './after-view-parent.component.css'],
+    standalone: false
 })
 export class AfterViewParentComponent implements OnInit, AfterViewInit, AfterViewChecked {
     /**

@@ -4,6 +4,7 @@ import { Logging } from '../../../../utils/logging';
     selector: 'app-do-check-verification',
     templateUrl: './do-check-verification.component.html',
     styleUrls: ['../../../../style/common.css', './do-check-verification.component.css'],
+    standalone: false
 })
 export class DoCheckVerificationComponent implements AfterViewInit, DoCheck {
     /**

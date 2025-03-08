@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-data-share-base',
     templateUrl: './data-share-base.component.html',
     styleUrls: ['../../style/common.css'],
+    standalone: false
 })
 export class DataShareBaseComponent implements OnInit {
     constructor() {}

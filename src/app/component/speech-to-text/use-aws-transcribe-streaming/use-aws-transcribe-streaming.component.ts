@@ -20,6 +20,7 @@ let micStream: any = null;
     selector: 'app-use-aws-transcribe-streaming',
     templateUrl: './use-aws-transcribe-streaming.component.html',
     styleUrls: ['../../../style/common.css', './use-aws-transcribe-streaming.component.css'],
+    standalone: false
 })
 export class UseAwsTranscribeStreamingComponent implements OnInit {
     title = 'AWS Transcribe Streaming を使ったサンプル';

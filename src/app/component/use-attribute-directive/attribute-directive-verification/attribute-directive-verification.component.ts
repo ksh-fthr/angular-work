@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-attribute-directive-verification',
     templateUrl: './attribute-directive-verification.component.html',
     styleUrls: ['./attribute-directive-verification.component.css'],
+    standalone: false
 })
 export class AttributeDirectiveVerificationComponent implements OnInit {
     constructor() {}
