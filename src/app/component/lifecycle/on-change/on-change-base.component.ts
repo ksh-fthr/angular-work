@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-on-change-base',
     templateUrl: './on-change-base.component.html',
     styleUrls: ['../../../style/common.css'],
+    standalone: false
 })
 export class OnChangeBaseComponent implements OnInit {
     childComponentParameter = 'initial value';

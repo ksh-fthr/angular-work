@@ -11,6 +11,7 @@ import { ModalService } from '../../service/modal/modal.service';
     selector: 'app-modal-base',
     templateUrl: './modal-base.component.html',
     styleUrls: ['../../style/common.css'],
+    standalone: false
 })
 export class ModalBaseComponent implements OnInit, OnDestroy {
     // モーダルダイアログが閉じた際のイベントをキャッチするための subscription

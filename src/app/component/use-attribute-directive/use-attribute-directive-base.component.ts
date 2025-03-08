@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-use-attribute-directive-base',
     templateUrl: './use-attribute-directive-base.component.html',
     styleUrls: ['../../style/common.css'],
+    standalone: false
 })
 export class UseAttributeDirectiveBaseComponent implements OnInit {
     constructor() {}

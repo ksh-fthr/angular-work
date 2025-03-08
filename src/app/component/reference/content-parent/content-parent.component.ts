@@ -13,6 +13,7 @@ import { ContentChildComponent } from '../content-child/content-child.component'
     selector: 'app-content-parent',
     templateUrl: './content-parent.component.html',
     styleUrls: ['../../../style/common.css', './content-parent.component.css'],
+    standalone: false
 })
 export class ContentParentComponent implements AfterContentChecked {
     /**

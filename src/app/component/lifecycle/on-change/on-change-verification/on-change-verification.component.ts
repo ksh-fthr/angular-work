@@ -5,6 +5,7 @@ import { Logging } from 'src/app/utils/logging';
     selector: 'app-on-change-verification',
     templateUrl: './on-change-verification.component.html',
     styleUrls: ['../../../../style/common.css', './on-change-verification.component.css'],
+    standalone: false
 })
 export class OnChangeVerificationComponent implements AfterViewInit {
     signalInputValue = input<string>('');

@@ -11,6 +11,7 @@ import { TabModel } from '../../model/tab-model';
     selector: 'app-tab-base',
     templateUrl: './tab-base.component.html',
     styleUrls: ['../../style/common.css'],
+    standalone: false
 })
 export class TabBaseComponent implements OnInit {
     private _tabs: Array<TabModel> = [];

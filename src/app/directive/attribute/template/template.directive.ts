@@ -2,6 +2,7 @@ import { Directive, ElementRef, OnInit, input } from '@angular/core';
 
 @Directive({
     selector: '[appTemplate]',
+    standalone: false
 })
 export class TemplateDirective implements OnInit {
     /**

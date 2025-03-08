@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-readme',
     templateUrl: './readme.component.html',
     styleUrls: ['../../style/common.css', './readme.component.css'],
+    standalone: false
 })
 export class ReadmeComponent implements OnInit {
     constructor() {}

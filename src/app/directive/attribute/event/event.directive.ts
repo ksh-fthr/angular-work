@@ -2,6 +2,7 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
     selector: '[appEvent]',
+    standalone: false
 })
 export class EventDirective {
     /**

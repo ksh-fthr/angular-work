@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-parent-child-base',
     templateUrl: './parent-child-base.component.html',
     styleUrls: ['../../style/common.css'],
+    standalone: false
 })
 export class ParentChildBaseComponent implements OnInit {
     constructor() {}

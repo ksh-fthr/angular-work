@@ -5,6 +5,7 @@ import { Logging } from '../../../../../utils/logging';
     selector: 'app-after-content-child',
     templateUrl: './after-content-child.component.html',
     styleUrls: ['./after-content-child.component.css'],
+    standalone: false
 })
 export class AfterContentChildComponent implements OnInit {
     // 親コンポーネントに渡す値をセットする変数

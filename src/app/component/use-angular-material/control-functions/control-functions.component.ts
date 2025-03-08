@@ -8,6 +8,7 @@ import { TabModel } from '../../../model/tab-model';
     selector: 'app-control-functions',
     templateUrl: './control-functions.component.html',
     styleUrls: ['./control-functions.component.css'],
+    standalone: false
 })
 export class ControlFunctionsComponent implements OnInit {
     private _currentTab: any;

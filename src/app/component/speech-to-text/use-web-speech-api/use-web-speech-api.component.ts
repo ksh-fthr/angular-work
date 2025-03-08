@@ -5,6 +5,7 @@ declare const webkitSpeechRecognition: any;
     selector: 'app-use-web-speech-api',
     templateUrl: './use-web-speech-api.component.html',
     styleUrls: ['../../../style/common.css', './use-web-speech-api.component.css'],
+    standalone: false
 })
 export class UseWebSpeechApiComponent implements OnInit {
     title = 'WebSpeechAPI を使ったサンプル';

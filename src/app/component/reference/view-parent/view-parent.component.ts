@@ -13,6 +13,7 @@ import { ViewChildComponent } from '../view-child/view-child.component';
     selector: 'app-view-parent',
     templateUrl: './view-parent.component.html',
     styleUrls: ['../../../style/common.css', './view-parent.component.css'],
+    standalone: false
 })
 export class ViewParentComponent implements AfterViewChecked {
     /**

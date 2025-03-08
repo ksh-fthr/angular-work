@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-validation-verification',
     templateUrl: './validation-verification.component.html',
     styleUrls: ['../../../style/common.css'],
+    standalone: false
 })
 export class ValidationVerificationComponent implements OnInit {
     /**
