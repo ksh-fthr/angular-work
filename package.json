@@ -63,7 +63,7 @@
     "prettier": "3.5.3",
     "protractor": "7.0.0",
     "ts-node": "10.9.2",
-    "typescript": "5.5.4",
+    "typescript": "^5.8.2",
     "typescript-eslint": "8.26.0"
   },
   "lint-staged": {
