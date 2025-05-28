@@ -43,9 +43,9 @@
     "@types/jasmine": "3.10.18",
     "@types/node": "16.18.126",
     "@types/readable-stream": "4.0.20",
-    "@typescript-eslint/eslint-plugin": "8.32.1",
-    "@typescript-eslint/parser": "8.32.1",
-    "angular-eslint": "19.5.0",
+    "@typescript-eslint/eslint-plugin": "8.33.0",
+    "@typescript-eslint/parser": "8.33.0",
+    "angular-eslint": "19.6.0",
     "eslint": "9.27.0",
     "eslint-config-prettier": "8.10.0",
     "eslint-plugin-import": "latest",
@@ -65,7 +65,7 @@
     "protractor": "7.0.0",
     "ts-node": "10.9.2",
     "typescript": "^5.8.2",
-    "typescript-eslint": "8.32.1"
+    "typescript-eslint": "8.33.0"
   },
   "lint-staged": {
     "**/*.{js,css,scss,html,md,yml,yaml},(!src)/**/*.ts": "prettier --write",
