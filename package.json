@@ -46,7 +46,7 @@
     "@typescript-eslint/eslint-plugin": "8.34.0",
     "@typescript-eslint/parser": "8.34.0",
     "angular-eslint": "19.8.0",
-    "eslint": "9.28.0",
+    "eslint": "9.29.0",
     "eslint-config-prettier": "8.10.0",
     "eslint-plugin-import": "latest",
     "eslint-plugin-jsdoc": "latest",
