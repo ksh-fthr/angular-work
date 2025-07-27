@@ -68,4 +68,13 @@
   "markdownlint.config": {
     "MD033": false  // no-inline-html: Inline HTML [Element: details]markdownlintMD033 を黙らせる
   },
+
+  "search.exclude": {
+    // 検索対象から node_modules を外す
+    "**/node_modules": true
+  },
+  "files.exclude": {
+    // ファイルエクスプローラーから node_modules を外す
+    "**/node_modules": true
+  }
 }
