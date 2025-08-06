@@ -15,10 +15,10 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 
 | 環境                                                        | バージョン | 備考                     |
 | ----------------------------------------------------------- | ---------- | ------------------------ |
-| [Angular CLI](https://cli.angular.io/)                      | v20.1.3    | `ng version` で確認      |
-| [Angular](https://angular.io/)                              | v20.1.3    | 同上                     |
-| [Angular Material](https://material.angular.io/)            | v20.1.3    | 同上                     |
-| [Angular CDK](https://github.com/angular/components#readme) | v20.1.3    | 同上                     |
+| [Angular CLI](https://cli.angular.io/)                      | v20.1.4    | `ng version` で確認      |
+| [Angular](https://angular.io/)                              | v20.1.4    | 同上                     |
+| [Angular Material](https://material.angular.io/)            | v20.1.4    | 同上                     |
+| [Angular CDK](https://github.com/angular/components#readme) | v20.1.4    | 同上                     |
 | [RxJS](https://rxjs.dev/)                                   | v6.6.7     | 同上                     |
 | [TypeScript](https://www.typescriptlang.org/)               | v5.8.3     | 同上                     |
 | [zone.js](https://www.npmjs.com/package/zone.js)            | v0.15.1    | 同上                     |
