@@ -56,7 +56,7 @@ Package                         Version
 @angular-devkit/architect       0.1802.14
 @angular-devkit/build-angular   20.1.3
 @angular-devkit/core            20.1.3
-@angular-devkit/schematics      19.2.15
+@angular-devkit/schematics      20.1.3
 @schematics/angular             20.1.3
 rxjs                            6.6.7
 typescript                      5.8.3
