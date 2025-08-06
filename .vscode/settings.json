@@ -76,5 +76,6 @@
   "files.exclude": {
     // ファイルエクスプローラーから node_modules を外す
     "**/node_modules": true
-  }
+  },
+  "nxConsole.generateAiAgentRules": true
 }

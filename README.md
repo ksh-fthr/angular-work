@@ -41,23 +41,23 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
                 |___/
 
 
-Angular CLI: 20.1.3
+Angular CLI: 20.1.4
 Node: 22.17.1
 Package Manager: npm 10.9.2
 OS: darwin x64
 
-Angular: 20.1.3
+Angular: 20.1.4
 ... animations, cdk, cli, common, compiler, compiler-cli, core
 ... forms, material, platform-browser, platform-browser-dynamic
 ... router
 
 Package                         Version
 ---------------------------------------------------------
-@angular-devkit/architect       0.1802.14
-@angular-devkit/build-angular   20.1.3
-@angular-devkit/core            20.1.3
-@angular-devkit/schematics      19.2.15
-@schematics/angular             20.1.3
+@angular-devkit/architect       0.2001.4
+@angular-devkit/build-angular   20.1.4
+@angular-devkit/core            20.1.4
+@angular-devkit/schematics      20.1.4
+@schematics/angular             20.1.4
 rxjs                            6.6.7
 typescript                      5.8.3
 zone.js                         0.15.1

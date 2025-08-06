@@ -26,6 +26,7 @@
     "pkief.material-icon-theme",
     "jgclark.vscode-todo-highlight",
     "usernamehw.errorlens",
-    "davidanson.vscode-markdownlint"
+    "davidanson.vscode-markdownlint",
+    "nrwl.angular-console"
   ]
 }
