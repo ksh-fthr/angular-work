@@ -41,6 +41,7 @@
     "@angular-eslint/builder": "20.1.1",
     "@angular/cli": "20.1.5",
     "@angular/compiler-cli": "20.1.6",
+    "@nrwl/angular": "^19.8.4",
     "@nx/angular": "21.3.11",
     "@nx/workspace": "21.3.11",
     "@schematics/angular": "20.1.5",
