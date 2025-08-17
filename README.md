@@ -144,3 +144,5 @@ zone.js                         0.15.1
   * Angular Material の検証を行うブランチ
 * [feature/use-toastr](https://github.com/ksh-fthr/angular-work/tree/feature/use-toastr)
   * [ngx-toastr](https://www.npmjs.com/package/ngx-toastr) の使用感を検証するブランチ
+* [feautre/lerning-design-pattern](https://github.com/ksh-fthr/angular-work/tree/feautre/lerning-design-pattern)
+  * GoF のデザインパターンを使った実装をためす統合ブランチ
