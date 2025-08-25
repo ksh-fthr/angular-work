@@ -25,6 +25,7 @@ import { AfterViewBaseComponent } from '../component/lifecycle/after-view/after-
 import { RoutingBaseComponent } from '../component/routing/routing.base.component';
 import { SpeechToTextBaseComponent } from '../component/speech-to-text/speech-to-text-base.component';
 import { ToastBaseComponent } from '../component/toast/toast-base.component';
+import { DesignPatternBaseComponent } from '../component/design-pattern/design-pattern-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
@@ -112,6 +113,10 @@ const ROUTE_TABLE: Routes = [
     {
         path: 'toast',
         component: ToastBaseComponent,
+    },
+    {
+        path: 'design-pattern',
+        loadChildren: () => import('./feature-design-pattern.module').then((m) => m.FeatureDesignPatternModule),
     },
 ];
 
