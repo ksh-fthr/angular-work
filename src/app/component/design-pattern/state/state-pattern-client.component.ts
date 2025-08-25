@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ContextService } from 'src/app/service/design-pattern/state/context/context.service';
 
 @Component({
     imports: [RouterModule],
@@ -8,7 +9,16 @@ import { RouterModule } from '@angular/router';
     styleUrls: ['./state-pattern-client.component.css'],
 })
 export class StatePatternClientComponent implements OnInit {
-    constructor() {}
+    buttonName: string | null = null;
+
+    constructor(private context: ContextService) {
+        this.buttonName = this.context.getText();
+    }
 
     ngOnInit(): void {}
+
+    changeState(): void {
+        this.context.up();
+        this.buttonName = this.context.getText();
+    }
 }
