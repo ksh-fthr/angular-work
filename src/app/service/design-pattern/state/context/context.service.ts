@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IState } from '../i-state';
+import { IState, State } from '../i-state';
 import { OffStateService } from '../OffState/off-state.service';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class ContextService {
         this.state = state;
     }
 
-    getText(): string {
+    getText(): State {
         return this.state.getText();
     }
 }

@@ -1,5 +1,18 @@
-<div>state-pattern-client works!</div>
-
 <div>
-  <input type="button" [value]="buttonName" (click)="changeState()" />
+  <div class="title">
+    <h2 class="h2-style">{{title}}</h2>
+  </div>
+  <div class="description-area">
+    <div>
+      <span class="description-text">ボタンを押すことで状態がトグルされます.</span>
+    </div>
+    <div>
+      <button type="button" class="event-button event-button-w-100" (click)="changeState()">状態更新</button>
+    </div>
+    <div>
+        <p class="state-area" readonly>
+        状態は <span [ngClass]="state">{{ state!  | caseTransform:'upper' }}</span> に切り替わりました.
+      </p>
+    </div>
+  </div>
 </div>
