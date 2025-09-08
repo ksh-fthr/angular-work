@@ -41,7 +41,7 @@
     "@angular-eslint/builder": "20.2.0",
     "@angular/cli": "20.2.2",
     "@angular/compiler-cli": "20.2.4",
-    "@nx/angular": "21.4.1",
+    "@nx/angular": "21.5.1",
     "@nx/workspace": "21.4.1",
     "@schematics/angular": "20.2.2",
     "@types/jasmine": "3.10.18",
