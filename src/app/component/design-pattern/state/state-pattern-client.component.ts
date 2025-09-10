@@ -6,7 +6,7 @@ import { ContextService } from 'src/app/service/design-pattern/state/context/con
 import { State } from 'src/app/service/design-pattern/state/i-state';
 
 @Component({
-    imports: [RouterModule, CommonModule, CaseTransformPipe],
+    imports: [CommonModule, CaseTransformPipe],
     selector: 'app-state-pattern-client',
     templateUrl: './state-pattern-client.component.html',
     styleUrls: ['../../../style/common.css', './state-pattern-client.component.css'],
