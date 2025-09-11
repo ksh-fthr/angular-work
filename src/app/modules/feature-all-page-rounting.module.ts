@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 // ----------------------------------------------
 // routing のために必要なベースコンポーネント
 // ----------------------------------------------
-// 各モジュールを import することでこれらのコンポーネントも巻き込んで import されるが､
+// app.module で各モジュールを import することでこれらのコンポーネントも巻き込んで import されるが､
 // routing を行うには宣言しておく必要がある
 import { ReadmeComponent } from '../component/readme/readme.component'; // TOP ページ用の README
 import { TabBaseComponent } from '../component/tab/tab-base.component';
@@ -25,7 +25,6 @@ import { AfterViewBaseComponent } from '../component/lifecycle/after-view/after-
 import { RoutingBaseComponent } from '../component/routing/routing.base.component';
 import { SpeechToTextBaseComponent } from '../component/speech-to-text/speech-to-text-base.component';
 import { ToastBaseComponent } from '../component/toast/toast-base.component';
-import { DesignPatternBaseComponent } from '../component/design-pattern/design-pattern-base.component';
 
 // TODO: ROUTING もモジュール分割したい
 // Routing を行う対象のコンポーネントを管理する
