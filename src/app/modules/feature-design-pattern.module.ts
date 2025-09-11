@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { DesignPatternBaseComponent } from '../component/design-pattern/design-pattern-base.component';
 import { StatePatternClientComponent } from '../component/design-pattern/state/state-pattern-client.component';
 
