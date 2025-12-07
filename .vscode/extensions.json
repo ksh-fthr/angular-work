@@ -27,6 +27,7 @@
     "jgclark.vscode-todo-highlight",
     "usernamehw.errorlens",
     "davidanson.vscode-markdownlint",
-    "nrwl.angular-console"
+    "nrwl.angular-console",
+    "alefragnani.project-manager"
   ]
 }
