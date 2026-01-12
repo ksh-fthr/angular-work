@@ -31,7 +31,11 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
 <summary>Angular のバージョン詳細( ng version の結果 )</summary>
 
 ```bash
-% ng version
+% npm run ng version
+
+> angular-app@0.0.0 ng
+> ng version
+
 
      _                      _                 ____ _     ___
     / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
@@ -41,26 +45,35 @@ Angular CLI で作成したプロジェクトを使用して、Angular の理解
                 |___/
 
 
-Angular CLI: 20.1.4
-Node: 22.17.1
-Package Manager: npm 10.9.2
-OS: darwin x64
+Angular CLI       : 21.0.5
+Angular           : 21.0.5
+Node.js           : 22.21.1
+Package Manager   : npm 10.9.4
+Operating System  : darwin arm64
 
-Angular: 20.1.4
-... animations, cdk, cli, common, compiler, compiler-cli, core
-... forms, material, platform-browser, platform-browser-dynamic
-... router
-
-Package                         Version
----------------------------------------------------------
-@angular-devkit/architect       0.2001.4
-@angular-devkit/build-angular   20.1.4
-@angular-devkit/core            20.1.4
-@angular-devkit/schematics      20.1.4
-@schematics/angular             20.1.4
-rxjs                            6.6.7
-typescript                      5.8.3
-zone.js                         0.15.1
+┌──────────────────┬──────────┬──────────┐
+│ Package                            │ Installed Version  │ Requested Version  │
+├──────────────────┼──────────┼──────────┤
+│ @angular-devkit/build-angular      │ 21.0.5             │ 21.0.5             │
+│ @angular-devkit/core               │ 21.0.5             │ 21.0.5             │
+│ @angular-devkit/schematics         │ 21.0.5             │ 21.0.5             │
+│ @angular/animations                │ 21.0.5             │ 21.0.5             │
+│ @angular/cdk                       │ 21.0.5             │ 21.0.5             │
+│ @angular/cli                       │ 21.0.5             │ 21.0.5             │
+│ @angular/common                    │ 21.0.5             │ 21.0.5             │
+│ @angular/compiler                  │ 21.0.5             │ 21.0.5             │
+│ @angular/compiler-cli              │ 21.0.5             │ 21.0.5             │
+│ @angular/core                      │ 21.0.5             │ 21.0.5             │
+│ @angular/forms                     │ 21.0.5             │ 21.0.5             │
+│ @angular/material                  │ 21.0.5             │ 21.0.5             │
+│ @angular/platform-browser          │ 21.0.5             │ 21.0.5             │
+│ @angular/platform-browser-dynamic  │ 21.0.5             │ 21.0.5             │
+│ @angular/router                    │ 21.0.5             │ 21.0.5             │
+│ @schematics/angular                │ 21.0.5             │ 21.0.5             │
+│ rxjs                               │ 6.6.7              │ 6.6.7              │
+│ typescript                         │ 5.9.3              │ ^5.8.2             │
+│ zone.js                            │ 0.15.1             │ 0.15.1             │
+└──────────────────┴──────────┴──────────┘
 ```
 
 </div>
