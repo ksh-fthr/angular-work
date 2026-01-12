@@ -71,7 +71,7 @@ Operating System  : darwin arm64
 │ @angular/router                    │ 21.0.5             │ 21.0.5             │
 │ @schematics/angular                │ 21.0.5             │ 21.0.5             │
 │ rxjs                               │ 6.6.7              │ 6.6.7              │
-│ typescript                         │ 5.9.3              │ ^5.8.2             │
+│ typescript                         │ 5.9.3              │ ^5.9.3             │
 │ zone.js                            │ 0.15.1             │ 0.15.1             │
 └──────────────────┴──────────┴──────────┘
 ```

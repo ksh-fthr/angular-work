@@ -47,7 +47,6 @@
     "@types/jasmine": "3.10.18",
     "@types/node": "16.18.126",
     "@types/readable-stream": "4.0.23",
-    "@types/process": "^0.11.1",
     "@typescript-eslint/eslint-plugin": "8.51.0",
     "@typescript-eslint/parser": "8.51.0",
     "angular-eslint": "19.8.1",
@@ -70,7 +69,7 @@
     "prettier": "3.7.4",
     "protractor": "7.0.0",
     "ts-node": "10.9.2",
-    "typescript": "^5.8.2",
+    "typescript": "^5.9.3",
     "typescript-eslint": "8.51.0"
   },
   "lint-staged": {
