@@ -13,7 +13,7 @@ import { ContentChildComponent } from '../content-child/content-child.component'
     selector: 'app-content-parent',
     templateUrl: './content-parent.component.html',
     styleUrls: ['../../../style/common.css', './content-parent.component.css'],
-    standalone: false
+    standalone: false,
 })
 export class ContentParentComponent implements AfterContentChecked {
     /**
@@ -37,6 +37,10 @@ export class ContentParentComponent implements AfterContentChecked {
      * 外部コンテンツの変更をフックする
      */
     ngAfterContentChecked(): void {
+        if (!this.contentChild || !this.contentChild.inputValue) {
+            return;
+        }
+
         if (this.contentValue !== this.contentChild.inputValue) {
             this.contentValue = this.contentChild.inputValue;
         }

@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AfterContentParentComponent } from './after-content-parent.component';
+import { AfterContentChildComponent } from '../after-content-child/after-content-child.component';
 
 describe('AfterContentParentComponent', () => {
     let component: AfterContentParentComponent;
@@ -8,7 +11,8 @@ describe('AfterContentParentComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [AfterContentParentComponent],
+            imports: [FormsModule],
+            declarations: [AfterContentParentComponent, AfterContentChildComponent],
         }).compileComponents();
     });
 
