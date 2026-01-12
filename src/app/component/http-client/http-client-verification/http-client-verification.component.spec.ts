@@ -18,10 +18,10 @@ describe('HttpClientVerificationComponent', () => {
                 {
                     provide: HttpClientService,
                     useValue: {
-                        get$: () => of([]),
-                        register$: () => of([]),
-                        update$: () => of([]),
-                        delete$: () => of([]),
+                        get$: () => () => [],
+                        register$: () => () => [],
+                        update$: () => () => [],
+                        delete$: () => () => [],
                     },
                 },
             ],

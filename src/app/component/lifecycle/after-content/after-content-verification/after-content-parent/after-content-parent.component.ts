@@ -6,7 +6,7 @@ import { Logging } from '../../../../../utils/logging';
     selector: 'app-after-content-parent',
     templateUrl: './after-content-parent.component.html',
     styleUrls: ['./after-content-parent.component.css'],
-    standalone: false
+    standalone: false,
 })
 export class AfterContentParentComponent implements OnInit, AfterContentInit, AfterContentChecked {
     // 外部コンテンツである子コンポーネントを参照
@@ -42,6 +42,9 @@ export class AfterContentParentComponent implements OnInit, AfterContentInit, Af
      * 外部コンテンツが初期化された後に処理
      */
     ngAfterContentInit(): void {
+        if (!this.child) {
+            return;
+        }
         this.parentContents = this.child.childContents;
 
         const message = `[AfterContentParentComponent][ngAfterContentInit] fired. parentContents={ ${this.parentContents} }`;
@@ -53,10 +56,12 @@ export class AfterContentParentComponent implements OnInit, AfterContentInit, Af
      * 外部コンテンツの確認後に処理
      */
     ngAfterContentChecked(): void {
-        this.parentContents = this.child.childContents;
+        if (this.child) {
+            this.parentContents = this.child.childContents;
 
-        const message = `[AfterContentParentComponent][ngAfterContentChecked] fired. parentContents={ ${this.parentContents} }`;
-        console.log(message);
-        Logging.info(this.textAreaElement, message);
+            const message = `[AfterContentParentComponent][ngAfterContentChecked] fired. parentContents={ ${this.parentContents} }`;
+            console.log(message);
+            Logging.info(this.textAreaElement, message);
+        }
     }
 }
