@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SwitchTabComponent } from './switch-tab.component';
 
@@ -6,7 +6,7 @@ describe('SwitchTabComponent', () => {
     let component: SwitchTabComponent;
     let fixture: ComponentFixture<SwitchTabComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             declarations: [SwitchTabComponent],
         }).compileComponents();
